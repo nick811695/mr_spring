@@ -2,13 +2,21 @@
 *{
 	margin: 0;
 	padding: 0;
-	list-style: 0;
+	list-style: none;
 	font-family: 'Noto Sans TC', sans-serif;
 	font-size: 15px;
 	color: #555;
 	line-height: 1.5;
+    box-sizing: border-box;
 }
-input{
+body::-webkit-scrollbar{
+    display: none;
+    -ms-overflow-style: none;
+    height: 100%;
+    width: calc(100vw + 18px);
+    overflow: auto;
+}
+input,textarea{
 	font-family: 'Noto Sans TC', sans-serif;
 	font-size: 15px;
     outline: none;
@@ -20,12 +28,14 @@ input{
 .wrap{
 	width: 1200px;
 	margin: auto;
+    padding-top: 80px;
 }
 
 
 h2{
 	font-size: 60px;
 	font-family: "pigmo";
+    text-align: center;
 }
 h3{
 	font-size: 24px;
@@ -34,12 +44,13 @@ h3{
 
 a{
 	text-decoration: none;
+    text-align: center;
 }
 .number{
 	font-size: 14px;
 }
 .btn_s{
-	padding: 10px 20px;
+	padding: 5px 15px;
 	border-radius:50px;
 }
 .btn_l{
