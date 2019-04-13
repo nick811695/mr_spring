@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/reservation.css">
+    <link rel="stylesheet" href="css/demo.css">
+    <style>
+        nav h2{
+            margin-top:11.08px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav_fabric">
+            <img src="images/navBar.png" alt="navBar">
+        </div>
+        <nav class="main_menu">
+            <a href="custom.html">
+                <h2>
+                    客製湯頭
+                </h2>
+            </a>
+            <a href="reservation.html">
+                <h2 style="color:#fff;">
+                    預約訂房
+                </h2>
+            </a>
+            <a href="index.html">
+                <h2 style="margin-top:0px;">
+                    <img style="width:100px;" src="images/mrSpringLogo.png" alt="">
+                </h2>
+            </a>
+            <a href="forum.html">
+                <h2>
+                    討論の區
+                </h2>
+            </a>
+            <a href="member.html">
+                <h2>
+                    會員専區
+                </h2>
+            </a>
+
+        </nav>
+    </header>
+    <div class="page_d first_page">
+        <div class="backgroundImgCloud">
+            <img src="images/cloud5.png" alt="">
+            <img src="images/cloud8.png" alt="">
+            <img src="images/cloud_large.png" alt="">
+            <img src="images/cloud4.png" alt="">
+            <img src="images/cloud_large.png" alt="">
+            <img src="images/cloud4.png" alt="">
+        </div>
+        <div class="wrap progress_d" style="padding-top: 60px;">
+            <div class="step step1_d">
+                <img src="images/inkDot.png" alt="">
+                <div class="stepContent_d">
+                    <p>step1</p>
+                    <h3>選擇湯牌和日期</h3>
+                    <p>從下方選擇喜愛的湯牌配方，再選擇泡湯日期。</p>
+                </div>
+            </div>
+            <div class="stepLine_d">
+                <img src="images/stepLine_gray.png" alt="">
+            </div>
+            <div class="step step2_d">
+                <img src="images/inkDot_gray.png" alt="">
+                <div class="stepContent_d">
+                    <p>step2</p>
+                    <h3>選擇分店和時段</h3>
+                    <p>從下方選項選擇分店以及入房泡湯時段。</p>
+                </div>
+            </div>
+            <div class="stepLine_d">
+                <img src="images/stepLine_gray.png" alt="">
+            </div>
+            <div class="step step3_d">
+                <img src="images/inkDot_gray.png" alt="">
+                <div class="stepContent_d">
+                    <p>step3</p>
+                    <h3>確認訂房資訊</h3>
+                    <p>輸入您的基本資料，並確認訂房細節，方可進行付款。</p>
+                </div>
+            </div>
+        </div>
+        <div class="wrap select1_container_d">
+            <div class="left_box_d">
+                <div class="springCard">
+                    <img src="images/springCard.png" alt="">
+                    <img src="images/springCard02.png" alt="">
+                    <div class="add_button_d">
+                        <div class="add_button"></div>
+                        <p>載入我的湯牌</p>
+                    </div>
+                </div>
+                <!-- <div class="radar">
+
+                </div> -->
+            </div>
+            <div class="middle_box_d">
+                <div class="calendar_top_d">
+                    <div class="calendar_top_box_left_d">
+                        <div class="herbsImg_d">
+                            <img src="images/sakura.png" alt="">
+                        </div>
+                        <div class="herbsContent_d">
+                            <p>
+                                目前選用之湯牌包含時段限定藥材 : <span class="herbsTitle">櫻花</span><br>
+                                已為您篩選出可使用本湯牌之日期。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="calendar_top_box_right_d">
+                        <div class="yy">
+                            <span id="yy-sp">年份</span>
+                        </div>
+                        <div class="mm">
+                            <!-- <div class="arrow_left" id="left-1"></div> -->
+                            <i id="left-1" class="fas fa-chevron-left"></i>
+                            <p>
+                                <span id="mm-sp">月份</span>月
+                            </p>
+                            <!-- <div class="arrow_right" id="right-1"></div> -->
+                            <i id="right-1" class="fas fa-chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="calendar_bottom_d">
+                    <table class="calendar">
+                        <tbody>
+                            <tr>
+                                <th>日</th>
+                                <th>一</th>
+                                <th>二</th>
+                                <th>三</th>
+                                <th>四</th>
+                                <th>五</th>
+                                <th>六</th>
+                            </tr>
+                        </tbody>
+                        <tbody id="calendar-tb">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="right_box_d">
+                <div class="btn_b nextStep">下一步</div>
+            </div>
+        </div>
+    </div>
+    <div class="page_d second_page">
+        <div class="backgroundImgCloud">
+            <img src="images/tree05.png" alt="">
+            <img src="images/mt1.png" alt="">
+            <img src="images/mt2.png" alt="">
+            <img src="images/tree04.png" alt="">
+            <img src="images/mt1.png" alt="">
+            <img src="images/cloud_large.png" alt="">
+            <img src="images/cloud_large.png" alt="">
+            <img src="images/cloud4.png" alt="">
+            <img src="images/tree06.png" alt="">
+            <img src="images/cloud2.png" alt="">
+        </div>
+        <div class="wrap progress_d">
+            <div class="step step1_d">
+                <img src="images/inkDot.png" alt="">
+                <div class="stepContent_d">
+                    <p>step1</p>
+                    <h3>選擇湯牌和日期</h3>
+                    <p>從下方選擇喜愛的湯牌配方，再選擇泡湯日期。</p>
+                </div>
+            </div>
+            <div class="stepLine_d">
+                <img src="images/stepLine.png" alt="">
+            </div>
+            <div class="step step2_d">
+                <img src="images/inkDot.png" alt="">
+                <div class="stepContent_d">
+                    <p>step2</p>
+                    <h3>選擇分店和時段</h3>
+                    <p>從下方選項選擇分店以及入房泡湯時段。</p>
+                </div>
+            </div>
+            <div class="stepLine_d">
+                <img src="images/stepLine_gray.png" alt="">
+            </div>
+            <div class="step step3_d">
+                <img src="images/inkDot_gray.png" alt="">
+                <div class="stepContent_d">
+                    <p>step3</p>
+                    <h3>確認訂房資訊</h3>
+                    <p>輸入您的基本資料，並確認訂房細節，方可進行付款。</p>
+                </div>
+            </div>
+            <div class="previousStep_d">
+                <div class="backButtonText_d">
+                    <span>回上一步</span>
+                </div>
+                <div class="backButtonImg_d">
+                    <img src="images/backButton.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="wrap select2_container_d">
+            <div class="background_d">
+                <div class="slider">
+                    <ul class="slider-list">
+
+                        <li class="slider-list__item slider-list__item_active">
+                            <span class="back__element">
+                                <img src="images/sunLight02.png" />
+                            </span>
+                            <span class="main__element">
+                                <img src="images/blueSky.png" />
+                            </span>
+                            <span class="front__element">
+                                <img src="images/birds.png" />
+                            </span>
+                        </li>
+
+                        <li class="slider-list__item">
+                            <span class="back__element">
+                                <img src="images/sunLight.png" />
+                            </span>
+                            <span class="main__element">
+                                <img src="images/sunSetSky.png" />
+                            </span>
+                            <span class="front__element">
+                                <img src="images/sunSetCloud.png" />
+                            </span>
+                        </li>
+
+                        <li class="slider-list__item">
+                            <span class="back__element">
+                                <img src="images/stars02.png" />
+                            </span>
+                            <span class="main__element">
+                                <img src="images/stars01.png" />
+                            </span>
+                            <span class="front__element">
+                                <img src="images/moon.png" />
+                            </span>
+                        </li>
+
+                        <div class="clockSelect_d">
+                            <div class="clockSelectCircle_d slider__nav-bar">
+                                <div class="clock firstClock_d nav-control">
+                                    <div class="clock_container firstClock_container">
+                                        <div class="clock1Img_d">
+                                            <img src="images/morning.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clock secondClock_d nav-control">
+                                    <div class="clock_container secondClock_container">
+                                        <div class="clock2Img_d">
+                                            <img src="images/afternoon.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clock thirdClock_d nav-control">
+                                    <div class="clock_container thirdCranch_container">
+                                        <div class="clock3Img_d">
+                                            <img src="images/night.png" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slider__controls">
+                            <a class="slider__arrow slider__arrow_prev"></a>
+                            <a class="slider__arrow slider__arrow_next"></a>
+                        </div>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="select2_left_box_d">
+                <div class="roomImg_d">
+                    <img src="images/room01.png" alt="">
+                    <img src="images/room02.png" alt="">
+                    <img src="images/room03.png" alt="">
+                </div>
+            </div>
+            <div class="select2_right_box_d">
+                <div class="firsrRow_d">
+                    <div class="branchTitle_d">
+                        <h3>選擇分店</h3>
+                    </div>
+                    <div class="branchContent_d">
+                        <div class="branchSelect_d">
+                            <div class="branch firstBranch_d">
+                                <div class="branch_container firstBranch_container">
+                                    <p class="firstBranch_p">中央</p>
+                                    <div class="store1Img_d">
+                                        <img src="images/store01.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="branch secondBranch_d">
+                                <div class="branch_container secondBranch_container">
+                                    <p class="secondBranch_p">桃園</p>
+                                    <div class="store2Img_d">
+                                        <img src="images/store02.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="branch thirdBranch_d">
+                                <div class="branch_container thirdBranch_container">
+                                    <p class="thirdBranch_p">北投</p>
+                                    <div class="store3Img_d">
+                                        <img src="images/store03.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="branchText_d">
+                            <div class="branchTextContainer">
+                                <div class="firstBranchText">
+                                    <div class="branchText_title">
+                                        <div class="branchText_title_Img_d">
+                                            <img src="images/store01_bk.png" alt="">
+                                        </div>
+                                        <p class="branchText_title_text">中央店</p>
+                                    </div>
+                                    <div class="branchText_addr">
+                                        <p>桃園市中壢區300號</p>
+                                    </div>
+                                    <div class="branchText_tel">
+                                        <p>03-3258778</p>
+                                    </div>
+                                </div>
+                                <div class="secondBranchText">
+                                    <div class="branchText_title">
+                                        <div class="branchText_title_Img_d">
+                                            <img src="images/store01_bk.png" alt="">
+                                        </div>
+                                        <p class="branchText_title_text">桃園店</p>
+                                    </div>
+                                    <div class="branchText_addr">
+                                        <p>桃園市中壢區300號</p>
+                                    </div>
+                                    <div class="branchText_tel">
+                                        <p>03-3258778</p>
+                                    </div>
+                                </div>
+                                <div class="thirdBranchText">
+                                    <div class="branchText_title">
+                                        <div class="branchText_title_Img_d">
+                                            <img src="images/store01_bk.png" alt="">
+                                        </div>
+                                        <p class="branchText_title_text">北投店</p>
+                                    </div>
+                                    <div class="branchText_addr">
+                                        <p>桃園市中壢區300號</p>
+                                    </div>
+                                    <div class="branchText_tel">
+                                        <p>03-3258778</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="secondRow_d">
+                    <div class="clockTitle_d">
+                        <h3>選擇時段</h3>
+                    </div>
+                    <div class="clockContent_d">
+                        <div class="clockText_d">
+                            <div class="clockTextContainer">
+                                <div class="firstClockText">
+                                    <div class="clockText_title">
+                                        <div class="clockText_title_Img_d">
+                                            <img src="images/morning.png" alt="">
+                                        </div>
+                                        <p class="clockText_title_text">早上時段</p>
+                                    </div>
+                                    <div class="clockText_clock">
+                                        <p>09:00-12:00</p>
+                                    </div>
+                                </div>
+                                <div class="secondClockText">
+                                    <div class="clockText_title">
+                                        <div class="clockText_title_Img_d">
+                                            <img src="images/afternoon.png" alt="">
+                                        </div>
+                                        <p class="clockText_title_text">下午時段</p>
+                                    </div>
+                                    <div class="clockText_clock">
+                                        <p>15:00-18:00</p>
+                                    </div>
+                                </div>
+                                <div class="thirdClockText">
+                                    <div class="clockText_title">
+                                        <div class="clockText_title_Img_d">
+                                            <img src="images/night.png" alt="">
+                                        </div>
+                                        <p class="clockText_title_text">晚上時段</p>
+                                    </div>
+                                    <div class="clockText_clock">
+                                        <p>21:00-24:00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="thirdRow_d">
+                    <div class="roomPrice">
+                        <span>價格</span>
+                        <span>NT$<span id="roomPriceText"></span>1200</span>
+                    </div>
+                    <div class="nextStepBtn_d">
+                        <div class="btn_b nextStep">下一步</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="page_d third_page">
+        <div class="backgroundImgCloud">
+            <img src="images/cloud5.png" alt="">
+            <img src="images/cloud6.png" alt="">
+            <img src="images/cloud7.png" alt="">
+            <img src="images/cloud1.png" alt="">
+            <img src="images/cloud_l2.png" alt="">
+        </div>
+        <div class="wrap progress_d">
+            <div class="step step1_d">
+                <img src="images/inkDot.png" alt="">
+                <div class="stepContent_d">
+                    <p>step1</p>
+                    <h3>選擇湯牌和日期</h3>
+                    <p>從下方選擇喜愛的湯牌配方，再選擇泡湯日期。</p>
+                </div>
+            </div>
+            <div class="stepLine_d">
+                <img src="images/stepLine.png" alt="">
+            </div>
+            <div class="step step2_d">
+                <img src="images/inkDot.png" alt="">
+                <div class="stepContent_d">
+                    <p>step2</p>
+                    <h3>選擇分店和時段</h3>
+                    <p>從下方選項選擇分店以及入房泡湯時段。</p>
+                </div>
+            </div>
+            <div class="stepLine_d">
+                <img src="images/stepLine.png" alt="">
+            </div>
+            <div class="step step3_d">
+                <img src="images/inkDot.png" alt="">
+                <div class="stepContent_d">
+                    <p>step3</p>
+                    <h3>確認訂房資訊</h3>
+                    <p>輸入您的基本資料，並確認訂房細節，方可進行付款。</p>
+                </div>
+            </div>
+            <div class="previousStep_d">
+                <div class="backButtonText_d">
+                    <span>回上一步</span>
+                </div>
+                <div class="backButtonImg_d">
+                    <img src="images/backButton.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="wrap detail_container_d">
+            <div class="detail_left_box_d">
+                <div class="prism-slider">
+                    <ul class="navigation"></ul>
+                </div>
+                <div class="roomInfo_d">
+                    <div class="roomInfoDate">
+                        <div class="roomInfoDateImg_d">
+                            <img src="images/calender.svg" alt="">
+                        </div>
+                        <p>2019/04/08</p>
+                    </div>
+                    <div class="roomInfoClock">
+                        <div class="roomInfoClockImg_d">
+                            <img src="images/morning_black.png" alt="">
+                        </div>
+                        <p>中午</p>
+                    </div>
+                    <div class="roomInfoTitle">
+                        <div class="roomInfoTitleImg_d">
+                            <img src="images/house.svg" alt="">
+                        </div>
+                        <p>中央店</p>
+                    </div>
+                    <div class="roomInfoText">
+                        <p>靠山面海，景觀優美，湯屋簡潔而溫潤，適合養顏美容的療效湯頭。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="detail_right_box_d">
+                <h3>訂房資訊<span>Account Name</span></h3>
+                <table class="orderDetails">
+                    <tr>
+                        <th>姓氏</th>
+                        <td>林</td>
+                        <th class="th_rightSide">名稱</th>
+                        <td>建廷</td>
+                    </tr>
+                    <tr>
+                        <th>身分證號</th>
+                        <td>A123456789</td>
+                        <th class="th_rightSide">連絡電話</th>
+                        <td>0912345678</td>
+                    </tr>
+                    <tr>
+                        <th>日期</th>
+                        <td colspan="3">2018/04/08</td>
+                    </tr>
+                    <tr>
+                        <th>時段</th>
+                        <td colspan="3">早上09:00-12:00</td>
+                    </tr>
+                    <tr>
+                        <th>地點</th>
+                        <td colspan="3">北投分店</td>
+                    </tr>
+                    <tr>
+                        <th>使用湯牌</th>
+                        <td colspan="3">舒筋軟骨湯</td>
+                    </tr>
+                    <tr>
+                        <th>優惠券</th>
+                        <td colspan="3"><select name="coupon" id="coupon">
+                                <option value="0">85折</option>
+                            </select></td>
+                    </tr>
+                </table>
+                <div class="orderNote" style="line-height:1.5;">
+                    <p>注意事項:</p>
+                    <p>1.一般飯店入住時間(CHECK
+                        IN)為15:00以後，若有特別規定入住時間則不在此限。敬請依飯店之規定辦理入住;若您無法在此規定時間內辦理入住手續，請事先與飯店電話確認，否則飯店將視為您當天取消訂房，恕不退費。</p>
+                </div>
+                <div class="confirm_d">
+                    <div class="roomTotalPrice">
+                        <span>優惠券折扣<span class="discountTxt">-NT$100</span></span>
+                        <span>NT$<span id="roomTotalPriceText"></span>1200</span>
+                    </div>
+                    <div class="nextStepBtn_d">
+                        <div class="btn_b nextStep">前往付款</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="all_rights">
+        <h4>Non commercial use&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright © 2019 Mr.Spring All rights
+            reserved</h4>
+    </div>
+    <script src="js/calendar.js"></script>
+    <script src="js/select.js"></script>
+    <script src="js/PrismSlider.js"></script>
+    <script src="js/easing.js"></script>
+    <script src="js/sliderMain.js"></script>
+    <script src="js/anime.min.js"></script>
+    <script src="js/demo.js"></script>
+</body>
+
+</html>
