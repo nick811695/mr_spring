@@ -15,7 +15,9 @@
 	flex-wrap: wrap;
 	width: 60%;
 	float: left;
+	line-height: 40px;
 }
+
 .kind_of_forum,.item_of_forum{
 	position: relative;
 	display: flex;
@@ -28,25 +30,20 @@
 }
 .kind_of_forum .count,.item_of_forum .count{
 	color: white;
-	background-color: #f66;
+	background-color: #a00;
 	width: 25px;
 	height: 25px;
 	line-height: 25px;
 	border-radius: 50%;
 	position: absolute;
-	right: -5px;
+	right: -10px;
 	top: -5px;
 	z-index: 999;
 	text-align: center;
 }
-/*.kind_of_forum p,.item_of_forum p{
-	text-align: center;
-	line-height: 40px;
-	margin-right: 200px;
-}*/
+
 #kind_of_forum_box,#item_of_forum_box{
 	width: 70%;
-	/*background-color: #6f3535;*/
 	width: 130px;
 	text-align: center;
 	max-height: 40px;
@@ -54,25 +51,18 @@
 	overflow: hidden;
 	position: absolute;
 	z-index: 997;
+	cursor: pointer;
 }
 #kind_of_forum_box{
 	left: 0px;
-	transition: 0.5s;
+	transition: 0.2s;
 }
 #item_of_forum_box{
 	left: 0px;
-	transition: 0.9s;
+	transition: 0.2s;
 }
-#kind_of_forum_box:hover{
-	max-height: 300px;
-}
-#item_of_forum_box:hover{
-	max-height: 1000px;
-}
-
 #kind_of_forum_box li,#item_of_forum_box li{
 	height: 30px;
-	line-height: 30px;
 	background-color: #c59a73;
 	color: #6f3535 ;
 	position: relative;
@@ -84,11 +74,12 @@
 }
 #kind_of_forum_box li label,#item_of_forum_box li label{
 	width: 100%;
+	height: 100%;
 	display: block;
+	line-height: 30px;
 }
 
 #kind_of_forum_box li label:hover,#item_of_forum_box li label:hover{
-	/*background-color:#c59a73  ;*/
 	color:#f3ca93 ;
 }
 #kind_of_forum_box li img,#item_of_forum_box li img{
@@ -108,12 +99,10 @@
 }
 
 .sort_forum{
-	padding-top: 20px;
+	margin-top: 20px;
 	width: 100%;
 	display: flex;
-	/*font-family: GenJyuuGothic-medium;*/
 	line-height: 30px;
-	cursor: default;
 }
 .sort_forum p{
 	height: 30px;
@@ -124,14 +113,13 @@
 	height: 30px;
 	display: inline-block;
 	background-color: #6f3535;
-	color: #c59a73;
 	margin-right: 10px;
 	padding-left: 5px;
 	padding-right: 5px;
 	border-radius: 5px;
 
 }
-.sort_forum span:hover{
+.sort_forum label:hover{
 	color: white;
 }
 .sort_forum span input{
@@ -145,6 +133,9 @@
 .sort_forum span label{
 	display: block;
 	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	color: #c59a73;
 }
 .forum_search{
 	width: 190px;
@@ -251,9 +242,9 @@
 }
 .forum .forum_data{
 	float: left;
-	/*font-family: GenJyuuGothic-medium;*/
 	color: #6f3535;
 	padding: 10px;
+	margin-top: 10px;
 }
 .forum .forum_data .user_name{
 	font-size: 21px;
@@ -303,14 +294,22 @@
 	/*font-family: GenJyuuGothic-normal;*/
 	color: #7b3e3e;
 }
-.forum_content .forum_title .forum_kind_title1{
+.forum_content .forum_title .forum_kind_title{
 	float:right;
 	font-size: 15px;
-	/*font-family: GenJyuuGothic-light;*/
+}
+.forum_content .forum_title .forum_kind_title1{
 	color: #6a912d;
 }
-.forum_content .forum_title .forum_kind_title1 img{
+.forum_content .forum_title .forum_kind_title2{
+	color: #A40000;
+}
+.forum_content .forum_title .forum_kind_title3{
+	// color: #6a912d;
+}
+.forum_content .forum_title .forum_kind_title img{
 	height: 25px;
+	width: 55px;
 	display: block;
 	float: left;
 	line-height: 25px;
@@ -321,6 +320,7 @@
 	line-height: 24px;
 	/*font-family: GenJyuuGothic-bold;*/
 	color: #555;
+	text-align: justify;
 }
 .forum .forum_count{
 	display: flex;
@@ -349,28 +349,22 @@
 
 
 /****/
-
-.forum_box_inner{
-	/*width: 80%;*/
+.time_inner{
+	margin-top: 5px;
 }
-
-.hot_forum_box .hot_forum_inner{
-	/*padding-left: 50px;*/
-}
-
 .forum_data_inner{
 	display: flex;
 	position: absolute;
 	bottom: 20px;
-	right: 80px;
-	/*font-family: GenJyuuGothic-bold;*/
+	right: 60px;
 	color: #6f3535;
 	height: 30px;
 	font-size: 21px;
+	line-height: 30px;
 }
 .forum_data_inner img{
 	height: 30px;
-	margin-right: 5px;
+	margin-right: 10px;
 }
 .forum_data_inner .like img{
 	cursor: pointer;
@@ -406,7 +400,6 @@
 }
 .msg_box .msg_l .user_name{
 	text-align: center;
-	/*font-family: GenJyuuGothic-bold;*/
 	font-size: 18px;
 	color: #555;
 }
@@ -422,7 +415,6 @@
 	position: relative;
 }
 .msg_box .msg_r p{
-	/*font-family: GenJyuuGothic-bold;*/
 	font-size: 16px;
 	color: #555;
 }
@@ -430,7 +422,6 @@
 	position: absolute;
 	bottom: 20px;
 	left: 20px;
-	/*font-family: GenJyuuGothic-bold;*/
 	font-size: 15px;
 	color: #999;
 }
@@ -440,6 +431,7 @@
 	height: 25px;
 	right: 20px;
 	bottom: 20px;
+	cursor: pointer;
 }
 .msg_box .like img{
 	width: 25px;
@@ -448,31 +440,34 @@
 }
 .msg_box .like p{
 	line-height: 25px;
-	/*font-family: GenJyuuGothic-bold;*/
 	color: #6f3535;
 }
 
 .msg_box .methods{
 	position: absolute;
+	padding: 8px 0px;
 	right: 20px;
-	top: 15px;
+	top: 7px;
 	display: flex;
 	cursor: pointer;
-	z-index: 10;
+	z-index: 1000;
 }
 .msg_box .methods_menu{
 	position: absolute;
 	right: 20px;
+	max-height: 0;
+	width: 48px;
 	top: 30px;
 	background-color: rgba(255,255,255,0.8);
 	box-shadow: 0 0 5px black;
-	z-index: 15;
+	overflow: hidden;
+	z-index: 1000;
+	border-radius:5px;
+	transition: 0.3s;
 }
 .msg_box .methods_menu li{
 	padding: 5px 8px;
 	cursor: pointer;
-	/*font-family: GenJyuuGothic-medium;*/
-	display: none;
 }
 .msg_box .methods_menu li:hover{
 	background-color:#e4bd5e; 
@@ -496,6 +491,7 @@
 }
 .publish_wrap{
 	margin-top: 50px;
+	margin-bottom: 50px;
 }
 .publish_wrap .msg_r{
 	padding: 20px;
@@ -510,7 +506,6 @@
 	height: 100%;
 	border: none;
 	padding: 5px;
-	/*font-family: GenJyuuGothic-bold;*/
 	font-size: 16px;
 	color: #555;
 	resize: none;
@@ -524,19 +519,20 @@
 	background-color: #6f3535;
 	border: none;
 	color: #ccc;
-	/*font-family: GenJyuuGothic-normal;*/
 	transition: 0.2s;
 	cursor: pointer;
 }
 .publish_wrap .msg_r input:hover{
 	color: #fff;
 }
+
+
+/*--article_publish---*/
 .article_publish_wrap{
-	height: 100vh;
-padding-top: 150px;}
+	padding-bottom: 170px; 
+}
 .forum_wrap .article_publish{
 	width: 100%;
-	height: 100vh;
 	display: flex;
 	justify-content: space-around;
 	background-color: #ffecce;
@@ -600,7 +596,6 @@ padding-top: 150px;}
 	height: 50px;
 	margin-top: 50px;
 	padding: 5px 10px;
-	/*font-family: GenJyuuGothic-normal;*/
 }
 .article_publish .publish_r textarea{
 	display: block;
@@ -611,7 +606,6 @@ padding-top: 150px;}
 	resize: none;
 	padding: 10px;
 	font-size: 18px;
-	/*font-family: GenJyuuGothic-normal;*/
 }
 .article_publish .publish_r input[type="submit"]{
 	width: 200px;
@@ -625,7 +619,6 @@ padding-top: 150px;}
 	text-decoration: none;
 	border-radius: 75px;
 	font-size: 30px;
-	/*font-family: GenJyuuGothic-bold;*/
 	margin-top: 20px;
 	margin-bottom: 20px;
 	transition: 0.5s;

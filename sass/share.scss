@@ -5,8 +5,6 @@
 	list-style: none;
 	font-family: 'Noto Sans TC', sans-serif;
 	font-size: 15px;
-	color: #555;
-	line-height: 1.5;
     box-sizing: border-box;
 }
 body::-webkit-scrollbar{
@@ -28,7 +26,6 @@ input,textarea{
 .wrap{
 	width: 1200px;
 	margin: auto;
-    padding-top: 80px;
 }
 
 
@@ -46,6 +43,7 @@ a{
 	text-decoration: none;
     text-align: center;
 }
+
 .number{
 	font-size: 14px;
 }
