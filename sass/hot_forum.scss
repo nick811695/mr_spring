@@ -1,0 +1,260 @@
+// .forum_bg{
+// 	/* background-image: url(../images/backGround.jpg); */
+// 	overflow: hidden;
+// }
+.forum_wrap{
+	position: relative;
+}
+h2.hot_forum_heading{
+	color: #ab0000;
+}
+.hot_forum_wrap{
+	height: 550px;
+	width: 1200px;
+	position: relative;
+}
+#prev{
+	display: block;
+	position: absolute;
+	z-index: 9999;
+	left: 0px;
+	top: calc(50% - 25px);
+}
+#next{
+	display: block;
+	position: absolute;
+	z-index: 9999;
+	right: 0px;
+	top: calc(50% - 25px);
+}
+.hot_forum_box{
+	width: 1000px;
+	position: absolute;
+	height: 100%;
+	transition: 1s;
+	padding-top: 25px;
+}
+.hot_forum_box .card{
+	position: relative;
+	top: 50px;
+	left: 0;
+	transition: 1s;
+}
+.hot_forum_box .hot_forum_hidden{
+	overflow:hidden;
+	width: 920px;
+	height: 500px;
+	position:absolute;
+	top: 40px;
+	right: -26px;
+}
+.hot_forum_box .hot_forum{
+	width: 900px;
+	height: 450px;
+	background-color: rgba(255,255,255,0.9);
+	box-shadow: 0 0 10px black;
+	border-radius: 10px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 10px;
+	margin:auto;
+	// overflow: hidden;
+	padding-left: 140px;
+	padding-top: 20px;
+	transition: 1s;
+	// z-index: 15;
+}
+#mask{
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999; 
+	display: none;
+}
+.hot_forum_methods{
+	position: absolute;
+	display: flex;
+	height: 30px;
+	right: 20px;
+	top: 20px;
+	z-index: 1000;
+}
+
+.hot_forum_methods .circle{
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	margin-left: 2px;
+	margin-right: 2px;
+	margin-top: 13px;
+	background-color: #aaa;
+	transition: 0.5s;
+}
+.hot_forum_methods:hover .circle{
+	background-color: rgba(0,0,0,0.8);
+}
+.hot_forum_methods_menu{
+	position: absolute;
+	right: 20px;
+	max-height: 0;
+	width: 48px;
+	top: 50px;
+	background-color: rgba(255,255,255,0.8);
+	box-shadow: 0 0 5px black;
+	overflow: hidden;
+	z-index: 1000;
+	border-radius:5px;
+	transition: 0.3s;
+}
+.hot_forum_methods_menu li{
+	padding: 5px 8px;
+	cursor: pointer;
+	transition: 0.5s;
+}
+.hot_forum_methods_menu li:hover{
+	background-color:#e4bd5e; 
+}
+.hot_forum_box .hot_forum .hot_user_data{
+	display: flex;
+}
+.hot_user_data .user_photo{
+	width: 90px;
+	height: 90px;
+	border-radius: 50%;
+	overflow: hidden;
+	border: 5px solid #e4bd5e;
+}
+.hot_user_data .user_photo img{
+	display: block;
+	width: 90px;
+	height: 90px;
+}
+.hot_user_data .user_name{
+	line-height: 90px;
+	padding-left: 20px;
+	color:#555;
+	font-size: 21px;
+}
+.hot_forum .forum_title{
+	color: #7b3e3e;
+	padding-top: 10px;
+	padding-right: 20px;
+}
+.hot_forum_content{
+	display: flex;
+	height: 264px;
+	position: relative;
+}
+.hot_forum_content .content_l{
+	width: 50%;
+	height: 100%;
+}
+
+.hot_forum_content .content_l .hot_forum_data{
+	// height: 25px;
+	color: #7b3e3e;
+}
+.hot_forum_content .hot_forum_data>p{
+	float: left;
+}
+.hot_forum_content .hot_forum_data img{
+	display: block;
+	width: 20px;
+	height: 20px;
+	margin-left: 30px;
+	margin-right: 5px;
+}
+
+.hot_forum_content .hot_forum_data .time{
+	color: #929090;
+}
+
+.hot_forum_content .content_l .article{
+	margin-top: 15px;
+	font-size: 16px;
+	color: #555;
+	line-height: 1.5;
+}
+.hot_forum_content .content_r{
+	width: 50%;
+	height: 100%;
+    position: relative;
+    top: -50px;
+}
+#radar_wrapper{
+    width: 80%;
+    position: relative;
+    margin: auto;
+}
+
+.hot_forum_content+a{
+	background-color: #7d0000;
+	text-align: center;
+	color: #f3ca93;
+	transition: 0.5s;
+	position: absolute;
+	left: 50%;
+	bottom: 10px;
+}
+.hot_forum_content+a:hover{
+	color: #ddd;
+}
+
+
+.hot_forum_wrap+a{
+	width: 150px;
+	background-color: #111;
+	text-align: center;
+	display: block;
+	margin: auto;
+	padding: auto;
+	color: #ccc;
+	text-decoration: none;
+	border-radius: 75px;
+	font-size: 21px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	transition: 0.5s;
+}
+.hot_forum_wrap+a:hover{
+	color: #fff;
+}
+
+
+
+.hot_forum_box1{
+	left: 100px;
+	z-index: 1000;
+}
+
+
+.hot_forum_box2 {
+	left: 10px;
+}
+.hot_forum_box3{
+	left: 966px;
+}
+.hot_forum_box2 .hot_forum,.hot_forum_box3 .hot_forum{
+	left: -2000px;
+}
+
+
+.hot_forum_box .zoom_in{
+	transform: scale(1.15,1.15);
+}
+.hot_forum_box .zoom_out{
+	transform: scale(1,1);
+}
+
+.mask{
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 999; 
+	display: none;
+}

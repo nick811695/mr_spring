@@ -1,0 +1,312 @@
+@charset "UTF-8";
+/* first page============================================================== */
+.mt_first_page {
+  background-image: url("images/backGround.jpg");
+  background-repeat: repeat;
+  background-size: 100%;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  top: 0px;
+  overflow: hidden;
+}
+
+.mt_first_page .container {
+  position: relative;
+}
+
+.mt_bg_wrap {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+}
+
+.mt_first_page .mt_cloud {
+  position: relative;
+  width: 100%;
+  /* height: 100vh; */
+  overflow: hidden;
+}
+
+@-webkit-keyframes cloudGo {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-1431px, 0, 0);
+  }
+}
+
+@keyframes cloudGo {
+  0% {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+  100% {
+    -webkit-transform: translate3d(-1431px, 0, 0);
+  }
+}
+
+.mt_first_page .cloud_large {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-preferred-size: row;
+      flex-basis: row;
+  position: relative;
+  -webkit-animation: 20s cloudGo linear infinite;
+          animation: 20s cloudGo linear infinite;
+}
+
+.bg_mt {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  /* overflow: hidden; */
+}
+
+.bg_mt img {
+  width: 100%;
+  position: absolute;
+  bottom: 50%;
+}
+
+.mt_trees {
+  position: relative;
+  z-index: 2;
+  /* bottom:600px; */
+  width: 100%;
+  /* margin: auto; */
+  /* display: flex;
+        flex-direction: row;
+        justify-content: space-evenly; */
+}
+
+.mt_trees img {
+  position: absolute;
+  width: 100%;
+  bottom: -500px;
+  /* float: left; */
+}
+
+#mt_water {
+  width: 100%;
+  /* height: 300px; */
+  position: relative;
+  bottom: 420px;
+  z-index: 3;
+}
+
+#water_color_change {
+  width: 100%;
+  height: 300px;
+  background: #ff9f9f;
+  position: absolute;
+  bottom: 100%;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+#water_color_nochange {
+  width: 100%;
+  height: 300px;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#fff09b));
+  background-image: linear-gradient(to bottom, transparent, #fff09b);
+  background-blend-mode: screen;
+  position: absolute;
+  bottom: 50%;
+}
+
+.herb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  /* padding-top: 0px; */
+  top: 100px;
+  width: 100%;
+  margin-top: -250px;
+  /* position: absolute; */
+}
+
+.herb_cross {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 135px;
+  cursor: pointer;
+}
+
+#herb_cross2 {
+  position: relative;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 135px;
+  cursor: pointer;
+}
+
+.herb_cross img {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+#herb_cross2 img {
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+}
+
+.herb_cross:hover .sepia_cross {
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#herb_cross2:hover .sepia_cross {
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+@-webkit-keyframes crossGo {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+
+@keyframes crossGo {
+  0% {
+    -webkit-transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(-360deg);
+  }
+}
+
+/* first page 湯頭介紹============================================================== */
+.herb_cross:hover img {
+  /* filter: drop-shadow(0 0 10px rgb(255, 255, 255)); */
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+  -webkit-animation: 15s crossGo linear infinite;
+          animation: 15s crossGo linear infinite;
+}
+
+.herb_cross:hover {
+  z-index: 3;
+}
+
+#herb_cross2:hover img {
+  -webkit-filter: brightness(1);
+          filter: brightness(1);
+  -webkit-animation: 15s crossGo linear infinite;
+          animation: 15s crossGo linear infinite;
+}
+
+#herb_cross2:hover {
+  z-index: 3;
+}
+
+.herb h3 {
+  font-family: "pigmo";
+  font-size: 33px;
+  color: #000;
+  -webkit-writing-mode: vertical-rl;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 110px;
+  text-align: center;
+}
+
+.introduce {
+  position: relative;
+  /* height: 100vh; */
+}
+
+.introduce h3 {
+  font-family: "pigmo";
+  font-size: 39px;
+  color: #000;
+  margin-top: 5px;
+  margin-right: 20px;
+}
+
+.introduce p {
+  font-family: 'Noto Sans TC', sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  color: #000;
+}
+
+.content {
+  position: relative;
+  padding-top: 350px;
+  pointer-events: auto;
+}
+
+#content_frame {
+  /* background-image: url("svg/SVG/cloud_clip.svg");
+        background-repeat: no-repeat; */
+  position: absolute;
+  width: 900px;
+  right: 100px;
+  bottom: -20px;
+}
+
+#text_bubble {
+  width: 900px;
+  -webkit-filter: drop-shadow(0 0 5px rgba(95, 69, 39, 0.7));
+          filter: drop-shadow(0 0 5px rgba(95, 69, 39, 0.7));
+}
+
+.sup_info {
+  position: absolute;
+  top: 75px;
+  left: 270px;
+  right: 0px;
+}
+
+.sup_info {
+  width: 400px;
+}
+
+.custom_button {
+  margin-top: 30px;
+}
+
+#spring_herb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-bottom: 5px;
+}
+
+#spring_herb img {
+  width: 40px;
+  /* height: 50px; */
+  margin: 0px 5px;
+}
