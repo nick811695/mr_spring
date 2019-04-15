@@ -1,4 +1,4 @@
-  /* first page============================================================== */
+/* first page============================================================== */
   .mt_first_page {
     background-image: url("../images/backGround.jpg");
     background-repeat: repeat;
@@ -305,17 +305,52 @@
     .an_monkeyCabinet{
         display: none;
     }
-    /* 處方籤 */
+    /* 藥籤諮詢 */
     .an_prescription{
         background-color: yellow;
     }
     .an_rescriptionWrap{
-        flex-grow: 1;
-        width: 100%;
-        height: 200px;
+        width: 95%;
         background-image: url("../images/fabric.jpg"); 
         background-size: 100%;
         box-shadow: 5px 5px 10px rgba(71, 69, 69, 0.301);
+        padding: 50px 0px;
+        margin:50px auto;
+    }
+    // 進度表
+    .an_schedule{
+        width: 100%;
+        display: flex;
+        box-sizing: border-box;
+        padding: 0 30px;
+        align-items: center;
+    }
+    .an_circle{
+        width: 7.4074074%;
+        background-image: url("../images/cir.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position-y: 50%;
+        text-align: center;
+        line-height: 26px;
+        font-family: "源柔ゴシック";
+        color:black;
+    }
+    .an_circle1{
+        width: 7.4074074%;
+        background-image: url("../images/cir2.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position-y: 50%;
+        text-align: center;
+        line-height: 26px;
+        font-family: "源柔ゴシック";
+        color:black;
+    }
+    .an_scheduleLine{
+        width: 11.111111%;
+        height: 3px;
+        background-color: #ceab5a;
     }
     @media screen and (min-width:768px){
        
@@ -342,13 +377,13 @@
             display: flex;
             justify-content: flex-end;
             align-items: flex-end;
-            position: relative;
+            // position: relative;
             /* overflow: hidden; */
         }
         /* 櫃子 */
         .an_cabinet{
-            margin-bottom:50px;
-            height: 46%;
+            margin-bottom:200px;
+            height: 48%;
             width: 100%;
             background-color: aqua;
             background-image: url("../images/cabinet.png");
@@ -364,7 +399,6 @@
             height: 33.33333%;
             box-sizing: border-box;
             padding-right: 70px;
-            margin-bottom: 0px;
             /* background-color: #7d0022; */
             display: flex;
         }
@@ -397,6 +431,27 @@
         }
         .drawer:hover .extend{
             width: 20px;
+        }
+        // 藥籤諮詢
+        .an_rescriptionWrap{
+            padding: 50px 0px;
+            margin-top:50px;
+        }
+        // 進度條
+        .an_schedule{
+            width: 90%;
+            height: 50px;
+            margin: auto;
+        }
+        .an_circle{
+            height: 100%;
+            background-position-y: 50%;
+            line-height: 50px;
+        }
+        .an_circle1{
+            height: 100%;
+            background-position-y: 50%;
+            line-height: 50px;
         }
     } 
     @media screen and (min-width:1200px){
