@@ -287,3 +287,117 @@
         /* height: 50px; */
         margin: 0px 5px;
     }
+
+    
+    
+    
+    // 第二屏==========================================================================================================
+    .an_monkeyMedicine{
+        margin: auto;
+        font-family: 'Noto Sans TC', sans-serif;
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row-reverse;
+        position: relative;
+    }
+    /* 大群 */
+    .an_monkeyCabinet{
+        display: none;
+    }
+    /* 處方籤 */
+    .an_prescription{
+        background-color: yellow;
+    }
+    .an_rescriptionWrap{
+        flex-grow: 1;
+        width: 100%;
+        height: 200px;
+        background-image: url("../images/fabric.jpg"); 
+        background-size: 100%;
+        box-shadow: 5px 5px 10px rgba(71, 69, 69, 0.301);
+    }
+    @media screen and (min-width:768px){
+       
+    }
+    @media screen and (min-width:992px){
+        .my_second_page{
+            background-image: url("../images/backGround.jpg");
+            background-repeat: repeat;
+            background-size: 100%;
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            top: 0px;
+        }
+        .an_monkeyMedicine{
+            max-width: 1200px;
+            height: 100vh;
+        }
+        /* 猴子櫃子群 */
+        .an_monkeyCabinet{
+            height: 100vh;
+            background-color: chartreuse;
+            height: 100%;
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-end;
+            position: relative;
+            /* overflow: hidden; */
+        }
+        /* 櫃子 */
+        .an_cabinet{
+            margin-bottom:50px;
+            height: 46%;
+            width: 100%;
+            background-color: aqua;
+            background-image: url("../images/cabinet.png");
+            background-repeat: repeat;
+            background-size: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+        }
+        /* 抽屜一列 */
+        .drawerWrap {
+            width: 100%;
+            height: 33.33333%;
+            box-sizing: border-box;
+            padding-right: 70px;
+            margin-bottom: 0px;
+            /* background-color: #7d0022; */
+            display: flex;
+        }
+    
+        .drawer {
+            box-sizing: border-box;
+            width: 33.33333%;
+            height: 100%;
+            /* background-color: cyan;
+            margin-right: 2px; */
+            display: flex;
+            justify-content:flex-end;
+            align-items: center;
+            /* background-image: url(img/close_drawer.png);
+            background-repeat: no-repeat; */
+        }
+        .extend{
+            height:132px;
+            width: 0px;
+            /* background-color: black; */
+            background-image: url("../images/open_drawerside.png");
+            background-size: 128%;
+            transition: 0.5s;
+        }
+        .drawer>img {
+            margin: 5px 0px 5px 5px;
+            width: 88%;
+            display: block;
+            box-shadow: 5px 5px 5px black;
+        }
+        .drawer:hover .extend{
+            width: 20px;
+        }
+    } 
+    @media screen and (min-width:1200px){
+    } 
