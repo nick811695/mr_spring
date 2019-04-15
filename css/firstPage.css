@@ -1,7 +1,7 @@
 @charset "UTF-8";
 /* first page============================================================== */
 .mt_first_page {
-  background-image: url("images/backGround.jpg");
+  background-image: url("../images/backGround.jpg");
   background-repeat: repeat;
   background-size: 100%;
   width: 100%;
@@ -68,6 +68,8 @@
   width: 100%;
   position: absolute;
   bottom: 50%;
+  pointer-events: none;
+  z-index: 1;
 }
 
 .mt_trees {
@@ -104,6 +106,7 @@
   bottom: 100%;
   -webkit-transition: 2s;
   transition: 2s;
+  z-index: 3;
 }
 
 #water_color_nochange {
@@ -114,6 +117,11 @@
   background-blend-mode: screen;
   position: absolute;
   bottom: 50%;
+  z-index: 4;
+}
+
+.mt_first_page .wrap {
+  z-index: 5;
 }
 
 .herb {
@@ -206,7 +214,7 @@
 }
 
 .herb_cross:hover {
-  z-index: 3;
+  z-index: 5;
 }
 
 #herb_cross2:hover img {
@@ -217,7 +225,7 @@
 }
 
 #herb_cross2:hover {
-  z-index: 3;
+  z-index: 5;
 }
 
 .herb h3 {
