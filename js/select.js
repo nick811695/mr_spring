@@ -99,14 +99,14 @@ function clockSlide(){
 
     if(temp == 0){
         clockSlider[0].style.transform = "translateY(0)";
+        roomImg[0].style.filter = "brightness(1.2)";
+        roomImg[1].style.filter = "brightness(1.2)";
+        roomImg[2].style.filter = "brightness(1.2)";
+    }else if(temp == 1){
+        clockSlider[0].style.transform = "translateY(-70px)";
         roomImg[0].style.filter = "brightness(1)";
         roomImg[1].style.filter = "brightness(1)";
         roomImg[2].style.filter = "brightness(1)";
-    }else if(temp == 1){
-        clockSlider[0].style.transform = "translateY(-70px)";
-        roomImg[0].style.filter = "brightness(0.9)";
-        roomImg[1].style.filter = "brightness(0.9)";
-        roomImg[2].style.filter = "brightness(0.9)";
     }else if(temp == 2){
         clockSlider[0].style.transform = "translateY(-140px)";
         roomImg[0].style.filter = "brightness(0.8)";
