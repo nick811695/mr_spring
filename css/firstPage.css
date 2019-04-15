@@ -1,5 +1,16 @@
 @charset "UTF-8";
-/* first page============================================================== */
+* {
+  line-height: 1.5;
+}
+
+.btn_s {
+  border: none;
+  color: #ceae81;
+  background-color: #000;
+  cursor: pointer;
+}
+
+/* 第一屏============================================================== */
 .mt_first_page {
   background-image: url("../images/backGround.jpg");
   background-repeat: repeat;
@@ -15,6 +26,47 @@
   position: relative;
 }
 
+/* 第一屏 霧特效============================================================== */
+#kasumi_top_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 100;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+#kasumi_top_container canvas {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  -webkit-animation: fogGo 3.5s;
+          animation: fogGo 3.5s;
+}
+
+@-webkit-keyframes fogGo {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes fogGo {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+/* 第一屏 背景============================================================== */
 .mt_bg_wrap {
   position: absolute;
   width: 100%;
@@ -67,27 +119,9 @@
 .bg_mt img {
   width: 100%;
   position: absolute;
-  bottom: 50%;
+  bottom: 500px;
   pointer-events: none;
   z-index: 1;
-}
-
-.mt_trees {
-  position: relative;
-  z-index: 2;
-  /* bottom:600px; */
-  width: 100%;
-  /* margin: auto; */
-  /* display: flex;
-        flex-direction: row;
-        justify-content: space-evenly; */
-}
-
-.mt_trees img {
-  position: absolute;
-  width: 100%;
-  bottom: -500px;
-  /* float: left; */
 }
 
 #mt_water {
@@ -124,6 +158,7 @@
   z-index: 5;
 }
 
+/* 第一屏 療效花圈============================================================== */
 .herb {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -136,10 +171,10 @@
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   /* padding-top: 0px; */
-  top: 100px;
   width: 100%;
   margin-top: -250px;
   /* position: absolute; */
+  z-index: 50;
 }
 
 .herb_cross {
@@ -164,6 +199,8 @@
   bottom: 0px;
   left: 0px;
   right: 0px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 
 #herb_cross2 img {
@@ -204,7 +241,6 @@
   }
 }
 
-/* first page 湯頭介紹============================================================== */
 .herb_cross:hover img {
   /* filter: drop-shadow(0 0 10px rgb(255, 255, 255)); */
   -webkit-filter: brightness(1);
@@ -260,19 +296,34 @@
   color: #000;
 }
 
+/* 第一屏 湯頭介紹
+============================================================== */
 .content {
   position: relative;
   padding-top: 350px;
   pointer-events: auto;
 }
 
+.content .btn_s:nth-of-type(1) {
+  margin-right: 20px;
+}
+
+.content_frame_wrap {
+  position: relative;
+  -webkit-filter: drop-shadow(0 0 5px rgba(95, 69, 39, 0.7));
+          filter: drop-shadow(0 0 5px rgba(95, 69, 39, 0.7));
+}
+
 #content_frame {
   /* background-image: url("svg/SVG/cloud_clip.svg");
         background-repeat: no-repeat; */
+  -webkit-mask-image: url("../images/cloud_clip.svg");
+  -webkit-mask-repeat: no-repeat;
+          mask-repeat: no-repeat;
   position: absolute;
   width: 900px;
   right: 100px;
-  bottom: -20px;
+  bottom: -580px;
 }
 
 #text_bubble {
@@ -283,7 +334,7 @@
 
 .sup_info {
   position: absolute;
-  top: 75px;
+  top: 90px;
   left: 270px;
   right: 0px;
 }
@@ -317,4 +368,680 @@
   width: 40px;
   /* height: 50px; */
   margin: 0px 5px;
+}
+
+/* 第一屏 動畫============================================================== */
+.monkey_animation {
+  position: relative;
+  width: 90%;
+  height: 500px;
+  pointer-events: none;
+  margin: auto;
+}
+
+.monkey_wrap {
+  height: 100vh;
+}
+
+#monkeyFace {
+  position: absolute;
+  width: 90px;
+  left: 535px;
+  top: 240px;
+  z-index: 5;
+  opacity: 0;
+  /* transition: 1s; */
+}
+
+#monkeyEyes {
+  position: absolute;
+  width: 70px;
+  left: 555px;
+  top: 260px;
+  z-index: 6;
+  opacity: 0;
+  /* transition: 1s; */
+}
+
+#mr_spring_for_firstpage {
+  position: absolute;
+  /* bottom: 60px; */
+  margin-top: 180px;
+  margin-left: 420px;
+  -webkit-filter: drop-shadow(0 0 5px rgba(95, 69, 39, 0.7));
+          filter: drop-shadow(0 0 5px rgba(95, 69, 39, 0.7));
+}
+
+#wave01 {
+  position: absolute;
+  right: 0px;
+  left: 400px;
+  top: 410px;
+  pointer-events: none;
+  opacity: 0;
+}
+
+#wave01 img {
+  position: absolute;
+  width: 50px;
+  width: 5%;
+  -webkit-animation: 4s waveScale ease-out infinite;
+          animation: 4s waveScale ease-out infinite;
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+#wave01 img:nth-of-type(2) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  left: 0px;
+}
+
+#wave01 img:nth-of-type(3) {
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
+  left: -50px;
+}
+
+@-webkit-keyframes waveScale {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+    left: 400px;
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+    opacity: 0;
+    left: -50px;
+  }
+}
+
+@keyframes waveScale {
+  0% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+    opacity: 0;
+    left: 400px;
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  100% {
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+    opacity: 0;
+    left: -50px;
+  }
+}
+
+#wave02 {
+  position: absolute;
+  right: 0px;
+  left: 660px;
+  top: 430px;
+  pointer-events: none;
+  /* transform: rotate(10deg); */
+  opacity: 0;
+}
+
+#wave02 img {
+  position: absolute;
+  width: 125px;
+  width: 20%;
+  -webkit-animation: 3s  waveScale02  ease-out infinite;
+          animation: 3s  waveScale02  ease-out infinite;
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+}
+
+#wave02 img:nth-of-type(2) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  /* top: 0px; */
+}
+
+#wave02 img:nth-of-type(3) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  /* top: 200px; */
+}
+
+@-webkit-keyframes waveScale02 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0;
+    /* top:300px; */
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+    opacity: 0;
+    /* top:470px; */
+    /* top:460px; */
+  }
+}
+
+@keyframes waveScale02 {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0;
+    /* top:300px; */
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(2.5);
+            transform: scale(2.5);
+    opacity: 0;
+    /* top:470px; */
+    /* top:460px; */
+  }
+}
+
+.note {
+  position: absolute;
+  right: 0px;
+  left: 550px;
+  top: 200px;
+  pointer-events: none;
+}
+
+.note span {
+  opacity: 0;
+  -webkit-animation: notes 2s infinite linear;
+          animation: notes 2s infinite linear;
+  font-family: 'pigmo';
+  font-size: 40px;
+  position: absolute;
+}
+
+.note span:nth-last-of-type(4) {
+  font-size: 50px;
+}
+
+.note span:nth-child(1) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.note span:nth-child(2) {
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+  top: -50px;
+  left: 15px;
+}
+
+.note span:nth-child(3) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+  top: -70px;
+  left: 30px;
+}
+
+.note span:nth-child(4) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  top: -900px;
+  left: 45px;
+}
+
+.note span:nth-child(5) {
+  -webkit-animation-delay: 2.5s;
+          animation-delay: 2.5s;
+  top: -120px;
+  left: 60px;
+}
+
+@-webkit-keyframes notes {
+  0% {
+    -webkit-transform: scale(1) translate(0, 0);
+            transform: scale(1) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.3) translate(50%, -50%);
+            transform: scale(1.3) translate(50%, -50%);
+  }
+  80% {
+    opacity: 0;
+    -webkit-transform: scale(1.3) translate(100%, -100%);
+            transform: scale(1.3) translate(100%, -100%);
+  }
+  100% {
+    -webkit-transform: scale(1.3) translate(100%, -100%);
+            transform: scale(1.3) translate(100%, -100%);
+    opacity: 0;
+  }
+}
+
+@keyframes notes {
+  0% {
+    -webkit-transform: scale(1) translate(0, 0);
+            transform: scale(1) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(1.3) translate(50%, -50%);
+            transform: scale(1.3) translate(50%, -50%);
+  }
+  80% {
+    opacity: 0;
+    -webkit-transform: scale(1.3) translate(100%, -100%);
+            transform: scale(1.3) translate(100%, -100%);
+  }
+  100% {
+    -webkit-transform: scale(1.3) translate(100%, -100%);
+            transform: scale(1.3) translate(100%, -100%);
+    opacity: 0;
+  }
+}
+
+.sk_wrap {
+  position: absolute;
+  bottom: 200px;
+  left: 600px;
+  pointer-events: none;
+}
+
+.sk_wrap02 {
+  position: absolute;
+  bottom: 20px;
+  left: 400px;
+}
+
+.sk_wrap .sk {
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-animation: 3s smokeScale ease-out infinite;
+          animation: 3s smokeScale ease-out infinite;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.sk_wrap .sk:nth-of-type(2) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  bottom: 150px;
+}
+
+.sk_wrap .sk:nth-of-type(3) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  bottom: 100px;
+}
+
+.sk_wrap02 .sk {
+  position: absolute;
+  width: 60px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  -webkit-animation: 3s smokeScale ease-out infinite;
+          animation: 3s smokeScale ease-out infinite;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+
+.sk_wrap02 .sk:nth-of-type(2) {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+  bottom: 150px;
+}
+
+.sk_wrap02 .sk:nth-of-type(3) {
+  -webkit-animation-delay: 3s;
+          animation-delay: 3s;
+  bottom: 100px;
+}
+
+@-webkit-keyframes smokeScale {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0;
+    bottom: 0px;
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  100% {
+    -webkit-transform: scale(3);
+            transform: scale(3);
+    opacity: 0;
+    bottom: 200px;
+    height: 40px;
+  }
+}
+
+@keyframes smokeScale {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+    opacity: 0;
+    bottom: 0px;
+  }
+  50% {
+    opacity: 1;
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+  100% {
+    -webkit-transform: scale(3);
+            transform: scale(3);
+    opacity: 0;
+    bottom: 200px;
+    height: 40px;
+  }
+}
+
+@-webkit-keyframes smokeGo {
+  0% {
+    bottom: 0px;
+  }
+  100% {
+    bottom: 200px;
+  }
+}
+
+@keyframes smokeGo {
+  0% {
+    bottom: 0px;
+  }
+  100% {
+    bottom: 200px;
+  }
+}
+
+.an_monkeyMedicine {
+  margin: auto;
+  font-family: 'Noto Sans TC', sans-serif;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+  position: relative;
+}
+
+/* 大群 */
+.an_monkeyCabinet {
+  display: none;
+}
+
+/* 藥籤諮詢 */
+.an_prescription {
+  background-color: yellow;
+}
+
+.an_rescriptionWrap {
+  width: 95%;
+  background-image: url("../images/fabric.jpg");
+  background-size: 100%;
+  -webkit-box-shadow: 5px 5px 10px rgba(71, 69, 69, 0.301);
+          box-shadow: 5px 5px 10px rgba(71, 69, 69, 0.301);
+  padding: 50px 0px;
+  margin: 50px auto;
+}
+
+.an_schedule {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0 30px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.an_circle {
+  width: 7.4074074%;
+  background-image: url("../images/cir.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  text-align: center;
+  line-height: 26px;
+  font-family: "源柔ゴシック";
+  color: black;
+}
+
+.an_circle1 {
+  width: 7.4074074%;
+  background-image: url("../images/cir2.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position-y: 50%;
+  text-align: center;
+  line-height: 26px;
+  font-family: "源柔ゴシック";
+  color: black;
+}
+
+.an_scheduleLine {
+  width: 11.111111%;
+  height: 3px;
+  background-color: #ceab5a;
+}
+
+@media screen and (max-width: 768px) {
+  #mr_spring_for_firstpage {
+    width: 50%;
+    position: absolute;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .my_second_page {
+    background-image: url("../images/backGround.jpg");
+    background-repeat: repeat;
+    background-size: 100%;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    top: 0px;
+  }
+  .an_monkeyMedicine {
+    max-width: 1200px;
+    height: 100vh;
+  }
+  /* 猴子櫃子群 */
+  .an_monkeyCabinet {
+    height: 100vh;
+    background-color: chartreuse;
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    /* overflow: hidden; */
+  }
+  /* 櫃子 */
+  .an_cabinet {
+    margin-bottom: 200px;
+    height: 48%;
+    width: 100%;
+    background-color: aqua;
+    background-image: url("../images/cabinet.png");
+    background-repeat: repeat;
+    background-size: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    position: relative;
+  }
+  /* 抽屜一列 */
+  .drawerWrap {
+    width: 100%;
+    height: 33.33333%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding-right: 70px;
+    /* background-color: #7d0022; */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .drawer {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    width: 33.33333%;
+    height: 100%;
+    /* background-color: cyan;
+            margin-right: 2px; */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    /* background-image: url(img/close_drawer.png);
+            background-repeat: no-repeat; */
+  }
+  .extend {
+    height: 132px;
+    width: 0px;
+    /* background-color: black; */
+    background-image: url("../images/open_drawerside.png");
+    background-size: 128%;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+  }
+  .drawer > img {
+    margin: 5px 0px 5px 5px;
+    width: 88%;
+    display: block;
+    -webkit-box-shadow: 5px 5px 5px black;
+            box-shadow: 5px 5px 5px black;
+  }
+  .drawer:hover .extend {
+    width: 20px;
+  }
+  .an_rescriptionWrap {
+    padding: 50px 0px;
+    margin-top: 50px;
+  }
+  .an_schedule {
+    width: 90%;
+    height: 50px;
+    margin: auto;
+  }
+  .an_circle {
+    height: 100%;
+    background-position-y: 50%;
+    line-height: 50px;
+  }
+  .an_circle1 {
+    height: 100%;
+    background-position-y: 50%;
+    line-height: 50px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .bg_mt img {
+    bottom: 800px;
+    margin-bottom: 100px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .mt_first_page .wrap {
+    width: 100%;
+  }
+  .bg_mt img {
+    bottom: 500px;
+  }
+  .herb {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+    width: 100%;
+    margin-top: -250px;
+  }
+  .herb_cross img {
+    width: 220px;
+  }
+  #herb_cross2 img {
+    width: 220px;
+  }
+  .herb_cross {
+    position: relative;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 110px;
+    cursor: pointer;
+  }
+  #herb_cross2 {
+    position: relative;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 110px;
+    cursor: pointer;
+  }
+  .herb h3 {
+    font-family: "pigmo";
+    font-size: 30px;
+    color: #000;
+    -webkit-writing-mode: vertical-rl;
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 90px;
+    text-align: center;
+    margin: 0;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .bg_mt img {
+    bottom: 400px;
+  }
 }

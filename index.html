@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>湯先生 Mr.Spring</title>
+    <script src="node_modules/gsap/src/minified/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/pixi.js/3.0.7/pixi.js"></script>
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/share.css">
     <link rel="stylesheet" href="css/firstPage.css">
 </head>
 <style>
-  
+    /* 全區域 */
+    * {
+        /* outline: 2px solid red; */
+    }
 </style>
 
 <body>
@@ -20,6 +26,7 @@
 
     <!-- 第一屏 -->
     <div class="mt_first_page">
+        <!-- <div id="kasumi_top_container"></div> -->
         <div class="mt_bg_wrap">
             <div class="mt_cloud">
                 <div class="cloud_large">
@@ -27,12 +34,9 @@
                     <img src="images/cloud_large.png" alt="cloud">
                     <img src="images/cloud_large.png" alt="cloud">
                 </div>
-                <div class="mt_trees">
-                    <img src="images/first_page_trees.png" alt="trees">
-
-                </div>
                 <div class="bg_mt">
                     <img src="images/fjMountain.png" alt="fujiMountain">
+                    <img src="images/first_page_trees.png" alt="trees">
                 </div>
                 <div id="mt_water">
                     <div id="water_color_change"></div>
@@ -46,27 +50,30 @@
             <section class="introduce">
 
                 <div class="content">
-                    <div id="content_frame" style="opacity: 0;">
-                        <img id="text_bubble" src="svg/SVG/cloud_clip.svg" alt="湯頭介紹">
-                        <article class="sup_info">
-                            <figure id="spring_herb">
-                                <h3 id="spring_name">舒筋緩骨湯</h3>
-                                <a href=""><img class="intro_pic_small" src="svg/SVG/herb01.svg" alt="湯頭介紹"></a>
-                                <a href=""><img class="intro_pic_small" src="svg/SVG/herb02.svg" alt="湯頭介紹"></a>
-                                <a href=""><img class="intro_pic_small" src="svg/SVG/herb03.svg" alt="湯頭介紹"></a>
-                            </figure>
-                            <p class="paragraph">【療效】理氣解鬱，活血散瘀，和血調經。治胃氣痛，新久風痺，吐血，月經不調，赤白帶，赤白痢，乳癰腫毒，跌打損傷；玫瑰露：和中：治肝氣犯胃。
-                            </p>
-                            </br>
-                            <p class="paragraph">【配方】山茱萸、菊花、薰衣草。</p>
-                            <div class="custom_button">
-                                <center>
-                                    <button class="btn_s"> <a href="custom.html" style="color:#ceae81;">馬上客製</a>
-                                    </button>
-                                    <button class="btn_s">我要諮詢</button>
-                                </center>
-                            </div>
-                        </article>
+                    <div class="content_frame_wrap">
+                        <div id="content_frame" style="opacity: 0;">
+                            <img id="text_bubble" src="images/texture01.png" alt="湯頭介紹">
+                            <article class="sup_info">
+                                <figure id="spring_herb">
+                                    <h3 id="spring_name">舒筋緩骨湯</h3>
+                                    <a href=""><img class="intro_pic_small" src="images/herb01.svg" alt="湯頭介紹"></a>
+                                    <a href=""><img class="intro_pic_small" src="images/herb02.svg" alt="湯頭介紹"></a>
+                                    <a href=""><img class="intro_pic_small" src="images/herb03.svg" alt="湯頭介紹"></a>
+                                </figure>
+                                <p class="paragraph">
+                                    【療效】理氣解鬱，活血散瘀，和血調經。治胃氣痛，新久風痺，吐血，月經不調，赤白帶，赤白痢，乳癰腫毒，跌打損傷；玫瑰露：和中：治肝氣犯胃。
+                                </p>
+                                </br>
+                                <p class="paragraph">【配方】山茱萸、菊花、薰衣草。</p>
+                                <div class="custom_button">
+                                    <center>
+                                        <button class="btn_s"> <a href="custom.html" style="color:#ceae81;">馬上客製</a>
+                                        </button>
+                                        <button class="btn_s">我要諮詢</button>
+                                    </center>
+                                </div>
+                            </article>
+                        </div>
                     </div>
                     <div class="herb">
                         <figure class="herb_cross">
@@ -88,34 +95,37 @@
                     </div>
 
                     <div class="monkey_animation">
-                        <div class="sk_wrap">
-                            <div class="little_smoke">
-                                <div class="sk"></div>
-                                <div class="sk"></div>
-                                <div class="sk"></div>
+
+
+
+
+                        <div class="monkey_wrap">
+                            <div class="sk_wrap">
+                                <div class="little_smoke">
+                                    <div class="sk"></div>
+                                    <div class="sk"></div>
+                                    <div class="sk"></div>
+                                </div>
                             </div>
-                        </div>
-
-
-                        <div id="wave01">
-                            <div class="little_wave">
-                                <img src="svg/SVG/wave1.svg" alt="">
-                                <img src="svg/SVG/wave1.svg" alt="">
-                                <img src="svg/SVG/wave1.svg" alt="">
+                            <div id="wave01">
+                                <div class="little_wave">
+                                    <img src="images/wave1.svg" alt="">
+                                    <img src="images/wave1.svg" alt="">
+                                    <img src="images/wave1.svg" alt="">
+                                </div>
                             </div>
-                        </div>
 
-                        <div id="wave02">
-                            <div class="little_wave">
-                                <img src="svg/SVG/wave2.svg" alt="">
-                                <img src="svg/SVG/wave2.svg" alt="">
-                                <img src="svg/SVG/wave2.svg" alt="">
+                            <div id="wave02">
+                                <div class="little_wave">
+                                    <img src="images/wave2.svg" alt="">
+                                    <img src="images/wave2.svg" alt="">
+                                    <img src="images/wave2.svg" alt="">
+                                </div>
                             </div>
+                            <img id="monkeyFace" src="images/monkeyFace01.svg" alt="">
+                            <img id="mr_spring_for_firstpage" src="images/monkey01.svg" alt="湯先生">
+                            <img id="monkeyEyes" src="images/monkeyEyesLemon.svg" alt="">
                         </div>
-
-                        <img id="monkeyFace" src="svg/SVG/monkeyFace01.svg" alt="">
-                        <img id="mr_spring_for_firstpage" src="svg/SVG/monkey01.svg" alt="湯先生">
-                        <img id="monkeyEyes" src="svg/SVG/monkeyEyesLemon.svg" alt="">
 
 
 
@@ -144,6 +154,82 @@
 
     </div>
 
+
+    <!-- 第二屏 -->
+    <div class="my_second_page">
+        <div class="an_monkeyMedicine">
+            <!-- 猴子櫃子 -->
+            <div class="col-lg-5 col-12 an_monkeyCabinet">
+                <div class="an_cabinet">
+                    <!-- 抽屜一列 -->
+                    <div class="drawerWrap">
+                        <div class="drawer">
+                            <img src="images\close_drawer.png" alt="抽屜">
+                            <div class="extend"></div>
+                        </div>
+                        <div class="drawer">
+                            <img src="images\close_drawer.png" alt="抽屜">
+                            <div class="extend"></div>
+                        </div>
+                        <div class="drawer">
+                            <img src="images\close_drawer.png" alt="抽屜">
+                            <div class="extend"></div>
+                        </div>
+                    </div>
+                    <div class="drawerWrap">
+                        <div class="drawer">
+                            <img src="images\close_drawer.png" alt="抽屜">
+                            <div class="extend"></div>
+                        </div>
+                        <div class="drawer">
+                            <img src="images\close_drawer.png" alt="抽屜">
+                            <div class="extend"></div>
+                        </div>
+                        <div class="drawer">
+                            <img src="images\close_drawer.png" alt="抽屜">
+                            <div class="extend"></div>
+                        </div>
+                    </div>
+                    <div class="drawerWrap">
+                        <div class="drawer">
+                            <img src="images\close_drawer.png" alt="抽屜">
+                            <div class="extend"></div>
+                        </div>
+                        <div class="drawer">
+                            <img src="images\close_drawer.png" alt="抽屜">
+                            <div class="extend"></div>
+                        </div>
+                        <div class="drawer">
+                            <img src="images\close_drawer.png" alt="抽屜">
+                            <div class="extend"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--藥籤諮詢 -->
+            <div class="col-lg-7 col-12 an_prescription " id="an_prescription">
+                <div class="an_rescriptionWrap">
+                    <!-- 進度表 -->
+                    <div class="an_schedule">
+                        <div class="an_circle">1</div>
+                        <div class="an_scheduleLine"></div>
+                        <div class="an_circle1" id="an_circle">2</div>
+                        <div class="an_scheduleLine"></div>
+                        <div class="an_circle1" id="an_circle">3</div>
+                        <div class="an_scheduleLine"></div>
+                        <div class="an_circle1" id="an_circle">4</div>
+                        <div class="an_scheduleLine"></div>
+                        <div class="an_circle1" id="an_circle">5</div>
+                        <div class="an_scheduleLine"></div>
+                        <div class="an_circle1" id="an_circle">6</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/cloudGo.js"></script>
+    <script src="js/kasumi.js"></script>
 </body>
 
 </html>

@@ -54,6 +54,7 @@ nav h2{
     text-decoration: none;
     margin: 0 35px;
     line-height: 1.5;
+    margin-top:11.08px;
 }
 
 nav h2:hover{
@@ -82,7 +83,8 @@ body{
     width: 100%;
     height: 100vh;
     position: relative;
-    margin-top: 85px;
+    margin-top: 45px;
+    // padding-top: 80px;
 }
 
 .backgroundImgCloud img{
@@ -154,7 +156,7 @@ body{
 }
 
 .stepContent_d{
-    width: 120%;
+    width: 130%;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -168,16 +170,17 @@ body{
 }
 
 .stepContent_d :nth-child(2){
-    font-size: 16px;
+    font-size: 18px;
     color: #fff;
     margin-top: 5px;
+    text-shadow: 0 0 1px rgba(0,0,0,.8);
 }
 
 .stepContent_d :nth-child(3){
-    font-size: 12px;
+    font-size: 14px;
     color: #000;
     text-align: left;
-    margin-top: 12px;
+    margin-top: 10px;
     line-height: 1.3;
 }
 
@@ -197,7 +200,7 @@ body{
 }
 
 .left_box_d{
-    width: 15%;
+    width: 20%;
 }
 
 .middle_box_d{
@@ -210,7 +213,7 @@ body{
 }
 
 .left_box_d .springCard{
-    width: 85%;
+    width: 100%;
     margin: 0 auto;
     position: relative;
 }
@@ -269,7 +272,7 @@ body{
 }
 
 .add_button_d p{
-    font-size: 12px;
+    font-size: 14px;
     color: #000;
     margin-top: 12px;
 }
@@ -290,6 +293,7 @@ body{
 .calendar_top_box_left_d,.calendar_top_box_right_d{
     display: flex;
     justify-content: space-around;
+    align-items: center;
 }
 
 .calendar_top_box_left_d{
@@ -299,7 +303,7 @@ body{
 
 .calendar_top_box_right_d{
     width: 30%;
-    flex-direction: row-reverse;
+    flex-direction: column;
 }
 
 .calendar_top_box_left_d .herbsImg_d{
@@ -322,7 +326,13 @@ body{
 
 .calendar_top_box_right_d .yy{
     width: 40%;
-    display: none;
+    // display: none;
+}
+
+.calendar_top_box_right_d .yy p{
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
 }
 
 .calendar_top_box_right_d .mm{
@@ -334,7 +344,7 @@ body{
 }
 
 #left-1,#right-1{
-    font-size: 15px;
+    font-size: 18px;
     text-align: center;
     cursor: pointer;
     position: relative;
@@ -433,7 +443,7 @@ body{
     width: 23%;
     top: 26%;
     left: 70%;
-    z-index: 2;
+    z-index: 0;
 }
 
 .second_page .backgroundImgCloud img:nth-child(5){
@@ -473,6 +483,7 @@ body{
     width: 30%;
     top: 13%;
     right: 12%;
+    z-index: -1;
 }
 
 .background_d{
@@ -519,6 +530,7 @@ body{
     left: 0;
     -webkit-transition: all 300ms ease-in-out;
     transition: all 700ms ease-in-out;
+    filter: brightness(1.2);
 }
 
 .roomImg_d img:first-child{
@@ -534,23 +546,25 @@ body{
     z-index: 100;
     top: 150px;
     left: 0;
-    -webkit-transition: all 500ms ease-in-out;
-    transition: all 500ms ease-in-out;
+    -webkit-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
 }
 
 .previousStep_d:hover{
     filter: brightness(.9);
-    -webkit-transition: all 500ms ease-in-out;
-    transition: all 500ms ease-in-out;
+    -webkit-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
 }
 
 .previousStep_d .backButtonText_d{
     width: 50%;
+    filter: drop-shadow(1px 0 0px rgba(43, 34, 34, 0.7));
 }
 
 .previousStep_d .backButtonImg_d{
     width: 40%;
     padding-left: 3px;
+    filter: drop-shadow(1px 0 0px rgba(43, 34, 34, 0.7));
 }
 
 .previousStep_d span{
@@ -593,6 +607,7 @@ body{
 .branchTitle_d h3,.clockTitle_d h3{
     text-align: center;
     font-weight: bold;
+    font-size: 20px;
 }
 
 .branch{
@@ -627,12 +642,11 @@ body{
     width:75%;
     margin-top: 3px;
     margin-left: 6px;
-    /* filter: brightness(1.4); */
+    opacity: .5;
 }
-.branch_container img:nth-of-type(1){
-    width:75%;
-    margin-top: 3px;
-    margin-left: 6px;
+
+.store1Img_d img{
+    opacity: 1;
     filter: brightness(1.4);
 }
 
@@ -674,7 +688,7 @@ body{
     height: 70px;
     border: 2px solid #000;
     overflow: hidden;
-    margin-left: 15%;
+    margin-left: 16%;
     margin-top: 15px;
     -webkit-mask-image: url(../images/frame.svg);
     mask-image: url(../images/frame.svg);
@@ -701,13 +715,14 @@ body{
 
 .branchText_title,.branchText_addr,.branchText_tel,.clockText_title,.clockText_clock{
     /* height: 33.33333%; */
-    padding: 5px 0;
+    padding: 4px 0;
 }
 
 .branchText_title,.clockText_title{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
 }
 
 .branchText_title_Img_d,.clockText_title_Img_d{
@@ -720,7 +735,7 @@ body{
 }
 
 .branchText_addr p,.branchText_tel p{
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .clockSelectCircle_d{
@@ -799,7 +814,7 @@ body{
 
 .roomPrice{
     font-weight: bold;
-    margin-left: 48px;
+    margin-left: 41px;
 }
 
 .roomPrice span:first-child{

@@ -3,13 +3,18 @@
 	background-image: url(../images/backGround.jpg);
 	overflow: hidden;
 }
-
 .forum_wrap{
-    padding-top: 80px;
-	position: relative;
-	z-index: 10;
+    width: 100%;
 }
 
+@media screen and (min-width: 1200px) {
+	.forum_wrap{
+	    padding-top: 80px;
+		position: relative;
+		z-index: 10;
+		width: 1200px;
+	}
+}
 .forum_filter{
 	display: flex;
 	flex-wrap: wrap;
