@@ -537,8 +537,8 @@ function showDiv() {
   document.getElementsByClassName("herb_cross")[0].onclick = ShowHerb01;
   document.getElementById("herb_cross2").onclick = ShowHerb02;
   document.getElementsByClassName("herb_cross")[1].onclick = ShowHerb03;
-  document.getElementById("talk_area").onmouseover = ShowTalkFrame;
-  document.getElementById("talk_area").onmouseleave = hideTalkFrame;
+  // document.getElementById("talk_area").onmouseover = ShowTalkFrame;
+  // document.getElementById("talk_area").onmouseleave = hideTalkFrame;
 }
 
 window.addEventListener("load", showDiv, false);
