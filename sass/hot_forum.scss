@@ -1,5 +1,5 @@
 .forum_wrap{
-	width: 100%;
+	width: 95%;
 	position: relative;
 }
 h2.hot_forum_heading{
@@ -71,10 +71,10 @@ h2.hot_forum_heading{
 
 
 .hot_forum_box2 {
-	left: 30px;
+	left: 0px;
 }
 .hot_forum_box3{
-	left: calc(100% - 254px);
+	left: calc(100% - 224px);
 }
 .hot_forum_box2 .hot_forum,.hot_forum_box3 .hot_forum{
 	left: -2000px;
@@ -203,7 +203,7 @@ h2.hot_forum_heading{
 	}
 	.hot_forum_content{
 		display: flex;
-		height: 264px;
+		height: 230px;
 		position: relative;
 	}
 	.hot_forum_content .content_l{
@@ -235,6 +235,9 @@ h2.hot_forum_heading{
 		font-size: 16px;
 		color: #555;
 		line-height: 1.5;
+	}
+	.hot_forum_content .content_r{
+	    display: none;
 	}
 	.hot_forum_content+a{
 		background-color: #7d0000;
