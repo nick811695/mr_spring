@@ -630,6 +630,14 @@
     
     
     // 第二屏==========================================================================================================
+    .my_second_page{
+        background-image: url("../images/backGround.jpg");
+        background-repeat: repeat;
+        background-size: 100%;
+        width: 100%;
+        position: relative;
+        top: 0px;
+    }
     .an_monkeyMedicine{
         margin: auto;
         font-family: 'Noto Sans TC', sans-serif;
@@ -645,12 +653,34 @@
     }
     /* 藥籤諮詢 */
     .an_prescription{
-        background-color: yellow;
+        // background-color: yellow;
     }
+    // 第二屏標題
+    .an_titleMedicine{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top:50px; 
+    }
+    .titleSquareMedicine{
+        width: 80%;
+        height: 80px;
+        border: 2px solid black;
+        background-image: linear-gradient(0deg, #05d5d7 0% , #ffa1a1 55%,white 98%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .titleSquareMedicine>h2{
+        font-family: "Pigmo";
+        font-size:36px;
+        color:black;
+    }
+    //藥籤諮詢
     .an_rescriptionWrap{
         width: 95%;
         background-image: url("../images/fabric.jpg"); 
-        background-size: 100%;
+        background-size: 160%;
         box-shadow: 5px 5px 10px rgba(71, 69, 69, 0.301);
         padding: 50px 0px;
         margin:50px auto;
@@ -682,7 +712,7 @@
         background-position-y: 50%;
         text-align: center;
         line-height: 26px;
-        font-family: "源柔ゴシック";
+        font-family: "GenJyuuGothic-Bold";
         color:black;
     }
     .an_scheduleLine{
@@ -690,7 +720,44 @@
         height: 3px;
         background-color: #ceab5a;
     }
-
+    //諮詢問題
+    .an_rescriptionText{
+        padding: 20px 25px;
+        height:200px;
+    }
+    .an_rescriptionText p:nth-of-type(1){
+        font-family: "GenJyuuGothic-Bold";
+        font-size: 36px;
+        color:#7d0022;
+    }
+    .an_rescriptionText p:nth-of-type(2){
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 18px;
+    }
+    // 諮詢答案按鈕
+    .an_anser{
+        display: flex;
+        width: 100%;
+        margin: 0px 0px 2% 0px;
+        font-family: "Noto Sans TC";
+    }
+    .btn_a{
+        padding: 10px 28px;
+        border-radius: 60px;
+        background-color: #58473c;
+        display: inline-block;
+        text-align: center;
+        margin: auto;
+        color:#eac694;
+        cursor: pointer;
+    }
+    .an_anser .btn_a:hover{
+        color:white;
+    }
+    //搗藥桌子
+    .an_table{
+        display: none;
+    }
 
 
 //======================================================================================
@@ -714,14 +781,9 @@
         // }
         }
     @media screen and (min-width:992px){
+        // 第二屏=======================================================================================
         .my_second_page{
-            background-image: url("../images/backGround.jpg");
-            background-repeat: repeat;
-            background-size: 100%;
-            width: 100%;
             height: 100vh;
-            position: relative;
-            top: 0px;
         }
         .an_monkeyMedicine{
             max-width: 1200px;
@@ -730,7 +792,7 @@
         /* 猴子櫃子群 */
         .an_monkeyCabinet{
             height: 100vh;
-            background-color: chartreuse;
+            // background-color: chartreuse;
             height: 100%;
             display: flex;
             justify-content: flex-end;
@@ -740,10 +802,10 @@
         }
         /* 櫃子 */
         .an_cabinet{
-            margin-bottom:200px;
+            margin-bottom:140px;
             height: 48%;
             width: 100%;
-            background-color: aqua;
+            // background-color: aqua;
             background-image: url("../images/cabinet.png");
             background-repeat: repeat;
             background-size: 100%;
@@ -790,11 +852,37 @@
         .drawer:hover .extend{
             width: 20px;
         }
+        // 第二屏標題
+        .an_titleMedicine{
+            width: 14%;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top:30px;
+            left:-40px;
+        }
+        .titleSquareMedicine{
+            width: 50%;
+            height: 250px;
+            border: 2px solid black;
+            background-image: linear-gradient(0deg, #05d5d7 0% , #ffa1a1 55%,white 98%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .titleSquareMedicine>h2{
+            writing-mode: vertical-rl;
+            font-family: "Pigmo";
+            font-size:36px;
+            color:black;
+        }
         // 藥籤諮詢
         .an_rescriptionWrap{
             padding: 50px 0px;
-            margin-top:50px;
+            margin:150px 0px 0px 50px;
+            background-size: 140%
         }
+        
         // 進度條
         .an_schedule{
             width: 90%;
@@ -810,6 +898,62 @@
             height: 100%;
             background-position-y: 50%;
             line-height: 50px;
+        }
+        //諮詢問題
+        .an_rescriptionText{
+            margin: auto;
+            padding: 20px 58px;
+            height: 150px;
+        }
+        .an_rescriptionText p:nth-of-type(1){
+            display: inline;
+        }
+        .an_rescriptionText p:nth-of-type(2){
+            display: inline;
+        }
+        // 諮詢問題按鈕
+        .an_anser_wrap{
+            margin-bottom: 25px;
+        }
+        .an_anser{
+            display: flex;
+            width: 100%;
+            margin: 0px 0px 2% 0px;
+            font-family: "Noto Sans TC";
+        }
+        .btn_a{
+            padding: 10px 28px;
+            border-radius: 60px;
+            background-color: #58473c;
+            display: inline-block;
+            text-align: center;
+            margin: auto;
+            color:#eac694;
+            cursor: pointer;
+        }
+        .an_anser .btn_a:hover{
+            color:white;
+        }
+        //搗藥桌子
+        .an_table{
+            display:block;
+            height: 140px;
+            width: 100%;
+            background-image: url("../images/table.png");
+            position: absolute;
+            bottom: 0;
+            z-index: 2;
+        }
+        //搗藥猴子
+        .an_table>img{
+            position: absolute;
+            // width: 18%;
+            // bottom: 68px;
+            // left:43%;
+            
+            width: 400px;
+            bottom: 57px;
+            left:43%;
         }
     } 
 
