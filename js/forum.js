@@ -18,19 +18,19 @@ $(document).ready(function(){
 				left:0,
 				opacity: 1,
 			});
-			$(".hot_forum_box1").css({
+			$(".hot_forum_box1").css('z-index',"10");
+			$(".hot_forum_box3").css('z-index',"999");
+			$(".hot_forum_box2").css('z-index',"10");
+			$(".hot_forum_box1").stop().animate({
 				'left':10,
-				'z-index':10,
-			});
-			$(".hot_forum_box2").css({
-				'left':966,
-				'z-index':10,
-			});
-			$(".hot_forum_box3").css({
-				'left':100,
-				'z-index':999,
 			});
 			
+			$(".hot_forum_box3").stop().animate({
+				'left':100,
+			});
+			$(".hot_forum_box2").stop().animate({
+				'left':966,
+			});
 			
 
 			$(".hot_forum_box1 .card").addClass('zoom_out');
@@ -52,15 +52,18 @@ $(document).ready(function(){
 				left:-2000,
 				opacity: 0,
 			});
-			$(".hot_forum_box1").css({
+			$(".hot_forum_box1").css('z-index',"999");
+			$(".hot_forum_box3").css('z-index',"10");
+			$(".hot_forum_box2").css('z-index',"10");
+			$(".hot_forum_box1").stop().animate({
 				'left':100,
 				'z-index':999,
 			});
-			$(".hot_forum_box2").css({
+			$(".hot_forum_box2").stop().animate({
 				'left':10,
 				'z-index':10,
 			});
-			$(".hot_forum_box3").css({
+			$(".hot_forum_box3").stop().animate({
 				'left':966,
 				'z-index':10,
 			});
@@ -84,15 +87,18 @@ $(document).ready(function(){
 				left:-2000,
 				opacity: 0,
 			});
-			$(".hot_forum_box1").css({
+			$(".hot_forum_box1").css('z-index',"10");
+			$(".hot_forum_box3").css('z-index',"10");
+			$(".hot_forum_box2").css('z-index',"999");
+			$(".hot_forum_box1").stop().animate({
 				'left':966,
-				'z-index':10,
+				'z-index':11,
 			});
-			$(".hot_forum_box2").css({
+			$(".hot_forum_box2").stop().animate({
 				'left':100,
 				'z-index':999,
 			});
-			$(".hot_forum_box3").css({
+			$(".hot_forum_box3").stop().animate({
 				'left':10,
 				'z-index':10,
 			});
@@ -120,23 +126,25 @@ $(document).ready(function(){
 				left:0,
 				opacity: 1,
 			});
-			$(".hot_forum_box3").css({
-				'left':10,
-				'z-index':10,
-			});
-			$(".hot_forum_box1").css({
-				'left':966,
-				'z-index':10,
-			});
-			$(".hot_forum_box2").css({
+
+			$(".hot_forum_box1").css('z-index',"10");
+			$(".hot_forum_box3").css('z-index',"10");
+			$(".hot_forum_box2").css('z-index',"999");
+			$(".hot_forum_box2").stop().animate({
 				'left':100,
-				'z-index':999,
+			});
+			$(".hot_forum_box3").stop().animate({
+				'left':10,
+			});
+			$(".hot_forum_box1").stop().animate({
+				'left':966,
 			});
 			
-
+			
+			$(".hot_forum_box2 .card").addClass('zoom_in');
 			$(".hot_forum_box1 .card").addClass('zoom_out');
 			$(".hot_forum_box3 .card").addClass('zoom_out');
-			$(".hot_forum_box2 .card").addClass('zoom_in');
+			
 			$(".hot_forum_box2 .card").removeClass('zoom_out');
 		}else if(sequence==2){
 			sequence = 3;
@@ -153,15 +161,19 @@ $(document).ready(function(){
 				left:-2000,
 				opacity: 0,
 			});
-			$(".hot_forum_box3").css({
+
+			$(".hot_forum_box1").css('z-index',"10");
+			$(".hot_forum_box3").css('z-index',"999");
+			$(".hot_forum_box2").css('z-index',"10");
+			$(".hot_forum_box3").stop().animate({
 				'left':100,
 				'z-index':999,
 			});
-			$(".hot_forum_box1").css({
+			$(".hot_forum_box1").stop().animate({
 				'left':10,
-				'z-index':10,
+				'z-index':11,
 			});
-			$(".hot_forum_box2").css({
+			$(".hot_forum_box2").stop().animate({
 				'left':966,
 				'z-index':10,
 			});
@@ -185,18 +197,21 @@ $(document).ready(function(){
 				left:-2000,
 				opacity: 0,
 			});
-			$(".hot_forum_box3").css({
-				'left':966,
-				'z-index':10,
-			});
-			$(".hot_forum_box1").css({
+
+
+			$(".hot_forum_box1").css('z-index',"999");
+			$(".hot_forum_box3").css('z-index',"10");
+			$(".hot_forum_box2").css('z-index',"10");
+			$(".hot_forum_box1").stop().animate({
 				'left':100,
-				'z-index':999,
 			});
-			$(".hot_forum_box2").css({
+			$(".hot_forum_box2").stop().animate({
 				'left':10,
-				'z-index':10,
 			});
+			$(".hot_forum_box3").stop().animate({
+				'left':966,
+			});
+			
 			
 
 			$(".hot_forum_box2 .card").addClass('zoom_out');
