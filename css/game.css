@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 .clearfix:after {
   display: block;
   content: '';
@@ -6,7 +7,8 @@
 }
 
 body {
-  font-family: "Microsoft JhengHei";
+  font-family: "源柔ゴシック";
+  line-height: 1.5;
 }
 
 .wrapper {
@@ -352,7 +354,6 @@ header .nav_mem {
 
 header .nav_mem p {
   vertical-align: middle;
-  line-height: 25px;
   margin-right: 10px;
 }
 
@@ -444,7 +445,6 @@ header .menu {
   display: flex;
   height: 10%;
   position: relative;
-  line-height: 50px;
   background-color: #f4d66d;
   border-radius: 10px 10px 0 0;
 }
@@ -517,7 +517,6 @@ header .menu {
   display: inline-block;
   height: 100%;
   width: 20%;
-  line-height: 40px;
   background-color: #ffd700;
   margin: 0;
   padding: 0.3rem 0;
@@ -750,11 +749,13 @@ header {
     position: absolute;
     width: 100%;
     height: 100vh;
+    background: url(../images/backGround.jpg) no-repeat;
+    background-size: cover;
+    overflow: hidden;
   }
   #game_info {
     left: 86%;
     top: 68%;
-    font-family: "微軟正黑體";
     text-align: center;
     color: white;
     display: block;
@@ -763,16 +764,15 @@ header {
   }
   #game_info > div {
     margin-top: 10px;
+    margin-right: 30px;
   }
   #game_info dl dt {
     font-weight: bold;
-    font-family: "微軟正黑體";
     font-size: 22px;
     text-indent: 10px;
   }
   #game_info dl dd {
     font-size: 12px;
-    line-height: 30px;
     text-align: center;
   }
   #game_info #gameCent,
@@ -781,7 +781,6 @@ header {
     text-shadow: 2px 1px #ccc;
     color: #0000ff;
     font-size: 16px;
-    font-family: "微软雅黑";
     margin: 0 2px;
   }
   #game_info #gameLevel {
@@ -799,7 +798,6 @@ header {
     -webkit-box-shadow: 2px 1px 5px #ccc;
             box-shadow: 2px 1px 5px #ccc;
     border-radius: 2px 2px;
-    line-height: normal;
     overflow: hidden;
   }
   #game_info #lifeBar {
@@ -825,8 +823,6 @@ header {
     width: 100%;
     height: 100vh;
     /* border: 1px solid #00415e; */
-    background: url(../images/blog_backgroung5.jpg) no-repeat;
-    background-size: cover;
     overflow: hidden;
   }
   #game_result {
@@ -855,13 +851,14 @@ header {
     position: absolute;
     height: 95px;
     width: 169px;
-    background: url(../images/jie.png) no-repeat;
+    background: url(../images/monkey01.svg) no-repeat;
+    -webkit-transition: 0.3s;
+    transition: 0.3s;
   }
   /* 水果大小 */
   .thing {
     position: absolute;
     width: 80px;
-    height: 80px;
     z-index: 10;
   }
   .thing img {
@@ -871,7 +868,6 @@ header {
   #game_box .tip_box {
     position: absolute;
     display: inline-block;
-    background: url(images/kiss.png) no-repeat left top;
     width: 45px;
     height: 16px;
     z-index: 11;
@@ -887,31 +883,36 @@ header {
     width: 94px;
     height: 61px;
   }
+  #tip_wrap {
+    position: absolute;
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    text-align: center;
+    z-index: 10;
+  }
   #game_box .upgrade_tip,
   #game_box .game_over_tip {
-    display: inline-block;
-    position: absolute;
+    display: block;
+    color: #fff;
+    font-family: "源柔ゴシック";
+    font-weight: 600;
     z-index: 12;
-    font-family: "微軟正黑體";
     font-size: 40px;
-    color: BLACK;
+    color: #fff;
     /* font-style: italic; */
-    text-shadow: 1px 1px 5px #fff;
     width: 100%;
     height: 40px;
     top: 18%;
-    margin-top: -20px;
+    margin-top: 20%;
     text-align: center;
   }
   #game_box .game_over_tip2 {
-    display: inline-block;
-    position: absolute;
     z-index: 0;
-    font-family: "微軟正黑體";
     font-size: 40px;
-    color: BLACK;
-    font-family: "Showcard Gothic";
-    text-shadow: 1px 1px 5px #fff;
+    color: #fff;
     width: 100%;
     height: 40px;
     top: 27%;
@@ -919,31 +920,22 @@ header {
     text-align: center;
   }
   #game_box .game_over_tip3 {
-    display: none;
     cursor: pointer;
-    position: absolute;
-    z-index: 0;
-    font-family: "微軟正黑體";
-    font-size: 40px;
-    color: BLACK;
-    /* font-family: "Showcard Gothic"; */
-    text-shadow: 1px 1px 5px #fff;
+    z-index: 12;
+    font-size: 24px;
+    padding: 20px 30px;
+    color: #fff;
     width: 120px;
     height: 68px;
     top: 50%;
-    line-height: 68px;
-    background-color: #ffd700;
+    width: 50%;
+    background-color: #6b0a0a;
     left: 45%;
     border-radius: 20px;
-    margin-top: 7%;
+    margin-top: 20%;
+    margin: auto;
     text-align: center;
     text-decoration: none;
-  }
-  #game_box .game_over_tip {
-    color: BLACK;
-    font-family: "微軟正黑體";
-    /* font-family: "Showcard Gothic"; */
-    font-size: 40px;
   }
   /* 開始按鈕和背景 */
   #game_control {
@@ -951,42 +943,48 @@ header {
     width: 100%;
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.7);
-    line-height: 21vh;
     height: 100%;
     text-align: center;
     z-index: 11;
   }
   #game_control_txt {
-    font-size: 48px;
+    font-size: 40px;
     color: white;
-    font-family: "微軟正黑體";
-    margin-top: 120px;
+    font-weight: 500;
+    margin-top: 30vh;
+    margin-bottom: 50px;
+    padding: 0px 30px;
   }
   .special {
-    width: 23%;
-    position: absolute;
+    display: block;
+    margin: auto;
+    width: 40%;
     top: 36%;
-    left: 38%;
+    left: 30%;
+    margin-top: 70px;
+    z-index: 12;
   }
   #game_control button {
     /* 出現手的游標 */
+    font-family: "源柔ゴシック";
     cursor: pointer;
     height: 100px;
     width: 150px;
     border-radius: 20px;
-    border: 3px solid white;
+    border: 2px solid white;
     background-color: rgba(0, 0, 0, 0.1);
     color: mintcream;
     font-size: 30px;
   }
   #game_control button:hover {
-    background-color: yellow;
-    color: black;
+    background-color: #6b0a0a;
+    color: #fff;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
   }
   .time_container {
     position: absolute;
     left: 10%;
-    font-family: "微軟正黑體";
     top: 5%;
     color: black;
     height: 50px;
@@ -995,24 +993,26 @@ header {
   }
 }
 
-@media only screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .game_container {
     position: absolute;
     width: 100%;
     height: 100vh;
+    background: url(../images/backGround.jpg) no-repeat;
+    background-size: cover;
+    overflow: hidden;
   }
   #game_info {
     left: 86%;
     top: 68%;
-    font-family: "微軟正黑體";
     text-align: center;
     color: white;
     display: block;
     position: absolute;
     z-index: 2;
   }
-  #game_info > div {
-    margin-top: 10px;
+  #game_info > .life_board {
+    margin-right: 10px;
   }
   #game_info #gameCent,
   #game_info #gameLevel {
@@ -1020,7 +1020,6 @@ header {
     text-shadow: 2px 1px #ccc;
     color: #0000ff;
     font-size: 16px;
-    font-family: "微软雅黑";
     margin: 0 2px;
   }
   #gameLevel {
@@ -1034,7 +1033,6 @@ header {
     -webkit-box-shadow: 2px 1px 5px #ccc;
             box-shadow: 2px 1px 5px #ccc;
     border-radius: 2px 2px;
-    line-height: normal;
     overflow: hidden;
   }
   #game_info #lifeBar {
@@ -1058,8 +1056,6 @@ header {
     position: absolute;
     width: 100%;
     height: 100vh;
-    background: url(../images/blog_backgroung5.jpg) no-repeat;
-    background-size: cover;
     /* background-size: 100%; */
     overflow: hidden;
   }
@@ -1091,13 +1087,12 @@ header {
     position: absolute;
     height: 95px;
     width: 169px;
-    background: url(../images/jie.png) no-repeat;
+    background: url(../images/monkey01.svg) no-repeat;
   }
   /* 水果大小 */
   .thing {
     position: absolute;
-    width: 80px;
-    height: 80px;
+    width: 60px;
     z-index: 10;
   }
   .thing img {
@@ -1107,7 +1102,6 @@ header {
   #game_box .tip_box {
     position: absolute;
     display: inline-block;
-    background: url(images/kiss.png) no-repeat left top;
     width: 45px;
     height: 16px;
     z-index: 11;
@@ -1123,62 +1117,59 @@ header {
     width: 94px;
     height: 61px;
   }
+  #tip_wrap {
+    position: absolute;
+    display: none;
+    width: 100%;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100%;
+    text-align: center;
+    z-index: 10;
+  }
   #game_box .upgrade_tip,
   #game_box .game_over_tip {
-    display: inline-block;
-    position: absolute;
     z-index: 12;
-    font-family: "微軟正黑體";
-    font-size: 40px;
-    color: BLACK;
-    text-shadow: 1px 1px 5px #fff;
+    font-size: 27px;
+    font-weight: 600;
+    color: #fff;
     width: 100%;
-    height: 40px;
     top: 18%;
-    margin-top: -20px;
+    margin: auto;
+    margin-top: 50%;
+    margin-bottom: 5%;
     text-align: center;
   }
   #game_box .game_over_tip2 {
-    display: inline-block;
-    position: absolute;
     z-index: 0;
-    font-family: "微軟正黑體";
-    font-size: 40px;
-    color: BLACK;
-    font-family: "Showcard Gothic";
+    font-size: 27px;
+    color: #fff;
     text-shadow: 1px 1px 5px #fff;
     width: 100%;
     height: 40px;
     top: 27%;
+    margin: auto;
     margin-top: -20px;
     text-align: center;
   }
   #game_box .game_over_tip3 {
-    display: none;
     cursor: pointer;
-    position: absolute;
-    z-index: 0;
-    font-family: "微軟正黑體";
-    font-size: 40px;
-    color: BLACK;
-    /* font-family: "Showcard Gothic"; */
-    text-shadow: 1px 1px 5px #fff;
-    width: 120px;
-    height: 68px;
-    top: 50%;
-    line-height: 68px;
-    background-color: #ffd700;
-    left: 45%;
+    margin: auto;
+    z-index: 100;
+    font-size: 21px;
+    color: #fff;
+    background-color: #6b0a0a;
+    padding: 20px 50px;
     border-radius: 20px;
-    margin-top: 7%;
+    margin: auto;
+    margin-top: 50%;
     text-align: center;
     text-decoration: none;
+    width: 180px;
   }
   #game_box .game_over_tip {
-    color: BLACK;
-    font-family: "微軟正黑體";
-    /* font-family: "Showcard Gothic"; */
-    font-size: 40px;
+    color: #fff;
+    font-size: 27px;
   }
   /* 開始按鈕和背景 */
   #game_control {
@@ -1186,46 +1177,63 @@ header {
     width: 100%;
     margin: 0 auto;
     background-color: rgba(0, 0, 0, 0.7);
-    line-height: 21vh;
     height: 100%;
     text-align: center;
     z-index: 11;
   }
   #game_control_txt {
-    font-size: 46px;
+    font-size: 27px;
+    margin-bottom: 50px;
     color: white;
-    font-family: "微軟正黑體";
     margin-top: 35%;
+    padding: 30px;
   }
   .special {
-    width: 23%;
-    position: absolute;
-    top: 36%;
-    left: 38%;
+    width: 70%;
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+    z-index: 12;
   }
   #game_control button {
     /* 出現手的游標 */
+    font-family: "源柔ゴシック";
     cursor: pointer;
-    height: 100px;
+    height: 70px;
     width: 150px;
     border-radius: 20px;
-    border: 3px solid white;
+    border: 2px solid white;
     background-color: rgba(0, 0, 0, 0.1);
     color: mintcream;
     font-size: 30px;
   }
   #game_control button:hover {
-    background-color: yellow;
-    color: black;
+    background-color: #6b0a0a;
+    color: #fff;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
   }
   .time_container {
     position: absolute;
     left: 10%;
-    font-family: "微軟正黑體";
     top: 5%;
     color: black;
     height: 50px;
     font-size: 35px;
     text-align: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #game_box .game_over_tip {
+    margin-top: 200px;
+    margin-bottom: 70px;
+  }
+  .special {
+    width: 30%;
+    display: block;
+    margin: auto;
+    margin-bottom: 30px;
+    z-index: 12;
   }
 }
