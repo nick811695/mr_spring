@@ -654,6 +654,20 @@
     /* 藥籤諮詢 */
     .an_prescription{
         // background-color: yellow;
+        position: relative;
+    }
+    .an_prescription_animation{
+        animation: finish 1s ;
+        animation-fill-mode: forwards;
+        animation-timing-function: cubic-bezier(.87,.8,.37,-1.14);
+    }
+    @keyframes finish{
+        from{
+            left:0;
+        }
+        to{
+            left:-2000px;
+        }
     }
     // 第二屏標題
     .an_titleMedicine{
@@ -812,6 +826,20 @@
             display: flex;
             flex-wrap: wrap;
             position: relative;
+            z-index: 1;
+        }
+        .an_cabinet_animation{
+            animation: finish02 1s;
+            animation-fill-mode: forwards;
+            animation-timing-function: cubic-bezier(.87,.8,.37,-1.14);
+        }
+        @keyframes finish02{
+            from{
+                right:0;
+            }
+            to{
+                right:-2000px;
+            }
         }
         /* 抽屜一列 */
         .drawerWrap {
@@ -854,7 +882,7 @@
         }
         // 第二屏標題
         .an_titleMedicine{
-            width: 14%;
+            width: 23%;
             display: flex;
             justify-content: center;
             position: absolute;
@@ -955,6 +983,21 @@
             bottom: 57px;
             left:43%;
             filter: drop-shadow(10px 10px 10px #492d0c);
+        }
+        .an_monkey_animation{
+            position: relative;
+            animation: finish03 1s;
+            animation-delay: 1s;
+            animation-fill-mode: forwards;
+        }
+        @keyframes finish03{
+            from{
+                left:43%;
+            }
+            to{
+                // left:350px;
+                left:19%;
+            }
         }
     } 
 
