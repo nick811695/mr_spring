@@ -1,6 +1,69 @@
 
 
 $(document).ready(function(){
+
+	/*-----hot_forum fall*/
+	$('.hot_forum_box1 .hot_forum_hidden').css({
+		"max-width":"0",
+	});
+	$('.hot_forum_box1 .hot_forum_hidden').delay(800).animate({
+		"max-width":"1000",
+	});
+
+	function rand(min,max){
+		var a=Math.floor( Math.random()*(max-min-1)+min);
+		return a;
+	}
+
+
+	$(".card .knot").before("<div class='rope'></div>");
+	$('.rope').append("<img src='images/rope.png'><img src='images/rope.png'><img src='images/rope.png'><img src='images/rope.png'><img src='images/rope.png'><img src='images/rope.png'><img src='images/rope.png'><img src='images/rope.png'><img src='images/rope.png'>")
+	
+
+
+	$('.hot_forum_box').css("top","-800px");
+	
+	$('.hot_forum_box1').animate({
+		"top": '50',
+	},rand(200,500),);
+	$('.hot_forum_box1').animate({
+		"top": '-50',
+	},rand(200,500),);
+	$('.hot_forum_box1').animate({
+		"top": '20',
+	},rand(200,500),);
+	$('.hot_forum_box1').animate({
+		"top": '0',
+	},rand(200,500),);
+
+	$('.hot_forum_box2').animate({
+		"top": '50',
+	},rand(200,500),);
+	$('.hot_forum_box2').animate({
+		"top": '-50',
+	},rand(200,500),);
+	$('.hot_forum_box2').animate({
+		"top": '20',
+	},rand(200,500),);
+	$('.hot_forum_box2').animate({
+		"top": '0',
+	},rand(200,500),);
+
+	$('.hot_forum_box3').animate({
+		"top": '50',
+	},rand(200,500),);
+	$('.hot_forum_box3').animate({
+		"top": '-50',
+	},rand(200,500),);
+	$('.hot_forum_box3').animate({
+		"top": '20',
+	},rand(200,500),);
+	$('.hot_forum_box3').animate({
+		"top": '0',
+	},rand(200,500),);
+	
+
+
 	/*-----hot_forum_slide--------*/
 	var sequence = 1; 
 	$("#prev").click(function(){

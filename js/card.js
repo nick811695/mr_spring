@@ -8,12 +8,6 @@ $(document).ready(function(){
 	$(".card .knot").before("<div class='rope'></div>");
 	$('.rope').append("<img src='images/rope.png'><img src='images/rope.png'><img src='images/rope.png'><img src='images/rope.png'><img src='images/rope.png'><img src='images/rope.png'><img src='images/rope.png'><img src='images/rope.png'><img src='images/rope.png'>")
 	
-	$('.hot_forum_box1 .hot_forum_hidden').css({
-		"width":"0",
-	});
-	$('.hot_forum_box1 .hot_forum_hidden').delay(800).animate({
-		"width":"1000",
-	});
 
 
 	$('.hot_forum_box').css("top","-800px");
@@ -56,10 +50,6 @@ $(document).ready(function(){
 	$('.hot_forum_box3').animate({
 		"top": '0',
 	},rand(200,500),);
-
-	// $('.hot_forum_box1 .hot_forum').delay(2000).animate({
-	// 	"left":"0",
-	// });
 	
 	
 });
