@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="css/game.css">
+    <link rel="stylesheet" href="css/fonts.css">
 </head>
 
 <body>
@@ -13,7 +16,7 @@
     <div class="game_container">
         <!-- 遊戲訊息欄 -->
         <div id="game_info">
-            <div>
+            <div class="life_board">
                 <div>生命力</div>
                 <div style="text-align: left;">
                     <div class="life_bar_box"><span id="lifeBar"></span></div>
@@ -29,7 +32,11 @@
         <!-- 遊戲主螢幕 start -->
         <div id="game_box">
             <!--倒數時間 -->
-            <a id="bonus" class="game_over_tip3">GO</a>
+            <div id="tip_wrap">
+                <div class="game_over_tip"></div>
+                <img class="special" src="images/coupon.png" alt="">
+                <a id="bonus" class="game_over_tip3" href="custom.html">立刻前往客製湯頭</a>
+            </div>
             <div class="time_container">
                 <span>剩餘時間:</span><span id="divNum">20</span>
             </div>
@@ -42,7 +49,7 @@
             <!-- 遊戲控制 start -->
             <div id="game_control">
                 <div id="game_control_txt">
-                    使用"→"跟"←"來接住水果,會依照水果數量給不同獎賞唷!
+                    使用"→"跟"←"控制接住藥材，<br>會依照藥材數量與等級給予不同獎賞喔!
                 </div>
                 <button onclick="document.getElementById('game_control').style.display='none'" id="btnStart">
                     開始
@@ -50,10 +57,27 @@
             </div>
 
         </div>
-        <form method="post" action="coupon.php" id="coupon1">
-            <input id="bonusgo" type="hidden" name="coupon" value="">
-        </form>
-        <script src="js/game.js"></script>
+    </div>
+    <form method="post" action="coupon.php" id="coupon1">
+        <input id="bonusgo" type="hidden" name="coupon" value="">
+    </form>
+    <script src="js/game.js"></script>
+    <script>
+        $(function () {
+            $("#btnStart").click(function () {
+                // alert('ok');
+                FruitGame.Start();
+            });
+        });
+        $(document).ready(function () {
+            $("#bonus").click(function () {
+                // alert('ok');
+                bonuscheck();
+            });
+        })
+
+
+    </script>
 
 
 

@@ -26,7 +26,7 @@
 
     <!-- 第一屏 -->
     <div class="mt_first_page">
-        <!-- <div id="kasumi_top_container"></div> -->
+        <div id="kasumi_top_container"></div>
         <div class="mt_bg_wrap">
             <div class="mt_cloud">
                 <div class="cloud_large">
@@ -157,6 +157,11 @@
 
     <!-- 第二屏 -->
     <div class="my_second_page">
+        <!-- 搗藥桌子 -->
+        <div class="an_table">
+            <!-- 搗藥猴子 -->
+            <img class="monkeyMedPic" src="images\monkeyMi.gif" alt="搗藥猴子">
+        </div>
         <div class="an_monkeyMedicine">
             <!-- 猴子櫃子 -->
             <div class="col-lg-5 col-12 an_monkeyCabinet">
@@ -208,6 +213,12 @@
             </div>
             <!--藥籤諮詢 -->
             <div class="col-lg-7 col-12 an_prescription " id="an_prescription">
+                 <!-- 第二屏標題 -->
+                 <div class="an_titleMedicine">
+                    <div class="titleSquareMedicine">
+                        <h2>湯先生抓藥</h2>
+                    </div>
+                </div>
                 <div class="an_rescriptionWrap">
                     <!-- 進度表 -->
                     <div class="an_schedule">
@@ -223,6 +234,29 @@
                         <div class="an_scheduleLine"></div>
                         <div class="an_circle1" id="an_circle">6</div>
                     </div>
+                    <!-- 諮詢問題 -->
+                    <div class="an_rescriptionText">
+                        <p id="qn">Q1</p>
+                        <p id="qus">最近的你，是否總是感到胸悶或容易偏頭痛呢?</p>
+                    </div>
+                    <!-- 諮詢問題答案按鈕 -->
+                    <div class="an_anser_wrap">
+                        <div class="an_anser">
+                            <div class="btn_a" id="btn_alltime" onclick="f_q('btn_alltime')">
+                                持續好幾周
+                            </div>
+                        </div>
+                        <div class="an_anser">
+                            <div class="btn_a" id="btn_sometime" onclick="f_q('btn_sometime')">
+                                每月兩三次
+                            </div>
+                        </div>
+                        <div class="an_anser">
+                            <div class="btn_a" id="btn_never" onclick="f_q('btn_never')">
+                                從來沒有過
+                            </div>
+                        </div>
+                    </div>                
                 </div>
             </div>
         </div>
@@ -230,6 +264,7 @@
 
     <script src="js/cloudGo.js"></script>
     <script src="js/kasumi.js"></script>
+    <script src="js/consult.js"></script>
 </body>
 
 </html>
