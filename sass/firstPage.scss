@@ -1145,10 +1145,16 @@
         /* background-color: darkorange; */
     }
     .shower_infoTitle p:nth-of-type(1){
-        font-size:45px;
+        font-family: "Pigmo";
+        font-size:36px;
+        color:#7d0022;
+        margin: 20px 20px 20px 20px;
     }
     .shower_infoTitle p:nth-of-type(2){
-        font-size:24px;
+        font-family:'Noto Sans TC', sans-serif;
+        font-size:20px;
+        color:rgb(85, 85, 85);
+        margin: 0px 20px 50px 20px;
     }
     /* 湯頭藥材 */
     .showerMedicine{
@@ -1163,7 +1169,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: flex-end;
+        justify-content: center;
     }
     .an_MedicinePicWrap>img{
         // height:10%;
@@ -1179,29 +1185,11 @@
     }
     // 按鈕
     .an_Medicine{
-        margin:80px 0px;
+        margin:60px 0px;
         display: flex;
         width: 100%;
         font-family: "Noto Sans TC";
         justify-content: center;
-    }
-    .Medicine_btn_s{
-        padding: 10px 20px;
-        border-radius: 50px;
-        background-color: #000000;
-        font-size:16px;
-        display: inline-block;
-        text-align: center;
-        margin:0 20px;
-        cursor: pointer;
-        z-index: 20;
-    }
-    .Medicine_btmLink{
-        text-decoration:none;
-        color:#eac694;
-    }
-    .Medicine_btn_s:hover .Medicine_btmLink{
-        color:white;
     }
     } 
 
