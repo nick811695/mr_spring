@@ -14,10 +14,14 @@ body::-webkit-scrollbar{
     width: calc(100vw + 18px);
     overflow: auto;
 }
-input,textarea{
+input,textarea,button{
 	font-family: 'Noto Sans TC', sans-serif;
 	font-size: 15px;
     outline: none;
+    border: none;
+}
+a,button{
+    cursor: pointer;
 }
 .bg{
 	width:100%;

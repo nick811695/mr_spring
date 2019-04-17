@@ -114,3 +114,17 @@ function clockSlide(){
         roomImg[2].style.filter = "brightness(0.8)";
     }
 }
+
+var lightboxOnBtn = document.getElementsByClassName("springCard");
+var lightboxOffBtn = document.getElementById("lightboxToggle");
+
+lightboxOnBtn[0].addEventListener("click",lightboxOn);
+lightboxOffBtn.addEventListener("click",lightboxOff);
+
+function lightboxOn(){
+    document.getElementById('lightbox_wrapper').style.visibility = "visible";
+}
+
+function lightboxOff(){
+    document.getElementById('lightbox_wrapper').style.visibility = "hidden";
+}

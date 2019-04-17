@@ -3,54 +3,14 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" type="text/css" href="css/share.css">
-	<link rel="stylesheet" type="text/css" href="css/hot_forum.css">
 	<link rel="stylesheet" type="text/css" href="css/forum.css">
-	<link rel="stylesheet" type="text/css" href="css/card.css">
-	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
-	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
-	<script src="js/Chart.js"></script>
-	<script src="js/forum.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/share.css">
 </head>
 <body>
-    <header>
-			<div class="nav_fabric">
-				<img src="images/navBar.png" alt="navBar">
-	
-			</div>
-			<nav class="main_menu">
-				<a href="custom.html">
-					<h2>
-						客製湯頭
-					</h2>
-				</a>
-				<a href="reservation.html">
-					<h2>
-						預約訂房
-					</h2>
-				</a>
-				<a href="index.html">
-					<h2>
-						<img style="width:100px;" src="images/mrSpringLogo.png" alt="">
-					</h2>
-				</a>
-				<a href="forum.html">
-					<h2>
-						討論の區
-					</h2>
-				</a>
-				<a href="member.html">
-					<h2>
-						會員専區
-					</h2>
-				</a>
-	
-			</nav>
-	</header>
-
-	<div class="forum_bg bg">
-		<div class="wrap forum_wrap article_publish_wrap">
+	<div class="forum_bg article_publish_bg">
+		<div class="forum_wrap article_publish_wrap">
 			<div class="article_publish">
+			<button class="add_card btn_l">選擇湯牌</button>
 				<div class="publish_l">
 					<div class="plus"></div>
 				</div>
@@ -58,18 +18,11 @@
 					<form action="#">
 						<input type="text" name="article_title" placeholder="請輸入標題">
 						<textarea placeholder="請輸入內容分享(上限250字)"></textarea>
-						<input type="submit" name="submit" value="發表文章">
+						<input class="btn_l" type="submit" name="submit" value="發表文章">
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-
-	<footer>
-			<div class="all_rights">
-				<h4>Non commercial use&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright © 2019 Mr.Spring All rights
-					reserved</h4>
-			</div>
-	</footer>
 </body>
 </html>

@@ -143,7 +143,7 @@ window.addEventListener("load", () => {
             var num = arrmm.indexOf(document.querySelector("#mm-sp").innerText)+1;
             if (document.querySelector("#yy-sp").innerText < yyyy   ) {
                 ss.style.color="#ADADAD";
-                ss.style.backgroundColor="rgba(173, 173, 173, .5)";
+                ss.style.backgroundColor="rgba(173, 173, 173, 0)";
                 ss.style.cursor="default";
                 // ss.style.cursor = "not-allowed";
                 ss.removeEventListener("click", tdclass);
@@ -153,7 +153,7 @@ window.addEventListener("load", () => {
             if( num<mm && document.querySelector("#yy-sp").innerText == yyyy ){
                 ss.removeEventListener("click", tdclass);
                 ss.style.color="#ADADAD";
-                ss.style.backgroundColor="rgba(173, 173, 173, .5)";
+                ss.style.backgroundColor="rgba(173, 173, 173, 0)";
                 ss.style.cursor="default";
                 //不等於今日
                 if(ss.innerText ==  today && num == mm && document.querySelector("#yy-sp").innerText == yyyy ){
@@ -165,7 +165,7 @@ window.addEventListener("load", () => {
             //同年同月 但小於今天
             if(ss.innerText<= today &&  num==mm && document.querySelector("#yy-sp").innerText == yyyy){
                 ss.style.color="#ADADAD";
-                ss.style.backgroundColor="rgba(173, 173, 173, .5)";
+                ss.style.backgroundColor="rgba(173, 173, 173, 0)";
                 ss.style.cursor="default";
                 // ss.style.cursor = "not-allowed";
                 ss.removeEventListener("click", tdclass);
