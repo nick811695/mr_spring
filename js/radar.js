@@ -15,7 +15,7 @@ chartRadarOptions =
     {
         ticks: 
         {
-            fontSize: 16,
+            fontSize: 13,
             beginAtZero: true,
             maxTicksLimit: 7,
             min:0,
@@ -23,21 +23,21 @@ chartRadarOptions =
         },
         pointLabels: 
         {
-            fontSize: 16,
+            fontSize: 15,
             fontColor: ['rgba(221,125,29,1)', 'rgba(178,79,89,1)', 'rgba(106,145,45,1)']
         },
         gridLines: 
         {
-            color: '#aaa'
+            color: '#aaa',
+        },
+        legend:
+        {
         }
     }
 };
 
 console.log("---------Rader Data--------");
-var graphData =new Array();
-graphData.push(.5);
-graphData.push(.3);
-graphData.push(.2);
+var graphData =[0.6, 0.1, 0.4];
 
 
 console.log("--------Rader Create-------------");
@@ -45,6 +45,7 @@ console.log(graphData);
     
 //CreateData
 chartRadarData = {
+
     labels: ['舒筋活骨', '養顏美容', '安定心神'],
     datasets: [{
         // label: `療效`,
@@ -54,9 +55,10 @@ chartRadarData = {
         pointBorderColor: ['rgba(221,125,29,.8)', 'rgba(178,79,89,.8)', 'rgba(106,145,45,.8)'],
         pointHoverBackgroundColor: ['rgba(221,125,29,.8)', 'rgba(178,79,89,.8)', 'rgba(106,145,45,.8)'],
         pointHoverBorderColor: ['rgba(221,125,29,.8)', 'rgba(178,79,89,.8)', 'rgba(106,145,45,.8)'],
-        pointBorderWidth: 8,
-        pointHoverBorderWidth: 8,
+        pointBorderWidth: 3,
+        pointHoverBorderWidth: 3,
         borderJoinStyle: 'round',
+        fillColor: '#f00',
         data: graphData}]
 };
     
