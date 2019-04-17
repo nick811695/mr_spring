@@ -819,8 +819,14 @@
 
 
 /*--article_publish---*/
+.article_publish_bg{
+	// height: 100vh;
+	padding-top: 150px;
+}
 .article_publish_wrap{
+	margin-top: 150px;
 	padding-bottom: 170px; 
+	margin: auto;
 }
 .forum_wrap .article_publish{
 	width: 100%;
@@ -833,7 +839,37 @@
 	padding-top: 100px;
 	
 }
+.add_card{
+	position: absolute;
+	top: 30px;
+	border: none;
+	background-color:  #6f3535;
+	color: #fff;
+}
+.add_card:hover{
+	background-color:  #c59a73;
+	color: #6f3535;
+}
+.add_card_ilghtbox_bg{
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	background-color: rgba(0,0,0,0.5);
+	position: fixed;
+}
+.add_card_ilghtbox{
+	width: 80%;
+	height: 50%;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: auto;
+	position: absolute;
+	background-color: #fff;
+}
 .article_publish .publish_l{
+	display: none;
 	-webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 10%, 100% 100%, 0 100%, 0 10%);
 	clip-path: polygon(25% 0%, 75% 0%, 100% 10%, 100% 100%, 0 100%, 0 10%);
 	background-color: #fff;
@@ -877,7 +913,7 @@
 .article_publish .publish_r{
 	background-color: #a39784;
 	width: 730px;
-	/*height: 500px;*/
+	height: 500px;
 }
 .article_publish .publish_r input[type="text"]{
 	font-size: 18px;
@@ -899,30 +935,20 @@
 	font-size: 18px;
 }
 .article_publish .publish_r input[type="submit"]{
-	width: 200px;
-	height: 70px;
 	background-color: #111;
-	text-align: center;
 	display: block;
-	margin: auto;
-	line-height: 70px;
 	color: #ccc;
-	text-decoration: none;
-	border-radius: 75px;
-	font-size: 30px;
+	font-size: 21px;
+	
+	transition: 0.5s;
+	margin: auto;
 	margin-top: 20px;
 	margin-bottom: 20px;
-	transition: 0.5s;
-	border: none;
-	position: absolute;
-	right: 0;
-	left: 0;
-	bottom: -90px;
-	margin: auto;
 	outline: none;
 }
 
 .article_publish .publish_r input[type="submit"]:hover{
 	color: #fff;
+	cursor: pointer;
 }
 
