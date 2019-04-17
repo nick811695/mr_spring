@@ -66,12 +66,13 @@
     position: absolute;
     width: 100%;
     overflow: hidden;
+    bottom: 0px;
 }
 
 .mt_first_page .mt_cloud {
     position: relative;
     width: 100%;
-    /* height: 100vh; */
+    height: 100vh;
     overflow: hidden;
 }
 
@@ -89,13 +90,19 @@
     display: flex;
     flex-basis: row;
     position: relative;
+    // top:-100px;
     animation: 20s cloudGo linear infinite;
 }
 
 .bg_mt {
-    position: relative;
+    background-image: url("../images/fjMountain.png");
+    background-repeat: no-repeat;
+    background-position-y:100px;
+    background-size: contain;
+    position: absolute;
     height: 100vh;
     width: 100%;
+    bottom:0px;
     /* overflow: hidden; */
 }
 
@@ -110,19 +117,28 @@
 #mt_water {
     width: 100%;
     /* height: 300px; */
-    position: relative;
-    bottom: 420px;
+    position:absolute;
+    
+    bottom:0px;
     z-index: 3;
 }
 
+#mt_water{
+    img{
+        position: absolute;
+        width: 100%;
+        bottom:10vh;
+
+    }
+}
 #water_color_change {
     width: 100%;
     height: 300px;
     background: #ff9f9f;
     position: absolute;
-    bottom: 100%;
     transition: 2s;
     z-index: 3;
+    bottom: 0px;
 }
 
 #water_color_nochange {
@@ -133,9 +149,10 @@
         linear-gradient(to bottom, transparent, #fff09b);
     background-blend-mode: screen;
     position: absolute;
-    bottom: 50%;
+    bottom:0px;
     z-index: 4;
 }
+
 
 .mt_first_page{
     .wrap{

@@ -20,7 +20,7 @@
         /*兩顆炸彈*/
         this.BombList = [
             { ID:'B1',BombName:'土雷',Icon:'images/user_photo.png',Life:40 },
-            { ID:'B2',BombName:'導弹',Icon:'images/user_photo02.jpg',Life:40 }
+            { ID:'B2',BombName:'導弹',Icon:'images/user_icon02.png',Life:40 }
         ];
         /*關卡等级*/
         this.LevelList = [
@@ -40,10 +40,10 @@
             CarMoveWidth:50,
             //水果籃寬度
             CarBoxWidth:$('div#carBox').width(),
-            //遊戲盒宽度
-            BoxWidth:1920,
-            //遊戲盒高度
-            BoxHeight:500,
+            //遊戲盒宽度 //1920
+            BoxWidth:$(window).width(),
+            //遊戲盒高度 //500
+            BoxHeight:$(window).height(),
             //水果寬度
             FruitWidth:80,
             //當前總得分
