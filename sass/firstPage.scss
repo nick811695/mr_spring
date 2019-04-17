@@ -715,7 +715,7 @@
         background-position-y: 50%;
         text-align: center;
         line-height: 26px;
-        font-family: "源柔ゴシック";
+        font-family: "KangXi";
         color:black;
     }
     .an_circle1{
@@ -726,7 +726,7 @@
         background-position-y: 50%;
         text-align: center;
         line-height: 26px;
-        font-family: "GenJyuuGothic-Bold";
+        font-family: "KangXi";
         color:black;
     }
     .an_scheduleLine{
@@ -740,7 +740,7 @@
         height:200px;
     }
     .an_rescriptionText p:nth-of-type(1){
-        font-family: "GenJyuuGothic-Bold";
+        font-family: "KangXi";
         font-size: 36px;
         color:#7d0022;
     }
@@ -772,7 +772,106 @@
     .an_table{
         display: none;
     }
-
+    // 結果
+    .showshower{
+        /* width: 70%;
+        height: 70%; */
+        width:90%;
+        position: absolute;
+        background-color:white;
+        border: 2px black solid;
+        border-radius: 10px;
+        background-image: url('../images/fabric.jpg');
+        background-size: 130%;
+        top:20px;
+        right: 0;
+        bottom: 0;
+        left:0;
+        margin: auto;
+        display: none;
+    }
+    /* 湯頭資訊 */
+    .an_shower_info{
+        /* background-color: chartreuse; */
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    .shower_infoTitle{
+        width: 100%;
+        /* background-color: darkorange; */
+    }
+    .shower_infoTitle p:nth-of-type(1){
+        font-family: "Pigmo";
+        font-size:36px;
+        color:#7d0022;
+        margin: 50px 20px 20px 20px;
+    }
+    .shower_infoTitle p:nth-of-type(2){
+        font-family:'Noto Sans TC', sans-serif;
+        font-size:16px;
+        color:rgb(85, 85, 85);
+        margin: 0px 20px 50px 20px;
+    }
+    /* 湯頭藥材 */
+    .showerMedicine{
+        width: 100%;
+        /* background-color:#faf; */
+        display: flex;
+    }
+    .an_MedicinePicWrap{
+        width:33.33333%;
+        /* background-color: darkred; */
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .an_MedicinePicWrap>img{
+        // height:10%;
+        width: 50%;
+    }
+    .an_MedicinePicWrap p:nth-of-type(1){
+        font-family: "KangXi";
+        font-size:16px;
+        color:#7d0022;
+        margin: 10px 20px;
+    }
+    .an_MedicinePicWrap p:nth-of-type(2){
+        font-family:'Noto Sans TC', sans-serif;
+        font-size:14px;
+        color:rgb(85, 85, 85);
+        margin: 0px 10px;
+        line-height: 1.5;
+        text-align: left;
+    }
+    // 按鈕
+    .an_Medicine{
+        margin:24% 0px;
+        display: flex;
+        width: 100%;
+        font-family: "Noto Sans TC";
+        justify-content: center;
+    }
+    .Medicine_btn_s{
+        padding: 10px 20px;
+        border-radius: 50px;
+        background-color: #000000;
+        font-size:16px;
+        display: inline-block;
+        text-align: center;
+        margin:0 20px;
+        cursor: pointer;
+        z-index: 20;
+    }
+    .Medicine_btmLink{
+        text-decoration:none;
+        color:#eac694;
+    }
+    .Medicine_btn_s:hover .Medicine_btmLink{
+        color:white;
+    }
 
 //======================================================================================
 
@@ -821,7 +920,6 @@
         .an_monkeyCabinet{
             height: 100vh;
             // background-color: chartreuse;
-            height: 100%;
             display: flex;
             justify-content: flex-end;
             align-items: flex-end;
@@ -883,17 +981,31 @@
             /* background-color: black; */
             background-image: url("../images/open_drawerside.png");
             background-size: 128%;
-            transition: 0.5s;
+            // transition: 0.5s;
+            position: relative;
         }
+        // .extend_animation{
+        //     animation: finish02 0.5s;
+        // }
+        // @keyframes finish02{
+        //     0%{
+        //         right:0;
+        //         width: 20px;
+        //     }
+        //     100%{
+        //         right:-2000px;
+        //         width: 100px;
+        //     }
+        // }
         .drawer>img {
             margin: 5px 0px 5px 5px;
             width: 88%;
             display: block;
             box-shadow: 5px 5px 5px black;
         }
-        .drawer:hover .extend{
-            width: 20px;
-        }
+        // .drawer:hover .extend{
+        //     width: 20px;
+        // }
         // 第二屏標題
         .an_titleMedicine{
             width: 23%;
@@ -1013,6 +1125,84 @@
                 left:19%;
             }
         }
+        //結果
+    .showshower{
+        width: 55%;
+        height: 70%;
+        top:-200px;
+        right: 0;
+        left:0;
+        margin: auto;
+        display: none;
+    }
+    /* 湯頭資訊 */
+    .an_shower_info{
+        /* background-color: chartreuse; */
+        padding: 40px;
+    }
+    .shower_infoTitle{
+        width: 100%;
+        /* background-color: darkorange; */
+    }
+    .shower_infoTitle p:nth-of-type(1){
+        font-size:45px;
+    }
+    .shower_infoTitle p:nth-of-type(2){
+        font-size:24px;
+    }
+    /* 湯頭藥材 */
+    .showerMedicine{
+        width: 100%;
+        /* background-color:#faf; */
+        display: flex;
+    }
+    .an_MedicinePicWrap{
+        width:33.33333%;
+        /* background-color: darkred; */
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .an_MedicinePicWrap>img{
+        // height:10%;
+        width: 30%;
+    }
+    .an_MedicinePicWrap p:nth-of-type(1){
+        font-size:24px;
+        margin: 20px 20px;
+    }
+    .an_MedicinePicWrap p:nth-of-type(2){
+        font-size:20px;
+        margin: 0px 20px;
+    }
+    // 按鈕
+    .an_Medicine{
+        margin:80px 0px;
+        display: flex;
+        width: 100%;
+        font-family: "Noto Sans TC";
+        justify-content: center;
+    }
+    .Medicine_btn_s{
+        padding: 10px 20px;
+        border-radius: 50px;
+        background-color: #000000;
+        font-size:16px;
+        display: inline-block;
+        text-align: center;
+        margin:0 20px;
+        cursor: pointer;
+        z-index: 20;
+    }
+    .Medicine_btmLink{
+        text-decoration:none;
+        color:#eac694;
+    }
+    .Medicine_btn_s:hover .Medicine_btmLink{
+        color:white;
+    }
     } 
 
 
