@@ -3,14 +3,80 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" type="text/css" href="css/forum.css">
 	<link rel="stylesheet" type="text/css" href="css/share.css">
+	<link rel="stylesheet" type="text/css" href="css/card.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.css">
+
+    <link rel="stylesheet" href="css/lightbox.css">
 </head>
 <body>
 	<div class="forum_bg article_publish_bg">
 		<div class="forum_wrap article_publish_wrap">
 			<div class="article_publish">
-			<button class="add_card btn_l">選擇湯牌</button>
+			<button class="add_card btn_s">選擇湯牌</button>
+			<section id="lightbox_wrapper">
+		        <div id="lightbox">
+		            <div id="lightboxToggle"></div>
+		            <div class="chooseCard_d">
+		                <h2>選擇湯牌</h2>
+		                <div class="select-box">
+		                    <label for="select-box1" class="label select-box1"><span class="label-desc">請選擇湯牌分類</span> </label>
+		                    <select id="select-box1" class="select">
+		                        <option value="Choice 1">全部</option>
+		                        <option value="Choice 2">自己製作</option>
+		                        <option value="Choice 3">討論區收藏</option>
+		                    </select>  
+		                </div>
+		                <div class="chooseCardArea_d">
+		                    <div class="responsive">
+		                        <div class="cards">
+		                            <img src="http://placehold.it/224x420" alt="" />
+		                        </div>
+		                        <div class="cards">
+		                            <img src="http://placehold.it/224x420" alt="" />
+		                        </div>
+		                        <div class="cards">
+		                            <img src="http://placehold.it/224x420" alt="" />
+		                        </div>
+		                        <div class="cards">
+		                            <img src="http://placehold.it/224x420" alt="" />
+		                        </div>
+		                        <div class="cards">
+		                            <img src="http://placehold.it/224x420" alt="" />
+		                        </div>
+		                        <div class="cards">
+		                            <img src="http://placehold.it/224x420" alt="" />
+		                        </div>
+		                        <div class="cards">
+		                            <img src="http://placehold.it/224x420" alt="" />
+		                        </div>
+		                        <div class="cards">
+		                            <img src="http://placehold.it/224x420" alt="" />
+		                        </div>
+		                    </div>
+		                    <!-- control arrows -->
+		                    <div class="prev">
+		                        <div class="arrow_left"></div>
+		                        <!-- <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> -->
+		                    </div>
+		                    <div class="next">
+		                        <div class="arrow_right"></div>
+		                        <!-- <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> -->
+		                    </div>
+		                </div>
+		            </div><!-- 
+		            <div class="radar_d">
+		                <div id="radar_wrapper">
+		                    <canvas id="chartRadar" width="300" height="300"></canvas>
+		                </div>
+		            </div> -->
+		            <div class="nextStepBtn_d">
+		                <div class="btn_b nextStep">確定</div>
+		            </div>
+		        </div>
+		    </section>
 				<div class="publish_l">
 					<div class="plus"></div>
 				</div>
@@ -24,5 +90,13 @@
 			</div>
 		</div>
 	</div>
+
+    <script src="js/select.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.js"></script>
+    <script src="js/selectCard.js"></script>
+    <script src="js/Chart.js"></script>
+    <script src="js/radar.js"></script>
+
 </body>
 </html>
