@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>湯先生 Mr.Spring - 客製湯頭</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/share.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <header>
+        <div class="nav_fabric">
+            <img src="images/navBar.png" alt="navBar">
+
+        </div>
+        <nav class="main_menu">
+            <a href="custom.html">
+                <h2 style="color:#fff;">
+                    客製湯頭
+                </h2>
+            </a>
+            <a href="reservation.html">
+                <h2>
+                    預約訂房
+                </h2>
+            </a>
+            <a href="index.html">
+                <h2>
+                    <img style="width:100px;" src="images/mrSpringLogo.png" alt="">
+                </h2>
+            </a>
+            <a href="forum.html">
+                <h2>
+                    討論の區
+                </h2>
+            </a>
+            <a href="member.html">
+                <h2>
+                    會員専區
+                </h2>
+            </a>
+
+        </nav>
+    </header>
+
+    <!-- 藥材挑選 -->
+    <section id="scrCustom">
+
+        <!-- 客製挑選屏 -->
+        <div id="customWrapper">
+            <!-- mobile切換按鈕-客製用 -->
+            <div class="switchBar switchBarCustom">
+                <span id="goWikiBtn">藥材小百科</span>
+                <span class="scr_now">客製湯頭</span>
+            </div>
+            <!-- 雷達及資訊容器 -->
+            <div id="items_info_wrapper">
+                <div id="radar_wrapper">
+                    <p id="radar_title">目前療效</p>
+                    <canvas id="chartRadar" width="300" height="300"></canvas>
+                </div>
+                <p id="title_price">目前所選藥材價格：
+                    <span id="total_price">0 元</span>
+                </p>
+                <p id="title_amount">最多可選 4 項藥材，您目前已選擇：
+                    <span id="total_amount">0 項</span>
+                </p>
+            </div>
+
+            <!-- 可選藥材清單 -->
+            <form id="items_input">
+                <h3>時段限定藥材</h3>
+                <div class="items_time">
+                    <input type="checkbox" value="櫻花" name="items" id="item0-1">
+                    <label for="item0-1">
+                        <img src="images/itemPics/item0-1-s.png" alt="櫻花">
+                        <p>櫻花</p>
+                        <span class="item_time_tag time_0">早</span>
+                    </label>
+                    <input type="checkbox" value="玫瑰花" name="items" id="item1-1">
+                    <label for="item1-1">
+                        <img src="images/itemPics/item1-1-s.png" alt="玫瑰花">
+                        <p>玫瑰花</p>
+                        <span class="item_time_tag time_1">午</span>
+                    </label>
+                    <input type="checkbox" value="繡球花" name="items" id="item2-1">
+                    <label for="item2-1">
+                        <img src="images/itemPics/item2-1-s.png" alt="繡球花">
+                        <p>繡球花</p>
+                        <span class="item_time_tag time_2">晚</span>
+                    </label>
+                </div>
+
+                <h3>一般藥材</h3>
+                <div class="items_normal">
+                    <div>
+                        <input type="checkbox" value="山茱萸" name="items" id="item0-2">
+                        <label for="item0-2">
+                            <img src="images/itemPics/item0-2-s.png" alt="山茱萸">
+                            <p>山茱萸</p>
+                        </label>
+                    </div>
+                    <div>
+                        <input type="checkbox" value="菊花" name="items" id="item0-3">
+                        <label for="item0-3">
+                            <img src="images/itemPics/item0-3-s.png" alt="菊花">
+                            <p>菊花</p>
+                        </label>
+                    </div>
+                    <div>
+                        <input type="checkbox" value="薰衣草" name="items" id="item0-4">
+                        <label for="item0-4">
+                            <img src="images/itemPics/item0-4-s.png" alt="薰衣草">
+                            <p>薰衣草</p>
+                        </label>
+                    </div>
+                    <div>
+                        <input type="checkbox" value="檸檬" name="items" id="item1-2">
+                        <label for="item1-2">
+                            <img src="images/itemPics/item1-2-s.png" alt="檸檬">
+                            <p>檸檬</p>
+                        </label>
+                    </div>
+                    <div>
+                        <input type="checkbox" value="蒜頭" name="items" id="item1-3">
+                        <label for="item1-3">
+                            <img src="images/itemPics/item1-3-s.png" alt="蒜頭">
+                            <p>蒜頭</p>
+                        </label>
+                    </div>
+                    <div>
+                        <input type="checkbox" value="生薑" name="items" id="item1-4">
+                        <label for="item1-4">
+                            <img src="images/itemPics/item1-4-s.png" alt="生薑">
+                            <p>生薑</p>
+                        </label>
+                    </div>
+                    <div>
+                        <input type="checkbox" value="佛手柑" name="items" id="item2-2">
+                        <label for="item2-2">
+                            <img src="images/itemPics/item2-2-s.png" alt="佛手柑">
+                            <p>佛手柑</p>
+                        </label>
+                    </div>
+                    <div>
+                        <input type="checkbox" value="八角" name="items" id="item2-3">
+                        <label for="item2-3">
+                            <img src="images/itemPics/item2-3-s.png" alt="八角">
+                            <p>八角</p>
+                        </label>
+                    </div>
+                    <div>
+                        <input type="checkbox" value="枸杞" name="items" id="item2-4">
+                        <label for="item2-4">
+                            <img src="images/itemPics/item2-4-s.png" alt="枸杞">
+                            <p>枸杞</p>
+                        </label>
+                    </div>
+                </div>
+            </form> 
+
+            <!-- 選擇完成按鈕 -->
+            <div id="btn_submit">選擇完成</div>
+        </div>
+
+                
+        <!-- footer -->
+        <div class="all_rights">
+            <h4>Non commercial use&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright © 2019 Mr.Spring All rights
+                reserved</h4>
+        </div>
+    </section>
+
+    <!-- 藥材百科 -->
+    <section id="scrWiki">
+        <!-- pc百科拉出按鈕 -->
+        <div id="btnShowWiki">
+            <div id="btnSpace"></div>
+            <span>藥材小百科</span>
+            <div id="btnRightTri"></div>
+        </div>
+
+        <!-- 藥材百科容器 -->
+        <div id="wikiWrapper">
+            <!-- mobile切換按鈕-百科用 -->
+            <div class="switchBar switchBarCustom">
+                <span class="scr_now">藥材小百科</span>
+                <span id="goCustomBtn">客製湯頭</span>
+            </div>
+
+            <!-- 小百科-上方資訊 -->
+            <div id="wikiInfo">
+                <div>
+                    <h3>櫻花</h3>
+                    <p>櫻花具有很好的收縮毛孔和平衡油脂的功效，含有豐富的天然維生素A、B、E及櫻葉黃酮，具有美容養顏、嫩膚、增亮膚色的作用，是可以用來保持肌膚年輕的青春之花。</p>
+                    <img src="images/itemPics/item0-1-o.png" alt="櫻花">
+                </div>
+                <div>
+                    <h3>玫瑰花</h3>
+                    <p>櫻花具有很好的收縮毛孔和平衡油脂的功效，含有豐富的天然維生素A、B、E及櫻葉黃酮，具有美容養顏、嫩膚、增亮膚色的作用，是可以用來保持肌膚年輕的青春之花。</p>
+                    <img src="images/itemPics/item1-1-o.png" alt="玫瑰花">
+                </div>
+                <div>
+                    <h3>繡球花</h3>
+                    <p>櫻花具有很好的收縮毛孔和平衡油脂的功效，含有豐富的天然維生素A、B、E及櫻葉黃酮，具有美容養顏、嫩膚、增亮膚色的作用，是可以用來保持肌膚年輕的青春之花。</p>
+                    <img src="images/itemPics/item2-1-o.png" alt="繡球花">
+                </div>
+                <div>
+                    <h3>山茱萸</h3>
+                    <p>櫻花具有很好的收縮毛孔和平衡油脂的功效，含有豐富的天然維生素A、B、E及櫻葉黃酮，具有美容養顏、嫩膚、增亮膚色的作用，是可以用來保持肌膚年輕的青春之花。</p>
+                    <img src="images/itemPics/item0-2-o.png" alt="山茱萸">
+                </div>
+                <div>
+                    <h3>菊花</h3>
+                    <p>櫻花具有很好的收縮毛孔和平衡油脂的功效，含有豐富的天然維生素A、B、E及櫻葉黃酮，具有美容養顏、嫩膚、增亮膚色的作用，是可以用來保持肌膚年輕的青春之花。</p>
+                    <img src="images/itemPics/item0-3-o.png" alt="菊花">
+                </div>
+                <div>
+                    <h3>薰衣草</h3>
+                    <p>櫻花具有很好的收縮毛孔和平衡油脂的功效，含有豐富的天然維生素A、B、E及櫻葉黃酮，具有美容養顏、嫩膚、增亮膚色的作用，是可以用來保持肌膚年輕的青春之花。</p>
+                    <img src="images/itemPics/item0-4-o.png" alt="薰衣草">
+                </div>
+                <div>
+                    <h3>檸檬</h3>
+                    <p>櫻花具有很好的收縮毛孔和平衡油脂的功效，含有豐富的天然維生素A、B、E及櫻葉黃酮，具有美容養顏、嫩膚、增亮膚色的作用，是可以用來保持肌膚年輕的青春之花。</p>
+                    <img src="images/itemPics/item1-2-o.png" alt="檸檬">
+                </div>
+                <div>
+                    <h3>蒜頭</h3>
+                    <p>櫻花具有很好的收縮毛孔和平衡油脂的功效，含有豐富的天然維生素A、B、E及櫻葉黃酮，具有美容養顏、嫩膚、增亮膚色的作用，是可以用來保持肌膚年輕的青春之花。</p>
+                    <img src="images/itemPics/item1-3-o.png" alt="蒜頭">
+                </div>
+                <div>
+                    <h3>生薑</h3>
+                    <p>櫻花具有很好的收縮毛孔和平衡油脂的功效，含有豐富的天然維生素A、B、E及櫻葉黃酮，具有美容養顏、嫩膚、增亮膚色的作用，是可以用來保持肌膚年輕的青春之花。</p>
+                    <img src="images/itemPics/item1-4-o.png" alt="生薑">
+                </div>
+                <div>
+                    <h3>佛手柑</h3>
+                    <p>櫻花具有很好的收縮毛孔和平衡油脂的功效，含有豐富的天然維生素A、B、E及櫻葉黃酮，具有美容養顏、嫩膚、增亮膚色的作用，是可以用來保持肌膚年輕的青春之花。</p>
+                    <img src="images/itemPics/item2-2-o.png" alt="佛手柑">
+                </div>
+                <div>
+                    <h3>八角</h3>
+                    <p>櫻花具有很好的收縮毛孔和平衡油脂的功效，含有豐富的天然維生素A、B、E及櫻葉黃酮，具有美容養顏、嫩膚、增亮膚色的作用，是可以用來保持肌膚年輕的青春之花。</p>
+                    <img src="images/itemPics/item2-3-o.png" alt="八角">
+                </div>
+                <div>
+                    <h3>枸杞</h3>
+                    <p>櫻花具有很好的收縮毛孔和平衡油脂的功效，含有豐富的天然維生素A、B、E及櫻葉黃酮，具有美容養顏、嫩膚、增亮膚色的作用，是可以用來保持肌膚年輕的青春之花。</p>
+                    <img src="images/itemPics/item2-4-o.png" alt="枸杞">
+                </div>
+            </div>
+
+            <!-- 小百科-下方導覽 -->
+            <div id="wikiNav">
+                <div>
+                    <img src="images/itemPics/item0-1-c.png" alt="櫻花">
+                    <span>櫻花</span>
+                </div>
+                <div>
+                    <img src="images/itemPics/item1-1-c.png" alt="玫瑰花">
+                    <span>玫瑰花</span>
+                </div>
+                <div>
+                    <img src="images/itemPics/item2-1-c.png" alt="繡球花">
+                    <span>繡球花</span>
+                </div>
+                <div>
+                    <img src="images/itemPics/item0-2-c.png" alt="山茱萸">
+                    <span>山茱萸</span>
+                </div>
+                <div>
+                    <img src="images/itemPics/item0-3-c.png" alt="菊花">
+                    <span>菊花</span>
+                </div>
+                <div>
+                    <img src="images/itemPics/item0-4-c.png" alt="薰衣草">
+                    <span>薰衣草</span>
+                </div>
+                <div>
+                    <img src="images/itemPics/item1-2-c.png" alt="檸檬">
+                    <span>檸檬</span>
+                </div>
+                <div>
+                    <img src="images/itemPics/item1-3-c.png" alt="蒜頭">
+                    <span>蒜頭</span>
+                </div>
+                <div>
+                    <img src="images/itemPics/item1-4-c.png" alt="生薑">
+                    <span>生薑</span>
+                </div>
+                <div>
+                    <img src="images/itemPics/item2-2-c.png" alt="佛手柑">
+                    <span>佛手柑</span>
+                </div>
+                <div>
+                    <img src="images/itemPics/item2-3-c.png" alt="八角">
+                    <span>八角</span>
+                </div>
+                <div>
+                    <img src="images/itemPics/item2-4-c.png" alt="枸杞">
+                    <span>枸杞</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- footer -->
+        <div class="all_rights">
+            <h4>Non commercial use&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright © 2019 Mr.Spring All rights
+                reserved</h4>
+        </div>
+    </section>
+
+
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/Chart.js"></script>
+<script src="js/radar.js"></script>
+<script src="js/slick.js"></script>
+<script>
+    document.getElementById('goWikiBtn').addEventListener('click',function(){
+        document.getElementById('scrCustom').style.display = 'none';
+        document.getElementById('scrWiki').style.display = '';
+    })
+    document.getElementById('goCustomBtn').addEventListener('click',function(){
+        document.getElementById('scrWiki').style.display = 'none';
+        document.getElementById('scrCustom').style.display = '';
+    })
+
+    $(document).ready(function(){
+        // 手機-一般藥材選擇
+        $('.items_normal').slick({
+            infinite: true,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            arrows: true,
+        });
+
+        // 手機-小百科
+        $('#wikiInfo').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            arrows: false,
+            fade: true,
+            asNavFor: '#wikiNav'
+        });
+        $('#wikiNav').slick({
+            slidesToShow: 3,
+            slidesToScroll: 1,
+            asNavFor: '#wikiInfo',
+            dots: true,
+            centerMode: true,
+            focusOnSelect: true
+        });
+    });
+
+</script>
+</html>

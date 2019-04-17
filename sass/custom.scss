@@ -1,0 +1,259 @@
+body{
+    // overflow: hidden;
+    position: relative;
+}
+
+//header
+header{
+    display: none;
+}
+//footer
+.all_rights{
+}
+
+#scrCustom{
+    display: block;
+    position: absolute;
+    top:0;
+    z-index: 2;
+    width: 100vw;
+    background-image: url("../images/backGroundPaperDoor.png");
+    //mobile切換按鈕
+    .switchBar{
+        width: 50%;
+        margin: 0 auto 20px;
+        display: flex;
+        background-color: rgb(182, 138, 138);
+        // border-radius: 10px;
+        span{
+            width: 50%;
+            color: rgb(139, 69, 69);
+            text-align: center;
+            padding: 6px 2px;
+        }
+        .scr_now{
+            color: #fff;
+            background-color: #582b07;
+        }
+    }    
+    //挑選藥材中間容器
+    #customWrapper{
+        width: 100%;
+        max-width: 1200px;
+        background-image: url("../images/backGround.jpg");
+        height: 100%;
+        margin: auto;
+        padding: 80px 6px 60px;
+        //目前選取資訊容器
+        #items_info_wrapper{
+            display: block;
+            background-color: #fff;
+            border-radius: 30px;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 10px;
+            #radar_title{
+                font-size: 18px;
+                text-align: center;
+                margin: auto;
+            }
+            #radar_wrapper{
+                margin: auto;
+                width: 300px;
+                height: 280px;
+            }
+            #total_price, #total_amount{
+                color: #a33131;
+            }
+        }
+        //藥材選單
+        #items_input{
+            padding: 6px;
+            input{
+                display: none;
+            }
+            h3{
+                font-family: 'Noto Sans TC', sans-serif;
+                font-size: 18px;
+                margin: 20px 0 10px;
+            }
+            .items_normal, .items_time{
+                display: flex;
+                flex-wrap: wrap;
+                width: 80%;
+                margin: auto;
+                label{
+                    width: 33.3333%;
+                    padding: 10px;
+                    display: block;
+                    position: relative;
+                    img{
+                        width: 100%;
+                    }
+                    p{
+                        line-height: 1;
+                        text-align: center;
+                    }
+                    .item_time_tag{
+                        position: absolute;
+                        top: 6px;
+                        right: 6px;
+                        background-color: #fff;
+                        border: 2px solid;
+                        border-radius: 50%;
+                        line-height: 1;
+                        padding: 4px;
+                        font-size: 15px;
+                    }
+                    .time_0{
+                        border-color: rgba(178,79,89,1);
+                    }
+                    .time_1{
+                        border-color: rgba(221,125,29,1);
+                    }
+                    .time_2{
+                        border-color: rgba(106,145,45,1);
+                    }
+                }
+            }
+            .items_normal{
+                label{
+                    width: 100%;
+                }
+                p{
+                    margin-top: 4px;
+                }
+            }
+        }
+        //選取完成按鈕
+        #btn_submit{
+            display: block;
+            margin: 16px auto;
+            font-size: 15px;
+            text-align: center;
+            padding: 10px 14px;
+            width: 100px;
+            border-radius: 30px;
+            background-color: #582b07;
+            color: #fff;
+            position: relative;
+            cursor: pointer;
+        }
+    }
+}
+
+// 打開百科按鈕
+#btnShowWiki{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: -70px;
+    top: calc(50vh - 70px);
+    width: 140px;
+    height: 140px;
+    border: none;
+    border-radius: 50%;
+    background-color: #582b07;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;   
+    #btnSpace{
+        width: 35%;
+    }
+    #btnRightTri{
+        position: relative;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 14px 0 14px 12px;
+        border-color: transparent transparent transparent #ffffff;
+    }
+    span{
+        font-size: 18px;
+        margin: 0 15px;
+        writing-mode: vertical-lr;
+    }
+}
+#btnShowWiki:hover #btnRightTri{    
+    animation: tri_right 0.5s infinite;
+}
+
+@keyframes tri_right{
+      0%{left:0px}
+    100%{left:6px}
+}
+
+#scrWiki{
+    display: block;
+    position: absolute;
+    top:0;
+    z-index: 1;
+    width: 100vw;
+    background-image: url("../images/backGroundPaperDoor.png");
+    #wikiWrapper{
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        background-image: url(../images/backGround.jpg);
+        padding: 80px 6px 60px;
+    }
+    .switchBar{
+        width: 50%;
+        margin: 0 auto 20px;
+        display: flex;
+        background-color: rgb(182, 138, 138);
+        // border-radius: 10px;
+        span{
+            width: 50%;
+            color: rgb(139, 69, 69);
+            text-align: center;
+            padding: 6px 2px;
+        }
+        .scr_now{
+            background-color: #582b07;
+            color: #fff;
+        }
+    }
+    #wikiInfo{
+        margin: 20px auto;
+        padding: 0 20px;
+        div{
+            display: flex;
+            margin: auto;
+            h3{
+                font-family: 'Noto Sans TC', sans-serif;
+                text-align: center;
+            }
+            p{
+                margin: 16px auto;
+            }
+            img{
+                display: block;
+                margin: auto;
+                width: 60%;
+            }
+        }
+    }
+    #wikiNav{
+        width: 90%;
+        margin: 20px auto;
+        div{
+            text-align: center;
+            img{
+                display: inline-block;
+                margin: auto;
+                width: 85%;
+            }
+            span{
+                display: block;
+            }
+        }
+        .slick-list .draggable{
+            overflow: hidden;
+        }
+        li{
+            margin: 0;
+        }
+    }
+}
