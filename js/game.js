@@ -20,7 +20,7 @@
         /*兩顆炸彈*/
         this.BombList = [
             { ID:'B1',BombName:'土雷',Icon:'images/user_photo.png',Life:40 },
-            { ID:'B2',BombName:'導弹',Icon:'images/user_icon02.png',Life:40 }
+            { ID:'B2',BombName:'導弹',Icon:'images/user_photo02.png',Life:40 }
         ];
         /*關卡等级*/
         this.LevelList = [
@@ -63,6 +63,7 @@
         },args);
     }
 
+    //var car = document.getElementById("carBox");
     /**
      * 遊戲等級對象,改寫只有一關
      */
@@ -142,6 +143,7 @@
     /**
      * 控制水果籃左右移動
      */
+    
     fruitGame.prototype.BindControlMove = function(){
         var _this = this;
         $(window).keydown(function(e){
@@ -149,6 +151,7 @@
             //左鍵
             if(_code == 37)
                 _this.CarBoxMove('left');
+            $('#carBox').css("background-image", "url(./images/game_monkey02.svg)");
             //右鍵
             if(_code == 39)
                 _this.CarBoxMove('right');

@@ -160,6 +160,19 @@
     }
 }
 
+#water_wrap{
+    position: relative;
+    bottom: -400px;
+}
+
+#canvas {
+    
+    // position: fixed;
+    // bottom:100px;
+    top: 0;
+    left: 0;
+  }
+
 
 /* 第一屏 療效花圈============================================================== */
 
@@ -349,14 +362,19 @@
 
     .monkey_animation {
         position: relative;
-        width: 90%;
+        width: 100%;
         height: 500px;
         pointer-events: none;
-        // margin-top: -100px;
         margin: auto;
+        bottom: 0px;
     }
-    .monkey_wrap{
-        height: 100vh;
+
+    #monkey_wrap{
+        position: relative;
+        width: 500px;
+        height: 500px;
+        transform: scale(1);
+        top:60px;
     }
     
     #monkeyFace {
@@ -380,10 +398,10 @@
     }
     
     #mr_spring_for_firstpage {
-        width:30%;
+        width:400px;
         position: absolute;
         /* bottom: 60px; */
-        margin-top: 180px;
+        margin-top:0px;
         margin-left: 420px;
         filter: drop-shadow(0 0 5px rgba(95, 69, 39, 0.7));
     }
@@ -391,8 +409,8 @@
     #wave01 {
         position: absolute;
         right: 0px;
-        left: 300px;
-        top: 350px;
+        left: 320px;
+        top: 230px;
         pointer-events: none;
         opacity: 0;
     }
@@ -400,7 +418,6 @@
     #wave01 img {
         position: absolute;
         width: 50px;
-        width: 10%;
         animation:4s waveScale ease-out infinite;
         animation-delay:2s;
     }
@@ -436,11 +453,11 @@
     
     
     #wave02{
-    
+        
         position: absolute;
         right: 0px;
-        left:630px;
-        top: 400px;
+        left:690px;
+        top: 270px;
         pointer-events: none;
         /* transform: rotate(10deg); */
         opacity: 0;
@@ -450,7 +467,6 @@
     #wave02 img {
         position: absolute;
         width: 125px;
-        width: 25%;
         animation:3s  waveScale02  ease-out infinite;
         animation-delay:3s;
     }
@@ -558,14 +574,14 @@
     
     .sk_wrap {
         position: absolute;
-        bottom: 200px;
-        left: 600px;
+        bottom: 250px;
+        left: 650px;
         pointer-events: none;
     }
     
     .sk_wrap02 {
         position: absolute;
-        bottom: 20px;
+        bottom: 130px;
         left: 400px;
     }
     
@@ -892,38 +908,6 @@
 
 //======================================================================================
 
-    @media screen and (max-width:768px){
-    .content_frame_wrap{
-        transform: scale(0.7);
-        left:240px;
-    }
-
-    #text_bubble{
-        opacity: 0;
-    }
-
-    .monkey_animation{
-        width:100%;
-    }
-       
-    #mr_spring_for_firstpage {
-        width:200%;
-        position: absolute;
-        margin:auto;
-        right:-200px;
-        top: 10%;
-    }
-    }
-
-    @media screen and (min-width:768px){
-       
-        // #mr_spring_for_firstpage {
-        //     width: 30%;
-        //     position: absolute;
-        //     /* bottom: 60px; */
-        //     margin:auto;
-        // }
-        }
     @media screen and (min-width:992px){
         // 第二屏=======================================================================================
         .my_second_page{
@@ -1211,21 +1195,106 @@
     } 
 
 
-    @media screen and (max-width:768px){
+    // 第一屏media queries============================================= 
+    @media screen and (max-width:399px){
+        .content_frame_wrap{
+            transform: scale(0.4);
+            left:180px;
+            bottom:70px;
+        }
+        
+        .herb {
+            transform: scale(0.5);
+            transition: 1s;
+            margin-top: -300px;
+        }
+        .monkey_animation{
+            transform: scale(0.5);
+            width:100%;
+            right:100%;
+            left:-220px;
+            bottom:150px;
+            transition: 1s;
+        }
+
+    }
+
+    @media screen and (max-width:767px) and (min-width:400px){
+        .content_frame_wrap{
+            transform: scale(0.7);
+            left:240px;
+        }
+    
+        // #text_bubble{
+        //     opacity: 0;
+        // }
         .bg_mt img {
             bottom: 800px;
             margin-bottom:100px;
         }
+        .herb {
+            transform: scale(0.6);
+            transition: 1s;
+        }
+        
+    //      #monkey_wrap{
+    //         position: fixed;
+    //         transform: scale(0.6);
+    //         left: 0px;
+    //         right:300px;
+    //         bottom: 0px;
+    // }
+        .monkey_animation{
+            transform: scale(0.5);
+            width:100%;
+            margin-left: 0%;
+            right:45%;
+            bottom:100px;
+            transition: 1s;
+        }
     } 
+
+    @media screen and (max-width:991px)and(min-width:768px) {
+        .bg_mt img {
+            bottom: 800px;
+            margin-bottom:100px;
+        }
+        .herb {
+            transform: scale(0.8);
+            transition: 1s;
+        }
+        .monkey_animation{
+            transform: scale(0.8);
+            right:30%;
+            left:-150px;
+            bottom:-100px;
+            transition: 1s;
+        }
+         
+    } 
+
+    @media screen and (max-width:1199px) and(min-width:992px) {
+        
+        
+       .herb {
+           
+           transform: scale(0.9);
+           transition: 1s;
+        }
+        .monkey_animation{
+            transform: scale(0.8);
+            right:10%;
+            transition: 1s;
+        }
+       
+   } 
     @media screen and (min-width:1200px){
-         #mr_spring_for_firstpage {
-            width: 40%;
-            position: absolute;
-            bottom: 60px;
-            left:-100px;
-        } 
+        .bg_mt img {
+            bottom: 400px;
+        }
     } 
-    @media screen and (max-width:1200px){
+
+    @media screen and (max-width:1199px){
         .mt_first_page{
             .wrap{
                 width: 100%;
@@ -1234,65 +1303,51 @@
         .bg_mt img {
             bottom: 500px;
         }
-        
 
-        .herb {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            width: 100%;
-            margin-top: -250px;
-        }
-        .herb_cross img {
-            width:220px;
-        }
+        // .herb {
+        //     display: flex;
+        //     flex-direction: row;
+        //     justify-content: space-evenly;
+        //     width: 100%;
+        //     margin-top: -250px;
+        // }
+        // .herb_cross img {
+        //     width:220px;
+        // }
 
         
-        #herb_cross2 img{
-            width:220px;
-        }
+        // #herb_cross2 img{
+        //     width:220px;
+        // }
         
-        .herb_cross {
-            position: relative;
-            box-sizing: border-box;
-            padding: 110px;
-            // padding-top: 50px;
-            // padding-bottom: 50px;
-            cursor: pointer;
-        }
+        // .herb_cross {
+        //     position: relative;
+        //     box-sizing: border-box;
+        //     padding: 110px;
+        //     // padding-top: 50px;
+        //     // padding-bottom: 50px;
+        //     cursor: pointer;
+        // }
     
         
-        #herb_cross2 {
-            position: relative;
-            box-sizing: border-box;
-            padding: 110px;
-            // padding-top: 50px;
-            // padding-bottom: 50px;
-            cursor: pointer;
-        }
-        .herb h3 {
-            font-family: "pigmo";
-            font-size: 30px;
-            color: #000;
-            -webkit-writing-mode: vertical-rl;
-            position: absolute;
-            top: 0px;
-            bottom: 0px;
-            left: 90px;
-            text-align: center;
-            margin: 0;
-        }
-        #mr_spring_for_firstpage {
-            width: 40%;
-            position: absolute;
-            bottom: 60px;
-            left:-200px;
-        } 
-    } 
-
-    @media screen and (min-width:1200px){
-        .bg_mt img {
-            bottom: 400px;
-        }
-
+        // #herb_cross2 {
+        //     position: relative;
+        //     box-sizing: border-box;
+        //     padding: 110px;
+        //     // padding-top: 50px;
+        //     // padding-bottom: 50px;
+        //     cursor: pointer;
+        // }
+        // .herb h3 {
+        //     font-family: "pigmo";
+        //     font-size: 30px;
+        //     color: #000;
+        //     -webkit-writing-mode: vertical-rl;
+        //     position: absolute;
+        //     top: 0px;
+        //     bottom: 0px;
+        //     left: 90px;
+        //     text-align: center;
+        //     margin: 0;
+        // }
     } 
