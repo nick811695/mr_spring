@@ -889,7 +889,231 @@
     .Medicine_btn_s:hover .Medicine_btmLink{
         color:white;
     }
-
+    // 第四屏===================================================================================
+    .my_fourth_page{
+        background-image: url("../images/backGround.jpg");
+        background-repeat: repeat;
+        background-size: 100%;
+        width: 100%;
+    }
+    .an_map{
+        /* background-color: rgb(189, 218, 28); */
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    /* 左半邊 */
+    .mapWrap{
+        /* height: 100%; */
+        /* background-color: cornflowerblue; */
+        // margin: 20px 0px;
+    }
+    //地圖選單群
+    .titleWrap{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;//改nowrap
+    }
+    // 地圖標題
+    .an_title{
+        // width: 25%;
+        width:100%;
+        display: flex;
+        justify-content: center;
+        margin: 20px auto;//刪
+    }
+    .titleSquare{
+        // width: 55%;
+        // height: 250px;
+        width: 80%;
+        height: 80px;
+        border: 2px solid black;
+        background-image: linear-gradient(0deg, #05d5d7 0% , #ffa1a1 55%,white 98%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .titleSquare>h2{
+        // writing-mode: vertical-rl; /改
+        font-size:36px;
+        color:black;
+    }
+    // 各分店
+    .an_roomtype{
+        // width: 50%;
+        /* height: 100%; */
+        /* outline: 2px solid red; */
+        // margin: 120px 0px 0px 80px;
+        width:100%;
+        margin: 20px auto;//刪
+    }
+    .an_roomtypeIcon{
+        width: 100%;
+        height: 100%;
+        display: flex;
+    }
+    .rommtypeIcon01,.rommtypeIcon02,.rommtypeIcon03{
+        width:33.333%;
+        background-repeat: no-repeat;
+        background-position-x: 50%;
+        background-position-y:50%;
+        /* outline: 2px solid red; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 10;
+    }
+    .rommtypeIcon01{
+        background-image: url("../images/icon01.png");
+    }
+    .rommtypeIcon01:hover{
+        background-image: url("../images/icon0102.png");
+    }
+    .rommtypeIcon02{
+        background-image: url("../images/icon02.png");
+    }
+    .rommtypeIcon02:hover{
+        background-image: url("../images/icon0202.png");
+    }
+    .rommtypeIcon03{
+        background-image: url("../images/icon03.png");
+    }
+    .rommtypeIcon03:hover{
+        background-image: url("../images/icon0302.png");
+    }
+    .branch{
+        writing-mode: vertical-rl;
+        font-family: "KangXi";
+        font-size:18px;
+        color:white;
+        display: block;
+        text-shadow: 1px 1px 2px #0000003d;
+    }
+    // 手機店家資訊
+    .room_info_mobile{
+        /* background-color: darkgreen; */
+        height: 30px;
+        width: 100%;
+        margin: auto;
+        display: flex;
+        justify-content:flex-end;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .room_info_mobile img:nth-of-type(1),.room_info_mobile img:nth-of-type(2){
+        height: 80%;
+        margin-left: 20px;
+        // margin-right:5px;
+    }
+    .room_info_mobile p:nth-of-type(1),.room_info_mobile p:nth-of-type(2){
+        margin-right:25px;
+        font-family: "Noto Sans TC";
+        font-size: 16px;
+    }
+    // 右半邊
+    .roomPicWrap{
+        /* height:600px; */
+        /* background-color: rgb(20, 220, 120); */
+        display: flex;
+        position: relative;
+    }
+    // 分店幻燈片
+    .mySlides {display:none}
+    
+    /* 幻灯片容器 */
+    .slideshow-container {
+      width: 120%;
+      right: 0;
+    }
+    
+    /* 下一張 & 上一張 */
+    .prev, .next {
+      cursor: pointer;
+      position: absolute;
+      margin-top:30%;
+      width: auto;
+      padding: 16px;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      transition: 0.6s ease;
+      border-radius: 0 3px 3px 0;
+      /* z-index: 100; */
+    }
+    
+    /* 定位 "下一张" 按钮靠右 */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    
+    
+    .prev:hover, .next:hover {
+      background-color: #7d0022;
+    }
+    
+    /* 房型名稱 */
+    .text {
+        display: block;
+        color: #ffffff;
+        padding: 8px 12px;
+        position: absolute;
+        text-align: center;
+        text-shadow: 5px 5px 5px black;
+        left:0;
+        right:0;
+        top:200px;
+        z-index: 5;
+        font-family: "Noto Sans TC";
+        font-size: 20px;
+    }
+    
+    /* 標記符號 */
+    .dotWrap{
+        display: none;
+    }
+    
+    /* 淡出動畫 */
+    .fade {
+      -webkit-animation-name: fade;
+      -webkit-animation-duration: 1.5s;
+      animation-name: fade;
+      animation-duration: 1.5s;
+    }
+    
+    @-webkit-keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    
+    @keyframes fade {
+      from {opacity: .4} 
+      to {opacity: 1}
+    }
+    // 桌機分店資訊
+    .room_info{
+        display: none;
+    }
+    // 立即訂房按鈕
+    .an_roomc{
+        margin:20px 0px 0px 0px;
+        display: flex;
+        width: 100%;
+        font-family: "Noto Sans TC";
+        
+    }
+    .btn_s{
+        padding: 10px 20px;
+        border-radius: 50px;
+        background-color: #000000;
+        font-size:16px;
+        display: inline-block;
+        text-align: center;
+        margin: auto;
+        color:#eac694;
+        cursor: pointer;
+    }
 //======================================================================================
 
     @media screen and (max-width:768px){
@@ -923,7 +1147,142 @@
         //     /* bottom: 60px; */
         //     margin:auto;
         // }
+
+
+        // 第四屏===================================================================================
+        .my_fourth_page{
+            height: 100vh;
+            position: relative;
         }
+        .an_map{
+            max-width: 1200px;
+            margin: auto;
+            padding-top: 100px;
+            height: 100vh;
+        }
+        //地圖選單群
+        .titleWrap{
+            flex-wrap: nowrap;
+        }
+        // 地圖標題
+        .an_title{
+            width: 35%;
+            margin:auto;
+        }
+        .titleSquare{
+            width: 55%;
+            height: 250px;
+        }
+        .titleSquare>h2{
+            writing-mode: vertical-rl;
+        }
+        // 各分店
+        .an_roomtype{
+            width: 100%;
+            margin:120px 0px 0px 50px;
+        }
+        .an_roomtypeIcon{
+            width: 70%;
+            height: 100%;
+            display: flex;
+        }
+        .rommtypeIcon01{
+            margin: 10px;
+            background-size: 90%;
+        }
+        .rommtypeIcon02{
+            margin: 10px;
+            background-size: 70%;
+        }
+        .rommtypeIcon03{
+            margin: 10px;
+            background-size: 85%;
+        }
+        // 手機店家資訊
+        .room_info_mobile{
+            display: none;
+        }
+        // 雲地圖
+        .cloud_map{
+            -webkit-mask-image:url("../images/cloud_mask01.svg");
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-size: 100%;
+            margin-top:50px;
+            width: 100%;
+            z-index: 2;
+        }
+        // 分店幻燈片
+        .slideshow-container {
+            margin: 220px 0px 0px 0px;
+            height: 410px;
+            width: 120%;
+            right: 0;
+            position: relative;
+            position: absolute;
+            -webkit-mask-image:url("../images/cloud_mask02.svg");
+            -webkit-mask-repeat: no-repeat;
+            -webkit-mask-size: 100%;
+        }
+        /* 下一張 & 上一張 按鈕 */
+        .prev, .next {
+            display: none;
+        }
+        /* 房型名稱 */
+        .text {
+            top:210px;
+            font-size: 24px;
+        }
+        /* 標記符號 */
+        .dotWrap{
+            display: block;
+            position: absolute;
+            margin: auto;
+            left:46%;
+            top: 260px;   
+        }
+        .dot {
+          cursor:pointer;
+          height: 13px;
+          width: 13px;
+          margin: 0 2px;
+          background-color: rgb(255, 255, 255);
+          border-radius: 50%;
+          display: inline-block;
+          /* position: absolute; */
+          transition: background-color 0.6s ease;
+        }
+        .active, .dot:hover {
+          background-color: #7d0022;
+        }
+        // 桌機分店資訊
+        .room_info{
+            /* background-color: darkgreen; */
+            height: 50px;
+            width: 90%;
+            position: absolute;
+            z-index: 11;
+            margin: auto;
+            bottom:220px;
+            left:6%;
+            display: flex;
+            align-items: center;
+        }
+        .room_info img:nth-of-type(1),.room_info img:nth-of-type(2){
+            height: 80%;
+            margin-right:5px;
+        }
+        .room_info p:nth-of-type(1),.room_info p:nth-of-type(2){
+            margin-right:50px;
+            font-family: "Noto Sans TC";
+            font-size: 16px;
+        }
+        // 立即訂房按鈕{
+            .an_roomc{
+                position: absolute;
+                margin: 20px auto;
+                bottom: 80px;
+            }
+    }
     @media screen and (min-width:992px){
         // 第二屏=======================================================================================
         .my_second_page{
@@ -1143,71 +1502,71 @@
             }
         }
         //結果
-    .showshower{
-        width: 55%;
-        height: 70%;
-        top:-200px;
-        right: 0;
-        left:0;
-        margin: auto;
-        display: none;
-    }
-    /* 湯頭資訊 */
-    .an_shower_info{
-        /* background-color: chartreuse; */
-        padding: 40px;
-    }
-    .shower_infoTitle{
-        width: 100%;
-        /* background-color: darkorange; */
-    }
-    .shower_infoTitle p:nth-of-type(1){
-        font-family: "Pigmo";
-        font-size:36px;
-        color:#7d0022;
-        margin: 20px 20px 20px 20px;
-    }
-    .shower_infoTitle p:nth-of-type(2){
-        font-family:'Noto Sans TC', sans-serif;
-        font-size:20px;
-        color:rgb(85, 85, 85);
-        margin: 0px 20px 50px 20px;
-    }
-    /* 湯頭藥材 */
-    .showerMedicine{
-        width: 100%;
-        /* background-color:#faf; */
-        display: flex;
-    }
-    .an_MedicinePicWrap{
-        width:33.33333%;
-        /* background-color: darkred; */
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .an_MedicinePicWrap>img{
-        // height:10%;
-        width: 30%;
-    }
-    .an_MedicinePicWrap p:nth-of-type(1){
-        font-size:24px;
-        margin: 20px 20px;
-    }
-    .an_MedicinePicWrap p:nth-of-type(2){
-        font-size:20px;
-        margin: 0px 20px;
-    }
-    // 按鈕
-    .an_Medicine{
-        margin:60px 0px;
-        display: flex;
-        width: 100%;
-        font-family: "Noto Sans TC";
-        justify-content: center;
-    }
+        .showshower{
+            width: 55%;
+            height: 70%;
+            top:-200px;
+            right: 0;
+            left:0;
+            margin: auto;
+            display: none;
+        }
+        /* 湯頭資訊 */
+        .an_shower_info{
+            /* background-color: chartreuse; */
+            padding: 40px;
+        }
+        .shower_infoTitle{
+            width: 100%;
+            /* background-color: darkorange; */
+        }
+        .shower_infoTitle p:nth-of-type(1){
+            font-family: "Pigmo";
+            font-size:36px;
+            color:#7d0022;
+            margin: 20px 20px 20px 20px;
+        }
+        .shower_infoTitle p:nth-of-type(2){
+            font-family:'Noto Sans TC', sans-serif;
+            font-size:20px;
+            color:rgb(85, 85, 85);
+            margin: 0px 20px 50px 20px;
+        }
+        /* 湯頭藥材 */
+        .showerMedicine{
+            width: 100%;
+            /* background-color:#faf; */
+            display: flex;
+        }
+        .an_MedicinePicWrap{
+            width:33.33333%;
+            /* background-color: darkred; */
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .an_MedicinePicWrap>img{
+            // height:10%;
+            width: 30%;
+        }
+        .an_MedicinePicWrap p:nth-of-type(1){
+            font-size:24px;
+            margin: 20px 20px;
+        }
+        .an_MedicinePicWrap p:nth-of-type(2){
+            font-size:20px;
+            margin: 0px 20px;
+        }
+        // 按鈕
+        .an_Medicine{
+            margin:60px 0px;
+            display: flex;
+            width: 100%;
+            font-family: "Noto Sans TC";
+            justify-content: center;
+        }
     } 
 
 

@@ -35,7 +35,7 @@ function f_q(str) {
         }
         var extendnumber = Math.floor(Math.random()*8);
         var extend = document.getElementsByClassName('extend')[extendnumber];
-        extend.style.width = '20px';
+        extend.style.width = '30px';
         prevNumber = extendnumber;
         qi++;
     }
@@ -73,73 +73,3 @@ function f_q(str) {
 
 
 // =====================================================================================================
-
-
-//定義變數
-var chartRadarDOM;
-var chartRadarData;
-var chartRadarOptions;
-
-//載入雷達圖
-Chart.defaults.global.legend.display = false;
-Chart.defaults.global.defaultFontColor = 'rgba(0,0,74, 1)';
-chartRadarDOM = document.getElementById("chartRadar");
-chartRadarData;
-chartRadarOptions =
-    {
-        scale:
-        {
-            ticks:
-            {
-                fontSize: 14,
-                beginAtZero: true,
-                maxTicksLimit: 7,
-                min: 0,
-                max: 100
-            },
-            pointLabels:
-            {
-                fontSize: 14,
-                fontColor: ['rgba(221,125,29,1)', 'rgba(178,79,89,1)', 'rgb(106,145,45,1)']
-            },
-            gridLines:
-            {
-                color: '#aaa'
-            }
-        }
-    };
-
-console.log("---------Rader Data--------");
-var graphData = new Array();
-graphData.push(82);
-graphData.push(30);
-graphData.push(66);
-
-
-console.log("--------Rader Create-------------");
-console.log(graphData);
-
-//CreateData
-chartRadarData = {
-    labels: ['舒筋活骨', '養顏美容', '安定心神'],
-    datasets: [{
-        // label: `療效`,
-        backgroundColor: "rgba(250,180,0,.8)",
-        // borderColor: "rgba(63,63,74,.8)",
-        pointBackgroundColor: ['rgba(221,125,29,.8)', 'rgba(178,79,89.8)', 'rgba(106,145,45,.8)'],
-        pointBorderColor: ['rgba(221,125,29,.8)', 'rgba(178,79,89,.8)', 'rgba(106,145,45,.8)'],
-        pointHoverBackgroundColor: ['rgba(221,125,29,.8)', 'rgba(178,7989,.8)', 'rgba(106,145,45,.8)'],
-        pointHoverBorderColor: ['rgba(221,125,29,.8)', 'rgba(178,79,89.8)', 'rgba(106,145,45,.8)'],
-        pointBorderWidth: 3,
-        pointHoverBorderWidth: 5,
-        borderJoinStyle: 'round',
-        data: graphData
-    }]
-};
-
-//Draw
-var chartRadar = new Chart(chartRadarDOM, {
-    type: 'radar',
-    data: chartRadarData,
-    options: chartRadarOptions
-});
