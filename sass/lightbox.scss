@@ -172,17 +172,18 @@
   margin-top: 20px;
   position: static;
   transform: scale(0.8,0.8);
+  cursor: pointer;
 }
 .cards .card_selected::after{
   content: "";
   display: block;
-  width: 115%;
+  width: 120%;
   height: 115%;
   border: 10px solid #a00;
   opacity: 0.3;
   position: absolute;
   top: -50px;
-  left: -12%;
+  left: -15%;
   margin: auto;
   border-radius: 30px;
 }

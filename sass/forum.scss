@@ -835,6 +835,7 @@
 	margin-bottom: 50px;
 	position: relative;
 	padding-top: 100px;
+	padding-bottom: 100px;
 	
 }
 .add_card{
@@ -892,16 +893,27 @@
 }
 
 @media screen and (min-width: 1200px) {
+	.article_publish_bg{
+		padding-top: 150px;
+	}
+	.add_card{
+		display: none;
+	}
 	.article_publish .publish_l{
 		display: block;
-		-webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 10%, 100% 100%, 0 100%, 0 10%);
-		clip-path: polygon(25% 0%, 75% 0%, 100% 10%, 100% 100%, 0 100%, 0 10%);
+		margin-top: 30px;
+		position: relative;
+		filter: drop-shadow(0px 0 15px rgba(0,0,0,0.5));
+	}
+	.article_publish .publish_l .plus_wrap{
 		background-color: #fff;
 		width: 224px;
 		height: 420px;
-		box-shadow: 5px 5px 20px black;
-		margin-top: 30px;
-		position: relative;
+		margin: auto;
+		transition: 0.5s;
+		-webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 10%, 100% 100%, 0 100%, 0 10%);
+		clip-path: polygon(25% 0%, 75% 0%, 100% 10%, 100% 100%, 0 100%, 0 10%);
+		cursor: pointer;
 	}
 	.article_publish .publish_l .plus{
 		width: 80px;
@@ -910,10 +922,12 @@
 		border-radius: 50%;
 		position: absolute;
 		left: 0;
-		bottom: 0;
-		top: 0;
+		top: 100px;
 		right: 0;
 		margin: auto;
+	}
+	.plus_wrap:hover{
+		transform: scale(1.05,1.05);
 	}
 	.article_publish .publish_l .plus::after{
 		content: "";

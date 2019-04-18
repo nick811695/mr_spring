@@ -4,6 +4,7 @@ var lightboxOffBtn = document.getElementById("lightboxToggle");
 
 lightboxOnBtn[0].addEventListener("click",lightboxOn);
 lightboxOffBtn.addEventListener("click",lightboxOff);
+document.getElementById('add_card').addEventListener("click",lightboxOn);
 document.getElementById('nextStep').addEventListener("click",lightboxOff);
 function lightboxOn(){
     document.getElementById('lightbox_wrapper').style.visibility = "visible";
@@ -77,10 +78,10 @@ $('.responsive').slick({
   ]
 });
 
-$(document).ready(function(){
+// $(document).ready(function(){
   
-  $(".card").click(function(){
-    $(".card").removeClass("card_selected");
-    $(this).addClass("card_selected");
-  });
-});
+//   $(".card").click(function(){
+//     $(".card").removeClass("card_selected");
+//     $(this).addClass("card_selected");
+//   });
+// });
