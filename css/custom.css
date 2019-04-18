@@ -1,2 +1,200 @@
+body {
+  position: relative; }
 
-/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiIiwic291cmNlcyI6WyJjdXN0b20uc2NzcyJdLCJzb3VyY2VzQ29udGVudCI6WyIiXSwiZmlsZSI6ImN1c3RvbS5jc3MifQ== */
+header {
+  display: none; }
+
+#scrCustom {
+  display: block;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  width: 100vw;
+  background-image: url("../images/backGroundPaperDoor.png"); }
+  #scrCustom .switchBar {
+    width: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    background-color: #b68a8a; }
+    #scrCustom .switchBar span {
+      width: 50%;
+      color: #8b4545;
+      text-align: center;
+      padding: 6px 2px; }
+    #scrCustom .switchBar .scr_now {
+      color: #fff;
+      background-color: #582b07; }
+  #scrCustom #customWrapper {
+    width: 100%;
+    max-width: 1200px;
+    background-image: url("../images/backGround.jpg");
+    height: 100%;
+    margin: auto;
+    padding: 80px 6px 60px; }
+    #scrCustom #customWrapper #items_info_wrapper {
+      display: block;
+      background-color: #fff;
+      border-radius: 30px;
+      box-sizing: border-box;
+      padding: 10px;
+      margin: 10px; }
+      #scrCustom #customWrapper #items_info_wrapper #radar_title {
+        font-size: 18px;
+        text-align: center;
+        margin: auto; }
+      #scrCustom #customWrapper #items_info_wrapper #radar_wrapper {
+        margin: auto;
+        width: 300px;
+        height: 280px; }
+      #scrCustom #customWrapper #items_info_wrapper #total_price, #scrCustom #customWrapper #items_info_wrapper #total_amount {
+        color: #a33131; }
+    #scrCustom #customWrapper #items_input {
+      padding: 6px; }
+      #scrCustom #customWrapper #items_input input {
+        display: none; }
+      #scrCustom #customWrapper #items_input h3 {
+        font-family: 'Noto Sans TC', sans-serif;
+        font-size: 18px;
+        margin: 20px 0 10px; }
+      #scrCustom #customWrapper #items_input .items_normal, #scrCustom #customWrapper #items_input .items_time {
+        display: flex;
+        flex-wrap: wrap;
+        width: 80%;
+        margin: auto; }
+        #scrCustom #customWrapper #items_input .items_normal label, #scrCustom #customWrapper #items_input .items_time label {
+          width: 33.3333%;
+          padding: 10px;
+          display: block;
+          position: relative; }
+          #scrCustom #customWrapper #items_input .items_normal label img, #scrCustom #customWrapper #items_input .items_time label img {
+            width: 100%; }
+          #scrCustom #customWrapper #items_input .items_normal label p, #scrCustom #customWrapper #items_input .items_time label p {
+            line-height: 1;
+            text-align: center; }
+          #scrCustom #customWrapper #items_input .items_normal label .item_time_tag, #scrCustom #customWrapper #items_input .items_time label .item_time_tag {
+            position: absolute;
+            top: 6px;
+            right: 6px;
+            background-color: #fff;
+            border: 2px solid;
+            border-radius: 50%;
+            line-height: 1;
+            padding: 4px;
+            font-size: 15px; }
+          #scrCustom #customWrapper #items_input .items_normal label .time_0, #scrCustom #customWrapper #items_input .items_time label .time_0 {
+            border-color: #b24f59; }
+          #scrCustom #customWrapper #items_input .items_normal label .time_1, #scrCustom #customWrapper #items_input .items_time label .time_1 {
+            border-color: #dd7d1d; }
+          #scrCustom #customWrapper #items_input .items_normal label .time_2, #scrCustom #customWrapper #items_input .items_time label .time_2 {
+            border-color: #6a912d; }
+      #scrCustom #customWrapper #items_input .items_normal label {
+        width: 100%; }
+      #scrCustom #customWrapper #items_input .items_normal p {
+        margin-top: 4px; }
+    #scrCustom #customWrapper #btn_submit {
+      display: block;
+      margin: 16px auto;
+      font-size: 15px;
+      text-align: center;
+      padding: 10px 14px;
+      width: 100px;
+      border-radius: 30px;
+      background-color: #582b07;
+      color: #fff;
+      position: relative;
+      cursor: pointer; }
+
+#btnShowWiki {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: -70px;
+  top: calc(50vh - 70px);
+  width: 140px;
+  height: 140px;
+  border: none;
+  border-radius: 50%;
+  background-color: #582b07;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer; }
+  #btnShowWiki #btnSpace {
+    width: 35%; }
+  #btnShowWiki #btnRightTri {
+    position: relative;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 14px 0 14px 12px;
+    border-color: transparent transparent transparent #ffffff; }
+  #btnShowWiki span {
+    font-size: 18px;
+    margin: 0 15px;
+    writing-mode: vertical-lr; }
+
+#btnShowWiki:hover #btnRightTri {
+  animation: tri_right 0.5s infinite; }
+
+@keyframes tri_right {
+  0% {
+    left: 0px; }
+  100% {
+    left: 6px; } }
+
+#scrWiki {
+  display: block;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width: 100vw;
+  background-image: url("../images/backGroundPaperDoor.png"); }
+  #scrWiki #wikiWrapper {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    background-image: url(../images/backGround.jpg);
+    padding: 80px 6px 60px; }
+  #scrWiki .switchBar {
+    width: 50%;
+    margin: 0 auto 20px;
+    display: flex;
+    background-color: #b68a8a; }
+    #scrWiki .switchBar span {
+      width: 50%;
+      color: #8b4545;
+      text-align: center;
+      padding: 6px 2px; }
+    #scrWiki .switchBar .scr_now {
+      background-color: #582b07;
+      color: #fff; }
+  #scrWiki #wikiInfo {
+    margin: 20px auto;
+    padding: 0 20px; }
+    #scrWiki #wikiInfo div {
+      display: flex;
+      margin: auto; }
+      #scrWiki #wikiInfo div h3 {
+        font-family: 'Noto Sans TC', sans-serif;
+        text-align: center; }
+      #scrWiki #wikiInfo div p {
+        margin: 16px auto; }
+      #scrWiki #wikiInfo div img {
+        display: block;
+        margin: auto;
+        width: 60%; }
+  #scrWiki #wikiNav {
+    width: 90%;
+    margin: 20px auto; }
+    #scrWiki #wikiNav div {
+      text-align: center; }
+      #scrWiki #wikiNav div img {
+        display: inline-block;
+        margin: auto;
+        width: 85%; }
+      #scrWiki #wikiNav div span {
+        display: block; }
+    #scrWiki #wikiNav .slick-list .draggable {
+      overflow: hidden; }
+    #scrWiki #wikiNav li {
+      margin: 0; }
