@@ -1,6 +1,6 @@
-#lightbox_wrapper{
+ #lightbox_wrapper{
     display: flex;
-    // visibility: hidden;
+    visibility: hidden;    
     width: 100%;
     height: 100vh;
     position: fixed;
@@ -76,6 +76,7 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 30px; 
 }
 
 .radar_d{
@@ -88,17 +89,17 @@
 
 .chooseCard_d h2{
     font-weight: bold;
-    margin-bottom: 15px;
     font-size: 30px;
     text-align: center;
     margin: auto;
+    margin-bottom: 10px;
 }
 
 .select-box{
     cursor: pointer;
     position : relative;
     max-width:  20em;
-    margin: 0 auto;
+    margin: 10px auto;
     width: 224px;
     background-image: url("../images/backGround.jpg");
 
@@ -149,7 +150,6 @@
 }
 
 .chooseCardArea_d{
-    // background-image: url(../images/makingCardBackground.png);
     width: 100%;
     padding: 10px 0px 0px;
     background-size: contain;
@@ -164,14 +164,34 @@
 }
 
 .cards{
-    width: 224px;
-    height: 420px;
+    height: 460px;
     padding: 0 5px;
-    // background-color: #aff;
 }
-
+.cards .card{
+  margin: auto;
+  margin-top: 20px;
+  position: static;
+  transform: scale(0.8,0.8);
+  cursor: pointer;
+}
+.cards .card_selected::after{
+  content: "";
+  display: block;
+  width: 120%;
+  height: 115%;
+  border: 10px solid #a00;
+  opacity: 0.3;
+  position: absolute;
+  top: -50px;
+  left: -15%;
+  margin: auto;
+  border-radius: 30px;
+}
+.cards .card_selected{
+  transform: scale(0.9,0.9);  
+}
 .slick-dots{
-    display: none;
+    position: absolute;
 	text-align: center;
     margin: 10px 0 10px 0;
     padding: 0;
@@ -246,10 +266,12 @@
 #lightbox .nextStepBtn_d{
     position: absolute;
     bottom: 10px;
-    right: 12%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 100px;
 }
 .btn_b.nextStep{
-    width: 100px;
     color: #fff;
     background-color: #000;
     font-size: 14px;
@@ -257,6 +279,12 @@
     border-radius: 50px;
     text-align: center;
     cursor: pointer;
+}
+#lightbox .count{
+  width: 224px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 50px;
 }
 .cardPrice_d{
     display: flex;
