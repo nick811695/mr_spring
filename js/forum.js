@@ -283,10 +283,8 @@ $(document).ready(function(){
 			$(".hot_forum_box1 .card").removeClass('zoom_out');
 		}
 	});
-	/*--card link--*/
-	$(".card").click(function (){
-		window.location = 'forum_article.html';
-	});
+
+
 	/*---filter---*/
 	var count1=0;
 	var count2=0;

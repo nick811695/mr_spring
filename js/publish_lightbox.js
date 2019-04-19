@@ -17,26 +17,31 @@ function lightboxOff(){
 
 
 
+
+
+
+
+
 /*----------*/
 $(document).ready(function(){
-  /*點確定關閉燈箱*/
+  
   $(".card").click(function(){
     $('#nextStep').click(function(){
       $("#lightbox_wrapper").css("visibility","hidden");
     });
-    /*選到的卡給class*/
+
     $(".card").removeClass("card_selected");
     $(this).addClass("card_selected");
   });
 });
-
 $("select").on("click" , function() {
   
   $(this).parent(".select-box").toggleClass("open");
   
 });
 
-$(document).mouseup(function (e){
+$(document).mouseup(function (e)
+{
     var container = $(".select-box");
 
     if (container.has(e.target).length === 0)
@@ -57,27 +62,28 @@ $("select").on("change" , function() {
 });
 
 $('.responsive').slick({
-  dots: false,
-  prevArrow: $('.prev'),
-  nextArrow: $('.next'),
+  dots: true,
+    prevArrow: $('.prev'),
+    nextArrow: $('.next'),
   infinite: false,
   speed: 300,
   slidesToShow: 3,
   slidesToScroll: 3,
   responsive: [
     {
-      breakpoint: 1100,
+      breakpoint: 1020,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 2
       }
     },
     {
-      breakpoint: 780,
+      breakpoint: 700,
       settings: {
         slidesToShow: 1,
-        slidesToScroll: 1,
+        slidesToScroll: 1
       }
     }
   ]
 });
+
