@@ -66,6 +66,7 @@ $(document).ready(function(){
 
 	/*-----hot_forum_slide--------*/
 	var sequence = 1; 
+	var screen = $(window).width();
 	$("#prev").click(function(){
 		if (sequence==1) {
 			sequence = 3;
@@ -81,19 +82,45 @@ $(document).ready(function(){
 				left:0,
 				opacity: 1,
 			});
-			$(".hot_forum_box1").css('z-index',"10");
+			$(".hot_forum_box1").css('z-index',"11");
 			$(".hot_forum_box3").css('z-index',"999");
 			$(".hot_forum_box2").css('z-index',"10");
-			$(".hot_forum_box1").stop().animate({
-				'left':10,
-			});
+			if (screen >= 1200) {
+				
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':10,
+				});
+				
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':100,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':966,
+				});
+			}else if(screen >=768 && screen<1200){
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':10,
+				});
+				
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':screen*0.95*0.14,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':screen*0.95-224,
+				});
+			}else{
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':10,
+				});
+				
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':screen*0.95*0.5-112,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':screen*0.95-224,
+				});
+			}
 			
-			$(".hot_forum_box3").stop().animate({
-				'left':100,
-			});
-			$(".hot_forum_box2").stop().animate({
-				'left':966,
-			});
 			
 
 			$(".hot_forum_box1 .card").addClass('zoom_out');
@@ -117,19 +144,40 @@ $(document).ready(function(){
 			});
 			$(".hot_forum_box1").css('z-index',"999");
 			$(".hot_forum_box3").css('z-index',"10");
-			$(".hot_forum_box2").css('z-index',"10");
-			$(".hot_forum_box1").stop().animate({
-				'left':100,
-				'z-index':999,
-			});
-			$(".hot_forum_box2").stop().animate({
-				'left':10,
-				'z-index':10,
-			});
-			$(".hot_forum_box3").stop().animate({
-				'left':966,
-				'z-index':10,
-			});
+			$(".hot_forum_box2").css('z-index',"11");
+			if (screen>=1200) {
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':100,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':10,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':966,
+				});
+			}else if(screen>=768 && screen < 1200){
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':screen*0.95*0.14,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':10,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':screen*0.95-224,
+				});
+			}else{
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':screen*0.95*0.5-112,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':10,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':screen*0.95-224,
+					
+				});
+			}
+			
 			
 
 			$(".hot_forum_box1 .card").addClass('zoom_in');
@@ -151,20 +199,49 @@ $(document).ready(function(){
 				opacity: 0,
 			});
 			$(".hot_forum_box1").css('z-index',"10");
-			$(".hot_forum_box3").css('z-index',"10");
+			$(".hot_forum_box3").css('z-index',"11");
 			$(".hot_forum_box2").css('z-index',"999");
-			$(".hot_forum_box1").stop().animate({
-				'left':966,
-				'z-index':11,
-			});
-			$(".hot_forum_box2").stop().animate({
-				'left':100,
-				'z-index':999,
-			});
-			$(".hot_forum_box3").stop().animate({
-				'left':10,
-				'z-index':10,
-			});
+			if (screen>=1200) {
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':966,
+					'z-index':11,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':100,
+					'z-index':999,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':10,
+					'z-index':10,
+				});
+			}else if(screen>=768 && screen<1200){
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':screen*0.95-224,
+					'z-index':10,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':screen*0.95*0.14,
+					'z-index':999,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':10,
+					'z-index':11,
+				});
+			}else if(screen<768){
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':screen*0.95-224,
+					'z-index':10,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':screen*0.95*0.5-112,
+					'z-index':999,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':10,
+					'z-index':11,
+				});
+			}
+			
 			
 
 			$(".hot_forum_box1 .card").addClass('zoom_out');
@@ -190,18 +267,41 @@ $(document).ready(function(){
 				opacity: 1,
 			});
 
-			$(".hot_forum_box1").css('z-index',"10");
+			$(".hot_forum_box1").css('z-index',"11");
 			$(".hot_forum_box3").css('z-index',"10");
 			$(".hot_forum_box2").css('z-index',"999");
-			$(".hot_forum_box2").stop().animate({
-				'left':100,
-			});
-			$(".hot_forum_box3").stop().animate({
-				'left':10,
-			});
-			$(".hot_forum_box1").stop().animate({
-				'left':966,
-			});
+			if(screen>=1200){
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':100,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':10,
+				});
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':966,
+				});
+			}else if(screen>=768 && screen<1200) {
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':screen*0.95*0.14,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':10,
+				});
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':screen*0.95-224,
+				});
+			}else if(screen<768) {
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':screen*0.95*0.5-112,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':10,
+				});
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':screen*0.95-224,
+				});
+			}
+			
 			
 			
 			$(".hot_forum_box2 .card").addClass('zoom_in');
@@ -227,19 +327,39 @@ $(document).ready(function(){
 
 			$(".hot_forum_box1").css('z-index',"10");
 			$(".hot_forum_box3").css('z-index',"999");
-			$(".hot_forum_box2").css('z-index',"10");
-			$(".hot_forum_box3").stop().animate({
-				'left':100,
-				'z-index':999,
-			});
-			$(".hot_forum_box1").stop().animate({
-				'left':10,
-				'z-index':11,
-			});
-			$(".hot_forum_box2").stop().animate({
-				'left':966,
-				'z-index':10,
-			});
+			$(".hot_forum_box2").css('z-index',"11");
+			if(screen>=1200){
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':100,
+				});
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':10,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':966,
+				});
+			}else if(screen>=768 && screen<1200) {
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':screen*0.95*0.14,
+				});
+				$(".hot_forum_box1").stop(false,true).animate({					
+					'left':10,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':screen*0.95-224,
+				});
+			}else if(screen<768) {
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':screen*0.95*0.5-112,
+				});
+				$(".hot_forum_box1").stop(false,true).animate({					
+					'left':10,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':screen*0.95-224,
+				});
+			}
+			
 			
 
 			$(".hot_forum_box3 .card").addClass('zoom_in');
@@ -263,17 +383,39 @@ $(document).ready(function(){
 
 
 			$(".hot_forum_box1").css('z-index',"999");
-			$(".hot_forum_box3").css('z-index',"10");
+			$(".hot_forum_box3").css('z-index',"11");
 			$(".hot_forum_box2").css('z-index',"10");
-			$(".hot_forum_box1").stop().animate({
+			if(screen>=1200){
+				$(".hot_forum_box1").stop(false,true).animate({
 				'left':100,
-			});
-			$(".hot_forum_box2").stop().animate({
-				'left':10,
-			});
-			$(".hot_forum_box3").stop().animate({
-				'left':966,
-			});
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':10,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':966,
+				});
+			}else if(screen>=768 && screen<1200) {
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':screen*0.95*0.14,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({					
+					'left':10,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':screen*0.95-224,
+				});
+			}else if(screen<768) {
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':screen*0.95*0.5-112,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({					
+					'left':10,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':screen*0.95-224,
+				});
+			}
 			
 			
 
@@ -283,9 +425,67 @@ $(document).ready(function(){
 			$(".hot_forum_box1 .card").removeClass('zoom_out');
 		}
 	});
+	/*--card link--*/
+
+	$(".card").click(function (){
+		window.location = 'forum_article.html';
+	});
+
+	/*---mobile filter---*/
+	$(document).ready(function(){
+		$("#filter_btn").click(function() {
+			var judge = $("#filter_wrap").hasClass('filter_open');
+			if (judge) {
+				$("#filter_wrap").removeClass("filter_open");
+				$("#sort_wrap").removeClass("filter_open");
+				$('.filter_mask').css("display","none");
+			}else{
+				$("#filter_wrap").addClass("filter_open");
+				$("#sort_wrap").removeClass("filter_open");
+				$('.filter_mask').css("display","block");
+			}
+		});
+		$("#sort_btn").click(function() {
+			var judge = $("#sort_wrap").hasClass('filter_open');
+			if (judge) {
+				$("#filter_wrap").removeClass("filter_open");
+				$("#sort_wrap").removeClass("filter_open");
+				$('.filter_mask').css("display","none");
+			}else{
+				$("#sort_wrap").addClass("filter_open");
+				$("#filter_wrap").removeClass("filter_open");
+				$('.filter_mask').css("display","block");
+			}
+		});
 
 
-	/*---filter---*/
+		$('#filter_wrap li').click(function(){
+			if ($(this).hasClass('selected')){
+				$(this).removeClass('selected');
+			}else{
+				$(this).addClass('selected');
+			}
+		});
+		$('#sort_wrap li').click(function(){
+			if ($(this).hasClass('selected')){
+				$(this).removeClass('selected');
+			}else{
+				$(this).addClass('selected');
+			}
+		});
+	/*filter_mask*/
+		$('.filter_mask').click(function(){
+			$('#filter_wrap').removeClass('filter_open');
+			$('#sort_wrap').removeClass('filter_open');
+			$('.filter_mask').css("display","none");
+		});
+	});		
+
+
+
+	/*----1200 filter*/
+
+
 	var count1=0;
 	var count2=0;
 	var k1 = 0;

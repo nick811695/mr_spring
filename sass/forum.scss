@@ -1,10 +1,99 @@
 
 .forum_bg{
-	background-image: url(../images/backGround.jpg);
 	overflow: hidden;
+}	
+/*mobile filter*/
+#filter_mask{
+	position: relative;
+	width: 100%;
+	height: 100px;
+	z-index: 101;
 }
-.forum_filter{
+#filter_mask .filter_mask{
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 90;
+	display: none;
+}
+#filter_wrap,#sort_wrap{
+	background-color: white;
+	width: 250px;
+	max-height: 30px;
+	margin: auto;
+	margin-top: 30px;
+	transition:0.2s;
+	overflow: hidden;
+	position: absolute;
+	background-color: #c59a73;
+	color: #6f3535 ;
+	right: 0;
+	left: 0;
+	border-radius: 10px;
+}
+#filter_wrap{
+	z-index: 92;
+	top: 0px;
+	margin: auto;
+}
+#sort_wrap{
+	z-index: 91;
+	top: 60px;
+	margin: auto;
+}
+#filter_mask h4{
+	padding: 10px 10px;
+}
+#filter_mask ul{
+	width: 100%;
 	display: flex;
+	flex-wrap: wrap;
+}
+#filter_mask label{
+	height: 30px;
+	display: block;
+	line-height: 30px;
+	text-align: center;
+	background-color: #6f3535 ; 
+	color: #c59a73;
+}
+
+#filter_mask li{
+	padding: 8px 20px;
+	position: relative;
+	cursor: pointer;
+}
+
+#filter_mask img{
+	display: none;
+	position: absolute;
+	right: 20px;
+	top: 15px;
+	width: 10px;
+}
+#filter_wrap li.selected img,#sort_wrap li.selected img{
+	display: block;
+}
+#filter_wrap li{
+	width: 50%;
+}
+#sort_wrap li{
+	width: 100%;
+}
+#filter_mask input{
+	position: fixed;	
+	left: 0;
+	top: 0;
+}
+#filter_mask .filter_open{
+	max-height: 1000px;
+}
+
+/*桌機 filter*/
+.forum_filter{
+	display: none;
 	flex-wrap: wrap;
 	width: 100%;
 	float: left;
@@ -146,7 +235,7 @@
 	margin-top: 50px;
 }
 .forum_box .forum{
-	height: 320px;
+	// height: 320px;
 	width: 100%;
 	position: relative;
 }
@@ -164,10 +253,10 @@
 	height: 90px;
 }
 .forum .forum_data{
+	width: calc(100% - 110px);
 	float: left;
 	color: #6f3535;
 	padding: 10px;
-	margin-top: 10px;
 }
 .forum .forum_data .user_name{
 	font-size: 21px;
@@ -177,15 +266,21 @@
 }
 .forum .forum_data .forum_item{
 	font-size: 15px;
-	padding-top: 5px;
+	display: flex;
+	flex-wrap: wrap;
+}
+.forum .forum_data .forum_item a{
+
 }
 .forum .forum_data .forum_item span{
-	height: 20px;
+	// height: 20px;
 	border-radius: 5px;
 	margin-right: 10px;
 	color: #ddd;
-	padding: 0 5px;
+	padding: 2px 5px;
 	cursor: pointer;
+	margin-top: 5px;
+	display: block;
 }
 .forum_item .item_kind1{
 	background-color: #6a912d;
@@ -203,18 +298,21 @@
 	background-color:rgba(255,255,255,0.6);
 	padding: 13px;
 	border: 1px solid #999;
-	height: 200px;
+	height: 230px;
 	position: relative;
 	color: #222;
+	overflow: auto;
 }
 .forum .forum_content .forum_title{
 	height: 25px;
 	line-height: 25px;
 }
+
 .forum_content .forum_title h3{
 	float: left;
 	font-size: 18px;
 	color: #7b3e3e;
+	font-family: 'Noto Sans TC', sans-serif;
 }
 .forum_content .forum_title .forum_kind_title{
 	float:right;
@@ -236,18 +334,18 @@
 	float: left;
 	line-height: 25px;
 }
-.forum .forum_content p{
+.forum_title+p{
 	margin-top: 10px;
 	font-size: 15px;
 	line-height: 24px;
 	color: #555;
 	text-align: justify;
+	overflow: auto;
 }
 .forum .forum_count{
 	display: flex;
 	justify-content: flex-end;
 	position: absolute;
-	bottom: 0;
 	right: 14px;
 	bottom: 14px;
 }
@@ -267,7 +365,11 @@
 	margin-top: 0;
 }
 @media screen and (min-width: 768px) {
+	#filter_mask{
+		display: none;
+	}
 	.forum_filter{
+		display: flex;
 		width: calc(100% - 190px);
 	}
 	.sort_forum{
@@ -446,6 +548,7 @@
 	font-size: 16px;
 	color: #555;
 	margin-bottom: 50px;
+	line-height: 1.5;
 }
 .msg_box .msg_r .time{
 	position: absolute;
@@ -829,6 +932,7 @@
 .forum_wrap .article_publish{
 	width: 100%;
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-around;
 	background-color: #ffecce;
 	margin-bottom: 50px;
@@ -848,6 +952,51 @@
 	background-color:  #c59a73;
 	color: #6f3535;
 }
+.selected_card_data{
+	margin-bottom: 20px; 
+	width: 80%;
+	text-align: center;
+	flex-wrap: wrap;
+}
+
+.selected_card_data h3{
+	margin-bottom: 10px;
+}
+.selected_card_data .item_box{
+	width: 100%;
+	display: flex;
+	align-items:center;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.selected_card_data .item_box::after{
+	content: "";
+	display: block;
+	clear: both;
+}
+.selected_card_data p{
+	float: left;
+	margin: 10px;
+	padding: 2px 8px;
+	border-radius: 5px;
+	color: #eee;
+	margin-top: 10px;
+}
+.selected_card_data h4{
+	float: left;
+	height: 26px;
+	line-height: 26px;
+	margin-right: 10px;
+}
+.selected_card_data .kind1{
+	background-color: #6a912d;
+}
+.selected_card_data .kind2{
+	background-color: #b24f59;
+}
+.selected_card_data .kind3{
+	background-color: #dd7d1d;
+}
 .article_publish .publish_l{
 	display: none;
 }
@@ -865,6 +1014,7 @@
 	margin-top: 50px;
 	padding: 5px 10px;
 }
+
 .article_publish .publish_r textarea{
 	display: block;
 	width: 80%;
@@ -875,7 +1025,7 @@
 	padding: 10px;
 	font-size: 18px;
 }
-.article_publish .publish_r input[type="submit"]{
+.article_publish .publish_r button{
 	background-color: #111;
 	display: block;
 	color: #ccc;
@@ -886,7 +1036,7 @@
 	outline: none;
 }
 
-.article_publish .publish_r input[type="submit"]:hover{
+.article_publish .publish_r button:hover{
 	color: #fff;
 	cursor: pointer;
 }
@@ -896,6 +1046,9 @@
 		padding-top: 150px;
 	}
 	.add_card{
+		display: none;
+	}
+	.selected_card_data{
 		display: none;
 	}
 	.article_publish{
