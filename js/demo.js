@@ -46,8 +46,8 @@ class Slider {
       }
     };
     
-    this.navBar = this.rootElement.querySelector(".slider__nav-bar");
-    this.thumbs = Array.from(this.rootElement.querySelectorAll(".nav-control"));
+    this.navBar = document.querySelector(".slider__nav-bar");
+    this.thumbs = Array.from(document.querySelectorAll(".nav-control"));
     this.prevButton = this.rootElement.querySelector(".slider__arrow_prev");
     this.nextButton = this.rootElement.querySelector(".slider__arrow_next");
 

@@ -15,8 +15,11 @@ h2.hot_forum_heading{
 	position: relative;
 	z-index: 90;
 }
+.hot_forum_wrap .card{
+	cursor: pointer;
+}
 .hot_forum_box{
-	width: 73.1770833333333%;
+	// width: 73.1770833333333%;
 }
 .hot_forum_box .hot_forum_hidden{
 	display: block;
@@ -31,7 +34,7 @@ h2.hot_forum_heading{
 	width: calc(100% - 20px);
 	height: 380px;
 	background-color: rgba(255,255,255,0.9);
-	box-shadow: 0 0 10px black;
+	box-shadow: 0 0 5px rgba(0,0,0,0.5);
 	border-radius: 10px;
 	position: absolute;
 	top: 0;
@@ -167,6 +170,8 @@ h2.hot_forum_heading{
 	left: 0px;
 	top: calc(50% - 25px);
 	cursor: pointer;
+	transition: 0.2s;
+	opacity:0.6;
 }
 #next{
 	display: block;
@@ -175,6 +180,11 @@ h2.hot_forum_heading{
 	right: 0px;
 	top: calc(50% - 25px);
 	cursor: pointer;
+	opacity:0.4;
+	transition: 0.2s;
+}
+#prev:hover,#next:hover{
+	opacity:1;
 }
 .hot_forum_box{
 	position: absolute;
@@ -185,7 +195,7 @@ h2.hot_forum_heading{
 	position: relative;
 	top: 50px;
 	left: 0;
-	transition: 1s;
+	transition: 0.2s;
 }
 .hot_forum_box .hot_forum_hidden{
 	display: none;
@@ -207,7 +217,6 @@ h2.hot_forum_heading{
 	color: #ccc;
 	text-decoration: none;
 	border-radius: 75px;
-	font-size: 21px;
 	margin-top: 50px;
 	margin-bottom: 50px;
 	transition: 0.5s;
@@ -267,19 +276,7 @@ h2.hot_forum_heading{
 	.hot_forum_box .hot_forum{
 		width: calc(100% - 20px);
 		height: 380px;
-		background-color: rgba(255,255,255,0.9);
-		box-shadow: 0 0 10px black;
-		border-radius: 10px;
-		position: absolute;
-		top: 0;
-		bottom: 0;
 		left: 0px;
-		margin:auto;
-		padding-left: 122px;
-		padding-right: 10px;
-		padding-top: 20px;
-		transition: 1s;
-		// z-index: 15;
 	}
 	.hot_forum_methods{
 		position: absolute;
@@ -349,6 +346,7 @@ h2.hot_forum_heading{
 		color: #7b3e3e;
 		padding-top: 10px;
 		padding-right: 20px;
+		font-family: 'Noto Sans TC', sans-serif;
 	}
 	.hot_forum_content{
 	}
@@ -395,7 +393,7 @@ h2.hot_forum_heading{
 		bottom: 30px;
 	}
 	.hot_forum_box1{
-		left: calc(36.5885416666667% - 22.10432875865%);
+		left: 14%;
 		z-index: 1000;
 	}
 	.hot_forum_box2 {
@@ -426,7 +424,6 @@ h2.hot_forum_heading{
 	.hot_forum_box .hot_forum{
 		width: 900px;
 		height: 450px;
-		background-color: rgba(255,255,255,0.9);
 		padding-left: 140px;
 	}
 	.hot_forum_content .content_l{
