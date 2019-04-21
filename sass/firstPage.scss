@@ -10,6 +10,68 @@
     cursor: pointer;
 }
 
+
+/* 小遊戲連結============================================================== */
+.getCoupon {
+       position: fixed;
+       left:20px;
+       bottom: 10px;
+       z-index:100;
+       #wave_for_coupon{
+        position: absolute; 
+        transform: scale(0.5);
+        opacity: 0;
+        left:20px; 
+        top:70px;
+        z-index:-1;
+       }
+
+       #peach{
+           width:100px;
+        }
+}
+
+.getCoupon:hover #wave_for_coupon{
+ transition: 0.5s;
+ opacity: 1;
+}
+
+#wave_for_coupon img {
+    position: absolute;
+    width: 125px;
+    animation:3s  waveScale02  ease-out infinite;
+    animation-delay:3s;
+    z-index:99;
+}
+#wave_for_coupon img:nth-of-type(2) {
+    animation-delay:2s;
+    /* top: 0px; */
+}
+
+#wave_for_coupon img:nth-of-type(3) {
+    animation-delay:1s;
+    /* top: 200px; */
+}
+
+@keyframes waveScale02 {
+    0% {
+        transform: scale(1);
+        opacity: 0;
+        /* top:300px; */
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(2.5);
+        opacity: 0;
+        /* top:470px; */
+        /* top:460px; */
+    }
+}
+
 /* 第一屏============================================================== */
   .mt_first_page {
     background-image: url("../images/backGround.jpg");
@@ -34,7 +96,7 @@
     left: 0;
     width: 100%;
     height: 100vh;
-    z-index:100;
+    z-index:99;
     overflow: hidden;
     pointer-events: none;
 }
@@ -359,6 +421,43 @@
 
 
     /* 第一屏 動畫============================================================== */
+    #slogon01{
+        position: absolute;
+        right:-350px;
+        top: -100px;
+        width: 120px;
+        transform: rotateZ(30deg);
+        animation-delay:3s;
+        transition: 0.5s;
+    }
+    @keyframes slogon{
+        0% {
+            opacity: 0;
+        }
+    
+        100% {
+            opacity: 1;
+        }
+    }
+
+    #slogon02{
+        position: absolute;
+        right:30px;
+        top: -100px;
+        width: 120px;
+        transform: rotateZ(-30deg);
+        animation-delay:3s;
+        transition: 0.5s;
+    }
+    @keyframes slogon{
+        0% {
+            opacity: 0;
+        }
+    
+        100% {
+            opacity: 1;
+        }
+    }
 
     .monkey_animation {
         position: relative;
@@ -367,6 +466,7 @@
         pointer-events: none;
         margin: auto;
         bottom: 0px;
+        transition: 0.5s;
     }
 
     #monkey_wrap{
@@ -375,13 +475,14 @@
         height: 500px;
         transform: scale(1);
         top:60px;
+        transition: 0.5s;
     }
     
     #monkeyFace {
         position: absolute;
         width: 90px;
-        left: 535px;
-        top: 240px;
+        left: 555px;
+        top: 60px;
         z-index: 5;
         opacity: 0;
         /* transition: 1s; */
@@ -390,8 +491,8 @@
     #monkeyEyes {
         position: absolute;
         width: 70px;
-        left: 555px;
-        top: 260px;
+        left: 575px;
+        top: 80px;
         z-index: 6;
         opacity: 0;
         /* transition: 1s; */
@@ -505,12 +606,12 @@
         position: absolute;
         right: 0px;
         left: 550px;
-        top: 200px;
+        top: 30px;
         pointer-events: none;
     }
     
     .note span {
-        opacity: 0;
+        opacity: 1;
         animation: notes 2s infinite linear;
         font-family: 'pigmo';
         font-size: 40px;
@@ -540,7 +641,7 @@
     
     .note span:nth-child(4) {
         animation-delay: 2s;
-        top: -900px;
+        top: -200px;
         left: 45px;
     }
     
@@ -1430,6 +1531,7 @@
         //     /* bottom: 60px; */
         //     margin:auto;
         // }
+    
 
 
         // 第四屏===================================================================================
@@ -1585,6 +1687,7 @@
             left:-220px;
             bottom:150px;
             transition: 1s;
+            margin:auto;
         }
 
     }
@@ -1617,7 +1720,7 @@
         .monkey_animation{
             transform: scale(0.5);
             width:100%;
-            margin-left: 0%;
+            margin:auto;
             right:45%;
             bottom:100px;
             transition: 1s;
@@ -1639,6 +1742,7 @@
             left:-150px;
             bottom:-100px;
             transition: 1s;
+            margin:auto;
         }
          
     } 
@@ -1653,8 +1757,9 @@
         }
         .monkey_animation{
             transform: scale(0.8);
-            right:10%;
+            // right:10%;
             transition: 1s;
+            margin:auto;
         }
        
    } 
@@ -1674,50 +1779,5 @@
             bottom: 500px;
         }
 
-        // .herb {
-        //     display: flex;
-        //     flex-direction: row;
-        //     justify-content: space-evenly;
-        //     width: 100%;
-        //     margin-top: -250px;
-        // }
-        // .herb_cross img {
-        //     width:220px;
-        // }
-
-        
-        // #herb_cross2 img{
-        //     width:220px;
-        // }
-        
-        // .herb_cross {
-        //     position: relative;
-        //     box-sizing: border-box;
-        //     padding: 110px;
-        //     // padding-top: 50px;
-        //     // padding-bottom: 50px;
-        //     cursor: pointer;
-        // }
-    
-        
-        // #herb_cross2 {
-        //     position: relative;
-        //     box-sizing: border-box;
-        //     padding: 110px;
-        //     // padding-top: 50px;
-        //     // padding-bottom: 50px;
-        //     cursor: pointer;
-        // }
-        // .herb h3 {
-        //     font-family: "pigmo";
-        //     font-size: 30px;
-        //     color: #000;
-        //     -webkit-writing-mode: vertical-rl;
-        //     position: absolute;
-        //     top: 0px;
-        //     bottom: 0px;
-        //     left: 90px;
-        //     text-align: center;
-        //     margin: 0;
-        // }
+     
     } 
