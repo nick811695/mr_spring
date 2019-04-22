@@ -161,14 +161,14 @@ function succCallback(arg) {
 			map: map,
 			title: '中壢',
 			animation: google.maps.Animation.BOUNCE,
-			icon:'../images/monkryMAP.png'
+			icon:'images/monkryMAP.png'
 		},
 		{
 			position: { lat: 24.989691, lng: 121.313312 },
 			map: map,
 			title: '桃園',
 			animation: google.maps.Animation.BOUNCE,
-			icon:'../images/monkryMAP.png'
+			icon:'images/monkryMAP.png'
 		}
 	];
 	for (var i = 0; data.length > i; i++) {
