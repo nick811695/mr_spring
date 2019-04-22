@@ -7,6 +7,14 @@ lightboxOffBtn.addEventListener("click",lightboxOff);
 document.getElementById('add_card').addEventListener("click",lightboxOn);
 function lightboxOn(){
     document.getElementById('lightbox_wrapper').style.visibility = "visible";
+    $(".card").click(function(){
+      $('#nextStep').click(function(){
+        $("#lightbox_wrapper").css("visibility","hidden");
+      });
+      /*選到的卡給class*/
+      $(".card").removeClass("card_selected");
+      $(this).addClass("card_selected");
+    });
 }
 
 function lightboxOff(){
@@ -20,14 +28,7 @@ function lightboxOff(){
 /*----------*/
 $(document).ready(function(){
   /*點確定關閉燈箱*/
-  $(".card").click(function(){
-    $('#nextStep').click(function(){
-      $("#lightbox_wrapper").css("visibility","hidden");
-    });
-    /*選到的卡給class*/
-    $(".card").removeClass("card_selected");
-    $(this).addClass("card_selected");
-  });
+  
 });
 
 $("select").on("click" , function() {
