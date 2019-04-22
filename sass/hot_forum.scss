@@ -118,7 +118,7 @@ h2.hot_forum_heading{
 }
 .hot_forum_content{
 	display: flex;
-	height: 230px;
+	// height: 230px;
 	position: relative;
 }
 .hot_forum_content .content_l{
@@ -424,10 +424,12 @@ h2.hot_forum_heading{
 	.hot_forum_box .hot_forum{
 		width: 900px;
 		height: 450px;
-		padding-left: 140px;
+		padding-left: 165px;
+		padding-top: 60px;
 	}
 	.hot_forum_content .content_l{
 		width: 50%;
+		padding-right: 30px;
 	}
 
 	.hot_forum_content .content_r{
@@ -435,7 +437,10 @@ h2.hot_forum_heading{
 		height: 100%;
 	    position: relative;
 	    display: block;
-	    top: -50px;
+	    top: -110px;
+	    background-image: url("../images/radar_frame..png");
+	    background-repeat: no-repeat;
+
 	}
 	#radar_wrapper{
 	    width: 80%;

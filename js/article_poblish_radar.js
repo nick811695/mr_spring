@@ -2,7 +2,6 @@
 //定義變數
 var chartRadarDOM;
 var chartRadarDOM2;
-var chartRadarDOM3;
 var chartRadarData;
 var chartRadarOptions;
 
@@ -28,7 +27,7 @@ chartRadarOptions =
         pointLabels: //類別字
         {   
             fontFamily: "pigmo",
-            fontSize: 18,
+            fontSize: 21,
             fontColor: ['rgba(221,125,29,1)', 'rgba(178,79,89,1)', 'rgba(106,145,45,1)']
         },
         gridLines: //網線
@@ -61,7 +60,7 @@ chartRadarData = {
         pointBorderColor: ['rgba(221,125,29,.8)', 'rgba(178,79,89,.8)', 'rgba(106,145,45,.8)'],
         pointHoverBackgroundColor: ['rgba(221,125,29,.8)', 'rgba(178,79,89,.8)', 'rgba(106,145,45,.8)'],
         pointHoverBorderColor: ['rgba(221,125,29,.8)', 'rgba(178,79,89,.8)', 'rgba(106,145,45,.8)'],
-        pointBorderWidth: 1,
+        pointBorderWidth: 10,
         pointHoverBorderWidth: 0,
         borderJoinStyle: 'round',
         fillColor: '#f00',
@@ -75,11 +74,6 @@ var chartRadar = new Chart(chartRadarDOM, {
     options: chartRadarOptions
 });
 var chartRadar = new Chart(chartRadarDOM2, {
-    type: 'radar',
-    data: chartRadarData,
-    options: chartRadarOptions
-});
-var chartRadar = new Chart(chartRadarDOM3, {
     type: 'radar',
     data: chartRadarData,
     options: chartRadarOptions
