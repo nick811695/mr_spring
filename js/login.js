@@ -1,0 +1,59 @@
+function showLogin() {
+        document.getElementById("lightBox").style.display = "block";
+    // if (document.getElementById("spanLogin").innerHTML == "登入") {
+    //     document.getElementById("lightBox").style.display = "block";
+    // }
+    // else {
+    //     document.getElementById('spanLogin').innerHTML = "登入";
+    //     document.getElementById('memName').innerHTML = "";
+    //     document.getElementById('memId').value = "";
+    //     document.getElementById('memPsw').value = "";
+    // }
+}
+
+function loginForm() {
+    var account = document.getElementById('memId').value;
+    var password = document.getElementById('memPsw').value;
+
+    if (document.getElementById('memId').value == "mountain" && document.getElementById('memPsw').value == "123456") {
+
+        // document.getElementById('spanLogin').innerHTML = "登出";
+        document.getElementById('memName').innerHTML = "張君山";
+        document.getElementById("memId").value = "";
+        document.getElementById("memPsw").value = "";
+        document.getElementById("lightBox").style.display = "none";
+    }
+    else {
+        alert("帳號或密碼錯誤，請重新輸入");
+    }
+}
+
+function logOut(){
+      if( document.getElementById('spanLogin').innerHTML == "登出"){
+
+      }
+}
+
+function cancelLogin() {
+    document.getElementById("memId").value = "";
+    document.getElementById("memPsw").value = "";
+    document.getElementById("lightBox").style.display = "none";
+}
+
+function init() {
+    var btnLogin = document.getElementById("spanLogin");
+    btnLogin.addEventListener("click", showLogin, false);
+
+    var btnLogOut = document.getElementById("spanLogin");
+    btnLogin.addEventListener("click", logOut, false);
+
+    var btnSendForm = document.getElementById("btnLogin");
+    btnSendForm.addEventListener("click", loginForm, false);
+
+
+    var btnLogCancel = document.getElementById("btnLoginCancel");
+    btnLogCancel.addEventListener("click", cancelLogin, false);
+
+};
+
+window.onload = init;
