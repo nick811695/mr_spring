@@ -474,6 +474,7 @@
 	margin: 10px auto;
 	height: auto;
 	position: relative;
+	max-width: 600px;
 }
 .time_inner{
 	margin-top: 5px;
@@ -485,8 +486,8 @@
 .forum_data_inner{
 	display: flex;
 	position: absolute;
-	bottom: 20px;
-	right: 20px;
+	bottom: 35px;
+	right: 35px;
 	color: #6f3535;
 	height: 30px;
 	font-size: 21px;
@@ -505,7 +506,9 @@
 
 .msg_wrap{
 	padding: 0 10px;
+	margin: auto;
 	margin-top: 80px;
+	max-width: 1000px;
 }
 .msg_box{
 	width: 100%;
@@ -513,6 +516,7 @@
 	display: flex;
 	position: relative;
 	margin-top: 30px;
+	max-width: 600px;
 }
 .msg_box .msg_l{
 	width: 90px;
@@ -537,7 +541,7 @@
 
 .msg_box .msg_r{
 	width: calc(100% - 90px);
-	background-color: #ddd;
+	background-color: #fff;
 	margin-left: 10px;
 	border-radius: 10px;
 	padding: 20px;
@@ -701,6 +705,7 @@
 	}
 	.publish_wrap .msg_box{
 		margin-top: 0;
+		max-width: none;
 	}
 	.publish_msg_l{
 		display: block;
@@ -725,44 +730,53 @@
 
 	.article_hot_forum_box .article_card{
 		display: block;
-		left: 10px;
+		left: 100px;
 		position: absolute;
 	}
 	.article_hot_forum_box .article_hot_forum_hidden{
-		width: 1000px;
+		margin: auto;
+		left: 60px;
+		right: 0;
+		top: 30px;
+		width: 100%;
+
 	}
 	.article_hot_forum_hidden .hot_forum{
-		padding: 20px;
+		max-width: none;
+		padding: 35px;
+		padding-top: 50px;
 		padding-left: 150px;
 		right: 0;
 		margin: 10px auto;
 		height: auto;
 		position: relative;
 		min-height: 450px;
-		width: calc(100% - 20px);
+		width: calc(100% - 100px);
 	}
 	.article_hot_forum_hidden .hot_forum_content{
 		display: flex;
 	}
 	.article_hot_forum_hidden .hot_forum_content .content_l{
-		width: 480px;
-		// margin-bottom: 200px;
+		// width: 480px;
+		padding-right: 10px;
 	}
 	.article_hot_forum_hidden .hot_forum_content .content_r{
-		top: -100px;
-		width: 400px;
+		top: -130px;
+		width: 350px;
 		position: absolute;
-		right: -40px;
+		right: 0px;
+		height: auto;
 	}
 	.msg_wrap {
-		margin-top: 80px; }
+		margin-top: 80px;
+	}
 
 	.msg_box {
 		width: 70%;
 		margin: auto;
 		display: flex;
 		position: relative;
-		margin-top: 30px; }
+		margin-top: 60px; }
 
 	.msg_box .msg_l {
 		width: 100px;
@@ -974,7 +988,7 @@
 }
 .article_publish .publish_r{
 	background-color: #a39784;
-	width: 730px;
+	width: 90%;
 	height: 500px;
 }
 .article_publish .publish_r input[type="text"]{
@@ -1013,7 +1027,7 @@
 	cursor: pointer;
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
 	.article_publish_bg{
 		padding-top: 150px;
 	}
@@ -1080,6 +1094,9 @@
 		top: 39px;
 		border-bottom: 2px solid #aaa;
 		transform: rotate(90deg);
+	}
+	.article_publish .publish_r{
+		width: calc(100% - 300px);
 	}
 }
 

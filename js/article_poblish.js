@@ -36,7 +36,7 @@ function lightboxOn(){
 		// card_item2 = $(this).children(".card_item_box").children(".card_item2").children(".card_item_name").html();
 		// card_item3 = $(this).children(".card_item_box").children(".card_item3").children(".card_item_name").html();
 		// card_item4 = $(this).children(".card_item_box").children(".card_item4").children(".card_item_name").html();
-		if (window_width<=1200) {
+		if (window_width<=768) {
 			$("#lightbox_radar_btn").css("display","block");
 			$("#lightbox_radar_btn").click(function(){
 				$("#lightbox_radar").css("display","block");
@@ -54,7 +54,7 @@ function lightboxOn(){
 			$('.springCard').css('display','none');
 			// $('.selected_card_data').html("<h3>"+card_name+"</h3>"+"<div class='item_box'>"+card_item1+card_item2+card_item3+card_item4+"</div>");
 			
-			if (window_width<=1200) {
+			if (window_width<=768) {
 				$('.selected_card_data').html(temp_card);
 				$('.selected_card_data').addClass('change_card');
 				$('.selected_card_data').css('margin-bottom','0px');
