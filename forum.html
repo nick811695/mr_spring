@@ -3,22 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 	<link rel="stylesheet" type="text/css" href="css/share.css">
 	<link rel="stylesheet" type="text/css" href="css/hot_forum.css">
 	<link rel="stylesheet" type="text/css" href="css/forum.css">
 	<link rel="stylesheet" type="text/css" href="css/card.css">
+	<link rel="stylesheet" type="text/css" href="css/fonts.css">
 	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 	<script type="text/javascript" src="js/jquery-ui.min.js"></script>
 	<script src="js/Chart.js"></script>
 	<script src="js/forum.js"></script>
+
 		
 
 
 
 </head>
 <body>
-	<header>
+	<!-- <header>
         <div class="nav_fabric">
             <img src="images/navBar.png" alt="navBar">
 
@@ -51,9 +53,9 @@
             </a>
 
         </nav>
-    </header>
+    </header> -->
 
-	<div class="bg">
+	<div class="bg forum_bg">
 		<div class="wrap forum_wrap">
 			<h2 class="hot_forum_heading">熱門湯牌</h2>
 			<div class="hot_forum_wrap">
@@ -68,7 +70,7 @@
 						<img class="knot" src="images/red_knot.png">
 						<div class="front">
 							<img class="badge" src="images/badge.png">
-							<h3 class="card_name">舒筋活骨湯</h3>
+							<h3 class="card_name">舒筋活骨湯1</h3>
 							<div class="card_item_box">
 								<div class="card_item card_item1">
 									<div class="card_item_image">
@@ -157,7 +159,7 @@
 						<img class="knot" src="images/red_knot.png">
 						<div class="front">
 							<img class="badge" src="images/badge.png">
-							<h3 class="card_name">舒筋活骨湯</h3>
+							<h3 class="card_name">舒筋活骨湯2</h3>
 							<div class="card_item_box">
 								<div class="card_item card_item1">
 									<div class="card_item_image">
@@ -231,7 +233,7 @@
 								</div>
 								<div class="content_r">
 									<div id="radar_wrapper">
-									    <canvas id="chartRadar" width="300" height="300"></canvas>
+									    <canvas id="chartRadar2" width="300" height="300"></canvas>
 									</div>
 								</div>
 							</div>
@@ -246,7 +248,7 @@
 						<img class="knot" src="images/red_knot.png">
 						<div class="front">
 							<img class="badge" src="images/badge.png">
-							<h3 class="card_name">舒筋活骨湯</h3>
+							<h3 class="card_name">舒筋活骨湯3 </h3>
 							<div class="card_item_box">
 								<div class="card_item card_item1">
 									<div class="card_item_image">
@@ -320,7 +322,7 @@
 								</div>
 								<div class="content_r">
 									<div id="radar_wrapper">
-									    <canvas id="chartRadar" width="300" height="300"></canvas>
+									    <canvas id="chartRadar3" width="300" height="300"></canvas>
 									</div>
 								</div>
 							</div>
@@ -331,9 +333,43 @@
 				
 			</div>
 			<a href="forum_article_publish.html" class="btn_l">我要發表</a>
-			
+			<div id="filter_mask">
+				<div class="filter_mask"></div>
+				<div id="filter_wrap">
+					<label for="filter_ctrl" id="filter_btn">篩選條件</label>
+					<h4>選擇種類</h4>
+					<ul id="filter_kind">
+						<li>舒筋活骨<img src="images/check.png"></li>
+						<li>養顏美容<img src="images/check.png"></li>
+						<li>安定心神<img src="images/check.png"></li>
+					</ul>
+					<h4>選擇藥材</h4>
+					<ul id="filter_item">
+						<li>櫻花<img src="images/check.png"></li>
+						<li>山茱萸<img src="images/check.png"></li>
+						<li>菊花<img src="images/check.png"></li>
+						<li>薰衣草<img src="images/check.png"></li>
+						<li>檸檬<img src="images/check.png"></li>
+						<li>蒜頭<img src="images/check.png"></li>
+						<li>生薑<img src="images/check.png"></li>
+						<li>玫瑰<img src="images/check.png"></li>
+						<li>繡球花<img src="images/check.png"></li>
+						<li>佛手柑<img src="images/check.png"></li>
+						<li>八角<img src="images/check.png"></li>
+						<li>枸杞<img src="images/check.png"></li>
+					</ul>
+				</div>
+				<div id="sort_wrap">
+					<label for="sort_ctrl" id="sort_btn">排序方式</label>
+					<ul>
+						<li>依時間<img src="images/check.png"></li>
+						<li>依熱門度<img src="images/check.png"></li>
+						<li>依回復數<img src="images/check.png"></li>
+					</ul>
+				</div>
+			</div>
 			<div class="forum_filter">
-				<p>篩選器：</p>
+				<!-- <p>篩選器：</p> -->
 				<div class="kind_of_forum">
 					<div class="count">0</div>
 					<ul id="kind_of_forum_box">
@@ -373,7 +409,7 @@
 					</ul>
 				</div>
 				<div class="sort_forum">
-					<p>排序：</p>
+					<!-- <p>排序：</p> -->
 					<span>
 						<input type="radio" name="sort" id="sort1" checked>
 						<label for="sort1">依時間</label>
@@ -750,8 +786,8 @@
 				<h4>Non commercial use&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright © 2019 Mr.Spring All rights
 					reserved</h4>
 			</div>
-		</footer>
-	<script>
+	</footer>
+<!-- 	<script>
         //定義變數
         var chartRadarDOM;
         var chartRadarData;
@@ -819,7 +855,8 @@
             options: chartRadarOptions
         }); 
         radar_wrapper.defaults.global.defaultFontColor = ['rgba(221,125,29,1)', 'rgba(178,79,89,1)', 'rgba(106,145,45,1)'];
-    </script>
+    </script> -->
     <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="js/hot_forum_radar.js"></script>
 </body>
 </html>

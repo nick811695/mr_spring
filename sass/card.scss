@@ -1,10 +1,33 @@
+
+.rope{
+	display: none;
+}
+
+
+
+@media screen and (min-width: 768px) {
+	.rope{
+		display: block;
+		font-size: 0;
+		position:absolute;
+		top:300px;
+		left: 50%;
+		width:5px;
+		display:flex;
+		transform: rotate(-90deg) translate(300px) scale(0.6,0.1);
+	}
+	.rope img{
+		filter: hue-rotate(-40deg);
+	}
+}
+
 .card{
 	width: 224px;
 	height: 420px;
 	color: #4d2000;
 	position: absolute;
 	font-family:'Mori';
-	filter:drop-shadow(0px 0px 5px rgba(0,0,0,1));
+	filter:drop-shadow(0px 0px 5px rgba(0,0,0,0.5));
 	z-index: 998;
 	text-align: center;
 }
@@ -74,7 +97,7 @@
 	font-size: 15px;
 	background-color: #7d0000;
 	color: #f3ca93;
-	transition: 0.5s;
+	// transition: 0.5s;
 	cursor: pointer;
 }
 .card .front .card_btn_box a:hover{
