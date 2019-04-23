@@ -45,7 +45,7 @@ function init() {
     btnLogin.addEventListener("click", showLogin, false);
 
     var btnLogOut = document.getElementById("spanLogin");
-    btnLogin.addEventListener("click", logOut, false);
+    btnLogOut.addEventListener("click", logOut, false);
 
     var btnSendForm = document.getElementById("btnLogin");
     btnSendForm.addEventListener("click", loginForm, false);
@@ -53,6 +53,10 @@ function init() {
 
     var btnLogCancel = document.getElementById("btnLoginCancel");
     btnLogCancel.addEventListener("click", cancelLogin, false);
+
+    
+    var LoginHere = document.getElementById("LoginHere");
+    LoginHere.addEventListener("click", showLogin, false);
 
 };
 

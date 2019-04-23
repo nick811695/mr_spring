@@ -25,28 +25,60 @@
 <body>
     <!-- <h1>首頁請用這支</h1> -->
     <!-- 燈箱：登入 -->
-    <div id="lightBox" style="display:none">
-        <table border="1" align="center" cellspacing="0" id="tableLogin">
-            <tr>
-                <td>帳號</td>
-                <td><input type="text" name="memId" id="memId"></td>
-            </tr>
-            <tr>
-                <td>密碼</td>
-                <td><input type="password" name="memPsw" id="memPsw"></td>
-            </tr>
-            <tr>
-                <td colspan="2" align="center">
-                    <input type="button" id="btnLogin" value="登入">
-                    <input type="button" id="btnLoginCancel" value="取消">
-                </td>
-            </tr>
-        </table>
+    <div id="lightBox" style="display:none; z-index: 1000;">
+        <div class="table_wrap">
+
+            <center>
+                <p class="Login_title">Login</p>
+            </center>
+            <table border="1" align="center" id="tableLogin">
+
+
+                <!-- <tr>
+                    <td>
+
+                    </td>
+                </tr> -->
+                <tr>
+                    <!-- <td></td> -->
+                    <td>
+                        <p>帳號</p>
+                        <input type="text" name="memId" id="memId" placeholder="example@email.com">
+                    </td>
+                </tr>
+                <tr>
+                    <!-- <td></td> -->
+                    <td>
+                        <p>密碼</p>
+                        <input type="password" name="memPsw" id="memPsw" placeholder="******">
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <!-- <td colspan="2" align="center">
+                        
+                    </td> -->
+                </tr>
+            </table>
+            <div class="btn_wrap">
+                <center>
+                    <button class="btn_s" id="btnLogin" value="登入">登入</button>
+                    <button class="btn_s" id="btnLoginCancel" value="取消">取消
+
+                    </button>
+                </center>
+            </div>
+            <center>
+                <button class="first_time">首次登入?</button>
+            </center>
+        </div>
     </div>
 
     <!-- 導覽列 -->
     <header>
         <nav id="nav_bar">
+            <img id="LoginHere" src="images/account.png" alt="會員登入">
             <svg width="800" height="0" viewBox="0 0 800 230">
                 <path fill="none" d="0 96%, 100% 96%, 100% 100%, 0% 100%" />
             </svg>
@@ -106,8 +138,8 @@
             $("#toggle").click(function () {
                 $(this).toggleClass("action");
                 $("#overlay").toggleClass("open");
-                document.getElementsByClassName("getCoupon").style.zIndex = "1";
             });
+
         </script>
 
     </header>

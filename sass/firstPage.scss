@@ -168,13 +168,13 @@
     /* overflow: hidden; */
 }
 
-.bg_mt img {
-    width: 100%;
-    position: absolute;
-    bottom: 500px;
-    pointer-events: none;
-    z-index: 1;
-}
+// #mt_water img {
+//     width: 100%;
+//     position: absolute;
+//     bottom: 200px;
+//     pointer-events: none;
+//     z-index: 1;
+// }
 
 #mt_water {
     width: 100%;
@@ -189,8 +189,7 @@
     img{
         position: absolute;
         width: 100%;
-        bottom:10vh;
-
+        bottom:5vh;
     }
 }
 #water_color_change {
@@ -431,15 +430,6 @@
         animation-delay:3s;
         transition: 0.5s;
     }
-    @keyframes slogon{
-        0% {
-            opacity: 0;
-        }
-    
-        100% {
-            opacity: 1;
-        }
-    }
 
     #slogon02{
         position: absolute;
@@ -521,16 +511,17 @@
         position: absolute;
         width: 50px;
         animation:4s waveScale ease-out infinite;
-        animation-delay:2s;
+        animation-delay:0.5s;
+        opacity: 0;
     }
     
     #wave01 img:nth-of-type(2) {
-        animation-delay:3s;
+        animation-delay:1s;
         left: 0px;
     }
     
     #wave01 img:nth-of-type(3) {
-        animation-delay: 4s;
+        animation-delay:1.5s;
         left: -50px;
     }
     
@@ -695,6 +686,7 @@
         background-color: rgba(255, 255, 255, 0.5);
         animation: 3s smokeScale ease-out infinite;
         animation-delay: 0.5s;
+        opacity: 0;
     }
     
     .sk_wrap .sk:nth-of-type(2) {
@@ -718,6 +710,7 @@
         background-color: rgba(255, 255, 255, 0.5);
         animation: 3s smokeScale ease-out infinite;
         animation-delay: 0.5s;
+        opacity: 0;
     }
     
     .sk_wrap02 .sk:nth-of-type(2) {
@@ -1670,10 +1663,18 @@
             }
     }
     @media screen and (max-width:399px){
+        #mt_water{
+            img{
+                position: absolute;
+                width: 100%;
+                bottom:35vh;
+            }
+        }
         .content_frame_wrap{
-            transform: scale(0.4);
-            left:180px;
+            transform: scale(0.7);
+            left:60%;
             bottom:70px;
+            margin: auto;
         }
         
         .herb {
@@ -1681,10 +1682,13 @@
             transition: 1s;
             margin-top: -300px;
         }
+
+        
         .monkey_animation{
             transform: scale(0.5);
             width:100%;
             right:100%;
+            bottom:-15%;
             left:-220px;
             // bottom:150px;
             transition: 1s;
@@ -1694,6 +1698,14 @@
     }
 
     @media screen and (max-width:767px) and (min-width:400px){
+
+        #mt_water{
+            img{
+                position: absolute;
+                width: 100%;
+                bottom:30vh;
+            }
+        }
         .content_frame_wrap{
             transform: scale(0.7);
             left:240px;
@@ -1707,22 +1719,29 @@
             margin-bottom:100px;
         }
         .herb {
-            transform: scale(0.6);
+            transform: scale(0.5);
             transition: 1s;
+            margin-top: -85%;
+
         }
         
-    //      #monkey_wrap{
-    //         position: fixed;
-    //         transform: scale(0.6);
-    //         left: 0px;
-    //         right:300px;
-    //         bottom: 0px;
-    // }
+        .herb_cross{
+            top:250px;
+            right:12.5%;
+        }
+
+        .herb_cross:nth-of-type(1){
+            // top:300px;
+            left:12.5%;
+        }
+
+        
         .monkey_animation{
             transform: scale(0.5);
             width:100%;
             margin:auto;
-            right:45%;
+            left:-45%;
+            // right:45%;
             // bottom:100px;
             transition: 1s;
         }
@@ -1733,14 +1752,32 @@
             bottom: 800px;
             margin-bottom:100px;
         }
+
+        #mt_water{
+            img{
+                position: absolute;
+                width: 100%;
+                bottom:15vh;
+            }
+        }
         .herb {
             transform: scale(0.8);
             transition: 1s;
         }
+
+        .herb_cross{
+            top:250px;
+            right:10%;
+        }
+
+        .herb_cross:nth-of-type(1){
+            // top:300px;
+            left:10%;
+        }
         .monkey_animation{
             transform: scale(0.8);
-            right:30%;
-            left:-150px;
+            // right:30%;
+            left:-20%;
             bottom:-100px;
             transition: 1s;
             margin:auto;
@@ -1752,14 +1789,24 @@
         
         
        .herb {
-           
            transform: scale(0.9);
            transition: 1s;
+           margin-top: -15%;
         }
+        // .herb_cross{
+        //     top:250px;
+        //     right:10%;
+        // }
+
+        // .herb_cross:nth-of-type(1){
+        //     // top:300px;
+        //     left:10%;
+        // }
         .monkey_animation{
-            transform: scale(0.8);
+            transform: scale(0.9);
             // right:10%;
             transition: 1s;
+            right:5%;
             margin:auto;
         }
        
