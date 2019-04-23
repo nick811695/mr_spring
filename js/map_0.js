@@ -8,9 +8,6 @@ function doFirst() {
 	navigator.geolocation.getCurrentPosition(succCallback);
 }
 
-function getCurPos(){
-	
-}
 function succCallback(arg) {
 	var lati = arg.coords.latitude;
 	var longi = arg.coords.longitude;
@@ -198,11 +195,8 @@ function showInfo(shop) {
     				document.getElementsByClassName('text')[2].innerHTML ='中央店-奕廷房';
 
             break;
-				case 'sopMap02':
-				  //  map = null;
-					//  navigator.geolocation.getCurrentPosition(succCallback);
-					//  setTimeout( function(){getLocation(1);}, 1000);
-					 getLocation(1);
+        case 'sopMap02':
+						getLocation(1);
 						// 手機
     				document.getElementById('adress_m').innerHTML = '桃園市桃園區400號';
     				document.getElementById('phone_m').innerHTML = '03-3585999';
@@ -241,33 +235,28 @@ function getLocation(e) { //e:0, 1, 2
 	// 	directionsDisplay.setMap(null);
 	// 	directionsDisplay = null;
 	// }
-	map = null;
-	navigator.geolocation.getCurrentPosition(succCallback);	
-	setTimeout(function(){
-			var directionsService = new google.maps.DirectionsService();
-			var directionsDisplay = new google.maps.DirectionsRenderer();
-			// 放置路線圖層
-			directionsDisplay.setMap(map);
+    var directionsService = new google.maps.DirectionsService();
+		var directionsDisplay = new google.maps.DirectionsRenderer();
+    // 放置路線圖層
+    directionsDisplay.setMap(map);
 
-			// 路線相關設定
-			var request = {
-					origin: now_s,
-					destination: temp_data[e],
-					travelMode: 'DRIVING'
-			};
+    // 路線相關設定
+    var request = {
+        origin: now_s,
+        destination: temp_data[e],
+        travelMode: 'DRIVING'
+    };
 
-			// 繪製路線
-			directionsService.route(request, function (result, status) {
-					if (status == 'OK') {
-							// 回傳路線上每個步驟的細節
-							console.log(result.routes[0].legs[0].steps);
-							console.log("result : ",result);
-							directionsDisplay.setDirections(result);
-					} else {
-							console.log(status);
-					}
-			});		
-	},1000); 
-
+		// 繪製路線
+    directionsService.route(request, function (result, status) {
+        if (status == 'OK') {
+            // 回傳路線上每個步驟的細節
+						console.log(result.routes[0].legs[0].steps);
+						console.log("result : ",result);
+            directionsDisplay.setDirections(result);
+        } else {
+            console.log(status);
+        }
+    });
 }
 window.addEventListener('load', doFirst, false);
