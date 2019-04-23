@@ -1764,6 +1764,232 @@
                 margin: 20px auto;
                 bottom: 80px;
             }
+
+        // 對話湯先生====================================================
+        .monkeyBotWrap {
+            width: 150px;
+            position: fixed;
+            bottom: 20px;
+            right: 50px;
+            cursor: pointer;
+            z-index: 99;
+        }
+        
+        .monkeyBot {
+            width: 100%;
+            position: relative;
+        }
+        
+        .monkeyBotWrap:hover {
+            -webkit-animation: rotation 1.5s infinite linear;
+        }
+        
+        @keyframes rotation {
+            0% {
+                /* transform: rotate(15deg); */
+                bottom:10px;
+            }
+        
+            25% {
+                /* transform: rotate(0deg); */
+                bottom:20px;
+            }
+            50%{
+                /* transform: rotate(-15deg); */
+                bottom:30px;
+            }
+            75%{
+                /* transform: rotate(0deg); */
+                bottom:20px;
+            }
+            100%{
+                /* transform: rotate(15deg); */
+                bottom:10px;
+            }
+        }
+        /* 文字區域 */
+        .chatbotTextWrap{
+            height: 575px;
+            width: 450px;
+            border-radius: 20px;
+            /* background-image: url("botbg.png");
+            background-size: 250%; */
+            background-color: #d5b17a;
+            padding: 30px 0px;
+            position: fixed;
+            bottom: 20px;
+            right: 220px;
+            box-shadow: 5px 5px 5px #70562e48;
+            z-index: 99;
+            display: none;
+        }
+        #close_btn{
+            position: absolute;
+            top: -20px;
+            right:-30px;
+            cursor: pointer;
+        }
+        #close_btn>img{
+            width:75%;
+            filter: drop-shadow(5px 5px 5px #70562e48)
+        }
+        /* .botTitle{
+            background-image: linear-gradient(0deg, #05d5d7 0%, #ffa1a1 55%, white 98%);
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        } */
+        .chatbotTextWrap>h2{
+            font-family:"Pigmo";
+            font-size: 30px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        #chatBot-content{
+            height:310px;
+            width: 100%;
+            margin-top: 30px;
+            margin: auto;
+            overflow: scroll;
+            overflow-x: hidden;
+            overflow-y: auto;
+            background-color: white;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        #chatBot-content-A {
+            border-radius: 15px 15px 15px 0px;
+            background-color: #e9dbc6;
+            padding: 10px;
+            line-height: 1.5;
+            margin: 10px 0;
+            position: relative;
+            margin-right: 160px;
+            margin-bottom:10px;
+            color:#70562e;
+        
+        }
+        #chatBot-content-B{
+            border-radius: 15px 15px 0px 15px;
+            background-color: #d5b17a;
+            padding: 10px;
+            line-height: 1.5;
+            margin: 10px 0;
+            position: relative;
+            margin-left: 160px;
+            margin-bottom: 10px;
+            color:white;
+            text-align: right;
+            float:right;
+            font-family: 'Noto Sans TC', sans-serif;
+            clear: both;
+        }
+        #chatBot-container::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        .clearfix{
+            clear: both;
+        }
+        .chatBot-keyword {
+            padding: 10px 0;
+            overflow: scroll;
+            overflow-y: hidden;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        
+        .chatBot-keyword::-webkit-scrollbar {
+            width: 10px;
+            height: 10px;
+        }
+        
+        .chatBot-keyword::-webkit-scrollbar-thumb {
+            background-color: rgb(0, 0, 0);
+            border-radius: 10px;
+        }
+        
+        .chatBot-keyword::-webkit-scrollbar-thumb:hover {
+            background-color: #76391B;
+        }
+        
+        .chatBot-keyword::-webkit-scrollbar-track {
+            box-shadow: inset 0 0 1px #BB7232;
+            border-radius: 10px;
+        }
+        
+        .chatBot-keyword::-webkit-scrollbar {
+            width: 5px;
+            height: 5px;
+        }
+        
+        .chatBot-keyword li {
+            display: inline-block;
+            margin-left: 5px;
+            color: #fff;
+            background-color: rgb(0, 0, 0);
+            border-radius: 10px;
+            padding: 10px 5px;
+            cursor: pointer;
+            line-height: 1;
+        }
+        .chatBot-text-Wrap {
+            position: relative;
+        }
+        
+        .chatBot-text-Wrap .nextBTN{
+            position: relative;
+            display: inline-block;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            font-family: 'Noto Sans TC', sans-serif;
+            cursor: pointer;
+            color: #fff;
+            border-radius: 100px;
+            transition: .2s;
+            margin: 10px;
+            font-size: 20px;
+            background-color: rgb(0, 0, 0);
+            color: #fff;
+            font-family: 微軟正黑體, arial, "LiHei-Pro", "sans serif";
+            border: 0;
+        }
+        
+        .chatBot-text-Wrap .nextBTN:hover,
+        .chatBot-text-Wrap .cancelBTN:hover {
+            opacity: .7;
+            transition: .2s;
+        }
+        
+        .chatBot-text-Wrap .nextBTN:active,
+        .chatBot-text-Wrap .cancelBTN:active {
+            top: 2px;
+        }
+        
+        .chatBot-text-Wrap .cancelBTN {
+            background-color: #FCF2CA;
+            color: #76391B;
+        }
+        
+        #chatBot-search {
+            position: absolute;
+            right: 00px;
+            top: 50%;
+            transform: translateY(-80%);
+        }
+        
+        .chatBot-text {
+            font-size: 20px;
+            width: 70%;
+            height: 100px;
+            padding-left: 15px;
+            border-radius: 0 0 0px 20px;
+            border: 0;
+            outline: none;
+        }
     }
     @media screen and (max-width:399px){
         #mt_water{
