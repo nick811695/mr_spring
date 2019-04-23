@@ -1,10 +1,12 @@
 // document.getElementsByClassName('rommtypeIcon01')[0].onclick = function(){
 
-//     document.getElementsByClassName('an_roomPic')[0].src ='../images/01.PNG';
+    
+//     document.getElementsByClassName('an_roompic')[0].src ='images/01.PNG';
 //     document.getElementsByClassName('text')[0].innerHTML ='中央店-煎餅房';
-//     document.getElementsByClassName('an_roomPic')[1].src = '../images/01.PNG';
+//     document.getElementsByClassName('an_roompic')[1].src = 'images/01.PNG';
 //     document.getElementsByClassName('text')[1].innerHTML ='中央店-君山房';
-// }
+
+//     }
 // 幻燈片
 var slideIndex = 1;
 showSlides(slideIndex);

@@ -3,8 +3,11 @@ var x = document.getElementById("content_frame");
 var colorsepia = document.getElementsByClassName("sepia_cross")[0];
 var colorsepia02 = document.getElementsByClassName("sepia_cross")[1];
 var colorsepia03 = document.getElementsByClassName("sepia_cross")[2];
+var herbWrap = document.getElementsByClassName("herb")[0];
+
 var slogon01 = document.getElementById("slogon01");
 var slogon02 = document.getElementById("slogon02");
+
 
 //switch content=================================================================
 
@@ -33,9 +36,13 @@ var wave02 = document.getElementById("wave02");
 
 //first page Show Herb=================================================================
 
-function changeWater(){
-
+function getCoupon(){
+    document.getElementById("peach").src="./images/getCoupon_red.svg";
 }
+function cleanCoupon(){
+  document.getElementById("peach").src="./images/getCoupon2.svg";
+}
+
 function ShowHerb01() {
   if (x.style.opacity == 0) {
     colorsepia.style.opacity = 0;
@@ -48,6 +55,7 @@ function ShowHerb01() {
     slogon01.style.opacity = 0;
     slogon02.style.opacity = 0;
     waterColor.style.backgroundColor = "#ff9f9f";
+    herbWrap.style.marginTop="-90%";
     TweenMax.from("#content_frame", 2, { opacity: 0, ease: Power4.easeIn });
     if($(window).width()<=768){
       TweenMax.fromTo("#monkey_wrap", 2, {
@@ -85,6 +93,7 @@ function ShowHerb01() {
     monkeyEyes.style.opacity = 0;
     slogon01.style.opacity = 0;
     slogon02.style.opacity = 0;
+    herbWrap.style.marginTop="-90%";
     waterColor.style.backgroundColor = "#ff9f9f";
     title.innerHTML = "舒筋緩骨湯";
     paragrah01.innerHTML = "【療效】山茱萸理氣解鬱，活血散瘀，和血調經。菊花治胃氣痛、新久風痺、吐血、月經不調、赤白帶、赤白痢、乳癰腫毒、跌打損傷；薰衣草：和中，治肝氣犯胃。";
@@ -126,6 +135,7 @@ function ShowHerb02() {
     monkeyEyes.style.opacity = 0;
     slogon01.style.opacity = 0;
     slogon02.style.opacity = 0;
+    herbWrap.style.marginTop="-90%";
     waterColor.style.backgroundColor = "#00e5be";
     x.style.opacity = 1;
     title.innerHTML = "安定心神湯";
@@ -181,6 +191,7 @@ function ShowHerb02() {
     monkeyEyes.style.opacity = 0;
     slogon01.style.opacity = 0;
     slogon02.style.opacity = 0;
+    herbWrap.style.marginTop="-90%";
     waterColor.style.backgroundColor = "#00e5be";
     title.innerHTML = "安定心神湯";
     paragrah01.innerHTML = "【療效】檸檬除可保養肌膚，有鎮靜安神的效果，建議到中藥房或花茶店買食用檸檬泡，免去農藥疑慮。而蒜頭，是很好的抑菌植物，搭配生薑一起泡澡，可放鬆肌肉、幫助睡眠。";
@@ -209,6 +220,7 @@ function ShowHerb03() {
     monkeyEyes.style.opacity = 1;
     slogon01.style.opacity = 0;
     slogon02.style.opacity = 0;
+    herbWrap.style.marginTop="-90%";
     waterColor.style.backgroundColor = " #f6ae54";
     x.style.opacity = 1;
     title.innerHTML = "養顏美容湯";
@@ -221,16 +233,16 @@ function ShowHerb03() {
     TweenMax.from("#content_frame", 2, { opacity: 0, ease: Power4.easeIn });  
     TweenMax.from("#monkeyFace", 2, { opacity: 0, ease: Power4.easeIn });
     TweenMax.from("#monkeyEyes", 2, { opacity: 0, ease: Power4.easeIn });
-    if($(window).width()<=768){
+    if($(window).width()<=768 || 1024){
       TweenMax.fromTo("#monkey_wrap", 2, {
         y: 0,
         repeat: 0,
-        ease: Power1.easeInOut
+        ease: Power3.easeInOut
       }, {
-          y: 200,
+          y: 100,
           repeat: 0,
-          ease: Power1.easeInOut,
-          // yoyo: true
+          ease: Power3.easeInOut,
+          yoyo: true
         });
     }else{
       TweenMax.fromTo("#monkey_wrap", 2, {
@@ -254,6 +266,7 @@ function ShowHerb03() {
     monkeyEyes.style.opacity = 1;
     slogon01.style.opacity = 0;
     slogon02.style.opacity = 0;
+    herbWrap.style.marginTop="-90%";
     waterColor.style.backgroundColor = "#f6ae54";
     title.innerHTML = "養顏美容湯";
     paragrah01.innerHTML = "【療效】八角、枸杞具有清熱解毒、涼血、止俐的功效。另外，佛手柑芳香疏散，可撫平焦慮、沮喪、振奮情緒。讓心裡恢復平衡，緩解工作生活的壓力。";
@@ -273,17 +286,12 @@ function ShowHerb03() {
 }
 
 
-function getDown(){
-  if($(window).width()==1024 || $(window).height()==1366){
-    document.getElementsByClassName("monkey_animation").style.top="500px";
-  }
-}
 
 // var slogon=document.getElementById("slogon01");
 //   function showSlogon(){
     
 //   }
-TweenMax.from("#slogon01", 2, { opacity: 0, ease: Power4.easeIn }); 
+// TweenMax.from("#slogon01", 2, { opacity: 0, ease: Power4.easeIn }); 
 
 
 
@@ -317,6 +325,8 @@ function showDiv() {
   document.getElementsByClassName("herb_cross")[0].onclick = ShowHerb01;
   document.getElementById("herb_cross2").onclick = ShowHerb02;
   document.getElementsByClassName("herb_cross")[1].onclick = ShowHerb03;
+  document.getElementsByClassName("getCoupon")[0].onmouseover=getCoupon;
+  document.getElementsByClassName("getCoupon")[0].onmouseleave=cleanCoupon;
   // document.getElementById("talk_area").onmouseover = ShowTalkFrame;
   // document.getElementById("talk_area").onmouseleave = hideTalkFrame;
 }

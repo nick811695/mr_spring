@@ -426,59 +426,71 @@ $(document).ready(function(){
 		}
 	});
 	/*--card link--*/
-
-	$(".card").click(function (){
-		window.location = 'forum_article.html';
-	});
+	if ($(window).width()<=768) {
+		$(".card").click(function (){
+			window.location = 'forum_article.html';
+		});
+	}
+	
 
 	/*---mobile filter---*/
+
+
+
+
 	$(document).ready(function(){
-		$("#filter_btn").click(function() {
-			var judge = $("#filter_wrap").hasClass('filter_open');
-			if (judge) {
-				$("#filter_wrap").removeClass("filter_open");
-				$("#sort_wrap").removeClass("filter_open");
-				$('.filter_mask').css("display","none");
-			}else{
-				$("#filter_wrap").addClass("filter_open");
-				$("#sort_wrap").removeClass("filter_open");
-				$('.filter_mask').css("display","block");
-			}
-		});
-		$("#sort_btn").click(function() {
-			var judge = $("#sort_wrap").hasClass('filter_open');
-			if (judge) {
-				$("#filter_wrap").removeClass("filter_open");
-				$("#sort_wrap").removeClass("filter_open");
-				$('.filter_mask').css("display","none");
-			}else{
-				$("#sort_wrap").addClass("filter_open");
-				$("#filter_wrap").removeClass("filter_open");
-				$('.filter_mask').css("display","block");
-			}
-		});
 
-
-		$('#filter_wrap li').click(function(){
-			if ($(this).hasClass('selected')){
-				$(this).removeClass('selected');
-			}else{
-				$(this).addClass('selected');
-			}
-		});
-		$('#sort_wrap li').click(function(){
-			if ($(this).hasClass('selected')){
-				$(this).removeClass('selected');
-			}else{
-				$(this).addClass('selected');
-			}
-		});
+		if ($(window).width()<=768) {
+			$(document).scroll(function(){
+				var scroll_h = $(document).scrollTop();
+				console.log(scroll_h);
+				if(scroll_h >= 750){
+					$("#filter_wrap").css('display','flex');
+					$("#mobile_filter").css('display','flex');
+				}else if(scroll_h < 750){
+					$("#filter_wrap").css('display','none');
+					$("#mobile_filter").css('display','none');
+				}
+			});
+			$("#filter_btn").click(function() {
+				$('.filter_kind').addClass('filter_open');
+				$('.filter_item').addClass('filter_open');
+				$('#mobile_filter_mask').css('display','block');
+			});
+			$("#sort_btn").click(function() {
+				$('.sort_wrap').addClass('filter_open');
+				$('#mobile_filter_mask').css('display','block');
+			});
+	/* 被選到打勾  */
+			$(".filter_kind li").click(function() {
+				let checked = $(this).children('img').hasClass('checked');
+				if(checked){
+					$(this).children('img').removeClass('checked');
+				}else{
+					$(this).children('img').addClass('checked');
+				}
+			});
+			$(".filter_item li").click(function() {
+				let checked = $(this).children('img').hasClass('checked');
+				if(checked){
+					$(this).children('img').removeClass('checked');
+				}else{
+					$(this).children('img').addClass('checked');
+				}
+			});
+			$('.sort_wrap li').click(function(){
+				$('.sort_wrap li img').removeClass('checked');
+				$(this).children('img').addClass('checked');
+			});
 	/*filter_mask*/
-		$('.filter_mask').click(function(){
-			$('#filter_wrap').removeClass('filter_open');
-			$('#sort_wrap').removeClass('filter_open');
-			$('.filter_mask').css("display","none");
-		});
+			$('#mobile_filter_mask').click(function(){
+				$('.filter_kind').removeClass('filter_open');
+				$('.filter_item').removeClass('filter_open');
+				$('.sort_wrap').removeClass('filter_open');
+				$('#mobile_filter_mask').css("display","none");
+			});
+		}
+		
 	});		
 
 
@@ -497,12 +509,29 @@ $(document).ready(function(){
 			$(this).css({
 				"max-height": 300,
 			});
+			$(this).parent().siblings(".mask").css("display",'block');
+
 		}else{
 			$(this).css({
 				"max-height": 40,
 			});
 		}
 		
+	});
+	$('.forum_filter .mask').click(function(){
+		if (k1%2==1) {
+			k1++;
+		}
+		if(k2%2==1){
+			k2++;
+		}
+		$("#kind_of_forum_box").css({
+			"max-height": 40,
+		});
+		$("#item_of_forum_box").css({
+			"max-height": 40,
+		});
+		$(this).css('display',"none");
 	});
 	$("#item_of_forum_box").click(function(){
 		k2++;
@@ -511,6 +540,7 @@ $(document).ready(function(){
 			$(this).css({
 				"max-height": 1000,
 			});
+			$(this).parent().siblings(".mask").css("display",'block');
 		}else{
 			$(this).css({
 				"max-height": 40,
@@ -606,6 +636,18 @@ $(document).ready(function(){
 			$(this).addClass('solid_heart');
 		}
 		
+	});
+
+
+	/*----article_info----*/
+	$('.article_info_btn').click(function(){
+		
+		$('.article_hot_forum_box .article_info').css('display','block');
+
+	});
+	$('#info_close').click(function(){
+		$('.article_hot_forum_box .article_info').css('display','none');
+
 	});
 });
 
