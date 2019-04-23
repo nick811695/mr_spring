@@ -12,7 +12,7 @@ function succCallback(arg) {
 	var lati = arg.coords.latitude;
 	var longi = arg.coords.longitude;
 
-	// //HOME 
+	//HOME 
 	// var lati = 25.0399182;
 	// var longi = 121.5569454;
 	var styledMapType = new google.maps.StyledMapType(
