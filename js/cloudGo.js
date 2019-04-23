@@ -33,9 +33,13 @@ var wave02 = document.getElementById("wave02");
 
 //first page Show Herb=================================================================
 
-function changeWater(){
-
+function getCoupon(){
+    document.getElementById("peach").src="./images/getCoupon_red.svg";
 }
+function cleanCoupon(){
+  document.getElementById("peach").src="./images/getCoupon2.svg";
+}
+
 function ShowHerb01() {
   if (x.style.opacity == 0) {
     colorsepia.style.opacity = 0;
@@ -221,16 +225,16 @@ function ShowHerb03() {
     TweenMax.from("#content_frame", 2, { opacity: 0, ease: Power4.easeIn });  
     TweenMax.from("#monkeyFace", 2, { opacity: 0, ease: Power4.easeIn });
     TweenMax.from("#monkeyEyes", 2, { opacity: 0, ease: Power4.easeIn });
-    if($(window).width()<=768){
+    if($(window).width()<=768 || 1024){
       TweenMax.fromTo("#monkey_wrap", 2, {
         y: 0,
         repeat: 0,
-        ease: Power1.easeInOut
+        ease: Power3.easeInOut
       }, {
-          y: 200,
+          y: 100,
           repeat: 0,
-          ease: Power1.easeInOut,
-          // yoyo: true
+          ease: Power3.easeInOut,
+          yoyo: true
         });
     }else{
       TweenMax.fromTo("#monkey_wrap", 2, {
@@ -273,17 +277,12 @@ function ShowHerb03() {
 }
 
 
-function getDown(){
-  if($(window).width()==1024 || $(window).height()==1366){
-    document.getElementsByClassName("monkey_animation").style.top="500px";
-  }
-}
 
 // var slogon=document.getElementById("slogon01");
 //   function showSlogon(){
     
 //   }
-TweenMax.from("#slogon01", 2, { opacity: 0, ease: Power4.easeIn }); 
+// TweenMax.from("#slogon01", 2, { opacity: 0, ease: Power4.easeIn }); 
 
 
 
@@ -317,6 +316,8 @@ function showDiv() {
   document.getElementsByClassName("herb_cross")[0].onclick = ShowHerb01;
   document.getElementById("herb_cross2").onclick = ShowHerb02;
   document.getElementsByClassName("herb_cross")[1].onclick = ShowHerb03;
+  document.getElementsByClassName("getCoupon")[0].onmouseover=getCoupon;
+  document.getElementsByClassName("getCoupon")[0].onmouseleave=cleanCoupon;
   // document.getElementById("talk_area").onmouseover = ShowTalkFrame;
   // document.getElementById("talk_area").onmouseleave = hideTalkFrame;
 }
