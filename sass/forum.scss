@@ -398,14 +398,17 @@
 	margin-top: 5px;
 	display: block;
 }
-.forum_item .item_kind1{
-	background-color: #6a912d;
+.forum_item .item_kind{
+	display: none;
 }
-.forum_item .item_kind2{
+.forum_item .item_kind1{
 	background-color: #b24f59;
 }
-.forum_item .item_kind3{
+.forum_item .item_kind2{
 	background-color: #dd7d1d;
+}
+.forum_item .item_kind3{
+	background-color: #6a912d;
 }
 
 .forum .forum_content{
