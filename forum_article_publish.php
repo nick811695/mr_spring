@@ -1,3 +1,23 @@
+<?php 
+
+try{
+  require_once("php/connect.php");
+  // $sql = "select * from products where psn = :psn";
+  // $products = $pdo->prepare($sql);
+  // $products->bindValue(":psn", $psn);
+  // $products->execute();
+}catch(PDOException $e){
+  $errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
+  $errMsg .= "錯誤行號 : ".$e -> getLine(). "<br>";
+}
+
+
+
+
+
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -224,7 +244,7 @@
 					    </div>
 	                </div>
 
-		            <a href="forum_article_publish.html#publish_r"><div class="nextStepBtn_d">
+		            <a href="forum_article_publish.php#publish_r"><div class="nextStepBtn_d">
 		            	    <div id="nextStep" class="btn_b nextStep">確定</div>
 		            	</div></a>
 		        </div>
@@ -237,10 +257,10 @@
 					</div>
 				</div>
 				<div class="publish_r" id="publish_r">
-					<form action="#">
+					<form action="php/add_article.php">
 						<input type="text" name="article_title" placeholder="請輸入標題">
-						<textarea placeholder="請輸入內容分享(上限250字)"></textarea>
-						<button class="btn_l">發表文章</button> 
+						<textarea placeholder="請輸入內容分享(上限250字)" name="article_text"></textarea>
+						<button type="submit" class="btn_l">發表文章</button> 
 					</form>
 				</div>
 			</div>
