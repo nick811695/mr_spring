@@ -1,3 +1,4 @@
+//選擇湯牌filter
 $("select").on("click" , function() {
   
   $(this).parent(".select-box").toggleClass("open");
@@ -25,6 +26,9 @@ $("select").on("change" , function() {
     
 });
 
+
+
+//選擇湯牌slider
 $('.responsive').slick({
   dots: true,
 	prevArrow: $('.prev'),
@@ -58,4 +62,15 @@ $('.responsive').slick({
       }
     }
   ]
+});
+
+
+
+//房間照片slider
+$('.roomPicSlider_d').slick({
+  dots: true,
+  infinite: false,
+  speed: 300,
+  slidesToShow: 1,
+  slidesToScroll: 1,
 });

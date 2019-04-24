@@ -66,6 +66,7 @@ $(document).ready(function(){
 
 	/*-----hot_forum_slide--------*/
 	var sequence = 1; 
+	var screen = $(window).width();
 	$("#prev").click(function(){
 		if (sequence==1) {
 			sequence = 3;
@@ -81,19 +82,45 @@ $(document).ready(function(){
 				left:0,
 				opacity: 1,
 			});
-			$(".hot_forum_box1").css('z-index',"10");
+			$(".hot_forum_box1").css('z-index',"11");
 			$(".hot_forum_box3").css('z-index',"999");
 			$(".hot_forum_box2").css('z-index',"10");
-			$(".hot_forum_box1").stop().animate({
-				'left':10,
-			});
+			if (screen >= 1200) {
+				
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':10,
+				});
+				
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':100,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':966,
+				});
+			}else if(screen >=768 && screen<1200){
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':10,
+				});
+				
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':screen*0.95*0.14,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':screen*0.95-224,
+				});
+			}else{
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':10,
+				});
+				
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':screen*0.95*0.5-112,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':screen*0.95-224,
+				});
+			}
 			
-			$(".hot_forum_box3").stop().animate({
-				'left':100,
-			});
-			$(".hot_forum_box2").stop().animate({
-				'left':966,
-			});
 			
 
 			$(".hot_forum_box1 .card").addClass('zoom_out');
@@ -117,19 +144,40 @@ $(document).ready(function(){
 			});
 			$(".hot_forum_box1").css('z-index',"999");
 			$(".hot_forum_box3").css('z-index',"10");
-			$(".hot_forum_box2").css('z-index',"10");
-			$(".hot_forum_box1").stop().animate({
-				'left':100,
-				'z-index':999,
-			});
-			$(".hot_forum_box2").stop().animate({
-				'left':10,
-				'z-index':10,
-			});
-			$(".hot_forum_box3").stop().animate({
-				'left':966,
-				'z-index':10,
-			});
+			$(".hot_forum_box2").css('z-index',"11");
+			if (screen>=1200) {
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':100,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':10,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':966,
+				});
+			}else if(screen>=768 && screen < 1200){
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':screen*0.95*0.14,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':10,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':screen*0.95-224,
+				});
+			}else{
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':screen*0.95*0.5-112,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':10,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':screen*0.95-224,
+					
+				});
+			}
+			
 			
 
 			$(".hot_forum_box1 .card").addClass('zoom_in');
@@ -151,20 +199,49 @@ $(document).ready(function(){
 				opacity: 0,
 			});
 			$(".hot_forum_box1").css('z-index',"10");
-			$(".hot_forum_box3").css('z-index',"10");
+			$(".hot_forum_box3").css('z-index',"11");
 			$(".hot_forum_box2").css('z-index',"999");
-			$(".hot_forum_box1").stop().animate({
-				'left':966,
-				'z-index':11,
-			});
-			$(".hot_forum_box2").stop().animate({
-				'left':100,
-				'z-index':999,
-			});
-			$(".hot_forum_box3").stop().animate({
-				'left':10,
-				'z-index':10,
-			});
+			if (screen>=1200) {
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':966,
+					'z-index':11,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':100,
+					'z-index':999,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':10,
+					'z-index':10,
+				});
+			}else if(screen>=768 && screen<1200){
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':screen*0.95-224,
+					'z-index':10,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':screen*0.95*0.14,
+					'z-index':999,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':10,
+					'z-index':11,
+				});
+			}else if(screen<768){
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':screen*0.95-224,
+					'z-index':10,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':screen*0.95*0.5-112,
+					'z-index':999,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':10,
+					'z-index':11,
+				});
+			}
+			
 			
 
 			$(".hot_forum_box1 .card").addClass('zoom_out');
@@ -190,18 +267,41 @@ $(document).ready(function(){
 				opacity: 1,
 			});
 
-			$(".hot_forum_box1").css('z-index',"10");
+			$(".hot_forum_box1").css('z-index',"11");
 			$(".hot_forum_box3").css('z-index',"10");
 			$(".hot_forum_box2").css('z-index',"999");
-			$(".hot_forum_box2").stop().animate({
-				'left':100,
-			});
-			$(".hot_forum_box3").stop().animate({
-				'left':10,
-			});
-			$(".hot_forum_box1").stop().animate({
-				'left':966,
-			});
+			if(screen>=1200){
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':100,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':10,
+				});
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':966,
+				});
+			}else if(screen>=768 && screen<1200) {
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':screen*0.95*0.14,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':10,
+				});
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':screen*0.95-224,
+				});
+			}else if(screen<768) {
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':screen*0.95*0.5-112,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':10,
+				});
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':screen*0.95-224,
+				});
+			}
+			
 			
 			
 			$(".hot_forum_box2 .card").addClass('zoom_in');
@@ -227,19 +327,39 @@ $(document).ready(function(){
 
 			$(".hot_forum_box1").css('z-index',"10");
 			$(".hot_forum_box3").css('z-index',"999");
-			$(".hot_forum_box2").css('z-index',"10");
-			$(".hot_forum_box3").stop().animate({
-				'left':100,
-				'z-index':999,
-			});
-			$(".hot_forum_box1").stop().animate({
-				'left':10,
-				'z-index':11,
-			});
-			$(".hot_forum_box2").stop().animate({
-				'left':966,
-				'z-index':10,
-			});
+			$(".hot_forum_box2").css('z-index',"11");
+			if(screen>=1200){
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':100,
+				});
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':10,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':966,
+				});
+			}else if(screen>=768 && screen<1200) {
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':screen*0.95*0.14,
+				});
+				$(".hot_forum_box1").stop(false,true).animate({					
+					'left':10,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':screen*0.95-224,
+				});
+			}else if(screen<768) {
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':screen*0.95*0.5-112,
+				});
+				$(".hot_forum_box1").stop(false,true).animate({					
+					'left':10,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':screen*0.95-224,
+				});
+			}
+			
 			
 
 			$(".hot_forum_box3 .card").addClass('zoom_in');
@@ -263,17 +383,39 @@ $(document).ready(function(){
 
 
 			$(".hot_forum_box1").css('z-index',"999");
-			$(".hot_forum_box3").css('z-index',"10");
+			$(".hot_forum_box3").css('z-index',"11");
 			$(".hot_forum_box2").css('z-index',"10");
-			$(".hot_forum_box1").stop().animate({
+			if(screen>=1200){
+				$(".hot_forum_box1").stop(false,true).animate({
 				'left':100,
-			});
-			$(".hot_forum_box2").stop().animate({
-				'left':10,
-			});
-			$(".hot_forum_box3").stop().animate({
-				'left':966,
-			});
+				});
+				$(".hot_forum_box2").stop(false,true).animate({
+					'left':10,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':966,
+				});
+			}else if(screen>=768 && screen<1200) {
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':screen*0.95*0.14,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({					
+					'left':10,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':screen*0.95-224,
+				});
+			}else if(screen<768) {
+				$(".hot_forum_box1").stop(false,true).animate({
+					'left':screen*0.95*0.5-112,
+				});
+				$(".hot_forum_box2").stop(false,true).animate({					
+					'left':10,
+				});
+				$(".hot_forum_box3").stop(false,true).animate({
+					'left':screen*0.95-224,
+				});
+			}
 			
 			
 
@@ -283,9 +425,79 @@ $(document).ready(function(){
 			$(".hot_forum_box1 .card").removeClass('zoom_out');
 		}
 	});
+	/*--card link--*/
+	if ($(window).width()<=768) {
+		$(".card").click(function (){
+			window.location = 'forum_article.html';
+		});
+	}
+	
+
+	/*---mobile filter---*/
 
 
-	/*---filter---*/
+
+
+	$(document).ready(function(){
+
+		if ($(window).width()<=768) {
+			$(document).scroll(function(){
+				var scroll_h = $(document).scrollTop();
+				console.log(scroll_h);
+				if(scroll_h >= 750){
+					$("#filter_wrap").css('display','flex');
+					$("#mobile_filter").css('display','flex');
+				}else if(scroll_h < 750){
+					$("#filter_wrap").css('display','none');
+					$("#mobile_filter").css('display','none');
+				}
+			});
+			$("#filter_btn").click(function() {
+				$('.filter_kind').addClass('filter_open');
+				$('.filter_item').addClass('filter_open');
+				$('#mobile_filter_mask').css('display','block');
+			});
+			$("#sort_btn").click(function() {
+				$('.sort_wrap').addClass('filter_open');
+				$('#mobile_filter_mask').css('display','block');
+			});
+	/* 被選到打勾  */
+			$(".filter_kind li").click(function() {
+				let checked = $(this).children('img').hasClass('checked');
+				if(checked){
+					$(this).children('img').removeClass('checked');
+				}else{
+					$(this).children('img').addClass('checked');
+				}
+			});
+			$(".filter_item li").click(function() {
+				let checked = $(this).children('img').hasClass('checked');
+				if(checked){
+					$(this).children('img').removeClass('checked');
+				}else{
+					$(this).children('img').addClass('checked');
+				}
+			});
+			$('.sort_wrap li').click(function(){
+				$('.sort_wrap li img').removeClass('checked');
+				$(this).children('img').addClass('checked');
+			});
+	/*filter_mask*/
+			$('#mobile_filter_mask').click(function(){
+				$('.filter_kind').removeClass('filter_open');
+				$('.filter_item').removeClass('filter_open');
+				$('.sort_wrap').removeClass('filter_open');
+				$('#mobile_filter_mask').css("display","none");
+			});
+		}
+		
+	});		
+
+
+
+	/*----1200 filter*/
+
+
 	var count1=0;
 	var count2=0;
 	var k1 = 0;
@@ -297,12 +509,29 @@ $(document).ready(function(){
 			$(this).css({
 				"max-height": 300,
 			});
+			$(this).parent().siblings(".mask").css("display",'block');
+
 		}else{
 			$(this).css({
 				"max-height": 40,
 			});
 		}
 		
+	});
+	$('.forum_filter .mask').click(function(){
+		if (k1%2==1) {
+			k1++;
+		}
+		if(k2%2==1){
+			k2++;
+		}
+		$("#kind_of_forum_box").css({
+			"max-height": 40,
+		});
+		$("#item_of_forum_box").css({
+			"max-height": 40,
+		});
+		$(this).css('display',"none");
 	});
 	$("#item_of_forum_box").click(function(){
 		k2++;
@@ -311,6 +540,7 @@ $(document).ready(function(){
 			$(this).css({
 				"max-height": 1000,
 			});
+			$(this).parent().siblings(".mask").css("display",'block');
 		}else{
 			$(this).css({
 				"max-height": 40,
@@ -406,6 +636,18 @@ $(document).ready(function(){
 			$(this).addClass('solid_heart');
 		}
 		
+	});
+
+
+	/*----article_info----*/
+	$('.article_info_btn').click(function(){
+		
+		$('.article_hot_forum_box .article_info').css('display','block');
+
+	});
+	$('#info_close').click(function(){
+		$('.article_hot_forum_box .article_info').css('display','none');
+
 	});
 });
 
