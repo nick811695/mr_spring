@@ -1,3 +1,7 @@
+header{
+  width:100%;
+}
+
 #nav_bar{
     position: fixed;
     z-index: 200;
@@ -201,9 +205,12 @@
 
 
 // Login =====================================================================
-
-.Login_pic img{
+.Login_pic{
+  text-align: center;
+}
+.Login_pic>img{
   width: 100px;
+  margin: auto;
   margin-left:25px;
   margin-top: 30px;
 }
@@ -235,6 +242,8 @@ background: rgba(66,66,66,.6);
 }
 
 .table_wrap{
+background-image: url("../images/backGround.jpg");
+background-size:200%;
 position: relative;
 width: 350px;
 top: 20%;
@@ -244,7 +253,7 @@ bottom: 25%;
 z-index: 2000;
 margin:auto;
 border-radius: 10px;
-background-color:#E7D5B1;
+// background-color:#E7D5B1;
 
 }
 #tableLogin{
@@ -261,12 +270,14 @@ border: none;
 }
 
 .Login_title{
+  text-align: center;
   padding: 20px 0px;
   font-size: 21px;
   font-weight: 600;
 }
 .btn_wrap{
   padding: 20px 0px;
+  text-align: center;
 }
 
 
@@ -311,6 +322,10 @@ outline: none;
 
 input {
   -webkit-autofill:none;
+}
+
+.center{
+  text-align: center;
 }
 
 .first_time{
@@ -363,6 +378,7 @@ right: 30px;
 #spanLogin{
   cursor:pointer;
   text-decoration:underline;
+  margin-right: 5px;
 }
 
 #spanLogin:hover{
