@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/share.css">
-    <link rel="stylesheet" href="css/firstPage.css">
-    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/hot_forum.css">
+    <link rel="stylesheet" href="css/firstPage.css">
+    <link rel="stylesheet" href="css/header.css">
 </head>
 <style>
     /* 全區域 */
@@ -26,29 +26,21 @@
 
 <body>
     <!-- <h1>首頁請用這支</h1> -->
+
     <!-- 燈箱：登入 -->
     <div id="lightBox" style="display:none; z-index: 1000;">
         <div class="table_wrap">
-            <center>
-                <figure class="Login_pic">
-                    <img src="images/Logo_browen.svg" alt="湯先生">
-                </figure>
-            </center>
 
+            <figure class="Login_pic">
+                <img src="images/Logo_browen.svg" alt="湯先生">
+            </figure>
 
-            <center>
-                <p class="Login_title">會員登入</p>
-            </center>
-            <table border="1" align="center" id="tableLogin">
+            <p class="Login_title">會員登入</p>
 
+            <table id="tableLogin">
 
-                <!-- <tr>
-                    <td>
-
-                    </td>
-                </tr> -->
                 <tr>
-                    <!-- <td></td> -->
+
                     <td>
                         <p>帳號</p>
                         <input type="text" name="memId" id="memId" placeholder="example@email.com">
@@ -65,27 +57,29 @@
 
                 <tr>
                     <!-- <td colspan="2" align="center">
-                        
-                    </td> -->
+                            
+                        </td> -->
                 </tr>
             </table>
             <div class="btn_wrap">
-                <center>
-                    <button class="btn_s" id="btnLogin" value="登入" style="color:rgb(112, 95, 69);">
-                            <span>登入</span></button>
-                    <button class="btn_s" id="btnLoginCancel" value="取消">
-                        <div class="x_x">
-                            <span class="top"></span>
-                            <span class="bottom"></span>
-                        </div>
-                    </button>
-                </center>
+                <button class="btn_s" id="btnLogin" value="登入" style="color:rgb(112, 95, 69);">
+                    <span>登入</span>
+                </button>
             </div>
-            <center>
-                <button class="first_time">還沒申請帳號?</button>
-            </center>
+            <button class="btn_s" id="btnLoginCancel" value="取消">
+                <div class="x_x">
+                    <span class="top"></span>
+                    <span class="bottom"></span>
+                </div>
+            </button>
+            <div class="center">
+                <button class="first_time">還沒註冊帳號?</button>
+            </div>
         </div>
     </div>
+
+
+
 
     <!-- 導覽列 -->
     <header>
@@ -156,6 +150,7 @@
 
     </header>
 
+    <!-- 小遊戲連結 -->
     <a class="getCoupon" href="game.html">
         <div id="wave_for_coupon">
             <div class="little_wave">
@@ -167,6 +162,7 @@
 
         <img id="peach" src="images/getCoupon2.svg" alt="優惠券小遊戲">
     </a>
+
 
     <!-- 第一屏 -->
     <div class="mt_first_page">
@@ -184,12 +180,58 @@
                 </div> -->
                 <div id="mt_water">
                     <img src="images/fjMountain.png" alt="fujiMountain">
-                    <!-- <div id="water_wrap">
-                        <canvas id="canvas"></canvas>
-                    </div> -->
+                    
                     <div id="water_color_change"></div>
                     <div id="water_color_nochange"></div>
+                    <div class="monkey_animation">
+                        
+                            <div id="monkey_wrap">
+                                <div class="sk_wrap">
+                                    <div class="little_smoke">
+                                        <div class="sk"></div>
+                                        <div class="sk"></div>
+                                        <div class="sk"></div>
+                                    </div>
+                                </div>
+                                <div id="wave01">
+                                    <div class="little_wave">
+                                        <img src="images/wave1.svg" alt="">
+                                        <img src="images/wave1.svg" alt="">
+                                        <img src="images/wave1.svg" alt="">
+                                    </div>
+                                </div>
 
+                                <div id="wave02">
+                                    <div class="little_wave">
+                                        <img src="images/wave2.svg" alt="">
+                                        <img src="images/wave2.svg" alt="">
+                                        <img src="images/wave2.svg" alt="">
+                                    </div>
+                                </div>
+                                <img id="slogon02" src="images/slogon2.svg" alt="來約泡湯吧!">
+                                <img id="slogon01" src="images/slogon01.svg" alt="專業客製湯屋">
+                                <img id="monkeyFace" src="images/monkeyFace01.svg" alt="">
+                                <img id="mr_spring_for_firstpage" src="images/monkey01.svg" alt="湯先生">
+                                <img id="monkeyEyes" src="images/monkeyEyesLemon.svg" alt="">
+
+
+                                <div class="note" style="opacity: 0;">
+                                    <span>z</span>
+                                    <span>Z</span>
+                                    <span>z</span>
+                                    <span>Z</span>
+                                    <span>z</span>
+                                </div>
+                                <div class="sk_wrap02">
+                                    <div class="little_smoke">
+                                        <div class="sk"></div>
+                                        <div class="sk"></div>
+                                        <div class="sk"></div>
+                                    </div>
+                                </div>
+                            </div>
+                       
+                    </div>
                 </div>
             </div>
         </div>
@@ -240,55 +282,6 @@
                             <img class="cross" src="images/herbCross03.png" alt="養顏美容">
                             <img class="sepia_cross" src="images/herbCross03_bl02.png" alt="養顏美容">
                         </figure>
-                    </div>
-
-                    <div class="monkey_animation">
-                        <div id="monkey_wrap">
-                            <div class="sk_wrap">
-                                <div class="little_smoke">
-                                    <div class="sk"></div>
-                                    <div class="sk"></div>
-                                    <div class="sk"></div>
-                                </div>
-                            </div>
-                            <div id="wave01">
-                                <div class="little_wave">
-                                    <img src="images/wave1.svg" alt="">
-                                    <img src="images/wave1.svg" alt="">
-                                    <img src="images/wave1.svg" alt="">
-                                </div>
-                            </div>
-
-                            <div id="wave02">
-                                <div class="little_wave">
-                                    <img src="images/wave2.svg" alt="">
-                                    <img src="images/wave2.svg" alt="">
-                                    <img src="images/wave2.svg" alt="">
-                                </div>
-                            </div>
-                            <img id="slogon02" src="images/slogon2.svg" alt="來約泡湯吧!">
-                            <img id="slogon01" src="images/slogon01.svg" alt="專業客製湯屋">
-                            <img id="monkeyFace" src="images/monkeyFace01.svg" alt="">
-                            <img id="mr_spring_for_firstpage" src="images/monkey01.svg" alt="湯先生">
-                            <img id="monkeyEyes" src="images/monkeyEyesLemon.svg" alt="">
-
-
-                            <div class="note" style="opacity: 0;">
-                                <span>z</span>
-                                <span>Z</span>
-                                <span>z</span>
-                                <span>Z</span>
-                                <span>z</span>
-                            </div>
-                            <div class="sk_wrap02">
-                                <div class="little_smoke">
-                                    <div class="sk"></div>
-                                    <div class="sk"></div>
-                                    <div class="sk"></div>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
 
                 </div>
@@ -444,25 +437,23 @@
     <!-- 第三屏 -->
 
     <div class="third_page_wrap">
-        <!-- <div class="cloud_large">
-                <img src="images/cloud_large.png" alt="cloud">
-                <img src="images/cloud_large.png" alt="cloud">
-                <img src="images/cloud_large.png" alt="cloud">
-            </div> -->
-        <div class="cloud_large">
-            <img src="images/cloud_l2.png" alt="cloud">
-            <img src="images/cloud_l2.png" alt="cloud">
-            <img src="images/cloud_l2.png" alt="cloud">
-        </div>
-
-        <div class="cloud_large">
-            <img src="images/cloud_large.png" alt="cloud">
-            <img src="images/cloud_large.png" alt="cloud">
-            <img src="images/cloud_large.png" alt="cloud">
-        </div>
 
 
         <div class="third_page">
+
+            <div class="cloud_large">
+                <img src="images/cloud_l2.png" alt="cloud">
+                <img src="images/cloud_l2.png" alt="cloud">
+                <img src="images/cloud_l2.png" alt="cloud">
+            </div>
+
+            <div class="cloud_large">
+                <img src="images/cloud_large.png" alt="cloud">
+                <img src="images/cloud_large.png" alt="cloud">
+                <img src="images/cloud_large.png" alt="cloud">
+            </div>
+
+
             <div class="wrap forum_wrap">
                 <div class="mt_title">
                     <div class="titleSquare">
