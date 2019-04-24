@@ -10,6 +10,13 @@
     cursor: pointer;
 }
 
+body{
+    background-image: url("../images/backGround.jpg");
+    background-repeat: repeat;
+    background-size: 100%;
+
+}
+
 
 /* 小遊戲連結============================================================== */
 .getCoupon {
@@ -185,13 +192,13 @@
     z-index: 3;
 }
 
-#mt_water{
-    img{
-        position: absolute;
-        width: 100%;
-        bottom:5vh;
-    }
-}
+// #mt_water{
+//     img{
+//         position: absolute;
+//         width: 100%;
+//         bottom:5vh;
+//     }
+// }
 #water_color_change {
     width: 100%;
     height: 300px;
@@ -281,9 +288,7 @@
         left: 0px;
         right: 0px;
     }
-
-
-
+    
     .herb_cross:hover .sepia_cross {
         opacity: 0;
         transition: 0.3s;
@@ -424,9 +429,11 @@
     /* 第一屏 動畫============================================================== */
     #slogon01{
         position: absolute;
-        right:-350px;
-        top: -100px;
-        width: 120px;
+        // right:0px;
+        left:260px;
+        top:-40px;
+        // width:50px;
+        height:250px;
         transform: rotateZ(30deg);
         animation-delay:3s;
         transition: 0.5s;
@@ -434,9 +441,10 @@
 
     #slogon02{
         position: absolute;
-        right:30px;
-        top: -100px;
-        width: 120px;
+        left:-70px;
+        top:-30px;
+        // width: 10px;
+        height:200px;
         transform: rotateZ(-30deg);
         animation-delay:3s;
         transition: 0.5s;
@@ -459,6 +467,9 @@
         margin: auto;
         bottom: 0px;
         transition: 0.5s;
+        z-index: 10;
+        // transform: scale(0.9);
+        
     }
 
     #monkey_wrap{
@@ -466,14 +477,18 @@
         width: 500px;
         height: 500px;
         transform: scale(1);
-        top:60px;
+        top:0px;
         transition: 0.5s;
+        margin: auto;
+        transform: scale(0.9);
+        // left:12.5%;
+        // right:20%;
     }
     
     #monkeyFace {
         position: absolute;
         width: 90px;
-        left: 555px;
+        left: 135px;
         top: 60px;
         z-index: 5;
         opacity: 0;
@@ -483,7 +498,7 @@
     #monkeyEyes {
         position: absolute;
         width: 70px;
-        left: 575px;
+        left: 155px;
         top: 80px;
         z-index: 6;
         opacity: 0;
@@ -495,15 +510,15 @@
         position: absolute;
         /* bottom: 60px; */
         margin-top:0px;
-        margin-left: 420px;
+        // margin-left: 420px;
         filter: drop-shadow(0 0 5px rgba(95, 69, 39, 0.7));
     }
     
     #wave01 {
         position: absolute;
         right: 0px;
-        left: 320px;
-        top: 230px;
+        left: -60px;
+        top:230px;
         pointer-events: none;
         opacity: 0;
     }
@@ -550,8 +565,8 @@
         
         position: absolute;
         right: 0px;
-        left:690px;
-        top: 270px;
+        left:260px;
+        top:260px;
         pointer-events: none;
         /* transform: rotate(10deg); */
         opacity: 0;
@@ -598,9 +613,10 @@
     .note {
         position: absolute;
         right: 0px;
-        left: 550px;
+        left: 110px;
         top: 30px;
         pointer-events: none;
+        opacity: 1;
     }
     
     .note span {
@@ -669,14 +685,14 @@
     .sk_wrap {
         position: absolute;
         bottom: 250px;
-        left: 650px;
+        left:230px;
         pointer-events: none;
     }
     
     .sk_wrap02 {
         position: absolute;
         bottom: 130px;
-        left: 400px;
+        left:0px;
     }
     
     .sk_wrap .sk {
@@ -1016,12 +1032,13 @@
     }
 
     .third_page{
-        background-image: url("../images/backGround.jpg");
-        background-repeat: repeat;
-        background-size: 100%;
+        // background-image: url("../images/backGround.jpg");
+        // background-repeat: repeat;
+        // background-size: 100%;
         width: 100%;
-        height: 100vh;
-        overflow: hidden;
+        // height: 100vh;
+        position: relative;
+        // overflow: hidden;
     }
 
     // .third_page .cloud_large{
@@ -1034,39 +1051,38 @@
     //     animation: 20s cloudGo linear infinite;
     // }
 
-    .third_page_wrap .cloud_large:nth-of-type(1){
+    .third_page .cloud_large:nth-of-type(1){
         position: absolute;
         display: flex;
         flex-direction: row;
         top:0px;
-        z-index:99;
-        // transform: rotateY(270deg);
-        overflow: hidden;
+        // z-index:40;
         pointer-events: none;
         animation: 20s cloudGo linear infinite;
+        // overflow: hidden;
     }
 
-    .third_page_wrap .cloud_large:nth-of-type(1) img{
+    .third_page .cloud_large:nth-of-type(1) img{
         transform: rotateX(180deg);
     }
 
-    .third_page_wrap .cloud_large:nth-of-type(2){
+    .third_page .cloud_large:nth-of-type(2){
         position: absolute;
         display: flex;
         flex-direction: row;
         bottom:-130px;
         // z-index: 50;
         transform: rotateX(180deg);
-        overflow: hidden;
         pointer-events: none;
         animation: 20s cloudGo linear infinite;
+        // overflow: hidden;
     }
 
 
     .third_page_wrap{
-        position: relative;
         width: 100%;
-        height: 100vh;
+        // height: 100vh;
+        overflow: hidden;
     }
 
     .mt_title{
@@ -1216,11 +1232,6 @@
         margin-right:25px;
         font-family: "Noto Sans TC";
         font-size: 16px;
-    }
-    //地圖
-    #mapBoard{
-        width:100%;
-        height: 500px;
     }
     // 右半邊
     .roomPicWrap{
@@ -1617,15 +1628,7 @@
     // 第一屏media queries============================================= 
     @media screen and (min-width:768px){
        
-        // #mr_spring_for_firstpage {
-        //     width: 30%;
-        //     position: absolute;
-        //     /* bottom: 60px; */
-        //     margin:auto;
-        // }
-    
-
-
+        
         // 第四屏===================================================================================
         .my_fourth_page{
             height: 100vh;
@@ -1687,11 +1690,6 @@
             margin-top:50px;
             width: 100%;
             z-index: 2;
-        }
-         //地圖
-        #mapBoard{
-            width:100%;
-            height: 380px;
         }
         // 分店幻燈片
         .slideshow-container {
@@ -1991,71 +1989,65 @@
             outline: none;
         }
     }
+
     @media screen and (max-width:399px){
-        #mt_water{
-            img{
-                position: absolute;
-                width: 100%;
-                bottom:35vh;
-            }
+        
+        #fj{
+            bottom: 250px;
         }
+
+
         .content_frame_wrap{
-            transform: scale(0.7);
-            left:60%;
-            bottom:70px;
+            transform: scale(0.9);
+            width: 100%;
+            right: 0px;
+            left:0px;
+            top:-60%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             margin: auto;
-        }
-        
-        .herb {
-            transform: scale(0.5);
-            transition: 1s;
-            margin-top: -300px;
+            // left:240px;
         }
 
         
-        .monkey_animation{
-            transform: scale(0.5);
+        #content_frame {
+            -webkit-mask-image: unset;
+            // -webkit-mask-repeat: no-repeat;
+            position: absolute;
+            width: 300px;
+            right:-50%;
+            left:-60%;
+            height: 400px;
+            top:-60%;
+            margin-top: 30%;
+            // bottom:-580px;
+        }
+        
+        .sup_info {
+            width: 100%;
+        }
+        #spring_herb{
+            flex-wrap: wrap;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #spring_name{
             width:100%;
-            right:100%;
-            bottom:-15%;
-            left:-220px;
-            // bottom:150px;
-            transition: 1s;
-            margin:auto;
         }
 
-    }
-
-    @media screen and (max-width:767px) and (min-width:400px){
-
-        #mt_water{
-            img{
-                position: absolute;
-                width: 100%;
-                bottom:30vh;
-            }
-        }
-        .content_frame_wrap{
-            transform: scale(0.7);
-            left:240px;
-        }
+         #text_bubble{
+            opacity: 0;
+         }
     
-        // #text_bubble{
-        //     opacity: 0;
-        // }
-        .bg_mt img {
-            bottom: 800px;
-            margin-bottom:100px;
-        }
+        
         .herb {
             transform: scale(0.5);
             transition: 1s;
-            margin-top: -85%;
-
+            // margin-top: -300px;
         }
-        
         .herb_cross{
-            top:250px;
+            // top:250px;
             right:12.5%;
         }
 
@@ -2064,15 +2056,152 @@
             left:12.5%;
         }
 
-        
-        .monkey_animation{
-            transform: scale(0.5);
+        #monkey_wrap{
+            transform: scale(0.6);
             width:100%;
-            margin:auto;
-            left:-45%;
-            // right:45%;
-            // bottom:100px;
+            bottom:-50%;
+            // right:100%;
+            // left:-55%;
+            // bottom:150px;
             transition: 1s;
+            margin:auto;
+            left:0px;
+            right: 0px;
+        }
+        #text_bubble{
+           opacity: 0;
+        }
+
+    }
+
+    @media screen and (max-width:380px){
+        
+        #content_frame {
+            transform: scale(0.9);
+            -webkit-mask-image: unset;
+            // -webkit-mask-repeat: no-repeat;
+            position: absolute;
+            width: 300px;
+            right:-50%;
+            left:-50%;
+            height: 400px;
+            margin-top: 15%;
+            // bottom:-580px;
+        }
+
+    }
+    @media screen and (max-width:375px){
+        #content_frame {
+            right:-50%;
+            left:-50%;
+            margin-top: 30%;
+        }
+    }
+
+    @media screen and (max-width:375px){
+        #content_frame {
+                right:-50%;
+                left:-52%;
+                margin-top: 10%;
+        }
+    }
+
+    @media screen and (max-width:360px){
+        #content_frame {
+                right:-50%;
+                left:-55%;
+                margin-top: 0%;
+        }
+
+
+    }
+    @media screen and (max-width:320px){
+        .herb {
+            transform: scale(0.4);
+            transition: 1s;
+        }
+        
+        #content_frame {
+            transform: scale(0.8);
+                right:-50%;
+                left:-62.5%;
+                top:-50%;
+                margin-top:-50%;
+        }
+
+    }
+
+    @media screen and (max-width:767px) and (min-width:400px){
+        
+        #fj{
+            bottom: 250px;
+        }
+
+        // #mt_water{
+        //     img{
+        //         position: absolute;
+        //         width: 100%;
+        //         bottom:30vh;
+        //     }
+        // }
+        .content_frame_wrap{
+            transform: scale(0.9);
+            right: 0px;
+            left:0px;
+            top: -80%;
+            // left:240px;
+        }
+
+        #content_frame {
+            // width: 900px;
+            right: 0px;
+            left:-65%;
+            // bottom:-580px;
+        }
+        
+        #content_frame {
+            -webkit-mask-image: unset;
+            // -webkit-mask-repeat: no-repeat;
+            position: absolute;
+            width: 900px;
+            right: 100px;
+            height: 400px;
+            bottom:-700px;
+        }
+         #text_bubble{
+            opacity: 0;
+         }
+    
+        .bg_mt img {
+            bottom: 800px;
+            margin-bottom:100px;
+        }
+        .herb {
+            transform: scale(0.6);
+            transition: 1s;
+            // margin-top: -85%;
+
+        }
+        
+        .herb_cross{
+            // top:250px;
+            right:12.5%;
+        }
+
+        .herb_cross:nth-of-type(1){
+            // top:300px;
+            left:12.5%;
+        }
+        
+        
+        #monkey_wrap{
+            transform: scale(0.6);
+            // right:10%;
+            
+            // left:-55%;
+            left:0px;
+            right: 0px;
+            margin:auto;
         }
     } 
 
@@ -2082,20 +2211,26 @@
             margin-bottom:100px;
         }
 
-        #mt_water{
-            img{
-                position: absolute;
-                width: 100%;
-                bottom:15vh;
-            }
+        
+        #fj{
+            bottom: 200px;
         }
+
+        
+        #content_frame {
+            width: 900px;
+            right: 0px;
+            left:0px;
+            bottom:-580px;
+        }
+
         .herb {
             transform: scale(0.8);
             transition: 1s;
         }
 
         .herb_cross{
-            top:250px;
+            // top:250px;
             right:10%;
         }
 
@@ -2103,12 +2238,14 @@
             // top:300px;
             left:10%;
         }
-        .monkey_animation{
+
+        #monkey_wrap{
             transform: scale(0.8);
-            // right:30%;
-            left:-20%;
-            bottom:-100px;
-            transition: 1s;
+            // right:10%;
+            
+            // left:-10%;
+            left:0px;
+            right: 0px;
             margin:auto;
         }
          
@@ -2116,27 +2253,30 @@
 
     @media screen and (max-width:1199px) and(min-width:992px) {
         
-        
        .herb {
            transform: scale(0.9);
            transition: 1s;
-           margin-top: -15%;
+        //    margin-top: -15%;
         }
-        // .herb_cross{
-        //     top:250px;
-        //     right:10%;
-        // }
 
-        // .herb_cross:nth-of-type(1){
-        //     // top:300px;
-        //     left:10%;
-        // }
-        .monkey_animation{
-            transform: scale(0.9);
-            // right:10%;
+        #monkey_wrap{
+            transform: scale(1);
+            left:0px;
+            right: 0px;
+        }
+        
+        #fj{
+            position: absolute;
+            width:100%;
+            bottom: 100px;
             transition: 1s;
-            right:5%;
-            margin:auto;
+        }
+        
+        
+        #content_frame {
+            width: 900px;
+            right: 50px;
+            bottom:-580px;
         }
        
    } 
@@ -2144,6 +2284,17 @@
         .bg_mt img {
             bottom: 400px;
         }
+        #fj{
+            position: absolute;
+            width:100%;
+            bottom: 0px;
+            transition: 1s;
+        }
+        #monkey_wrap{
+            left:0px;
+            right: 0px;
+        }
+
     } 
 
     @media screen and (max-width:1199px){
@@ -2154,6 +2305,26 @@
         }
         .bg_mt img {
             bottom: 500px;
+        }
+
+        #fj{
+            position: absolute;
+            width:100%;
+            transition: 1s;
+        }
+
+        
+        .forum_wrap{
+            padding-top: 90px;
+            margin-bottom: 60px;
+        }
+
+        .mt_title{
+            // width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top:0px; 
+            z-index: 50;
         }
 
      

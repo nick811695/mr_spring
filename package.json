@@ -1,29 +1,25 @@
 {
-  "name": "cd106",
+  "name": "gulp",
   "version": "1.0.0",
-  "description": "# 環境安裝",
-  "main": "index.js",
+  "description": "",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.2"
+  },
+  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sexfat/cd106.git"
+    "url": "git+https://github.com/nick811695/mr_spring.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/sexfat/cd106/issues"
+    "url": "https://github.com/nick811695/mr_spring/issues"
   },
-  "homepage": "https://github.com/sexfat/cd106#readme",
-  "dependencies": {
-    "bootstrap-sass": "^3.4.1",
-    "browser-sync": "^2.26.3",
-    "gsap": "^2.1.2",
-    "gulp": "^3.9.1",
-    "gulp-sass": "^4.0.2",
-    "gulp-sourcemaps": "^2.6.5",
-    "jquery": "^3.3.1",
-    "scrollmagic": "^2.0.6"
-  }
+  "homepage": "https://github.com/nick811695/mr_spring#readme"
 }
