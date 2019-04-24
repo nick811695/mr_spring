@@ -3,8 +3,11 @@ var x = document.getElementById("content_frame");
 var colorsepia = document.getElementsByClassName("sepia_cross")[0];
 var colorsepia02 = document.getElementsByClassName("sepia_cross")[1];
 var colorsepia03 = document.getElementsByClassName("sepia_cross")[2];
+var herbWrap = document.getElementsByClassName("herb")[0];
+
 var slogon01 = document.getElementById("slogon01");
 var slogon02 = document.getElementById("slogon02");
+
 
 //switch content=================================================================
 
@@ -52,21 +55,91 @@ function ShowHerb01() {
     slogon01.style.opacity = 0;
     slogon02.style.opacity = 0;
     waterColor.style.backgroundColor = "#ff9f9f";
+    herbWrap.style.marginTop="-25%";
     TweenMax.from("#content_frame", 2, { opacity: 0, ease: Power4.easeIn });
-    if($(window).width()<=768){
+      
+
+    if($(window).width()<=768 && $(window).width()>400){
+      herbWrap.style.marginTop="-80%";
+      monkeyWrap.style.opacity = 0;
       TweenMax.fromTo("#monkey_wrap", 2, {
         y: 0,
         repeat: 0,
         ease: Power1.easeInOut
       }, {
-          y: 200,
+          y:100,
           repeat: 0,
           ease: Power1.easeInOut,
           // yoyo: true
         });
-    } 
+    }
+    else if($(window).width()==768 && $(window).height()==1024){
+      
+      herbWrap.style.marginTop="-40%";
+      TweenMax.fromTo("#monkey_wrap", 2, {
+        x: 0,
+        repeat: 0,
+        ease: Power1.easeInOut
+      }, {
+          x: -150,
+          repeat: 0,
+          ease: Power1.easeInOut,
+          yoyo: true
+        });
+
+    }
+    else if($(window).width()<400 && $(window).height()<768){
+      
+      herbWrap.style.marginTop="-95%";
+      
+      monkeyWrap.style.opacity = 0;
+
+    }
+    else if($(window).width()<400 && $(window).height()<900){
+      
+      herbWrap.style.marginTop="-95%";
+      TweenMax.fromTo("#monkey_wrap", 2, {
+        y: 0,
+        repeat: 0,
+        ease: Power1.easeInOut
+      }, {
+          y: 100,
+          repeat: 0,
+          ease: Power1.easeInOut,
+          yoyo: true
+        });
+
+    }
+    else if($(window).width()>=400 && $(window).height()<=900){
+      
+      herbWrap.style.marginTop="-30%";
+      monkeyWrap.style.opacity = 0;
+      TweenMax.fromTo("#monkey_wrap", 2, {
+        y: 0,
+        repeat: 0,
+        ease: Power1.easeInOut
+      }, {
+          y: 100,
+          repeat: 0,
+          ease: Power1.easeInOut,
+          yoyo: true
+        });
+
+    }
+    else if($(window).width()<=1024 && $(window).height()==1366 ){
+      TweenMax.fromTo("#monkey_wrap", 2, {
+        x: 0,
+        repeat: 0,
+        ease: Power1.easeInOut
+      }, {
+          x: 0,
+          repeat: 0,
+          ease: Power1.easeInOut,
+          yoyo: true
+        });
+
+    }
     else{
-    
       TweenMax.fromTo("#monkey_wrap", 2, {
         x: 0,
         repeat: 0,
@@ -77,10 +150,10 @@ function ShowHerb01() {
           ease: Power1.easeInOut,
           yoyo: true
         });
-
     }
    
-  } else {
+  } 
+  else {
     colorsepia.style.opacity = 0;
     colorsepia02.style.opacity = 1;
     colorsepia03.style.opacity = 1;
@@ -89,6 +162,7 @@ function ShowHerb01() {
     monkeyEyes.style.opacity = 0;
     slogon01.style.opacity = 0;
     slogon02.style.opacity = 0;
+    // herbWrap.style.marginTop="-30%";
     waterColor.style.backgroundColor = "#ff9f9f";
     title.innerHTML = "舒筋緩骨湯";
     paragrah01.innerHTML = "【療效】山茱萸理氣解鬱，活血散瘀，和血調經。菊花治胃氣痛、新久風痺、吐血、月經不調、赤白帶、赤白痢、乳癰腫毒、跌打損傷；薰衣草：和中，治肝氣犯胃。";
@@ -99,25 +173,10 @@ function ShowHerb01() {
     TweenMax.from("#spring_name", 1, { opacity: 0, ease: Power3.easeIn });
     TweenMax.from(".paragraph", 1, { opacity: 0, ease: Power3.easeIn });
     TweenMax.from(".intro_pic_small", 1, { opacity: 0, ease: Power1.easeIn });
-    monkeyWrap.style.left="0";
-
+    
   
   }
-  //  else {
-  //   x.style.opacity = "0";
-  //   // colorSapia.style.display="block";
-  //   // TweenMax.fromTo("#content_frame", 2, {opacity: 1, ease: Power4.easeIn},{opacity: 0, ease: Power4.easeOut});
-  //   monkey.style.marginLeft = "420px";
-  //   TweenMax.fromTo("#mr_spring_for_firstpage",2,{ 
-  //       x:-120,
-  //       repeat: 0,
-  //       ease: Power1.easeInOut},{
-  //       x:55,
-  //       repeat: 0,
-  //       ease: Power1.easeInOut,
-  //       yoyo:true
-  //   });
-  // }
+  
 }
 
 function ShowHerb02() {
@@ -130,6 +189,7 @@ function ShowHerb02() {
     monkeyEyes.style.opacity = 0;
     slogon01.style.opacity = 0;
     slogon02.style.opacity = 0;
+    herbWrap.style.marginTop="-25%";
     waterColor.style.backgroundColor = "#00e5be";
     x.style.opacity = 1;
     title.innerHTML = "安定心神湯";
@@ -139,17 +199,86 @@ function ShowHerb02() {
     smallPic02.src = "./images/herb05.png";
     smallPic03.src = "./images/herb06.png";
     TweenMax.from("#content_frame", 2, { opacity: 0, ease: Power4.easeIn });
-    if($(window).width()<=768){
+   
+    if($(window).width()<768 && $(window).width()>400){
+      herbWrap.style.marginTop="-80%";
+      monkeyWrap.style.opacity = 0;
       TweenMax.fromTo("#monkey_wrap", 2, {
         y: 0,
         repeat: 0,
         ease: Power1.easeInOut
       }, {
-          y: 200,
+          y:100,
           repeat: 0,
           ease: Power1.easeInOut,
           // yoyo: true
         });
+    }
+    else if($(window).width()==768 && $(window).height()==1024){
+      
+      herbWrap.style.marginTop="-40%";
+      TweenMax.fromTo("#monkey_wrap", 2, {
+        x: 0,
+        repeat: 0,
+        ease: Power1.easeInOut
+      }, {
+          x: -150,
+          repeat: 0,
+          ease: Power1.easeInOut,
+          yoyo: true
+        });
+
+    }
+    else if($(window).width()<400 && $(window).height()<768){
+      
+      herbWrap.style.marginTop="-95%";
+      
+      monkeyWrap.style.opacity = 0;
+
+    }
+    else if($(window).width()<400 && $(window).height()<900){
+      
+      herbWrap.style.marginTop="-95%";
+      TweenMax.fromTo("#monkey_wrap", 2, {
+        y: 0,
+        repeat: 0,
+        ease: Power1.easeInOut
+      }, {
+          y: 100,
+          repeat: 0,
+          ease: Power1.easeInOut,
+          yoyo: true
+        });
+
+    }
+    else if($(window).width()>=400 && $(window).height()<=900){
+      
+      herbWrap.style.marginTop="-30%";
+      monkeyWrap.style.opacity = 0;
+      TweenMax.fromTo("#monkey_wrap", 2, {
+        y: 0,
+        repeat: 0,
+        ease: Power1.easeInOut
+      }, {
+          y: 100,
+          repeat: 0,
+          ease: Power1.easeInOut,
+          yoyo: true
+        });
+
+    }
+    else if($(window).width()<=1024 && $(window).height()==1366 ){
+      TweenMax.fromTo("#monkey_wrap", 2, {
+        x: 0,
+        repeat: 0,
+        ease: Power1.easeInOut
+      }, {
+          x: 0,
+          repeat: 0,
+          ease: Power1.easeInOut,
+          yoyo: true
+        });
+
     }else{
       TweenMax.fromTo("#monkey_wrap", 2, {
         x: 0,
@@ -161,21 +290,9 @@ function ShowHerb02() {
           ease: Power1.easeInOut,
           yoyo: true
         });
-
+    
     }
     
-    // TweenMax.fromTo(".note", 2, {
-    //   x: -15,
-    //   repeat: 0,
-    //   ease: Power1.easeInOut
-    // }, {
-    //     x: -200,
-    //     repeat: 0,
-    //     ease: Power1.easeInOut,
-    //     yoyo: true
-    //   });
-    
-
   } else {
     colorsepia.style.opacity = 1;
     colorsepia02.style.opacity = 0;
@@ -185,6 +302,7 @@ function ShowHerb02() {
     monkeyEyes.style.opacity = 0;
     slogon01.style.opacity = 0;
     slogon02.style.opacity = 0;
+    // herbWrap.style.marginTop="-30%";
     waterColor.style.backgroundColor = "#00e5be";
     title.innerHTML = "安定心神湯";
     paragrah01.innerHTML = "【療效】檸檬除可保養肌膚，有鎮靜安神的效果，建議到中藥房或花茶店買食用檸檬泡，免去農藥疑慮。而蒜頭，是很好的抑菌植物，搭配生薑一起泡澡，可放鬆肌肉、幫助睡眠。";
@@ -195,9 +313,8 @@ function ShowHerb02() {
     TweenMax.from("#spring_name", 1, { opacity: 0, ease: Power1.easeIn });
     TweenMax.from(".paragraph", 1, { opacity: 0, ease: Power1.easeIn });
     TweenMax.from(".intro_pic_small", 1, { opacity: 0, ease: Power1.easeIn });
-    monkeyWrap.style.left="0";
+    // monkeyWrap.style.left="0";
     
-
   }
 
 }
@@ -213,6 +330,7 @@ function ShowHerb03() {
     monkeyEyes.style.opacity = 1;
     slogon01.style.opacity = 0;
     slogon02.style.opacity = 0;
+    herbWrap.style.marginTop="-25%";
     waterColor.style.backgroundColor = " #f6ae54";
     x.style.opacity = 1;
     title.innerHTML = "養顏美容湯";
@@ -225,17 +343,87 @@ function ShowHerb03() {
     TweenMax.from("#content_frame", 2, { opacity: 0, ease: Power4.easeIn });  
     TweenMax.from("#monkeyFace", 2, { opacity: 0, ease: Power4.easeIn });
     TweenMax.from("#monkeyEyes", 2, { opacity: 0, ease: Power4.easeIn });
-    if($(window).width()<=768 || 1024){
+    
+    
+    if($(window).width()<=768 && $(window).width()>400){
+      herbWrap.style.marginTop="-80%";
+      monkeyWrap.style.opacity = 0;
       TweenMax.fromTo("#monkey_wrap", 2, {
         y: 0,
         repeat: 0,
-        ease: Power3.easeInOut
+        ease: Power1.easeInOut
+      }, {
+          y:100,
+          repeat: 0,
+          ease: Power1.easeInOut,
+          // yoyo: true
+        });
+    }
+    else if($(window).width()==768 && $(window).height()==1024){
+      
+      herbWrap.style.marginTop="-40%";
+      TweenMax.fromTo("#monkey_wrap", 2, {
+        x: 0,
+        repeat: 0,
+        ease: Power1.easeInOut
+      }, {
+          x: -150,
+          repeat: 0,
+          ease: Power1.easeInOut,
+          yoyo: true
+        });
+
+    }
+    else if($(window).width()<400 && $(window).height()<768){
+      
+      herbWrap.style.marginTop="-95%";
+      
+      monkeyWrap.style.opacity = 0;
+
+    }
+    else if($(window).width()<400 && $(window).height()<900){
+      
+      herbWrap.style.marginTop="-95%";
+      TweenMax.fromTo("#monkey_wrap", 2, {
+        y: 0,
+        repeat: 0,
+        ease: Power1.easeInOut
       }, {
           y: 100,
           repeat: 0,
-          ease: Power3.easeInOut,
+          ease: Power1.easeInOut,
           yoyo: true
         });
+
+    }
+    else if($(window).width()>=400 && $(window).height()<=900){
+      
+      herbWrap.style.marginTop="-30%";
+      monkeyWrap.style.opacity = 0;
+      TweenMax.fromTo("#monkey_wrap", 2, {
+        y: 0,
+        repeat: 0,
+        ease: Power1.easeInOut
+      }, {
+          y: 100,
+          repeat: 0,
+          ease: Power1.easeInOut,
+          yoyo: true
+        });
+
+    }
+    else if($(window).width()<=1024 && $(window).height()==1366 ){
+      TweenMax.fromTo("#monkey_wrap", 2, {
+        x: 0,
+        repeat: 0,
+        ease: Power1.easeInOut
+      }, {
+          x: 0,
+          repeat: 0,
+          ease: Power1.easeInOut,
+          yoyo: true
+        });
+
     }else{
       TweenMax.fromTo("#monkey_wrap", 2, {
         x: 0,
@@ -247,8 +435,9 @@ function ShowHerb03() {
           ease: Power1.easeInOut,
           yoyo: true
         });
-
     }
+
+    
   } else {
     colorsepia.style.opacity = 1;
     colorsepia02.style.opacity = 1;
@@ -258,6 +447,7 @@ function ShowHerb03() {
     monkeyEyes.style.opacity = 1;
     slogon01.style.opacity = 0;
     slogon02.style.opacity = 0;
+    // herbWrap.style.marginTop="-30%";
     waterColor.style.backgroundColor = "#f6ae54";
     title.innerHTML = "養顏美容湯";
     paragrah01.innerHTML = "【療效】八角、枸杞具有清熱解毒、涼血、止俐的功效。另外，佛手柑芳香疏散，可撫平焦慮、沮喪、振奮情緒。讓心裡恢復平衡，緩解工作生活的壓力。";
@@ -270,7 +460,6 @@ function ShowHerb03() {
     TweenMax.from("#spring_name", 1, { opacity: 0, ease: Power1.easeIn });
     TweenMax.from(".paragraph", 1, { opacity: 0, ease: Power1.easeIn });
     TweenMax.from(".intro_pic_small", 1, { opacity: 0, ease: Power1.easeIn });
-    monkeyWrap.style.left="0";
     
   }
 
@@ -365,41 +554,6 @@ TweenMax.fromTo("#monkey_wrap", 2, {
     yoyo: true
 
   });
-
-// TweenMax.fromTo("#mr_spring_for_firstpage", 2, {
-//   y: 10,
-//   repeat: -1,
-//   ease: Power1.easeInOut
-// }, {
-//     y: 20,
-//     repeat: -1,
-//     ease: Power1.easeInOut,
-//     yoyo: true
-
-//   });
-
-// TweenMax.fromTo("#monkeyFace", 2, {
-//   y: -5,
-//   repeat: -1,
-//   ease: Power1.easeInOut
-// }, {
-//     y: 5,
-//     repeat: -1,
-//     ease: Power1.easeInOut,
-//     yoyo: true
-
-//   });
-// TweenMax.fromTo("#monkeyEyes", 2, {
-//   y: -5,
-//   repeat: -1,
-//   ease: Power1.easeInOut
-// }, {
-//     y: 5,
-//     repeat: -1,
-//     ease: Power1.easeInOut,
-//     yoyo: true
-
-//   });
 
 
 TweenMax.fromTo("#wave01", 2, { opacity: 0, ease: Power4.easeIn }, { opacity: 0.8, ease: Power4.easeOut });
