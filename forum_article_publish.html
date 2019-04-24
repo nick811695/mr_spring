@@ -18,40 +18,7 @@
 	}
 </style>
 <body>
-	<!-- <header>
-			<div class="nav_fabric">
-				<img src="images/navBar.png" alt="navBar">
-	
-			</div>
-			<nav class="main_menu">
-				<a href="custom.html">
-					<h2>
-						客製湯頭
-					</h2>
-				</a>
-				<a href="reservation.html">
-					<h2>
-						預約訂房
-					</h2>
-				</a>
-				<a href="index.html">
-					<h2>
-						<img style="width:100px;" src="images/mrSpringLogo.png" alt="">
-					</h2>
-				</a>
-				<a href="forum.html">
-					<h2>
-						討論の區
-					</h2>
-				</a>
-				<a href="member.html">
-					<h2>
-						會員専區
-					</h2>
-				</a>
-	
-			</nav>
-	</header> -->
+
 	<div class="forum_bg bg article_publish_bg">
 		<div class="forum_wrap article_publish_wrap">
 			<div class="article_publish">
@@ -61,7 +28,7 @@
 			</div>
 			<section id="lightbox_wrapper">
 		        <div id="lightbox">
-		            <div id="lightboxToggle"></div>
+		            <!-- <div id="lightboxToggle"></div> -->
 		            <div id="lightbox_radar_mask"></div>
 		            <div id="lightbox_radar">
 	            		<div id="lightbox_radar_close" class="btn_s">關閉</div>
@@ -73,14 +40,14 @@
 		                <h3>選擇湯牌</h3>
 		                <div id="lightbox_filter_mask"></div>
 		                <div class="lightbox_filter">
-		            		<img src="images/filter.png">
-		            		<ul class="lightbox_filter_box">
-		            			<li>全部湯牌</li>
-		            			<li>自己製作</li>
-		            			<li>討論區收藏</li>
-		            		</ul>
+		                	<img src="images/filter.png">
+		            		<select id="lightbox_filter_select">
+		            			<option value="Choice 1">全部湯牌</option>
+		            			<option value="Choice 2">自己製作</option>
+		            			<option value="Choice 3">討論區收藏</option>
+		            		</select>
 		            	</div>
-		                <label for="lightbox_radar" id="lightbox_radar_btn"><img src="images/radar_icon.png"></label>
+		                <label for="lightbox_radar" id="lightbox_radar_btn"><img src="images/info_icon.png"></label>
 		            	
 		                <div class="select-box">
 		                    <label for="select-box1" class="label select-box1"><span class="label-desc">全部湯牌</span> </label>

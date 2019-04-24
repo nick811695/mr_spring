@@ -82,6 +82,8 @@
     // margin-bottom: 20px; 
     z-index: 10;
     position: relative;
+
+    align-items: center;
 }
 
 .radar_d{
@@ -97,28 +99,18 @@
 }
 .lightbox_filter{
     width: 30px;
+    height: 30px;
     margin-left: 20px;
-    z-index: 11;
 }
 .lightbox_filter img{
     width: 30px;
-}
-.lightbox_filter_box{
-    max-height: 0;
-    overflow: hidden;
     position: absolute;
-    z-index: 100;
-    background-color: rgba(255,255,255,0.8);
-    transition: 0.2s;
+    display: block;
 }
-.lightbox_filter_box li{
-    padding: 3px 5px;
-    z-index: 101;
-}
-.lightbox_filter_box li.select{
-}
-.lightbox_filter_box.open{
-    max-height: 300px;
+.lightbox_filter select{
+    width: 30px;
+    opacity: 0;
+    font-size: 16px;
 }
 #lightbox_filter_mask{
     width: 100vw;
@@ -131,10 +123,14 @@
 }
 #lightbox_radar_btn{
     display: none;
+    // visibility: hidden;
     margin-left: 20px;
+    height: 30px;
+    width: 30px;
 }
 #lightbox_radar_btn img{
     width: 30px;
+    display: block;
 }
 .select-box{
     display: none;
@@ -176,18 +172,18 @@
 
 #lightbox_radar_mask{
     width: 100vw;
-    height: 100vh;
+    // height: 100vh;
     position: fixed;
-    top: -20px;
-    left: -12%;
-    z-index: 10;
+    top: -15px;
+    left: 0%;
+    z-index: 11;
     display: none;
     background-color: rgba(0,0,0,0.5);
 }
 #lightbox_radar{
     position: absolute;
     z-index: 12;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255,0.9);
     border-radius: 15px;
     padding: 10px;
     width: 320px;
@@ -381,11 +377,18 @@
   .cards .card_selected{
     transform: scale(0.88,0.88);  
   }
+  #lightbox .nextStepBtn_d{
+    bottom: 25px;
+  }
 }
 @media screen and (min-width: 1200px){
     #lightbox{
         display: flex;
         width: 90%;
+        padding-bottom: 50px;
+    }
+    #lightbox_radar_btn{
+        display: none;
     }
     #lightbox_radar{
         display: none;
@@ -405,5 +408,7 @@
          top: 100px;
          right: 0;
     }
+
+
   
 }
