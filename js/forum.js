@@ -1,7 +1,11 @@
 
 
 $(document).ready(function(){
-
+	/*---hot_forum_zoom-----*/
+	$('.hot_forum_box1 .card').addClass('zoom_in');
+	$('.hot_forum_box1 .card').removeClass('zoom_out');
+	/*-----湯牌去圖------*/
+	
 	/*-----hot_forum fall*/
 	$('.hot_forum_box1 .hot_forum_hidden').css({
 		"max-width":"0",
@@ -588,11 +592,13 @@ $(document).ready(function(){
 	/*---tag----*/
 	$(".forum .forum_item span").click(function(){
 		var temp = $(this).text();
+		console.log($(this));
 		$(".forum_search input").val(temp);
 		$(".forum_search input").focus();
+		
 	});
 
-
+	
 
 	/*----methods----*/
 	var i=0;
