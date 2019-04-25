@@ -1233,6 +1233,12 @@ body{
         font-family: "Noto Sans TC";
         font-size: 16px;
     }
+    //地圖
+    #mapBoard{
+        width:100%;
+        height: 500px;
+        margin-bottom: 20px;
+    }
     // 右半邊
     .roomPicWrap{
         /* height:600px; */
@@ -1241,7 +1247,9 @@ body{
         position: relative;
     }
     // 分店幻燈片
-    .mySlides {display:none}
+    .slideshow-container{
+        margin: 0px 10px;
+    }
     
     /* 幻灯片容器 */
     .slideshow-container {
@@ -1253,7 +1261,7 @@ body{
     .prev, .next {
       cursor: pointer;
       position: absolute;
-      margin-top:30%;
+      margin-top:25%;
       width: auto;
       padding: 16px;
       color: white;
@@ -1265,8 +1273,11 @@ body{
     }
     
     /* 定位 "下一张" 按钮靠右 */
+    .prev{
+        left: 10px;
+    }
     .next {
-      right: 0;
+      right: 10px;
       border-radius: 3px 0 0 3px;
     }
     
@@ -1285,7 +1296,7 @@ body{
         text-shadow: 5px 5px 5px black;
         left:0;
         right:0;
-        top:200px;
+        top:180px;
         z-index: 5;
         font-family: "Noto Sans TC";
         font-size: 20px;
@@ -1686,6 +1697,7 @@ body{
          #mapBoard{
             width:100%;
             height: 380px;
+            margin-bottom: 0px;
         }
         // 雲地圖
         .cloud_map{
