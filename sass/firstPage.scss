@@ -1682,6 +1682,11 @@ body{
         .room_info_mobile{
             display: none;
         }
+         //地圖
+         #mapBoard{
+            width:100%;
+            height: 380px;
+        }
         // 雲地圖
         .cloud_map{
             -webkit-mask-image:url("../images/cloud_mask01.svg");
