@@ -1,3 +1,4 @@
+//開關
 document.getElementById('close_btn').onclick = function () {
     document.getElementById('chatbotTextWrap').style.display = 'none';
 }
@@ -10,8 +11,7 @@ document.getElementById('monkeyBot').onclick = function () {
     }
 }
 
-
-
+//輸入文字
 //內容第一層overflow
 var content = document.getElementById("chatBot-content");
 //內容第二層(包p)
@@ -27,44 +27,73 @@ function chatBotScrollTo(container, content) {
         behavior: "smooth"
     });
 }
+
+//抓輸入的input
 var chatUserText = document.getElementsByClassName("chatBot-text")[0];
-document.getElementById('chatBot-search').onclick = function () {
+
+document.getElementById('chatBot-search').addEventListener("click",function () {
     // 檢查input有沒有內容
-    if(chatUserText.value == ""){
+    if (chatUserText.value == "") {
         return;
     }
     // 取使用者輸入文字
     var userText = document.getElementsByClassName('chatBot-text')[0].value;
     //創造元素
     var node = document.createElement("p");
+    var clear = document.createElement("div");
     //定義元素樣式
-    node.id = "chatBot-content-B";
+    node.className = "chatBot-content-B";
+    clear.className = "clearfix";
     //創造節點
     var textnode = document.createTextNode(userText);
     node.appendChild(textnode);
     document.getElementById("chatBot-container").appendChild(node);
+    document.getElementById("chatBot-container").appendChild(clear);
+});
+
+
+
+//Ajax============================================================================================================
+
+//撈資料
+function $id(id) {
+    return document.getElementById(id);
+}
+
+$id("chatBot-search").addEventListener("click",getUserText);
+
+function bottalk(jsonStr) {
+    var reply = JSON.parse(jsonStr);//轉成字串
+    
+    console.log(reply);
+    //創造元素
+    var nodeA = document.createElement("p");
+    var clear = document.createElement("div");
+    //定義元素樣式
+    nodeA.className = "chatBot-content-A";
+    clear.className = "clearfix";
+    //創造節點
+    var textnodeA = document.createTextNode(reply);
+    nodeA.appendChild(textnodeA);
+    document.getElementById("chatBot-container").appendChild(nodeA);
+	document.getElementById("chatBot-container").appendChild(clear);
     //清空輸入區
     chatUserText.value = "";
     //卷軸更新
     chatBotScrollTo(container, content);
 }
-document.getElementById('chatBot-search').onclick = function () {
-    // 檢查input有沒有內容
-    if(chatUserText.value == ""){
-        return;
+
+function getUserText() {
+    var xhr = new XMLHttpRequest();
+    xhr.onload = function () {//網頁load完才執行，資料有回傳的話就執行
+        if (xhr.status == 200) {
+            bottalk(xhr.responseText);
+        } else {
+            alert(xhr.status);
+        }
     }
-    // 取使用者輸入文字
-    var userText = document.getElementsByClassName('chatBot-text')[0].value;
-    //創造元素
-    var node = document.createElement("p");
-    //定義元素樣式
-    node.id = "chatBot-content-B";
-    //創造節點
-    var textnode = document.createTextNode(userText);
-    node.appendChild(textnode);
-    document.getElementById("chatBot-container").appendChild(node);
-    //清空輸入區
-    chatUserText.value = "";
-    //卷軸更新
-    chatBotScrollTo(container, content);
+    
+    var url = "./php/chatBot.php?chatBot=" + document.getElementById("chatBot-text").value;
+    xhr.open("Get", url, true);//格式、要讀取的網址、同步與非同步 //get(讀取資料)、post(傳送資料 )
+    xhr.send(null);
 }

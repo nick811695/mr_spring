@@ -1634,7 +1634,12 @@ body{
         justify-content: center;
     }
     } 
-
+    .chatbot{
+        display: none;
+    }
+    .chatbotTextWrap{
+        display: none;
+    }
 
     // 第一屏media queries============================================= 
     @media screen and (min-width:768px){
@@ -1781,6 +1786,9 @@ body{
             }
 
         // 對話湯先生====================================================
+        .chatbot{
+            display: block;
+        }
         .monkeyBotWrap {
             width: 110px;
             position: fixed;
@@ -1872,7 +1880,7 @@ body{
             padding: 10px;
             box-sizing: border-box;
         }
-        #chatBot-content-A {
+        .chatBot-content-A {
             border-radius: 15px 15px 15px 0px;
             background-color: #e9dbc6;
             padding: 10px;
@@ -1884,7 +1892,7 @@ body{
             color:#70562e;
         
         }
-        #chatBot-content-B{
+        .chatBot-content-B{
             border-radius: 15px 15px 0px 15px;
             background-color: #d5b17a;
             padding: 10px;
