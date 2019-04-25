@@ -141,11 +141,10 @@
 
 
         <script>
-            $("#toggle").click(function () {
+            $("#toggle").click(function() {
                 $(this).toggleClass("action");
                 $("#overlay").toggleClass("open");
             });
-
         </script>
 
     </header>
@@ -192,22 +191,16 @@
                                         <img id="text_bubble" src="images/texture01.png" alt="湯頭介紹">
                                         <article class="sup_info">
                                             <figure id="spring_herb">
-                                        
-                                                <h3 id="spring_name"></h3>
-                                        
-                                                <a href=""><img class="intro_pic_small" src="images/herb01.svg"
-                                                        alt="湯頭介紹"></a>
-                                                <a href=""><img class="intro_pic_small" src="images/herb02.svg"
-                                                        alt="湯頭介紹"></a>
-                                                <a href=""><img class="intro_pic_small" src="images/herb03.svg"
-                                                        alt="湯頭介紹"></a>
+                                                <h3 id="spring_name">舒筋緩骨湯</h3>
+                                                <a href=""><img class="intro_pic_small" src="images/herb01.svg" alt="湯頭介紹"></a>
+                                                <a href=""><img class="intro_pic_small" src="images/herb02.svg" alt="湯頭介紹"></a>
+                                                <a href=""><img class="intro_pic_small" src="images/herb03.svg" alt="湯頭介紹"></a>
                                             </figure>
-                                            <p class="paragraph"> </p>
+                                            <p class="paragraph">
+                                                【療效】山茱萸理氣解鬱，活血散瘀，和血調經。菊花治胃氣痛、新久風痺、吐血、月經不調、赤白帶、赤白痢、乳癰腫毒、跌打損傷；薰衣草：和中，治肝氣犯胃。
+                                            </p>
                                             </br>
-                                            <p class="paragraph"></p>
-
-                                            
-                                       
+                                            <p class="paragraph">【配方】山茱萸、菊花、薰衣草。</p>
                                             <div class="custom_button">
                                                 <center>
                                                     <a href="custom.html" class="btn_s" style="color:#ceae81;">馬上客製</a>
@@ -837,6 +830,44 @@
     </div>
 
 
+    <!-- 猴子機器人 -->
+    <div class="chatbot">
+        <div class="monkeyBotWrap">
+            <img class="monkeyBot" id="monkeyBot" src="images\monkeyBot.png" alt="猴子機器人">
+        </div>
+    </div>
+    <div class="chatbotTextWrap" id="chatbotTextWrap">
+        <!-- 叉叉 -->
+        <div id="close_btn">
+            <img src="images\X.png" alt="關閉鍵">
+        </div>
+        <!-- <div class="botTitle"> -->
+        <h2>湯先生客服</h2>
+        <!-- </div> -->
+        <!-- 對話框 -->
+        <div id="chatBot-content" class="clearfix">
+            <div id="chatBot-container" class="clearfix">
+                <p id="chatBot-content-A" class="chatBot-content-A">HI! 很高興為您服務，您可以點擊下方關鍵或是直接輸入詢問內容!</p>
+                <div style="clear:both"></div>
+            </div>
+        </div>
+
+        <ul class="chatBot-keyword">
+            <li>營業時間</li>
+            <li>藥草</li>
+            <li>功效</li>
+            <li>分店</li>
+            <li>優惠折扣</li>
+            <li>房型有哪些</li>
+            <li>客製要到哪客製</li>
+            <div class="clearfix"></div>
+        </ul>
+        <div class="chatBot-text-Wrap">
+            <button type="submit" id="chatBot-search" class="nextBTN">送出</button>
+            <input type="text" class="chatBot-text" id="chatBot-text" placeholder="輸入你的問題" name="userkey">
+            <div id="UserText"></div>
+        </div>
+    </div>
 
     <script src="js/cloudGo.js"></script>
     <script src="js/kasumi.js"></script>
@@ -848,41 +879,10 @@
     <script src="js/Chart.js"></script>
     <script src="js/forum.js"></script>
     <script src="js/radar.js"></script>
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrMA9a22m_ft2x_W8UDhDpfI2GS7k54kg&callback=initMap">
-        </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCrMA9a22m_ft2x_W8UDhDpfI2GS7k54kg&callback=initMap">
+    </script>
     <script src="js/chatbot.js"></script>
     <!-- <script src="js/waveGo.js"></script> -->
-
-    <!-- 幻燈片 -->
-    <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) { slideIndex = 1 }
-            if (n < 1) { slideIndex = slides.length }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-        }
-    </script>
 </body>
 
 </html>
