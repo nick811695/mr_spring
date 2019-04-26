@@ -40,6 +40,7 @@
 	-webkit-clip-path: polygon(25% 0%, 75% 0%, 100% 10%, 100% 100%, 0 100%, 0 10%);
 	clip-path: polygon(25% 0%, 75% 0%, 100% 10%, 100% 100%, 0 100%, 0 10%);
 	padding-top: 7.7142857142857%;
+	border-radius: 10px;
 }
 .card .knot{
 	position: absolute;
@@ -59,6 +60,7 @@
 	text-align: center;
 	width: 100%;
 	padding: 5px 20px;
+	font-family: 'pigmo';
 }
 .card .card_item_box{
 	width: 80%;
@@ -76,7 +78,10 @@
 	float: left;
 }
 
-
+.card .card_item h4{
+	font-family: 'KangXi';
+	margin-top: 5px;
+}
 .card div.front .card_item img{
 	width: 45px;
 	display: block;

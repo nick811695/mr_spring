@@ -16,8 +16,8 @@
     margin: auto;
 }
 #lightbox{
-    position: relative;
-    width: 90%;
+    position: absolute;
+    width: 80%;
     max-width: 1200px;
     background-image: url('../images/backGround.jpg');
     background-size: 950px;
@@ -25,6 +25,8 @@
     padding: 20px;
     filter: drop-shadow(-3px 3px 5px #333);
     display: flex;
+    top: 10px;
+    // padding-bottom: 50px;
 }
 
 #lightboxToggle{
@@ -37,6 +39,7 @@
     background-color: #e19d43;
     border: 3px solid #fee;
     cursor: pointer;
+    display: none;
 }
 
 #lightboxToggle::before{
@@ -76,7 +79,11 @@
     height: 100%;
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 80px; 
+    // margin-bottom: 20px; 
+    z-index: 10;
+    position: relative;
+
+    align-items: center;
 }
 
 .radar_d{
@@ -87,22 +94,46 @@
     align-items: center;
 }
 
-.chooseCard_d h2{
-    font-weight: bold;
-    font-size: 30px;
-    text-align: center;
-    margin: auto;
-    margin-bottom: 10px;
+.chooseCard_d h3{
+    font-family: 'Noto Sans TC', sans-serif;
 }
-
+.lightbox_filter{
+    width: 30px;
+    height: 30px;
+    margin-left: 20px;
+}
+.lightbox_filter img{
+    width: 30px;
+    position: absolute;
+    display: block;
+}
+.lightbox_filter select{
+    width: 30px;
+    opacity: 0;
+    font-size: 16px;
+}
+#lightbox_filter_mask{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 10;
+    display: none;
+    left: -12%;
+    top: -20px;
+}
+#lightbox_radar_btn{
+    display: none;
+    // visibility: hidden;
+    margin-left: 20px;
+    height: 30px;
+    width: 30px;
+}
+#lightbox_radar_btn img{
+    width: 30px;
+    display: block;
+}
 .select-box{
-    cursor: pointer;
-    position : relative;
-    max-width:  20em;
-    margin: 10px auto;
-    width: 224px;
-    background-image: url("../images/backGround.jpg");
-
+    display: none;
 }
 
 .select,.label{
@@ -139,6 +170,43 @@
     content: "▲";
 }
 
+#lightbox_radar_mask{
+    width: 100vw;
+    // height: 100vh;
+    position: fixed;
+    top: -15px;
+    left: 0%;
+    z-index: 11;
+    display: none;
+    background-color: rgba(0,0,0,0.5);
+}
+#lightbox_radar{
+    position: absolute;
+    z-index: 12;
+    background-color: rgba(255, 255, 255,0.9);
+    border-radius: 15px;
+    padding: 10px;
+    width: 320px;
+    top: 20px;
+    left: -10%;
+    right: -10%;
+    margin: auto;
+    display: none;
+}
+#lightbox_radar_close{
+    border-radius: 10px;
+    background-color: #e19d43;
+    position: absolute;
+    color: #864d04;
+    text-align: center;
+    width: 80px;
+    left: 0;
+    right: 0;
+    bottom: 25px;
+    margin: auto;
+    cursor: pointer;
+    z-index: 11;
+}
 .label:after{
     content: "▼";
     font-size: 13px;
@@ -151,12 +219,12 @@
 
 .chooseCardArea_d{
     width: 100%;
-    padding: 10px 0px 0px;
     background-size: contain;
     background-repeat: round;
     display: flex;
     flex-wrap: wrap;
     position: relative;
+    z-index: 9;
 }
 
 .responsive{
@@ -165,7 +233,7 @@
 
 .cards{
     height: 460px;
-    padding: 0 5px;
+    padding: 0px 5px 10px 5px;
 }
 .cards .card{
   margin: auto;
@@ -173,24 +241,14 @@
   position: static;
   transform: scale(0.85,0.85);
   cursor: pointer;
+  filter: brightness(80%) drop-shadow(0 0 5px rgba(0,0,0,0.5));
 }
-.cards .card_selected::after{
-  content: "";
-  display: block;
-  width: 120%;
-  height: 115%;
-  border: 10px solid #a00;
-  opacity: 0.3;
-  position: absolute;
-  top: -50px;
-  left: -15%;
-  margin: auto;
-  border-radius: 30px;
+.cards .card .card_item_box{
+    margin-top: 20px;
 }
-// .cardNo{
-//   text-align: center;
-//   padding-top: 10px;
-// }
+.cards .card_selected{
+    filter: brightness(100%) drop-shadow(0 0 5px rgba(0,0,0,0.5));
+  }
 .slick-dots{
     position: absolute;
 	text-align: center;
@@ -206,7 +264,6 @@
             }
         }
         button{
-            display: none;
             font: 0/0 a;
             text-shadow: none;
             color: transparent;
@@ -228,6 +285,7 @@
 	top: calc(50% - 30px);
     left: -10px;
     cursor: pointer;
+    z-index: 10;
 }
 
 .next{
@@ -235,6 +293,7 @@
 	top: calc(50% - 30px);
     right: -10px;
     cursor: pointer;
+    z-index: 10;
 }
 
 .arrow_left,.arrow_right{
@@ -256,20 +315,21 @@
 .arrow_left:hover,.arrow_right:hover{
     border-left: 4px solid black;
     border-bottom: 4px solid black;
-    // transition: .3s;
 }
 
 #radar_wrapper{
     display: none;
+    z-index: 11;
 }
 
 #lightbox .nextStepBtn_d{
     position: absolute;
-    bottom: 30px;
+    bottom: 10px;
     right: 0;
     left: 0;
     margin: auto;
     width: 100px;
+    z-index: 10;
 }
 .btn_b.nextStep{
     color: #fff;
@@ -281,31 +341,74 @@
     cursor: pointer;
 }
 @media screen and (min-width: 768px) {
-  .cards .card{
-    margin-top: 20px;
-    transform: scale(0.85,0.85);
-  }
-
+    #lightbox{
+        top: 150px;
+        padding: 30px;
+    }
+    .lightbox_filter{
+        display: none;
+    }
+    .select-box{
+        display: block;
+        cursor: pointer;
+        position : relative;
+        max-width:  20em;
+        margin-left: 30px;
+        width: 224px;
+        background-image: url("../images/backGround.jpg");
+    }
+    .chooseCardArea_d{
+        margin-bottom: 50px;
+    }
+    .cards .card{
+       margin-top: 20px;
+       transform: scale(0.85,0.85);
+    }
+    .chooseCard_d h3:first-child{
+        font-family: 'Noto Sans TC', sans-serif;
+        display: block;
+        font-weight: bold;
+        font-size: 30px;
+        text-align: left;
+        margin-bottom: 10px;
+        margin: 0;
+        margin-left: 10%;
+    }
   .cards .card_selected{
     transform: scale(0.88,0.88);  
   }
+  #lightbox .nextStepBtn_d{
+    bottom: 25px;
+  }
 }
-
 @media screen and (min-width: 1200px){
-  #lightbox{
-    display: flex;
-  }
-  .chooseCard_d{
-    width: 75%;
-    margin-left: 0; 
-  }
+    #lightbox{
+        display: flex;
+        width: 90%;
+        padding-bottom: 50px;
+    }
+    #lightbox_radar_btn{
+        display: none;
+    }
+    #lightbox_radar{
+        display: none;
+    }
+    .chooseCard_d{
+        width: 65%;
+        margin-left: 0; 
+    }
+    .radar_box{
+        width: 33%;
+    }
     #radar_wrapper{
-      display: block;
-      width: 280px;
-      height: 300px;
-      position: relative;
-      top: 200px;
-      right: 0;
-  }
+        display: block;
+        width: 100%;
+        // height: 300px;
+         position: relative;
+         top: 100px;
+         right: 0;
+    }
+
+
   
 }
