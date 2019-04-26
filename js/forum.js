@@ -1,6 +1,7 @@
 
 
 $(document).ready(function(){
+	
 	/*---hot_forum_zoom-----*/
 	$('.hot_forum_box1 .card').addClass('zoom_in');
 	$('.hot_forum_box1 .card').removeClass('zoom_out');
@@ -432,10 +433,14 @@ $(document).ready(function(){
 	/*--card link--*/
 	if ($(window).width()<=768) {
 		$(".card").click(function (){
-			window.location = 'forum_article.html';
+			$(this).siblings(".readMore").submit();
 		});
 	}
 	
+	/*   forum link   */
+	$(".forum_content").click(function (){
+		$(this).children(".readMore").submit();
+	});
 
 	/*---mobile filter---*/
 
@@ -630,18 +635,48 @@ $(document).ready(function(){
 	});
 
 	/*----like-----*/
-
+	if ($(".heart_icon").hasClass("likeType")){
+		$(".heart_icon").attr("src","images/hollow_heart.png");
+	}else if($(".heart_icon").hasClass("likeType1")){
+		$(".heart_icon").attr("src","images/solid_heart.png");
+	}
 	$(".heart_icon ").click(function(){
-		if ($(this).hasClass('solid_heart')) {
-			$(this).attr("src","../images/hollow_heart.png");
-			$(this).removeClass('solid_heart');
-			$(this).addClass('hollow_heart');
+		if ($(this).hasClass('likeType1')) {
+			$(this).attr("src","images/hollow_heart.png");
+			$(this).removeClass('likeType1');
+			$(this).addClass('likeType');
+			var artNo = $(this).siblings("div").text();
+			// console.log(artNo);
+			$.ajax({
+	            url: './php/like.php',
+	            data: {
+	            	artNo:artNo,
+	            	type:"1",
+	            	},
+	            type: 'GET',
+	            async: false,
+	            success: function(data){
+	                $(".likeNum").text(data);
+	            },
+	        });
 		}else {
-			$(this).attr("src","../images/solid_heart.png");
-			$(this).removeClass('hollow_heart');
-			$(this).addClass('solid_heart');
+			var artNo = $(this).siblings("div").text();
+			$(this).attr("src","images/solid_heart.png");
+			$(this).removeClass('likeType');
+			$(this).addClass('likeType1');
+			$.ajax({
+	            url: './php/like.php',
+	            data: {
+	            	artNo:artNo,
+	            	type:"2",
+	            	},
+	            type: 'GET',
+	            async: false,
+	            success: function(data){
+	                $(".likeNum").text(data);
+	            },
+	        });
 		}
-		
 	});
 
 
@@ -653,6 +688,15 @@ $(document).ready(function(){
 	});
 	$('#info_close').click(function(){
 		$('.article_hot_forum_box .article_info').css('display','none');
+
+	});
+	/*addMes*/
+	$(".publish_msg_r input[name='submit']").click(function(){
+		if ($("#addMes textarea").val().length>=1) {
+			$("#addMes").submit();
+		}
+		
+
 
 	});
 });

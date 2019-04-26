@@ -1,5 +1,7 @@
 <?php
+$errMsg = "";
 try {
+	session_start();
 	$dsn = "mysql:host=localhost;port=3306;dbname=cd106g4;charset=utf8";
 	$user = "root";
 	$password = "root";
@@ -7,10 +9,10 @@ try {
 
 	$pdo = new PDO($dsn, $user, $password, $options);  
 
-	session_start();
     // $_SESSION["memNo"] = $memRow["no"];
-    $_SESSION["memId"] = "hsujie";
-    $_SESSION["memName"] = "hsujie";
+    $_SESSION["memNo"] = 1;
+    $_SESSION["memId"] = "test";
+    $_SESSION["memNickname"] = "test";
 
 } catch (PDOException $e) {
 	$errMsg .=  "錯誤原因" . $e->getMessage() . "<br>"; 
