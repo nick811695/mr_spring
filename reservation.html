@@ -52,7 +52,7 @@
         <section id="smallLightBox_wrapper">
             <div id="smallLightBox">
                 <!-- <div id="smallLightboxToggle"></div> -->
-                <h3>還沒選擇<sapn>日期</span>哦!!!</h3>
+                <h3>還沒選擇日期哦!!!</h3>
                 <div class="nextStepBtn_d">
                     <div class="btn_b nextStep">確定</div>
                 </div>
@@ -116,7 +116,7 @@
                 </div>
                 <div class="cardPrice_d">
                     <span>湯牌價格</span>
-                    <span>NT$<span id="cardPriceText"></span>1200</span>
+                    <span>NT$<span id="cardPriceText">1200</span></span>
                 </div>
                 <div class="nextStepBtn_d">
                     <div class="btn_b nextStep">確定</div>
@@ -231,7 +231,7 @@
                         </div>
                         <div class="cardPrice_d">
                             <span>湯牌價格</span>
-                            <span>NT$<span id="cardPriceText"></span>1200</span>
+                            <span>NT$<span id="cardPriceText">1200</span></span>
                         </div>
                     </div>
                 </div>
@@ -379,10 +379,13 @@
                                 </div>
                                 <div class="branchText_d">
                                     <div class="branchTextContainer">
+                                        <div class="branchTips">
+                                            <h2>請選擇分店哦!!!</h2>
+                                        </div>
                                         <div class="firstBranchText">
                                             <div class="branchText_title">
                                                 <div class="branchText_title_Img_d">
-                                                    <img src="images/store01_bk.png" alt="">
+                                                    <img src="images/store01_bk.png" alt="" style="width:110%;">
                                                 </div>
                                                 <p class="branchText_title_text">中央店</p>
                                             </div>
@@ -396,7 +399,7 @@
                                         <div class="secondBranchText">
                                             <div class="branchText_title">
                                                 <div class="branchText_title_Img_d">
-                                                    <img src="images/store01_bk.png" alt="">
+                                                    <img src="images/store02_bk.png" alt="" style="width:85%;">
                                                 </div>
                                                 <p class="branchText_title_text">桃園店</p>
                                             </div>
@@ -410,7 +413,7 @@
                                         <div class="thirdBranchText">
                                             <div class="branchText_title">
                                                 <div class="branchText_title_Img_d">
-                                                    <img src="images/store01_bk.png" alt="">
+                                                    <img src="images/store03_bk.png" alt="">
                                                 </div>
                                                 <p class="branchText_title_text">北投店</p>
                                             </div>
@@ -457,6 +460,9 @@
                                 </div>
                                 <div class="clockText_d">
                                     <div class="clockTextContainer">
+                                        <div class="clockTips">
+                                            <h2>請選擇時段哦!!!</h2>
+                                        </div>
                                         <div class="firstClockText">
                                             <div class="clockText_title">
                                                 <div class="clockText_title_Img_d">
@@ -498,7 +504,7 @@
                         <div class="thirdRow_d">
                             <div class="roomPrice">
                                 <span>湯屋價格</span>
-                                <span>NT$<span id="roomPriceText"></span>1200</span>
+                                <span>NT$<span id="roomPriceText">1200</span></span>
                             </div>
                             <div class="nextStepBtn_d">
                                 <div class="btn_b nextStep">下一步</div>
@@ -593,19 +599,19 @@
                                 <div class="roomInfoDateImg_d">
                                     <img src="images/calender.svg" alt="">
                                 </div>
-                                <p>2019/04/08</p>
+                                <p id="roomResDate">2019/04/08</p>
                             </div>
                             <div class="roomInfoClock">
                                 <div class="roomInfoClockImg_d">
                                     <img src="images/morning_black.png" alt="">
                                 </div>
-                                <p>中午</p>
+                                <p id="roomResTime">中午</p>
                             </div>
                             <div class="roomInfoTitle">
                                 <div class="roomInfoTitleImg_d">
                                     <img src="images/house.svg" alt="">
                                 </div>
-                                <p>中央店</p>
+                                <p id="roomResName">中央店</p>
                             </div>
                             <div class="roomInfoText">
                                 <p>靠山面海，景觀優美，湯屋簡潔而溫潤，適合養顏美容的療效湯頭。</p>
@@ -629,15 +635,15 @@
                             </tr>
                             <tr>
                                 <th>日期</th>
-                                <td colspan="3">2018/04/08</td>
+                                <td id="orderResDate" colspan="3">2018/04/08</td>
                             </tr>
                             <tr>
                                 <th>時段</th>
-                                <td colspan="3">早上09:00-12:00</td>
+                                <td id="orderResTime" colspan="3">早上09:00-12:00</td>
                             </tr>
                             <tr>
                                 <th>地點</th>
-                                <td colspan="3">北投分店 ( NT$<span>1200</span> )</td>
+                                <td colspan="3"><span id="orderRoomName">北投分店</span> ( NT$<span>1200</span> )</td>
                             </tr>
                             <tr>
                                 <th>使用湯牌</th>
@@ -662,7 +668,7 @@
                             <div class="roomTotalPrice">
                                 <!-- <span>優惠券折扣<span class="discountTxt">-NT$100</span></span> -->
                                 <span>總價</span>
-                                <span>NT$<span id="roomTotalPriceText"></span>2300</span>
+                                <span>NT$<span id="roomTotalPriceText">2300</span></span>
                             </div>
                             <div class="nextStepBtn_d">
                                 <div class="btn_b nextStep">前往付款</div>
@@ -680,7 +686,9 @@
         
         
     
-    
+   
+
+    <script src="js/loadInfo.js"></script>
     <script src="js/calendar.js"></script>
     <script src="js/select.js"></script>
     <!-- <script src="js/PrismSlider.js"></script> -->
