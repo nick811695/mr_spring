@@ -2,13 +2,38 @@
 
 try{
   require_once("php/connect.php");
-  // $sql = "select * from products where psn = :psn";
-  // $products = $pdo->prepare($sql);
-  // $products->bindValue(":psn", $psn);
-  // $products->execute();
+  	// $memNo = $_SESSION["memNo"];
+  	// $memId = $_SESSION["memId"];
+  	// $memNickname = $_SESSION["memNickname"];
+  	$sql = "select *
+			from card c
+			natural join (
+				select a.effectTypeNo item1type,a.pointA item1pointA,a.pointB item1pointB,a.pointC item1pointC,a.itemImg2Url item1Img2Url,a.itemname item1name,b.cardno
+				from carditem1 b
+				left outer join item a
+				on a.itemno = b.item1no)as a
+			natural join (
+				select a.effectTypeNo item2type,a.pointA item2pointA,a.pointB item2pointB,a.pointC item2pointC,a.itemImg2Url item2Img2Url,a.itemname item2name,b.cardno
+				from carditem2 b
+				left outer join item a
+				on a.itemno = b.item2no)as b
+			natural join (
+				select a.effectTypeNo item3type,a.pointA item3pointA,a.pointB item3pointB,a.pointC item3pointC,a.itemImg2Url item3Img2Url,a.itemname item3name,b.cardno
+				from carditem3 b
+				left outer join item a
+				on a.itemno = b.item3no)as c
+			natural join (
+				select a.effectTypeNo item4type,a.pointA item4pointA,a.pointB item4pointB,a.pointC item4pointC,a.itemImg2Url item4Img2Url,a.itemname item4name,b.cardno
+				from carditem4 b
+				left outer join item a
+				on a.itemno = b.item4no)as d
+			where memNo = 1;"; //mem_card
+	
+	$mem_card = $pdo -> query($sql);
+
 }catch(PDOException $e){
-  $errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
-  $errMsg .= "錯誤行號 : ".$e -> getLine(). "<br>";
+	$errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
+	$errMsg .= "錯誤行號 : ".$e -> getLine(). "<br>";
 }
 
 
@@ -18,8 +43,8 @@ try{
  ?>
 
 
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
@@ -31,12 +56,6 @@ try{
     <link rel="stylesheet" href="css/lightbox.css">
     <link rel="stylesheet" href="css/slick.css">
 </head>
-<style type="text/css">
-	
-	body{
-		/*height: 100vh;*/
-	}
-</style>
 <body>
 
 	<div class="forum_bg bg article_publish_bg">
@@ -80,151 +99,55 @@ try{
 		                
 		                <div class="chooseCardArea_d">
 		                    <div class="responsive">
-		                       	<div class="cards">
-		                            <div class="card card1">
+<?php
+$i=0;
+while ($mem_cardRow = $mem_card->fetch(PDO::FETCH_ASSOC)) {
+$i++;
+?>	
+								<div class="cards">
+		                            <div class="card card<?php echo $i ?>" cardNo="<?php echo $mem_cardRow['cardNo'] ?>" cardPrice="<?php echo $mem_cardRow['cardPrice'] ?>">
 										<img class="knot" src="images/red_knot.png">
 										<div class="front">
 											<img class="badge" src="images/badge.png">
-											<h3 class="card_name">舒筋活骨湯1</h3>
+											<h3 class="card_name"><?php echo $mem_cardRow['cardName'] ?></h3>
 											<div class="card_item_box">
 												<div class="card_item card_item1">
 													<div class="card_item_image">
-														<img src="images/card_item.png">
+														<img src="<?php echo $mem_cardRow['item1Img2Url'] ?>">
 													</div>
-													<h4 class="card_item_name card_item_name1">紅色鼻屎</h4>
+													<h4 class="card_item_name card_item_name1"><?php echo $mem_cardRow['item1name'] ?></h4>
 												</div>
 												<div class="card_item card_item2">
 													<div class="card_item_image">
-														<img src="images/card_item.png">
+														<img src="<?php echo $mem_cardRow['item2Img2Url'] ?>">
 													</div>
-													<h4 class="card_item_name card_item_name2">紅地瓜</h4>
+													<h4 class="card_item_name card_item_name2"><?php echo $mem_cardRow['item2name'] ?></h4>
 												</div>
 												<div class="card_item card_item3">
 													<div class="card_item_image">
-														<img src="images/card_item.png">
+														<img src="<?php echo $mem_cardRow['item3Img2Url'] ?>">
 													</div>
-													<h4 class="card_item_name card_item_name3">紅色鼻屎</h4>
+													<h4 class="card_item_name card_item_name3"><?php echo $mem_cardRow['item3name'] ?></h4>
 												</div>
 												<div class="card_item card_item4">
 													<div class="card_item_image">
-														<img src="images/card_item.png">
+														<img src="<?php echo $mem_cardRow['item4Img2Url'] ?>">
 													</div>
-													<h4 class="card_item_name card_item_name4">枸杞</h4>
+													<h4 class="card_item_name card_item_name4"><?php echo $mem_cardRow['item4name'] ?></h4>
 												</div>
 												<div class="clear"></div>
 											</div>
 										</div>
 									</div>
 		                        </div>
-		                        <div class="cards">
-		                            <div class="card card1">
-										<img class="knot" src="images/red_knot.png">
-										<div class="front">
-											<img class="badge" src="images/badge.png">
-											<h3 class="card_name">舒筋活骨湯1</h3>
-											<div class="card_item_box">
-												<div class="card_item card_item1">
-													<div class="card_item_image">
-														<img src="images/card_item.png">
-													</div>
-													<h4 class="card_item_name card_item_name1">紅色鼻屎</h4>
-												</div>
-												<div class="card_item card_item2">
-													<div class="card_item_image">
-														<img src="images/card_item.png">
-													</div>
-													<h4 class="card_item_name card_item_name2">紅地瓜</h4>
-												</div>
-												<div class="card_item card_item3">
-													<div class="card_item_image">
-														<img src="images/card_item.png">
-													</div>
-													<h4 class="card_item_name card_item_name3">紅色鼻屎</h4>
-												</div>
-												<div class="card_item card_item4">
-													<div class="card_item_image">
-														<img src="images/card_item.png">
-													</div>
-													<h4 class="card_item_name card_item_name4">枸杞</h4>
-												</div>
-												<div class="clear"></div>
-											</div>
-										</div>
-									</div>
-		                        </div>
-		                        <div class="cards">
-		                            <div class="card card1">
-										<img class="knot" src="images/red_knot.png">
-										<div class="front">
-											<img class="badge" src="images/badge.png">
-											<h3 class="card_name">舒筋活骨湯1</h3>
-											<div class="card_item_box">
-												<div class="card_item card_item1">
-													<div class="card_item_image">
-														<img src="images/card_item.png">
-													</div>
-													<h4 class="card_item_name card_item_name1">紅色鼻屎</h4>
-												</div>
-												<div class="card_item card_item2">
-													<div class="card_item_image">
-														<img src="images/card_item.png">
-													</div>
-													<h4 class="card_item_name card_item_name2">紅地瓜</h4>
-												</div>
-												<div class="card_item card_item3">
-													<div class="card_item_image">
-														<img src="images/card_item.png">
-													</div>
-													<h4 class="card_item_name card_item_name3">紅色鼻屎</h4>
-												</div>
-												<div class="card_item card_item4">
-													<div class="card_item_image">
-														<img src="images/card_item.png">
-													</div>
-													<h4 class="card_item_name card_item_name4">枸杞</h4>
-												</div>
-												<div class="clear"></div>
-											</div>
-										</div>
-									</div>
-		                        </div>
+
+
+
+<?php 
+}
+?>
+		                       	
 		                        
-		                        <div class="cards">
-		                            <div class="card card1">
-										<img class="knot" src="images/red_knot.png">
-										<div class="front">
-											<img class="badge" src="images/badge.png">
-											<h3 class="card_name">舒筋活骨湯1</h3>
-											<div class="card_item_box">
-												<div class="card_item card_item1">
-													<div class="card_item_image">
-														<img src="images/card_item.png">
-													</div>
-													<h4 class="card_item_name card_item_name1">紅色鼻屎</h4>
-												</div>
-												<div class="card_item card_item2">
-													<div class="card_item_image">
-														<img src="images/card_item.png">
-													</div>
-													<h4 class="card_item_name card_item_name2">紅地瓜</h4>
-												</div>
-												<div class="card_item card_item3">
-													<div class="card_item_image">
-														<img src="images/card_item.png">
-													</div>
-													<h4 class="card_item_name card_item_name3">紅色鼻屎</h4>
-												</div>
-												<div class="card_item card_item4">
-													<div class="card_item_image">
-														<img src="images/card_item.png">
-													</div>
-													<h4 class="card_item_name card_item_name4">枸杞</h4>
-												</div>
-												<div class="clear"></div>
-											</div>
-										</div>
-									</div>
-		                        </div>
 		                        
 		                    </div>
 		                    <!-- control arrows -->
@@ -260,6 +183,7 @@ try{
 					<form action="php/add_article.php">
 						<input type="text" name="article_title" placeholder="請輸入標題">
 						<textarea placeholder="請輸入內容分享(上限250字)" name="article_text"></textarea>
+						<input type="hidden" name="cardNO" id="cardNo">
 						<button type="submit" class="btn_l">發表文章</button> 
 					</form>
 				</div>
@@ -270,7 +194,7 @@ try{
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.js"></script>
 	<script src="js/Chart.js"></script>
-	<script src="js/hot_forum_radar.js"></script>
+	<script src="js/article_poblish_radar.js"></script>
 
 	<script type="text/javascript" src="js/article_poblish.js"></script>
 
