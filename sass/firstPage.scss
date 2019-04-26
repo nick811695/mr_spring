@@ -425,6 +425,10 @@ body{
         margin: 0px 5px;
     }
 
+    .paragraph{
+        text-align: justify;
+    }
+
 
     /* 第一屏 動畫============================================================== */
     #slogon01{
@@ -1233,6 +1237,12 @@ body{
         font-family: "Noto Sans TC";
         font-size: 16px;
     }
+    //地圖
+    #mapBoard{
+        width:100%;
+        height: 500px;
+        margin-bottom: 20px;
+    }
     // 右半邊
     .roomPicWrap{
         /* height:600px; */
@@ -1241,7 +1251,9 @@ body{
         position: relative;
     }
     // 分店幻燈片
-    .mySlides {display:none}
+    .slideshow-container{
+        margin: 0px 10px;
+    }
     
     /* 幻灯片容器 */
     .slideshow-container {
@@ -1253,7 +1265,7 @@ body{
     .prev, .next {
       cursor: pointer;
       position: absolute;
-      margin-top:30%;
+      margin-top:25%;
       width: auto;
       padding: 16px;
       color: white;
@@ -1265,8 +1277,11 @@ body{
     }
     
     /* 定位 "下一张" 按钮靠右 */
+    .prev{
+        left: 10px;
+    }
     .next {
-      right: 0;
+      right: 10px;
       border-radius: 3px 0 0 3px;
     }
     
@@ -1285,7 +1300,7 @@ body{
         text-shadow: 5px 5px 5px black;
         left:0;
         right:0;
-        top:200px;
+        top:180px;
         z-index: 5;
         font-family: "Noto Sans TC";
         font-size: 20px;
@@ -1623,7 +1638,12 @@ body{
         justify-content: center;
     }
     } 
-
+    .chatbot{
+        display: none;
+    }
+    .chatbotTextWrap{
+        display: none;
+    }
 
     // 第一屏media queries============================================= 
     @media screen and (min-width:768px){
@@ -1681,6 +1701,12 @@ body{
         // 手機店家資訊
         .room_info_mobile{
             display: none;
+        }
+         //地圖
+         #mapBoard{
+            width:100%;
+            height: 380px;
+            margin-bottom: 0px;
         }
         // 雲地圖
         .cloud_map{
@@ -1764,6 +1790,9 @@ body{
             }
 
         // 對話湯先生====================================================
+        .chatbot{
+            display: block;
+        }
         .monkeyBotWrap {
             width: 110px;
             position: fixed;
@@ -1855,7 +1884,7 @@ body{
             padding: 10px;
             box-sizing: border-box;
         }
-        #chatBot-content-A {
+        .chatBot-content-A {
             border-radius: 15px 15px 15px 0px;
             background-color: #e9dbc6;
             padding: 10px;
@@ -1867,7 +1896,7 @@ body{
             color:#70562e;
         
         }
-        #chatBot-content-B{
+        .chatBot-content-B{
             border-radius: 15px 15px 0px 15px;
             background-color: #d5b17a;
             padding: 10px;

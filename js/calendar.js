@@ -1,8 +1,9 @@
-window.addEventListener("load", () => {  
+// window.addEventListener("load", () => {  
     var yy = new Date().getFullYear(); //年
     var mm = new Date().getMonth(); //月份
     var dd = new Date().getDate();//今天日期
     var arrmm = new Array();
+    var datevalue = "";
     arrmm[0] = "1";
     arrmm[1] = "2";
     arrmm[2] = "3";
@@ -187,7 +188,18 @@ window.addEventListener("load", () => {
         var value = document.querySelector("#mm-sp").innerText;
         var mmtext = Number(arrmm.indexOf(value));//月
         mmtext += 1;
-        datevalue = document.querySelector("#yy-sp").innerText + "-" + mmtext + "-" + e.target.innerText;
+        datevalue = document.querySelector("#yy-sp").innerText + "-" + ('00' + mmtext).slice(-2) + "-" + ('00' + e.target.innerText).slice(-2);
+        // console.log(datevalue);
+
+        // tradeTime = new Date();
+        // tradeTime = tradeTime.getFullYear() + '-' +
+        // ('00' + (tradeTime.getMonth() + 1)).slice(-2) + '-' +
+        // ('00' + tradeTime.getDate()).slice(-2) + ' ' +
+        // ('00' + tradeTime.getHours()).slice(-2) + ':' +
+        // ('00' + tradeTime.getMinutes()).slice(-2) + ':' +
+        // ('00' + tradeTime.getSeconds()).slice(-2);
+
+        
         // document.querySelector("#date-label").innerHTML = datevalue;
         // $('#date-text').removeClass('expanded');
         // document.querySelector("#date").value = datevalue;
@@ -228,4 +240,4 @@ window.addEventListener("load", () => {
         // }
     }
     load();
-})
+// })

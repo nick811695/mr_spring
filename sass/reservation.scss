@@ -159,7 +159,7 @@ nav h2:hover{
 }
 
 #smallLightBox h3{
-    font-size: 32px;
+    font-size: 26px;
     margin-bottom: 40px;
 }
 
@@ -422,7 +422,8 @@ nav h2:hover{
     margin-left: 10px;
 }
 
-#cardPrice_dText{
+#cardPriceText{
+    font-size: 36px;
     margin-left: 5px;
 }
 
@@ -880,6 +881,7 @@ body{
     flex-direction: column;
     position: relative;
     margin-top: 70px;
+    z-index: 2;
 }
 
 .select2_left_box_d{
@@ -1073,18 +1075,24 @@ body{
 
 .branchTextContainer,.clockTextContainer{
     width: 200px;
-    height: 210px;
+    height: 280px;
     -webkit-transition: all 300ms ease-in-out;
     transition: all 300ms ease-in-out;
 }
 
-.firstBranchText,.secondBranchText,.thirdBranchText,.firstClockText,.secondClockText,.thirdClockText{
+.branchTips,.firstBranchText,.secondBranchText,.thirdBranchText,.clockTips,.firstClockText,.secondClockText,.thirdClockText{
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     width: 200px;
     height: 70px;
     text-align: center;
+}
+
+.branchTips,.clockTips{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
 }
 
 .branchText_title,.branchText_addr,.branchText_tel,.clockText_title,.clockText_clock{
@@ -1137,6 +1145,7 @@ body{
     width: 70%;
     height: 70%;
     transform-origin: 0% 100%;
+    // filter: brightness(.5);
 }
 
 .firstClock_d{
@@ -1202,6 +1211,7 @@ body{
 }
 
 #roomPriceText{
+    font-size: 36px;
     margin-left: 5px;
 }
 
@@ -1479,6 +1489,7 @@ body{
 }
 
 #roomTotalPriceText{
+    font-size: 36px;
     margin-left: 5px;
 }
 
@@ -1494,6 +1505,7 @@ body{
 @media screen and (max-width: 768px){
     *{
         -webkit-user-select: none;
+        -webkit-tap-highlight-color: transparent;
     }
 
     .mobile_display{

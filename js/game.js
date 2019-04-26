@@ -4,18 +4,18 @@
      * 初始化遊戲
      */
     var fruitGame = function(args){
-        /*十種水果*/
+        /*十二種藥材*/
         this.FruitList = [
             // { ID:'F1', FruitName:'香蕉',Icon:'images/b-fruit/banana.png',Cent:50 },
             { ID:'F2', FruitName:'山茱萸',Icon:'./images/herb01.svg',Cent:50 },
-            { ID:'F3', FruitName:'哈密瓜',Icon:'./images/herb02.svg',Cent:50 },
-            { ID:'F4', FruitName:'葡萄',Icon:'./images/herb03.svg',Cent:30 },
-            { ID:'F5', FruitName:'芭樂',Icon:'./images/herb04.png',Cent:30 },
-            { ID:'F6', FruitName:'橘子',Icon:'./images/herb05.png',Cent:50 },
-            { ID:'F7', FruitName:'鳳梨',Icon:'./images/herb06.png',Cent:30 },
-            { ID:'F8', FruitName:'番茄',Icon:'./images/herb07.png',Cent:20 },
-            { ID:'F9', FruitName:'西瓜',Icon:'./images/herb08.png',Cent:10 },
-            { ID:'F10', FruitName:'柳丁',Icon:'./images/herb09.png',Cent:10 }
+            { ID:'F3', FruitName:'菊花',Icon:'./images/herb02.svg',Cent:50 },
+            { ID:'F4', FruitName:'薰衣草',Icon:'./images/herb03.svg',Cent:30 },
+            { ID:'F5', FruitName:'檸檬',Icon:'./images/herb04.png',Cent:30 },
+            { ID:'F6', FruitName:'蒜頭',Icon:'./images/herb05.png',Cent:50 },
+            { ID:'F7', FruitName:'生薑',Icon:'./images/herb06.png',Cent:30 },
+            { ID:'F8', FruitName:'佛手柑',Icon:'./images/herb07.png',Cent:20 },
+            { ID:'F9', FruitName:'八角',Icon:'./images/herb08.png',Cent:10 },
+            { ID:'F10', FruitName:'枸杞',Icon:'./images/herb09.png',Cent:10 }
         ];
         /*兩顆炸彈*/
         this.BombList = [
@@ -26,25 +26,25 @@
         this.LevelList = [
             { Level:1,Cent:1000,Speed:1000 }
         ];
-        /*生成水果炸弹的全局引用*/
+        /*生成藥材炸弹的全局引用*/
         this.BuilderFruit = null;
-        /*水果炸弹往下移动的全局引用*/
+        /*藥材炸弹往下移动的全局引用*/
         this.FruitMove = null;
         /*全局参数设置*/
         this.Setting = $.extend({
             //遊戲盒子
             GameBox:$('div#game_box'),
-            //水果籃
+            //藥材籃
             CarBox:$('div#carBox'),
-            //水果籃子移动像素
+            //藥材籃子移动像素
             CarMoveWidth:50,
-            //水果籃寬度
+            //藥材籃寬度
             CarBoxWidth:$('div#carBox').width(),
             //遊戲盒宽度 //1920
             BoxWidth:$(window).width(),
             //遊戲盒高度 //500
             BoxHeight:$(window).height(),
-            //水果寬度
+            //藥材寬度
             FruitWidth:80,
             //當前總得分
             CountCent:0,
@@ -79,7 +79,7 @@
     }
 
     /**
-     * 隨機獲得水果類型
+     * 隨機獲得藥材類型
      */
     fruitGame.prototype.GetRandomFruit = function(){
        var _this = this,
@@ -141,7 +141,7 @@
     // }
 
     /**
-     * 控制水果籃左右移動
+     * 控制藥材籃左右移動
      */
     
     fruitGame.prototype.BindControlMove = function(){
@@ -161,7 +161,7 @@
 // 手機模式
     //  使用陀螺儀
     if(window.screen.width<1440){
-        $('#game_control_txt').text('請將手機改成橫式，左右搖擺移動菜籃');
+        $('#game_control_txt').text('請將手機改成橫式，左右搖擺移動猴子');
         var mql = window.matchMedia('(orientation: portrait)');
         console.log(mql);
         //判斷手機是直式或橫式
@@ -257,7 +257,7 @@ mql.addListener(handleOrientationChange);
 
 
     /**
-     * 水果籃位置
+     * 藥材籃位置
      */
     fruitGame.prototype.CarBoxMove = function(action){
         var _this = this,
@@ -276,7 +276,7 @@ mql.addListener(handleOrientationChange);
     }
 
     /**
-     * 生成水果的X位置
+     * 生成藥材的X位置
      */
     fruitGame.prototype.BuilderFruitPosition = function(){
         var _setting = this.Setting,
@@ -285,7 +285,7 @@ mql.addListener(handleOrientationChange);
     }
 
     /**
-     * 控制水果下落
+     * 控制藥材落下
      */
     fruitGame.prototype.FruitDownMove = function(element){
         var _this = this,
@@ -302,7 +302,7 @@ mql.addListener(handleOrientationChange);
  
 
     /**
-     * 水果炸弹,血量减少
+     * 藥材炸弹,血量减少
      */
     fruitGame.prototype.FruitBomb = function(life){
         var _this = this,
@@ -319,15 +319,17 @@ mql.addListener(handleOrientationChange);
                 aa = parseInt(document.getElementById('gameCent').innerText);
                 // 把文字轉成數值再來判斷
                 // alert(aa);
-                if(aa >=200){
-                    c = 7;
+                if(aa >=250){
+                    c = "7折";
+                }if(aa >=200){
+                    c = "8折";
                 }else if(aa >=100){
-                    c = 8;
+                    c = "9折";
                 }else if(aa >=0){
-                    c = 9;
+                    c = "減價10元";
                 }
                 // $("div#game_box").append('<div class="game_over_tip">恭喜你得到積分'+document.getElementById('gameCent').innerText+'分~拿到<span id="score">'+c+'</span>折優惠券</div><br>');
-                score.innerHTML=`恭喜您得到積分${document.getElementById('gameCent').innerText}分<br>獲得${c}折優惠券!`;
+                score.innerHTML=`恭喜您得到積分${document.getElementById('gameCent').innerText}分<br>獲得${c}優惠券!`;
                 
                 //$("div#game_box").append('<div class="game_over_tip2">立刻前往客製湯頭</div>');
                 // $("div#game_box").append('<a href="javasript:;" id="bonus" class="game_over_tip3">'+'GO'+'</a>');
@@ -350,7 +352,7 @@ mql.addListener(handleOrientationChange);
     }
 
     /**
-     * 水果爆炸後,抖動畫面
+     * 藥材爆炸後,抖動畫面
      */
     fruitGame.prototype.FruitBombShock = function(){
         var _this = this,
@@ -375,7 +377,7 @@ mql.addListener(handleOrientationChange);
     }
 
     /**
-     * 計算籃子接到的水果
+     * 計算籃子接到的藥材
      */
     fruitGame.prototype.FruitPutCount = function(element,elementMove){
         var _this = this,
@@ -416,12 +418,15 @@ mql.addListener(handleOrientationChange);
      */
     fruitGame.prototype.Start = function(){
        // 倒數二十秒計時器 
-        var num = 20;
+        var num = 15;
         var time;
         function bye(){
  	        num--;
  	        if(num == 0){ 
- 		    num = "時間到!";
+             num = "時間到!";
+             document.getElementById("count_back").style.marginTop="-22px";
+             document.getElementById("divNum").style.color="#790e0e";
+             document.getElementById("timeBack").style.display="none";
  		clearInterval( time )
 		// 到這邊取消計時器標號
         }
@@ -431,7 +436,7 @@ mql.addListener(handleOrientationChange);
 		console.log(num)
     }
 	    time = setInterval( bye,1000);
-        // 寫下一個數字 就會是10的-3次方,所以我們寫1000會等於一秒	
+        // 寫下一個數字 就會是10的-3次方,所以寫1000會等於一秒	
         // 倒數三十秒計時器結束  
         var _this = this,
             _setting = this.Setting;
@@ -453,11 +458,11 @@ mql.addListener(handleOrientationChange);
             _this.FruitDownMove(_domDiv);
         },_this.GetLevelModel(_setting.LevelNum).Speed);
         // 這邊寫一個遊戲本身停止的計時器
-        // 30000毫秒過後執行吃到炸彈的function，這function是給生命life，要扣多少就給多少，滿是80，所以可以給80，但我94要給100(怪人)
+        // 30000毫秒過後執行吃到炸彈的function，這function是給生命life，要扣多少就給多少，滿是80，所以可以給80，這裡給100
         setTimeout(function() {
         clearInterval(_this.BuilderFruit);
         console.log(fruitGame.prototype.FruitBomb(100));
-        }, 20000);
+        }, 5000);
         return this;
     };
 
@@ -474,3 +479,17 @@ mql.addListener(handleOrientationChange);
         return new fruitGame();
     }();
 })(window);
+
+// Login===============================================
+var loginBnt = document.getElementById("toLogin");
+
+function showLogin(){
+
+}
+
+function init(){
+    loginBnt.onclick=showLogin;
+}
+
+window.addEventListener("load",init,false);
+
