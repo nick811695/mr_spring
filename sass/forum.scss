@@ -421,6 +421,7 @@
 	position: relative;
 	color: #222;
 	overflow: auto;
+	cursor: pointer;
 }
 .forum .forum_content .forum_title{
 	height: 25px;
@@ -680,7 +681,7 @@
 	background-color: #A40000;
 }
 .card_item_mobile .kind2{
-	background-color: #6a912d;
+	background-color: #dd7d1d;
 }
 .card_item_mobile .kind3{
 	background-color: #6a912d;
@@ -1019,11 +1020,12 @@
 		right: 0px;
 		height: auto;
 	}
+	.card_item_mobile{
+		display: none;
+	}
 	.msg_wrap {
-		margin-top: 80px;
+		// margin-top: 80px;
 		// max-width: 900px;
-		background-color: transparent;
-		padding: 0;
 		top: 0;
 	}
 
