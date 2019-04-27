@@ -155,7 +155,7 @@ h2.hot_forum_heading{
 .hot_forum_content .content_r{
     display: none;
 }
-.hot_forum_content+a{
+.hot_forum_content+form input[type="submit"]{
 	background-color: #7d0000;
 	text-align: center;
 	color: #f3ca93;
@@ -163,6 +163,7 @@ h2.hot_forum_heading{
 	position: absolute;
 	left: 50%;
 	bottom: 30px;
+	cursor: pointer;
 }
 #prev{
 	display: block;
@@ -202,7 +203,7 @@ h2.hot_forum_heading{
 	display: none;
 }
 
-#radar_wrapper{
+.radar_wrapper{
     width: 80%;
     position: relative;
     margin: auto;
@@ -387,7 +388,7 @@ h2.hot_forum_heading{
 	.hot_forum_content .content_r{
 	    display: none;
 	}
-	.hot_forum_content+a{
+	.hot_forum_content+form input[type="submit"]{
 		background-color: #7d0000;
 		text-align: center;
 		color: #f3ca93;
@@ -447,7 +448,7 @@ h2.hot_forum_heading{
 	    background-position: center;
 
 	}
-	#radar_wrapper{
+	.radar_wrapper{
 	    width: 80%;
 	    position: relative;
 	    margin: auto;
@@ -461,7 +462,7 @@ h2.hot_forum_heading{
 		top: 50px;
 	}
 
-	.hot_forum_content+a:hover{
+	.hot_forum_content+form input:hover{
 		color: #ddd;
 	}
 
