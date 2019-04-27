@@ -88,16 +88,16 @@ body{
                 <table class="member_data">
                     <tr>
                         <td>
-                            <div class="edit_data"><h4>會員編號：</h4><?php echo $memNo ?></div>
+                            <div class="edit_data"><h4>會員編號：</h4> <p><?php echo $memNo ?></p> </div>
                         </td>
                     </tr>
 
                     <tr>
                         <td>
-                            <div class="edit_data"><h4>身分證：</h4><?php echo $twId ?></div>
+                            <div class="edit_data"><h4>身分證：</h4><p><?php echo $twId ?></p></div>
                         </td>
                     </tr>
-                    
+
                     <tr>
                         <td>
                             <div class="edit_data"> <h4>姓氏：</h4> 

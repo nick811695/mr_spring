@@ -1,14 +1,13 @@
 *{
     outline: #f99 solid 2px;
 }
-
+ 
 .wrap{
     width: 100%;
     max-width: 1200px;
 }
-
-    
-//會員資料＋大頭貼
+ 
+//會員資料 + 大頭貼
 .member_info{
     display: flex;
     // justify-content: center;
@@ -21,7 +20,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    // max-width: 1200px;
     margin: 0 auto;
     padding: 130px 0 0 0;
 }
@@ -35,32 +33,37 @@
 }
 }
 
-.member_headpic{
+.member_edit_label{
+    position: relative;
+}
+
+.member_imgPreview{
     border: #231515 1px solid;
     border-radius: 200%;
     width: 180px;
     height: 180px;
     overflow: hidden;
-    margin: auto;
-    //margin-top:80px; 
+    margin: auto; 
 }
 
-.head_pic{
+#imgPreview_pic{
+    margin: auto;
     width: 100%;
+}
+
+#member_upFile{
+    display: none;
 }
 
 .edit_text{
     text-align: center;
-    margin: 13px;
-
+    padding: 10px 0 0 0;
 }
 
-//編輯icon圖
 .fas{
-    margin: 0 12px;
-    cursor: pointer;
+    padding:0 0 0 10px ;
 }
-    
+
 //會員資料
 .mem_info{
     background-color: #fff;
@@ -103,11 +106,16 @@
 .edit_data{
     display: flex;
     margin: 15px 5px 15px 0;
-    
+    padding-left: 10px;
 }
 
-.edit_data p{
-    padding: 3px 0 0 0;
+.edit_data > input{
+    padding: 0 0 0 10px;
+}
+
+.btn_edit{
+    text-align: center;
+    margin: 0 0 20px 0;
 }
 
 .redknot{
@@ -220,6 +228,10 @@
     // padding:0px;
     z-index: 1;
     margin: 0 auto;
+}
+
+#updated_it{
+    display: none;
 }
 
 .function_area{
