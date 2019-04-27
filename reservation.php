@@ -7,15 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/share.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/demo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.css">
+    <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/reservation.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
 
 <body>
-    <header class="mobile_display">
+    <!-- <header class="mobile_display">
         <div class="nav_fabric">
             <img src="images/navBar.png" alt="navBar">
         </div>
@@ -47,6 +51,127 @@
             </a>
 
         </nav>
+    </header> -->
+    <!-- 燈箱：登入 -->
+    <div id="lightBox" style="display:none; z-index: 1000;">
+        <div class="table_wrap">
+
+            <figure class="Login_pic">
+                <img src="images/Logo_browen.svg" alt="湯先生">
+            </figure>
+
+            <p class="Login_title">會員登入</p>
+
+            <table id="tableLogin">
+
+                <tr>
+
+                    <td>
+                        <p>帳號</p>
+                        <input type="text" name="memId" id="memId" placeholder="example@email.com">
+                    </td>
+                </tr>
+                <tr>
+                    <!-- <td></td> -->
+                    <td>
+                        <p>密碼</p>
+                        <input type="password" name="memPsw" id="memPsw" placeholder="******">
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <!-- <td colspan="2" align="center">
+                            
+                        </td> -->
+                </tr>
+            </table>
+            <div class="btn_wrap">
+                <button class="btn_s" id="btnLogin" value="登入" style="color:rgb(112, 95, 69);">
+                    <span>登入</span>
+                </button>
+            </div>
+            <button class="btn_s" id="btnLoginCancel" value="取消">
+                <div class="x_x">
+                    <span class="top"></span>
+                    <span class="bottom"></span>
+                </div>
+            </button>
+            <div class="center">
+                <button class="first_time">還沒註冊帳號?</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- 導覽列 -->
+    <header>
+        <nav id="nav_bar">
+            <img id="LoginHere" src="images/account.png" alt="會員登入">
+            <svg width="800" height="0" viewBox="0 0 800 230">
+                <path fill="none" d="0 96%, 100% 96%, 100% 100%, 0% 100%" />
+            </svg>
+            <ul id="banner">
+                <a class="flag" href="custom.html">
+                    <h2>客製湯頭</h2>
+                </a>
+                <a class="flag" href="reservation.html">
+                    <h2>預約訂房</h2>
+                </a>
+                <a class="flag" href="index.html">
+                    <h1> <img id="mrSpringLogo_w" style="width:118.7px; " src="images/mrSpringLogo_W.svg" alt="湯先生">
+                        <img id="mrSpringLogo" style="width:110px;" src="images/mrSpringLogo.svg" alt="湯先生"></h1>
+                </a>
+                <a class="flag" href="forum.html">
+                    <h2>討論の區</h2>
+                </a>
+                <a class="flag" href="member.html">
+                    <h2>會員専區</h2>
+                </a>
+            </ul>
+        </nav>
+
+        <div id="nav_wrapper">
+            <h1 id="mt_logo">
+                <a href="index.html"><img src="images/logoHorizon.svg" alt="Mr.Spring Logo"></a>
+            </h1>
+            <div class="nav_icon_wrap">
+                <!-- <a href="javascript:;"><img src="object/most_love.png" alt="most_love" style="display:none;"></a>
+        <a href="javascript:;"><img src="object/shop_cart.png" alt="shop_cart" style="display:none;"></a> -->
+                <span id="memName">&nbsp;</span>
+                <img id="spanLogin" src="images/account.png" alt="member">
+            </div>
+
+            <div class="button_container" id="toggle">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+
+        <div class="overlay" id="overlay">
+
+            <nav class="overlay-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="custom.html">客製湯頭</a></li>
+                    <li><a href="reservation.html">預約訂房</a></li>
+                    <li><a href="forum.html">討論の區</a></li>
+                    <li><a href="member.html">會員専區</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <script>
+            $("#toggle").click(function() {
+                $(this).toggleClass("action");
+                $("#overlay").toggleClass("open");
+            });
+        </script>
+
     </header>
     <div class="reservationWindow_d">
         <section id="smallLightBox_wrapper">
@@ -64,9 +189,9 @@
                 <div class="chooseCard_d">
                     <h2>請選擇要使用的湯牌</h2>
                     <div class="select-box">
-                        <label for="select-box1" class="label select-box1"><span class="label-desc">全部湯牌</span> </label>
+                        <label for="select-box1" class="label select-box1"><span class="label-desc">熱門湯牌</span> </label>
                         <select id="select-box1" class="select">
-                            <option value="Choice 1">全部湯牌</option>
+                            <option value="Choice 1">熱門湯牌</option>
                             <option value="Choice 2">自己製作</option>
                             <option value="Choice 3">討論區收藏</option>
                         </select>  
@@ -643,7 +768,7 @@
                             </tr>
                             <tr>
                                 <th>地點</th>
-                                <td colspan="3"><span id="orderRoomName">北投分店</span> ( NT$<span>1200</span> )</td>
+                                <td colspan="3"><span id="orderRoomName">北投分店</span> ( NT$<span id="orderRoomPrice">1200</span> )</td>
                             </tr>
                             <tr>
                                 <th>使用湯牌</th>
@@ -687,8 +812,10 @@
         
     
    
-
+    <script src="js/header.js"></script>
+    <script src="js/login.js"></script>
     <script src="js/loadInfo.js"></script>
+    <script src="js/yt_cardFilter.js"></script>
     <script src="js/calendar.js"></script>
     <script src="js/select.js"></script>
     <!-- <script src="js/PrismSlider.js"></script> -->
@@ -696,7 +823,6 @@
     <!-- <script src="js/sliderMain.js"></script> -->
     <script src="js/anime.min.js"></script>
     <script src="js/demo.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.js"></script>
     <script src="js/chooseCard.js"></script>
     <script src="js/Chart.js"></script>
