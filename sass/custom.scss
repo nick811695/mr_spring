@@ -8,10 +8,6 @@ body{
     }
 }
 
-//header
-header{
-    display: none;
-}
 
 // 客製挑選
 #scrCustom{
@@ -122,13 +118,13 @@ header{
                         padding: 4px;
                         font-size: 15px;
                     }
-                    .time_0{
+                    .time_1{
                         border-color: rgba(178,79,89,1);
                     }
-                    .time_1{
+                    .time_2{
                         border-color: rgba(221,125,29,1);
                     }
-                    .time_2{
+                    .time_3{
                         border-color: rgba(106,145,45,1);
                     }
                 }
@@ -362,7 +358,6 @@ header{
             left: 2px;
         }
         h3{
-            font-family: 'Noto Sans TC', sans-serif;
             text-align: center;
         }
         #dashboard{
