@@ -2,7 +2,7 @@
     $errMsg="";
 
     try {
-        require_once("connect.php");
+        require_once("yt_connect.php");
         $sql = "select * from branch";
         $branchs = $pdo->query($sql);//下指令
     } catch (PDOException $e) {

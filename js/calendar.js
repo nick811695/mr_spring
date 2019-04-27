@@ -134,6 +134,8 @@
     var len;
     var arr = new Array();
     function load() {
+        // console.log(datevalue);
+        datevalue = "";
         len = document.getElementsByClassName("tdclass");
         var ss;
         for (var k = 0; k <= len.length - 1; k++) {

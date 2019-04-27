@@ -28,7 +28,7 @@ page2_nextStep.addEventListener("click",nextStep);
 page2_prevStep.addEventListener("click",prevStep);
 page3_prevStep.addEventListener("click",prevStep);
 
-// page3_nextStep.addEventListener("click",);
+page3_nextStep.addEventListener("click",completeOrder);
 
 function nextStep(){
     if(tempIndex == 0){
@@ -36,11 +36,34 @@ function nextStep(){
         // console.log(datevalue);
         if(datevalue != ""){
             //每次點選初始化選項
+
+            //初始化時段動畫
+            roomvalue = "000";
+            for(let j = 0;j < document.getElementsByClassName("clock").length;j++){
+                document.getElementsByClassName("clock")[j].style.filter = "brightness(1)";
+                document.getElementsByClassName("clock")[j].addEventListener("click",clockSlide);
+                document.getElementsByClassName("clock")[j].classList.add("nav-control");
+            }
+            document.getElementsByClassName("firstBranch_d")[0].click();
+            document.getElementsByClassName("firstClock_d")[0].click();
+            
+            
+
             roomvalue = "";
             clockvalue = "";
+            
             document.getElementsByClassName("firstBranch_d")[0].style.backgroundColor = "rgb(0, 209, 188)";
             document.querySelectorAll(".branch_container img")[0].style.opacity = ".5";
             document.querySelectorAll(".branch_container img")[0].style.filter = "brightness(1)";
+
+            document.getElementsByClassName("secondBranch_d")[0].style.backgroundColor = "#f9c8b9";
+            document.querySelectorAll(".branch_container img")[1].style.opacity = ".5";
+            document.querySelectorAll(".branch_container img")[1].style.filter = "brightness(1)";
+            
+            document.getElementsByClassName("thirdBranch_d")[0].style.backgroundColor = "#7fd1de";
+            document.querySelectorAll(".branch_container img")[2].style.opacity = ".5";
+            document.querySelectorAll(".branch_container img")[2].style.filter = "brightness(1)";
+
             document.getElementById("roomPriceText").innerText = "0";
             document.getElementsByClassName("branchTextContainer")[0].style.transform = "translateY(0)";
             document.getElementsByClassName("clockTextContainer")[0].style.transform = "translateY(0)";
@@ -100,7 +123,7 @@ function nextStep(){
             document.getElementById("orderRoomName").innerText = roomvalue + "分店";
             document.getElementById("roomResName").innerText = roomvalue + "店";
 
-            //填分店照片
+            //填分店照片,分店資訊,分店價錢
             var xhr = new XMLHttpRequest();
             xhr.onreadystatechange = function(){
                 if( xhr.readyState == 4){
@@ -122,6 +145,8 @@ function nextStep(){
                 document.querySelectorAll(".roomPicSlider_d .roomPic img")[0].src = BranchImg[0].branchImgUrl1;
                 document.querySelectorAll(".roomPicSlider_d .roomPic img")[1].src = BranchImg[0].branchImgUrl2;
                 document.querySelectorAll(".roomPicSlider_d .roomPic img")[2].src = BranchImg[0].branchImgUrl3;
+                document.querySelector(".roomInfoText p").innerText = BranchImg[0].branchDescription;
+                document.getElementById("orderRoomPrice").innerText = BranchImg[0].branchPrice;
             }
 
             PageContainer.style.transform = `translateY(${-2*tempVh}vh)`;
@@ -162,4 +187,38 @@ function resize(){
         tempVh = 200;
     }
     // console.log(window.innerWidth);
+}
+
+//完成預約
+function completeOrder(){
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function(){
+        if( xhr.readyState == 4){
+            if( xhr.status == 200 ){
+                inserReservationToDb(xhr.responseText);
+            }else{
+                alert( xhr.status );
+            }
+        }
+    }
+
+    var url = "php/yt_InserReservationToDb.php?roomvalue=" + roomvalue + "店" + "&datevalue=" + datevalue + "&clockvalue=" + clockvalue;
+    xhr.open("Get", url, true);
+    xhr.send( null );
+
+    function inserReservationToDb(jsonStr){
+        console.log(jsonStr);
+    }
+
+
+
+
+    document.getElementById("smallLightBox_wrapper").style.visibility = "visible";
+    document.querySelector("#smallLightBox_wrapper h3").innerHTML = "已完成付款囉，請前往會員中心查看預約。"
+    document.querySelector("#smallLightBox_wrapper .nextStepBtn_d").addEventListener("click",jumpUrl);
+    
+    function jumpUrl(){
+        location.href = "http://yahoo.com";
+        document.querySelector("#smallLightBox_wrapper .nextStepBtn_d").removeEventListener("click",jumpUrl);
+    }
 }

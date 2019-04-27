@@ -28,7 +28,7 @@ function animateStrands(strand) {
   });
 
   if (supportsOffsetPath) {
-    animateStringInWind(strand, fromPath, toPath, strandPathDuration);
+    // animateStringInWind(strand, fromPath, toPath, strandPathDuration);
   }
 }
 
