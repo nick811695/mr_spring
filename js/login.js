@@ -1,5 +1,7 @@
 function showLogin() {
         document.getElementById("lightBox").style.display = "block";
+        document.getElementById("lightBox").style.opacity = 1;
+        TweenMax.from("#lightBox", 1, { opacity:0, ease: Power1.easeIn });
     // if (document.getElementById("spanLogin").innerHTML == "登入") {
     //     document.getElementById("lightBox").style.display = "block";
     // }
@@ -19,7 +21,7 @@ function loginForm() {
 
         // document.getElementById('spanLogin').innerHTML = "登出";
         document.getElementById('memName').innerHTML = "張君山";
-        document.getElementById("memId").value = "";
+        account.value = "mountain";
         document.getElementById("memPsw").value = "";
         document.getElementById("lightBox").style.display = "none";
     }

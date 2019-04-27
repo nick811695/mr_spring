@@ -1,16 +1,24 @@
 <?php 
-	session_start();
-	$now = date("Y-m-d");
-	$article_title = $_REQUEST['article_title'];
-	$article_text = $_REQUEST['article_text'];
-	$cardNo = $_REQUEST['cardNo'];
-	$memId = $_SESSION["memId"];
-	$pdo = new PDO($dsn, $user, $password, $options); 
-	$sql = "INSERT INTO 'article' ('artNo', 'artTitle', 'memNo', 'artText', 'artTime', 'cardNo') VALUES (NULL, :article_title, :memId, :article_text, :now, :cardNo);";
-	$add_art = $pdo->prepare( $sql );
-	$add_art->bindValue(":article_title", $_REQUEST['article_title']);
-	$add_art->bindValue(":memId", $_SESSION["memId"]);
-	$add_art->bindValue(":article_text", $_REQUEST['article_text']);
-	$add_art->bindValue(":now", date("Y-m-d"));
-	$add_art->bindValue(":cardNo", $_REQUEST['cardNo']);
- ?>
+$errMsg = "";
+try{
+  require_once("connect.php");
+	$sql_insert = "insert into article (artNo, artTitle, memNo, artText, artTime, cardNo) 
+			VALUES (null, :artTitle,:memNo, :artText, :artTime, :cardNo);";
+	$art_add = $pdo -> prepare($sql_insert);
+	$art_add -> bindValue(":artTitle",$_REQUEST['article_title']);
+	$art_add -> bindValue(":memNo",$_SESSION["memNo"]);
+	$art_add -> bindValue(":artText",$_REQUEST['article_text']);
+	$art_add -> bindValue(":artTime",date("Y-m-d H:i:s"));
+	$art_add -> bindValue(":cardNo",$_REQUEST['cardNO']);
+	$art_add -> execute();
+	header('Location: ../forum.php');
+
+
+}catch(PDOException $e){
+	$errMsg .= "錯誤原因 : ".$e -> getMessage(). "<br>";
+	$errMsg .= "錯誤行號 : ".$e -> getLine(). "<br>";
+}
+
+
+
+?>

@@ -28,7 +28,7 @@
     <!-- <h1>首頁請用這支</h1> -->
 
     <!-- 燈箱：登入 -->
-    <div id="lightBox" style="display:none; z-index: 1000;">
+    <div id="lightBox" style="display:none; z-index: 1000; opacity: 0;">
         <div class="table_wrap">
 
             <figure class="Login_pic">
@@ -85,6 +85,7 @@
     <header>
         <nav id="nav_bar">
             <img id="LoginHere" src="images/account.png" alt="會員登入">
+            <input type="hidden" name="memId" id="memId">
             <svg width="800" height="0" viewBox="0 0 800 230">
                 <path fill="none" d="0 96%, 100% 96%, 100% 100%, 0% 100%" />
             </svg>
@@ -151,7 +152,7 @@
     </header>
 
     <!-- 小遊戲連結 -->
-    <a class="getCoupon" href="game.html">
+    <button class="getCoupon">
         <div id="wave_for_coupon">
             <div class="little_wave">
                 <img class="" src="images/wave2.svg" alt="">
@@ -161,7 +162,7 @@
         </div>
 
         <img id="peach" src="images/getCoupon2.svg" alt="優惠券小遊戲">
-    </a>
+    </button>
 
 
     <!-- 第一屏 -->
@@ -843,6 +844,7 @@
     <script src="js/consult.js"></script>
     <script src="js/header.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/loginOrNot.js"></script>
     <script src="js/map.js"></script>
     <script src="js/slide.js"></script>
     <script src="js/Chart.js"></script>
