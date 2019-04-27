@@ -12,6 +12,7 @@ $errMsg="";
     $memNickname = $_POST["mem_memNickname"];
     $memId = $_POST["mem_memId"];
     $memPsw = $_POST["mem_memPsw"];
+    $twId = $_POST["tw_id"];
     $memTel = $_POST["mem_memTel"];
     $memEmail = $_POST["mem_memEmail"];
     $memImgUrl = $_FILES['memUpFile']['name'];
@@ -35,7 +36,7 @@ $errMsg="";
                     $sql = "UPDATE `member` SET  memFirstName=:memFirstName,memLastName=:memLastName,";
                     $sql .= "memNickname=:memNickname,memId=:memId,";
                     $sql .= "memPsw=:memPsw,memTel=:memTel,memEmail=:memEmail, memImgUrl=:memImgUrl WHERE memNo=:memNo";
-                     
+                    
                     $statement =  $pdo-> prepare($sql);
                     $statement -> bindValue(':memFirstName', $memFirstName);
                     $statement -> bindValue(':memLastName', $memLastName);
@@ -46,7 +47,6 @@ $errMsg="";
                     $statement -> bindValue(':memEmail', $memEmail);
                     $statement -> bindValue(':memImgUrl', $memImgUrl);
                     $statement -> bindValue(':memNo', $memNo);
-
                     $updateRow = $statement->execute();
                     header("Location: member.php");
             

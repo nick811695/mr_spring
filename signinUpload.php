@@ -1,7 +1,7 @@
 <?php
 
 session_start();
-$errMsg=""; 
+$errMsg="";
 
 if(isset($_POST['login'])) {
     try{
