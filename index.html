@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>湯先生 Mr.Spring</title>
-    <script src="node_modules/gsap/src/minified/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
     <script src="https://cdn.jsdelivr.net/pixi.js/3.0.7/pixi.js"></script>
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/reset.css">
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="css/hot_forum.css">
     <link rel="stylesheet" href="css/firstPage.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
 </head>
 <style>
     /* 全區域 */
@@ -86,9 +87,7 @@
         <nav id="nav_bar">
             <img id="LoginHere" src="images/account.png" alt="會員登入">
             <input type="hidden" name="memId" id="memId">
-            <svg width="800" height="0" viewBox="0 0 800 230">
-                <path fill="none" d="0 96%, 100% 96%, 100% 100%, 0% 100%" />
-            </svg>
+
             <ul id="banner">
                 <a class="flag" href="custom.html">
                     <h2>客製湯頭</h2>
@@ -193,9 +192,9 @@
                                         <img id="text_bubble" src="images/texture01.png" alt="湯頭介紹">
                                         <article class="sup_info">
                                             <figure id="spring_herb">
-                                        
+
                                                 <h3 id="spring_name"></h3>
-                                        
+
                                                 <a href=""><img class="intro_pic_small" src="images/herb01.svg"
                                                         alt="湯頭介紹"></a>
                                                 <a href=""><img class="intro_pic_small" src="images/herb02.svg"
@@ -207,8 +206,8 @@
                                             </br>
                                             <p class="paragraph"></p>
 
-                                            
-                                       
+
+
                                             <div class="custom_button">
                                                 <center>
                                                     <a href="custom.html" class="btn_s" style="color:#ceae81;">馬上客製</a>
@@ -837,6 +836,53 @@
         </div>
     </div>
 
+    <footer>
+        <div class="cloud_front">
+            <div class="cloud_large">
+                <img src="images/cloud_l2.png" alt="">
+                <img src="images/cloud_l2.png" alt="">
+                <img src="images/cloud_l2.png" alt="">
+            </div>
+        </div>
+        <div class="footer_container">
+            <div class="footer_row">
+                <div class="footer_row01">
+                    <figure class="logo">
+                        <h1><img style="width:100px;" src="images/Logo_browen.svg" alt=""></h1>
+                    </figure>
+                    <div class="about_us">
+                        <p>感謝您的蒞臨!
+                            湯先生專業客製溫泉一直以提供專業及親切的服務為信念，期許能為每一位賓客提供最盡善盡美的服務品質，
+                            對於每一次的意見及建議，將是本酒店提供專業服務的最佳能量，我們會持續朝著營造高品質服務目標努力。
+                            謹代表本酒店全體同仁致上最真摯之感謝!!
+                            更期待與您在相見!!</p>
+                    </div>
+
+                </div>
+
+                <div class="store_info">
+                    <div class="store_info_colunm">
+                        <div class="store_info_wrap">
+                            <a href=""><img class="store_info_icon" src="images/mail.png" alt=""></a>
+                            <p>mrspring@gmail.info</p>
+                        </div>
+                        <div class="store_info_wrap">
+                            <a href=""><img class="store_info_icon" src="images/facebook.png" alt=""></a>
+                            <div class="footer_search_bar">
+                                <p style="margin-right:5px;">臉書搜尋&nbsp;:&nbsp;湯先生</p><img src="images/search-solid.svg"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="all_rights">
+            <h4>Non commercial use&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Copyright © 2019 Mr.Spring All rights
+                reserved</h4>
+        </div>
+
+    </footer>
 
 
     <script src="js/cloudGo.js"></script>
