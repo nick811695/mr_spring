@@ -4,6 +4,7 @@
     var dd = new Date().getDate();//今天日期
     var arrmm = new Array();
     var datevalue = "";
+    var datevalueTemp = "";
     arrmm[0] = "1";
     arrmm[1] = "2";
     arrmm[2] = "3";
@@ -135,7 +136,7 @@
     var arr = new Array();
     function load() {
         // console.log(datevalue);
-        datevalue = "";
+        // datevalue = "";
         len = document.getElementsByClassName("tdclass");
         var ss;
         for (var k = 0; k <= len.length - 1; k++) {
@@ -159,11 +160,11 @@
                 ss.style.backgroundColor="rgba(173, 173, 173, 0)";
                 ss.style.cursor="default";
                 //不等於今日
-                if(ss.innerText ==  today && num == mm && document.querySelector("#yy-sp").innerText == yyyy ){
-                    ss.style.color="#F27F22";
-                    // ss.style.cursor = "not-allowed";
-                    ss.addEventListener("click", tdclass);
-                }
+                // if(ss.innerText ==  today && num == mm && document.querySelector("#yy-sp").innerText == yyyy ){
+                //     ss.style.color="#F27F22";
+                //     // ss.style.cursor = "not-allowed";
+                //     ss.addEventListener("click", tdclass);
+                // }
             }
             //同年同月 但小於今天
             if(ss.innerText<= today &&  num==mm && document.querySelector("#yy-sp").innerText == yyyy){
@@ -172,6 +173,11 @@
                 ss.style.cursor="default";
                 // ss.style.cursor = "not-allowed";
                 ss.removeEventListener("click", tdclass);
+            }
+            if(ss.innerText == datevalueTemp.split("-")[2] && num == datevalueTemp.split("-")[1] && document.querySelector("#yy-sp").innerText == datevalueTemp.split("-")[0]){
+                ss.style.background = "#2c1608";
+                ss.style.color = "#F4F4F4";
+                ss.style.boxShadow = "0 0 8px 10px #fff";
             }
             arr[k] = ss;
         }
@@ -190,8 +196,9 @@
         var value = document.querySelector("#mm-sp").innerText;
         var mmtext = Number(arrmm.indexOf(value));//月
         mmtext += 1;
+        datevalueTemp = document.querySelector("#yy-sp").innerText + "-" + mmtext + "-" + e.target.innerText;
         datevalue = document.querySelector("#yy-sp").innerText + "-" + ('00' + mmtext).slice(-2) + "-" + ('00' + e.target.innerText).slice(-2);
-        // console.log(datevalue);
+        // console.log(datevalueTemp);
 
         // tradeTime = new Date();
         // tradeTime = tradeTime.getFullYear() + '-' +

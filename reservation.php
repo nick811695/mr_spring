@@ -1,3 +1,10 @@
+<?php
+    ob_start();
+    session_start();
+
+    // $_SESSION["memNo"] = 1;
+    // unset($_SESSION["memNo"]);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,8 +21,13 @@
     <link rel="stylesheet" href="css/demo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.css">
     <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/forum.css">
+    <link rel="stylesheet" type="text/css" href="css/card.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/reservation.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 </head>
 
 <body>
@@ -185,9 +197,27 @@
         </section>
         <section id="lightbox_wrapper">
             <div id="lightbox">
-                <div id="lightboxToggle"></div>
+                <!-- <div id="lightboxToggle"></div> -->
+                <div id="lightbox_radar_mask"></div>
+                <div id="lightbox_radar">
+                    <div id="lightbox_radar_close" class="btn_s">關閉</div>
+                    <div id="lightbox_radar_wrapper">
+                        <canvas id="chartRadar" width="300" height="300"></canvas>
+                    </div>
+                </div>
                 <div class="chooseCard_d">
                     <h2>請選擇要使用的湯牌</h2>
+                    <div id="lightbox_filter_mask"></div>
+                    <div class="lightbox_filter">
+                        <img src="images/filter.png">
+                        <select id="lightbox_filter_select">
+                            <option value="Choice 1">熱門湯牌</option>
+                            <option value="Choice 2">自己製作</option>
+                            <option value="Choice 3">討論區收藏</option>
+                        </select>
+                    </div>
+                    <label for="lightbox_radar" id="lightbox_radar_btn"><img src="images/info_icon.png"></label>
+                    
                     <div class="select-box">
                         <label for="select-box1" class="label select-box1"><span class="label-desc">熱門湯牌</span> </label>
                         <select id="select-box1" class="select">
@@ -196,9 +226,10 @@
                             <option value="Choice 3">討論區收藏</option>
                         </select>  
                     </div>
+                    
                     <div class="chooseCardArea_d">
                         <div class="responsive">
-                            <div class="cards">
+                            <!-- <div class="cards">
                                 <img src="http://placehold.it/224x420" alt="" />
                             </div>
                             <div class="cards">
@@ -221,7 +252,7 @@
                             </div>
                             <div class="cards">
                                 <img src="http://placehold.it/224x420" alt="" />
-                            </div>
+                            </div> -->
                         </div>
                         <!-- control arrows -->
                         <div class="prev">
@@ -234,18 +265,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="radar_d">
+                <div class="radar_box">
                     <div id="radar_wrapper">
-                        <canvas id="chartRadar" width="300" height="300"></canvas>
+                        <canvas id="chartRadar2" width="300" height="300"></canvas>
                     </div>
                 </div>
-                <div class="cardPrice_d">
+                <!-- <div class="cardPrice_d">
                     <span>湯牌價格</span>
                     <span>NT$<span id="cardPriceText">1200</span></span>
-                </div>
-                <div class="nextStepBtn_d">
-                    <div class="btn_b nextStep">確定</div>
-                </div>
+                </div> -->
+                <!-- <a href="forum_article_publish.php#publish_r"> -->
+                    <div class="nextStepBtn_d">
+                        <div class="btn_b nextStep">確定</div>
+                    </div>
+                <!-- </a> -->
             </div>
         </section>
         <div class="reservationContainer_d">
@@ -292,12 +325,14 @@
                 </div>
                 <div class="wrap select1_container_d">
                     <div class="left_box_d">
-                        <div class="springCard">
-                            <!-- <img src="images/springCard.png" alt=""> -->
-                            <img src="images/springCard02.png" alt="">
-                            <div class="add_button_d">
-                                <div class="add_button"></div>
-                                <p>載入我的湯牌</p>
+                        <div class="publish_l">
+                            <div class="springCard publish_card" id="add_card">
+                                <!-- <img src="images/springCard.png" alt=""> -->
+                                <img src="images/springCard02.png" alt="">
+                                <div class="add_button_d">
+                                    <div class="add_button"></div>
+                                    <p>載入我的湯牌</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -310,7 +345,7 @@
                                 <div class="herbsContent_d">
                                     <p>
                                         目前選用之湯牌包含時段限定藥材 : <span class="herbsTitle">櫻花</span><br>
-                                        <span class="mobile_display">已為您篩選出可使用本湯牌之日期</sapn>。
+                                        <span class="mobile_display">已為您篩選出可使用本湯牌之時段</sapn>。
                                     </p>
                                 </div>
                             </div>
@@ -356,7 +391,7 @@
                         </div>
                         <div class="cardPrice_d">
                             <span>湯牌價格</span>
-                            <span>NT$<span id="cardPriceText">1200</span></span>
+                            <span>NT$<span id="cardPriceText">0</span></span>
                         </div>
                     </div>
                 </div>
@@ -748,15 +783,15 @@
                         <table class="orderDetails">
                             <tr>
                                 <th>姓氏</th>
-                                <td>林</td>
+                                <td id="orderMemFirstName">林</td>
                                 <th class="th_rightSide">名稱</th>
-                                <td>建廷</td>
+                                <td id="orderMemLastName">建廷</td>
                             </tr>
                             <tr>
                                 <th>身分證號</th>
-                                <td>A123456789</td>
+                                <td id="orderTwId">A123456789</td>
                                 <th class="th_rightSide">連絡電話</th>
-                                <td>0912345678</td>
+                                <td id="orderMemTel">0912345678</td>
                             </tr>
                             <tr>
                                 <th>日期</th>
@@ -772,7 +807,7 @@
                             </tr>
                             <tr>
                                 <th>使用湯牌</th>
-                                <td colspan="3">舒筋軟骨湯 ( NT$<span>1200</span> )</td>
+                                <td colspan="3"><span id="orderCardName">舒筋軟骨湯</span> ( NT$<span id="orderCardPrice">1200</span> )</td>
                             </tr>
                             <tr>
                                 <th>優惠券</th>
@@ -780,7 +815,7 @@
                                     <select name="coupon" id="coupon">
                                         <option value="0">85折</option>
                                     </select>
-                                    <span>( - NT$<span>100</span> )</span>
+                                    <span>( - NT$<span id="couponDiscount">100</span> )</span>
                                 </td>
                             </tr>
                         </table>
@@ -824,9 +859,11 @@
     <script src="js/anime.min.js"></script>
     <script src="js/demo.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.js"></script>
-    <script src="js/chooseCard.js"></script>
     <script src="js/Chart.js"></script>
-    <script src="js/radar.js"></script>
+    <!-- <script src="js/radar.js"></script> -->
+    <!-- <script src="js/article_poblish_radar.js"></script> -->
+    <script src="js/chooseCard.js"></script>
+    <!-- <script type="text/javascript" src="js/article_poblish.js"></script> -->
     <script src="js/reservationStep.js"></script>
 </body>
 

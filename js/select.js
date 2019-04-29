@@ -68,13 +68,31 @@ function storeSlide(){
             }else if(result[i].reserNight == "1"){
                 reserNightCount++;
                 if(reserNightCount == 3){
-                    // document.getElementsByClassName("clock")[2].style.filter = "brightness(.5)";
-                    // document.getElementsByClassName("clock")[2].removeEventListener("click",clockSlide);
-                    // document.getElementsByClassName("clock")[2].classList.remove("nav-control");
+                    document.getElementsByClassName("clock")[2].style.filter = "brightness(.5)";
+                    document.getElementsByClassName("clock")[2].removeEventListener("click",clockSlide);
+                    document.getElementsByClassName("clock")[2].classList.remove("nav-control");
                 }
             }
         }
+        
+        //時段限定篩選時段
+        // console.log(cardTimeItemValue);
+        if(cardTimeItemValue == 1){
+            document.getElementsByClassName("clock")[0].style.filter = "brightness(.5)";
+            document.getElementsByClassName("clock")[0].removeEventListener("click",clockSlide);
+            document.getElementsByClassName("clock")[0].classList.remove("nav-control");
+        }else if(cardTimeItemValue == 2){
+            document.getElementsByClassName("clock")[1].style.filter = "brightness(.5)";
+            document.getElementsByClassName("clock")[1].removeEventListener("click",clockSlide);
+            document.getElementsByClassName("clock")[1].classList.remove("nav-control");
+        }else if(cardTimeItemValue == 3){
+            document.getElementsByClassName("clock")[2].style.filter = "brightness(.5)";
+            document.getElementsByClassName("clock")[2].removeEventListener("click",clockSlide);
+            document.getElementsByClassName("clock")[2].classList.remove("nav-control");
+        }
     }
+
+    
     
     // console.log(this.getAttribute("roomPrice"));
     // console.log(this.childNodes[1].childNodes[1].innerHTML);
@@ -202,16 +220,16 @@ function clockCheck(){
         // console.log(this.style.filter);
     }else if(this.style.filter == "brightness(0.5)"){
         document.getElementById("smallLightBox_wrapper").style.visibility = "visible";
-        document.querySelector("#smallLightBox_wrapper h3").innerHTML = "此時段已經被訂完囉!!!"
+        document.querySelector("#smallLightBox_wrapper h3").innerHTML = "此時段無法預約哦!!!"
     }
 }
 
 //選擇湯牌燈箱開關
-var lightboxOnBtn = document.getElementsByClassName("springCard");
-var lightboxOffBtn = document.getElementById("lightboxToggle");
+// var lightboxOnBtn = document.getElementsByClassName("springCard");
+// var lightboxOffBtn = document.getElementById("lightboxToggle");
 
-lightboxOnBtn[0].addEventListener("click",lightboxOn);
-lightboxOffBtn.addEventListener("click",lightboxOff);
+// lightboxOnBtn[0].addEventListener("click",lightboxOn);
+// lightboxOffBtn.addEventListener("click",lightboxOff);
 
 function lightboxOn(){
     document.getElementById('lightbox_wrapper').style.visibility = "visible";

@@ -1,7 +1,10 @@
 <?php
+    ob_start();
+    session_start();
+    
     $errMsg="";
 
-    $_REQUEST["memNo"] = 1;
+    // $_SESSION["memNo"] = 1;
     if($_REQUEST["cardFilter"] == "Choice 1"){
         $sql = "select *
                 from article JOIN card c USING (cardNo)
@@ -49,7 +52,7 @@
                     from carditem4 b
                     left outer join item a
                     on a.itemno = b.item4no)as d
-                where memNo = {$_REQUEST["memNo"]} and artNo is null";
+                where memNo = {$_SESSION["memNo"]} and artNo is null";
     }elseif($_REQUEST["cardFilter"] == "Choice 3"){
         $sql = "select *
                 from card c
@@ -73,7 +76,7 @@
                     from carditem4 b
                     left outer join item a
                     on a.itemno = b.item4no)as d
-                where memNo = {$_REQUEST["memNo"]} and artNo is not null";
+                where memNo = {$_SESSION["memNo"]} and artNo is not null";
     }
 
     try {
