@@ -262,9 +262,12 @@
 .reser_data{
     position: relative;
     margin: 0 auto;
-    background-color: #fff;
-    border: #fff 2px solid;
-    border-bottom: #7d0000 2px solid;
+    // background-color: rgb(255, 255, 255);
+    background-image: url('../images/bg04.png');
+    background-size: 100%;
+    // border: #fff 2px solid;
+    // border-bottom: #7d0000 2px solid;
+    box-shadow: 5px 5px 5px rgba(177, 147, 113, 0.459);
     border-radius: 10px;  
     width: 80%;
     display: flex;
@@ -272,12 +275,13 @@
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 @media screen and (min-width:768px){
     .reser_data{
         padding: 20px 20px 20px 60px;
+        background-image: url('../images/bg03.png');
     }
 }
 
@@ -295,16 +299,20 @@
 .card_area , .collection_area{
     margin:30px 60px;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
+    justify-items: auto;
     flex-wrap: wrap;
 }
 
 .cards{
+    width: 33.333333%;
     margin-top: 40px;
+    margin-bottom: 10px;
 }
 
 .card{
-    margin:40px;
+    margin: auto;
+    margin-bottom: 40px;
 }
 
 .rope{

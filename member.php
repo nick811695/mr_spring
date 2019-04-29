@@ -888,7 +888,7 @@ body{
                                                 <h4 class="card_item_name card_item_name4">${checkNull(collectResult[i].item4Name)}</h4>
                                             </div>
                                             <div class="card_btn_box">
-                                                <a class="btn_s card_btn" cardNoCard="${collectResult[i].cardNo}">查看</a>
+                                                // <a class="btn_s card_btn" href="forum_article&cardNo=${collectResult[i].cardNo}">查看</a>
                                                 <a class="btn_s card_btn delete_collection_btn" cardNoCollect="${collectResult[i].cardNo}">刪除</a>
                                             </div> 
                                             <div class="clear"></div>
@@ -911,14 +911,14 @@ body{
 for(let i=0;i<deleteCollectionBtnArr.length;i++){
     deleteCollectionBtnArr[i].addEventListener("click",function(e){ 
         let trash = e.target;
-        let body = trash.parentNode.parentNode.parentNode.parentNode.parentNode;
+        let body = trash.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
 
         if(confirm('確定要刪除嗎?')){
             cardNo = this.getAttribute("cardNoCollect");
 
             memNo = <?php echo $memNo ?>;
 
-            url = "delete_collection.php?";
+            url = "mem_delete_collection.php?";
             url += `memNo=${memNo}`;
             url += `&cardNo=${cardNo}`;
 
@@ -926,7 +926,7 @@ for(let i=0;i<deleteCollectionBtnArr.length;i++){
 
             xhr.onload = function(){
                 if( xhr.status == 200){
-                   body.removeChild(trash.parentNode.parentNode.parentNode.parentNode); 
+                   body.removeChild(trash.parentNode.parentNode.parentNode.parentNode.parentNode); 
 
                 }else{ 
                     alert( xhr.status );
@@ -954,14 +954,14 @@ for(let i=0;i<deleteCardBtnArr.length;i++){
 deleteCardBtnArr[i].addEventListener("click",function(e){ 
     
     let trash = e.target;
-    let body = trash.parentNode.parentNode.parentNode.parentNode.parentNode;
+    let body = trash.parentNode.parentNode.parentNode.parentNode.parentNode.parentNode;
 
     if(confirm('確定要刪除嗎?')){
         cardNo = this.getAttribute("cardNoCard");
 
         memNo = <?php echo $memNo ?>;
 
-        url = "delete_card.php?";
+        url = "mem_delete_card.php?";
         url += `memNo=${memNo}`;
         url += `&cardNo=${cardNo}`;
 
@@ -969,7 +969,7 @@ deleteCardBtnArr[i].addEventListener("click",function(e){
 
         xhr.onload = function(){
             if( xhr.status == 200){
-               body.removeChild(trash.parentNode.parentNode.parentNode.parentNode); 
+               body.removeChild(trash.parentNode.parentNode.parentNode.parentNode.parentNode); 
 
             }else{ 
                 alert( xhr.status );
