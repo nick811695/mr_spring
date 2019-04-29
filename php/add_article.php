@@ -1,7 +1,7 @@
 <?php 
 $errMsg = "";
 try{
-  require_once("connect.php");
+  require_once("j_connect.php");
 	$sql_insert = "insert into article (artNo, artTitle, memNo, artText, artTime, cardNo) 
 			VALUES (null, :artTitle,:memNo, :artText, :artTime, :cardNo);";
 	$art_add = $pdo -> prepare($sql_insert);

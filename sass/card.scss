@@ -51,10 +51,42 @@
 	margin: auto;
 	width: 150px;
 }
-.card .front .badge{
-	display: block;
-	width: 65%;
+// .card .front .badge{
+// 	display: block;
+// 	width: 65%;
+// 	margin: auto;
+// }
+.draw{
 	margin: auto;
+	width: 150px;
+	height: 150px;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	transform: scale(0.8,0.8);
+	.drawingArea{
+		transform: scale(.55);
+		width: 0;
+		height: 0; 
+		position: relative;
+		text-align: center;
+		vertical-align: baseline;
+	}
+	.circle1, .circle2, .circle3, .circle4, .circle5, .circle0{
+		position: relative;
+		/* letter-spacing: 0.1em; */
+	}                
+	.circle p{
+		font-weight: bold;
+		position: absolute;
+		display: block;
+		width: 25px;
+		margin: 0;
+		font-size: 60px;
+		font-family: 'Times New Roman';
+		vertical-align: top;
+	}
 }
 .card .front .card_name{
 	text-align: center;
@@ -96,16 +128,15 @@
 	display: flex;
 }
 
-.card .front .card_btn_box a{
+.card .front .card_btn_box button{
 	display: block;
 	margin: auto;
 	font-size: 15px;
 	background-color: #7d0000;
 	color: #f3ca93;
-	// transition: 0.5s;
 	cursor: pointer;
 }
-.card .front .card_btn_box a:hover{
+.card .front .card_btn_box button:hover{
 	color: #fff;
 }
 

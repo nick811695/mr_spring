@@ -15,6 +15,7 @@ $(document).ready(function(){
 		"max-width":"1000",
 	});
 
+
 	function rand(min,max){
 		var a=Math.floor( Math.random()*(max-min-1)+min);
 		return a;
@@ -452,7 +453,7 @@ $(document).ready(function(){
 		if ($(window).width()<=768) {
 			$(document).scroll(function(){
 				var scroll_h = $(document).scrollTop();
-				console.log(scroll_h);
+				// console.log(scroll_h);
 				if(scroll_h >= 750){
 					$("#filter_wrap").css('display','flex');
 					$("#mobile_filter").css('display','flex');
@@ -476,15 +477,24 @@ $(document).ready(function(){
 				if(checked){
 					$(this).children('img').removeClass('checked');
 				}else{
+					$(".filter_kind li").children('img').removeClass('checked');
 					$(this).children('img').addClass('checked');
 				}
 			});
+			var itemNum = 0;
 			$(".filter_item li").click(function() {
 				let checked = $(this).children('img').hasClass('checked');
 				if(checked){
-					$(this).children('img').removeClass('checked');
+					
+						$(this).children('img').removeClass('checked');
+						itemNum--;
+					
+					
 				}else{
-					$(this).children('img').addClass('checked');
+					if(itemNum<=3){
+						$(this).children('img').addClass('checked');
+						itemNum++;
+					}
 				}
 			});
 			$('.sort_wrap li').click(function(){
@@ -506,98 +516,105 @@ $(document).ready(function(){
 
 	/*----1200 filter*/
 
-
-	var count1=0;
-	var count2=0;
-	var k1 = 0;
-	var k2 = 0;
-	$("#kind_of_forum_box").click(function(){
-		k1++;
-		console.log(k1);
-		if(k1%2==1){
-			$(this).css({
-				"max-height": 300,
-			});
-			$(this).parent().siblings(".mask").css("display",'block');
-
+	count1=0;
+	count2=0;
+	$("#kind_of_forum_box li:eq(0)").click(function(){
+		if ($(this).parent().hasClass("open")) {
+			$(this).parent().removeClass('open');
+			$("#item_of_forum_box").removeClass('open');
+			$('.forum_filter .mask').css("display","none");
 		}else{
-			$(this).css({
-				"max-height": 40,
-			});
+			$(this).parent().addClass('open');
+			$('.forum_filter .mask').css("display","block");
+			$("#item_of_forum_box").removeClass('open');
 		}
 		
+		
 	});
-	$('.forum_filter .mask').click(function(){
-		if (k1%2==1) {
-			k1++;
-		}
-		if(k2%2==1){
-			k2++;
-		}
-		$("#kind_of_forum_box").css({
-			"max-height": 40,
-		});
-		$("#item_of_forum_box").css({
-			"max-height": 40,
-		});
-		$(this).css('display',"none");
-	});
-	$("#item_of_forum_box").click(function(){
-		k2++;
-		console.log(k2);
-		if(k2%2==1){
-			$(this).css({
-				"max-height": 1000,
-			});
-			$(this).parent().siblings(".mask").css("display",'block');
+	$("#item_of_forum_box li:eq(0)").click(function(){
+		if ($(this).parent().hasClass("open")) {
+			$(this).parent().removeClass('open');
+			$("#kind_of_forum_box").removeClass('open');
+			$('.forum_filter .mask').css("display","none");
 		}else{
-			$(this).css({
-				"max-height": 40,
-			});
+			$(this).parent().addClass('open');
+			$('.forum_filter .mask').css("display","block");
+			$("#kind_of_forum_box").removeClass('open');
 		}
+	});
+	
+	$('.forum_filter .mask').click(function(){
+		$("#kind_of_forum_box").removeClass('open');
+		$("#item_of_forum_box").removeClass('open');
 	});
 
 
+
+
+
+
+	var arr=[];
 	$('.kind_of_forum li label').click(function(){
-		var check = $(this).siblings("input").prop('checked');
-		if (check == false) {
-			$(this).siblings("img").css({
-				"opacity":"1",
-			})
-			count1++;
-		}else if(check == true){
-			$(this).siblings("img").css({
-				"opacity":"0",
-			})
-			count1--;
-		}
-		$(this).parent().parent().siblings(".count").text(count1);
+		var type = $(this).attr('class');
+		if($(this).siblings('img').hasClass('check')){
+			$(".kind_of_forum li label").siblings('img').removeClass('check');
+			arr.splice(0,1,"");
+			// console.log(arr);
 
+		}else{
+			$(".kind_of_forum li label").siblings('img').removeClass('check');
+			$(this).siblings('img').addClass('check');
+			arr[0]=type;
+			// console.log(arr);
+		}
+		filter();
 	});
+
+	var itemNum = 0;
 	$('.item_of_forum li label').click(function(){
-		var check = $(this).siblings("input").prop('checked');
-		if (check == false) {
-			$(this).siblings("img").css({
-				"opacity":"1",
-			})
-			count2++;
-		}else if(check == true){
-			$(this).siblings("img").css({
-				"opacity":"0",
-			})
+		if($(this).siblings('img').hasClass('check')){
+			$(this).siblings('img').removeClass('check');
 			count2--;
+			itemNum--;
+			// console.log(arr);
+		}else{
+			if(itemNum<4){
+				$(this).siblings('img').addClass('check');
+				count2++;
+				itemNum++;
+			}
+
+			// console.log(arr);
 		}
-		$(this).parent().parent().siblings(".count").text(count2);
+		// $(this).parent().parent().siblings(".count").text(count2);
 	});
 
-
-
-
-
+	function filter(){
+		$('.forum').css('display','none');
+		if(arr.length==1 && arr[0]==""){
+			$('.forum').css('display','block');
+		}else{
+			for(var i=0;i<$('.forum').length;i++){
+				if ($('.forum').eq(i).hasClass(arr[0])) {
+					$('.forum').eq(i).css("display",'block');
+				}
+				// for(var j=1;j<arr.length;j++){
+				// 	if ($('.forum').eq(j).hasClass(arr[j])) {
+				// 		$('.forum').eq(j).css("display",'block');
+				// 	}else{
+				// 		$('.forum').eq(j).css("display",'none');
+				// 	}
+				// }
+			}
+		}
+	}
+	/*-----keep_card------- */
+	$('.card_btn_box .keep_btn').click(function(){
+	});
 	/*---tag----*/
 	$(".forum .forum_item span").click(function(){
 		var temp = $(this).text();
-		console.log($(this));
+		// console.log($(this));
 		$(".forum_search input").val(temp);
 		$(".forum_search input").focus();
 		
@@ -634,52 +651,30 @@ $(document).ready(function(){
 		$(".mask").css("display","none");
 	});
 
-	/*----like-----*/
-	if ($(".heart_icon").hasClass("likeType")){
-		$(".heart_icon").attr("src","images/hollow_heart.png");
-	}else if($(".heart_icon").hasClass("likeType1")){
-		$(".heart_icon").attr("src","images/solid_heart.png");
-	}
-	$(".heart_icon ").click(function(){
-		if ($(this).hasClass('likeType1')) {
-			$(this).attr("src","images/hollow_heart.png");
-			$(this).removeClass('likeType1');
-			$(this).addClass('likeType');
-			var artNo = $(this).siblings("div").text();
-			// console.log(artNo);
-			$.ajax({
-	            url: './php/like.php',
-	            data: {
-	            	artNo:artNo,
-	            	type:"1",
-	            	},
-	            type: 'GET',
-	            async: false,
-	            success: function(data){
-	                $(".likeNum").text(data);
-	            },
-	        });
-		}else {
-			var artNo = $(this).siblings("div").text();
-			$(this).attr("src","images/solid_heart.png");
-			$(this).removeClass('likeType');
-			$(this).addClass('likeType1');
-			$.ajax({
-	            url: './php/like.php',
-	            data: {
-	            	artNo:artNo,
-	            	type:"2",
-	            	},
-	            type: 'GET',
-	            async: false,
-	            success: function(data){
-	                $(".likeNum").text(data);
-	            },
-	        });
-		}
+
+
+	$(".msg_box .forum_methods_menu .editbtn").click(function(){
+		var msg_edit=$(this).parent().siblings(".msg_r").children("p").text();
+		var mesNo = $(this).parent().siblings(".msg_r").attr('mesNo');
+		var artNo = $(this).parent().siblings(".msg_r").attr('artNo');
+		$(this).parent().siblings(".msg_r").children("p").html(`<form action="./php/update_mes.php"><input type="hidden" value="${artNo}" name="artNo"><input type="hidden" value="${mesNo}" name="mesNo"><textarea  name="mesText" style="width:100%; padding-left:5px; resize : none;outline:solid 1px #ddd;">${msg_edit}</textarea><input value="修改" type="submit"></form>`);
+		
+		
 	});
+	$(".msg_box .forum_methods_menu .deletebtn").click(function(){
+		var artNo = $(this).parent().siblings(".msg_r").attr('artNo');
+		var mesNo = $(this).parent().siblings(".msg_r").attr('mesNo');
+		var del = confirm("確定刪除嗎?")
+		if(del){
+			window.location=`php/delete_mes.php?artNo=${artNo}&mesNo=${mesNo}`;
+		}
+		
+	});
+	/*----like-----*/
 
 
+
+	/*--- mes ----*/
 	/*----article_info----*/
 	$('.article_info_btn').click(function(){
 		

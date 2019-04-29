@@ -1,6 +1,6 @@
 <?php 
 try{
-	require_once("../php/connect.php");
+	require_once("../php/j_connect.php");
 	$cardNo = $_REQUEST['cardNo'];
 	$sql = "select *
 			from card c 

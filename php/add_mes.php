@@ -1,7 +1,7 @@
 <?php
 $errMsg = "";
 try{
-	require_once("connect.php");
+	require_once("j_connect.php");
 	$sql = "INSERT INTO message (mesNo, artNo, memNo, mesText, mesTime) 
 			VALUES (NULL, :artNo, :memNo, :mesText, :artTime);";
 

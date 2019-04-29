@@ -209,7 +209,7 @@ h2.hot_forum_heading{
     margin: auto;
 }
 
-.hot_forum_wrap+a{
+.hot_forum_wrap+button{
 	width: 150px;
 	background-color: #111;
 	text-align: center;
@@ -467,7 +467,7 @@ h2.hot_forum_heading{
 	}
 
 
-	.hot_forum_wrap+a:hover{
+	.hot_forum_wrap+button:hover{
 		color: #fff;
 	}
 

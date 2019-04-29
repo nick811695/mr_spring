@@ -14,15 +14,7 @@ var c2 = parseFloat($("#pointC2").text());
 var a3 = parseFloat($("#pointA3").text());
 var b3 = parseFloat($("#pointB3").text());
 var c3 = parseFloat($("#pointC3").text());
-console.log(a1);
-console.log(a2);
-console.log(a3);
-console.log(b1);
-console.log(b2);
-console.log(b3);
-console.log(c1);
-console.log(c2);
-console.log(c3);
+
 
     //載入雷達圖
 Chart.defaults.global.legend.display = false;
@@ -60,16 +52,16 @@ chartRadarOptions =
     }
 };
 
-console.log("---------Rader Data--------");
+// console.log("---------Rader Data--------");
 var graphData =[a1, c1, b1];
 var graphData2 =[a2, c2, b2];
 var graphData3 =[a3, c3, b3];
 
 
-console.log("--------Rader Create-------------");
-console.log(graphData);
-console.log(graphData2);
-console.log(graphData3);
+// console.log("--------Rader Create-------------");
+// console.log(graphData);
+// console.log(graphData2);
+// console.log(graphData3);
     
 //CreateData
 chartRadarData = {

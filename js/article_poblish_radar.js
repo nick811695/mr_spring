@@ -5,6 +5,7 @@ $(document).ready(function(){
     var totalB;
     var totalC;
     var total;
+    
     $('.card').click(function(){
         var cardNo = $(this).attr('cardno');
         $.ajax({
@@ -55,7 +56,7 @@ $(document).ready(function(){
                 {   
                     fontFamily: "pigmo",
                     fontSize: 21,
-                    fontColor: ['rgba(221,125,29,1)', 'rgba(178,79,89,1)', 'rgba(106,145,45,1)']
+                    fontColor: ['rgba(178,79,89,1)', 'rgba(106,145,45,1)', 'rgba(221,125,29,1)']
                 },
                 gridLines: //網線
                 {   
@@ -69,7 +70,7 @@ $(document).ready(function(){
         };
 
         // console.log("---------Rader Data--------");
-        var graphData =[parseFloat(totalA/total),parseFloat(totalB/total), parseFloat(totalC/total)];
+        var graphData =[parseFloat(totalA/total),parseFloat(totalC/total), parseFloat(totalB/total)];
 
 
         // console.log("--------Rader Create-------------");
@@ -83,10 +84,10 @@ $(document).ready(function(){
                 // label: `療效`,
                 backgroundColor: "rgba(250,180,0,.6)",
                 borderColor: "rgba(225,225,225,.3)",
-                pointBackgroundColor: ['rgba(221,125,29,.8)', 'rgba(178,79,89,.8)', 'rgba(106,145,45,.8)'],
-                pointBorderColor: ['rgba(221,125,29,.8)', 'rgba(178,79,89,.8)', 'rgba(106,145,45,.8)'],
-                pointHoverBackgroundColor: ['rgba(221,125,29,.8)', 'rgba(178,79,89,.8)', 'rgba(106,145,45,.8)'],
-                pointHoverBorderColor: ['rgba(221,125,29,.8)', 'rgba(178,79,89,.8)', 'rgba(106,145,45,.8)'],
+                pointBackgroundColor: ['rgba(178,79,89,.8)', 'rgba(106,145,45,.8)', 'rgba(221,125,29,.8)'],
+                pointBorderColor: ['rgba(178,79,89,.8)', 'rgba(106,145,45,.8)', 'rgba(221,125,29,.8)'],
+                pointHoverBackgroundColor: ['rgba(178,79,89,.8)', 'rgba(106,145,45,.8)', 'rgba(221,125,29,.8)'],
+                pointHoverBorderColor: ['rgba(178,79,89,.8)', 'rgba(106,145,45,.8)', 'rgba(221,125,29,.8)'],
                 pointBorderWidth: 10,
                 pointHoverBorderWidth: 0,
                 borderJoinStyle: 'round',
