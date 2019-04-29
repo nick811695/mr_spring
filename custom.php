@@ -1,7 +1,7 @@
 <?php
 ob_start();
 session_start();
-$_SESSION["consultantItems"] = array(2,8,12);
+
 try{
     require_once("Pancake_connectbooks.php");  
     // 時段限定藥材arr
@@ -35,47 +35,159 @@ try{
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/share.css">
     <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/signin.css">
     <link rel="stylesheet" href="css/slick-custom.css">
     <link rel="stylesheet" href="css/slick-theme.css">
     <link rel="stylesheet" href="css/colourpicker.css">
     <link rel="stylesheet" href="css/card.css">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/circleCarousel.css">
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/pixi.js/3.0.7/pixi.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
+    <style>
+    #kasumi_top_container {
+        position: absolute;
+        /* top: 0; */
+        bottom: 58px;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 2;
+        overflow: hidden;
+        pointer-events: none;
+        /* opacity: .4; */
+        animation-name: fade ;
+        animation-duration: 5s; 
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes fade{
+          0%{opacity:0;}
+        100%{opacity:.4;}
+    }
+
+    header #kasumi_top_container canvas {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        pointer-events: none;
+    }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="nav_fabric">
-            <img src="images/navBar.png" alt="navBar">
+    <!-- <h1>首頁請用這支</h1> -->
 
+    <!-- 燈箱：登入 -->
+    <div id="lightBox" style="display:none; z-index: 1000;">
+        <div class="table_wrap">
+            <div id="login_content">
+                <figure class="Login_pic">
+                    <img src="images/Logo_browen.svg" alt="湯先生">
+                </figure>
+                <p class="Login_title">會員登入</p>
+                <table id="tableLogin">
+                    <tr>
+                        <td>
+                            <p>帳號</p>
+                            <input type="text" name="memId" id="memId" placeholder="example@email.com">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>密碼</p>
+                            <input type="password" name="memPsw" id="memPsw" placeholder="******">
+                        </td>
+                    </tr>
+                </table>
+                <div class="btn_wrap">
+                    <button class="btn_s" id="btnLogin" value="登入" style="color:rgb(112, 95, 69);">
+                        <span>登入</span>
+                    </button>
+                </div>
+                <div class="center">
+                    <button class="first_time">還沒註冊帳號?</button>
+                </div>
+            </div>
+            <div id="signup_content">
+                <div class="Signup_btn"></div>
+            </div>
+            <button class="btn_s" id="btnLoginCancel" value="取消">
+                <div class="x_x">
+                    <span class="top"></span>
+                    <span class="bottom"></span>
+                </div>
+            </button>
         </div>
-        <nav class="main_menu">
-            <a href="custom.html">
-                <h2 style="color:#fff;">
-                    客製湯頭
-                </h2>
-            </a>
-            <a href="reservation.html">
-                <h2>
-                    預約訂房
-                </h2>
-            </a>
-            <a href="index.html">
-                <h2>
-                    <img style="width:100px;" src="images/mrSpringLogo.png" alt="">
-                </h2>
-            </a>
-            <a href="forum.html">
-                <h2>
-                    討論の區
-                </h2>
-            </a>
-            <a href="member.html">
-                <h2>
-                    會員専區
-                </h2>
-            </a>
+    </div>
 
+
+
+
+    <!-- 導覽列 -->
+    <header>
+        <nav id="nav_bar">
+            <img id="LoginHere" src="images/account.png" alt="會員登入">
+            <ul id="banner">
+                <a class="flag" href="custom.html">
+                    <h2>客製湯頭</h2>
+                </a>
+                <a class="flag" href="reservation.html">
+                    <h2>預約訂房</h2>
+                </a>
+                <a class="flag" href="index.html">
+                    <h1> <img id="mrSpringLogo_w" style="width:118.7px; " src="images/mrSpringLogo_W.svg" alt="湯先生">
+                        <img id="mrSpringLogo" style="width:110px;" src="images/mrSpringLogo.svg" alt="湯先生"></h1>
+                </a>
+                <a class="flag" href="forum.html">
+                    <h2>討論の區</h2>
+                </a>
+                <a class="flag" href="member.html">
+                    <h2>會員専區</h2>
+                </a>
+            </ul>
         </nav>
+
+        <div id="nav_wrapper">
+            <h1 id="mt_logo">
+                <a href="index.html"><img src="images/logoHorizon.svg" alt="Mr.Spring Logo"></a>
+            </h1>
+            <div class="nav_icon_wrap">
+                <!-- <a href="javascript:;"><img src="object/most_love.png" alt="most_love" style="display:none;"></a>
+        <a href="javascript:;"><img src="object/shop_cart.png" alt="shop_cart" style="display:none;"></a> -->
+                <span id="memName">&nbsp;</span>
+                <img id="spanLogin" src="images/account.png" alt="member">
+            </div>
+
+            <div class="button_container" id="toggle">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+
+        <div class="overlay" id="overlay">
+
+            <nav class="overlay-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="custom.html">客製湯頭</a></li>
+                    <li><a href="reservation.html">預約訂房</a></li>
+                    <li><a href="forum.html">討論の區</a></li>
+                    <li><a href="member.html">會員専區</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <script>
+            $("#toggle").click(function() {
+                $(this).toggleClass("action");
+                $("#overlay").toggleClass("open");
+            });
+        </script>
+
     </header>
 
     <!-- 藥材挑選 -->
@@ -120,6 +232,7 @@ try{
                         <img src="<?php echo $itemTimeRow["itemImg2Url"]?>" alt="<?php echo $itemTimeRow["itemName"]?>">
                         <p><?php echo $itemTimeRow["itemName"]?></p>
                         <span class="item_time_tag time_<?php echo $itemTimeRow["itemTime"]?>"><?php switch($itemTimeRow["itemTime"]){case '1': echo '早'; break;case '2': echo '午'; break;case '3': echo '晚'; break;}?></span>
+                        <span class="item_price_span"><?php echo $itemTimeRow["itemPrice"]?>元</span>
                     </label>
                 <?php
                 }
@@ -129,7 +242,7 @@ try{
                 <h3>一般藥材</h3>
                 <div class="items_normal">
                 <?php
-                while( $itemNormalRow = $itemNormal->fetch(PDO::FETCH_ASSOC)){                
+                while( $itemNormalRow = $itemNormal->fetch(PDO::FETCH_ASSOC)){        
                 ?>
 
                     <div>
@@ -137,6 +250,7 @@ try{
                         <label for="item<?php echo $itemNormalRow["itemNo"]?>">
                             <img src="<?php echo $itemNormalRow["itemImg2Url"]?>" alt="<?php echo $itemNormalRow["itemName"]?>">
                             <p><?php echo $itemNormalRow["itemName"]?></p>
+                            <span class="item_price_span"><?php echo $itemNormalRow["itemPrice"]?>元</span>
                         </label>
                     </div>
 
@@ -533,8 +647,9 @@ try{
         <div id="alertLightboxToggle"></div>
         <span>我是燈箱提示文字</span>
     </section>
+    <!-- 那個雲那個霧 -->
+    <div id="kasumi_top_container"></div>
 </body>
-<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="js/card.js"></script>
 <script type="text/javascript" src="js/Chart.js"></script>
 <script type="text/javascript" src="js/radar.js"></script>
@@ -542,6 +657,10 @@ try{
 <script type="text/javascript" src="js/tinycolor.js"></script>
 <script type="text/javascript" src="js/colourpicker.full.js"></script>
 <script type="text/javascript" src="js/kale.js"></script>
+<script type="text/javascript" src="js/header.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<script type="text/javascript" src="js/kasumi_custom.js"></script>
+
 <script>    
 
     // 提示文字用燈箱關閉
@@ -688,12 +807,23 @@ try{
     };
 
     // 接收SESSION中的推薦藥材並點選對應的label
-    var consultantItems = <?php echo json_encode($_SESSION["consultantItems"]); ?>;
+    var consultantItems = 
+    <?php 
+        if(isset($_SESSION["consultantItems"])){
+            echo json_encode($_SESSION["consultantItems"]); 
+        }else{
+            echo '[]';
+        }
+    ?>;
     if(consultantItems.length>0){
       for(let i=0;i<consultantItems.length;i++){
           document.querySelector(`label[for="item${consultantItems[i]}"]`).click();
       }
     };
+
+    <?php
+        unset($_SESSION["consultantItems"]);
+    ?>
 
     // 繼續製作按鈕
     $("#newCardBtn").click(function(){
@@ -727,7 +857,14 @@ try{
 
     // 湯牌燈箱底下完成鈕
     $("#btnSubmitCard").click(function(){
-        // 判斷內容是否填妥
+        var xhrMember = new  XMLHttpRequest();
+
+        xhrMember.onreadystatechange=function (){
+            if( xhrMember.readyState == 4){
+                if( xhrMember.status == 200 ){
+                    // console.log(xhrMember.responseText);
+                    if(xhrMember.responseText=='1'){
+                        // 判斷內容是否填妥
         if( document.getElementById("cardTitleInput").value == `` || document.getElementById("cardTextInput").value == ``){
             document.getElementById("mask").style.display = "block";
             document.querySelector("#alertLightbox span").innerText = `請輸入湯牌標題及徽章文字`
@@ -822,6 +959,20 @@ try{
         }else{
             $("#scrSubmitLightbox").css("display","flex");
         }
+                    }else{
+                        
+                        document.getElementById("mask").style.display = "block";
+                        document.querySelector("#alertLightbox span").innerText = `請先登入會員`;
+                        document.getElementById("alertLightbox").style.display = "flex";
+                    }
+                }else{
+                    alert( xhrMember.status );
+                }
+            }
+        }
+        var url = "login_or_not.php";
+        xhrMember.open("Get", url, true);
+        xhrMember.send( null );       
 
     });
 
@@ -880,7 +1031,7 @@ try{
    
     });
 
-    // 客志頁底下送出按鈕(768以下)
+    // 客製頁底下送出按鈕(768以下)
     $("#btnSubmitItems_formobile").click(function(){
         //沒有選擇時停用
         var itemsInputCheckedCount = 0;
@@ -1079,5 +1230,18 @@ try{
         fontArr[i].style.fontFamily = fontArr[i].value;   
     }
 
+    if(consultantItems.length>0){
+        document.getElementById("mask").style.display = "block";
+        document.querySelector("#alertLightbox span").innerText = `已為您選取諮詢推薦藥材`
+        document.getElementById("alertLightbox").style.display = "flex";
+    };
+
+    // 根據session判斷登入與否
+    var memLogin = <?php if(isset($_SESSION["memNo"])){echo "1";}else{echo "0";}?>;
+    if(memLogin !== 1){
+        // 登入提示燈箱
+    }else{
+        // 原function後段
+    }
 </script>
 </html>

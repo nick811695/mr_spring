@@ -1,4 +1,7 @@
 <?php
+ob_start();
+session_start();
+
 try{
     require_once("Pancake_connectbooks.php");  
 
@@ -20,7 +23,7 @@ try{
     $newCard->bindValue(":effecttypeNo", $newCardInfo->effecttypeNo);
 
     // =====會員號=====
-    $newCard->bindValue(":memNo", 1);
+    $newCard->bindValue(":memNo", $_SESSION["memNo"]);
     // =====會員號=====
 
     $newCard->bindValue(":cardText", $newCardInfo->cardText);
