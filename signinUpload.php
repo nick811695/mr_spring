@@ -1,16 +1,16 @@
 <?php
-
+ob_start();
 session_start();
 $errMsg="";
 
 if(isset($_POST['login'])) {
     try{
-        $dsn="mysql:host=localhost;port=3306;dbname=mrspring;charset=utf8";
-        $user="root";
-        $password="bebe";
+        $dsn="mysql:host=localhost;port=3306;dbname=mrspringtest;charset=utf8";
+        $user="nick8195";
+        $password="1234";
         $options= array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE=>PDO::CASE_NATURAL);
         $pdo = new PDO($dsn, $user, $password, $options);
-        $sql="select * from member where memId = ':memId' and memPsw = ':memPsw'";
+        $sql="select * from member where memId = :memId and memPsw = :memPsw";
 
         $memId = $_POST['memId'];
         $memPsw = $_POST['memPsw'];
@@ -19,12 +19,22 @@ if(isset($_POST['login'])) {
         $member -> bindValue(":memId",$memId);
         $member -> bindValue(":memPsw",$memPsw);
         $member -> execute();
-
         
-        if($memId != ""){
-            echo "歡迎你進來".$memId ;
+        if($member->rowCount() == 0){
+                echo "XXXXXXXX";
         }else{
-            echo "帳號密碼有問題";}
+            $memberRow = $member->fetch(PDO::FETCH_ASSOC);
+            $_SESSION["memId"] = $memberRow["memId"];
+            $_SESSION["memFirstName"] = $memberRow["memFirstName"];
+            $_SESSION["memLastName"] = $memberRow["memLastName"];
+            $_SESSION["memNickname"] = $memberRow["memNickname"];
+            $_SESSION["twId"] = $memberRow["twId"];
+            $_SESSION["memTel"] = $memberRow["memTel"];
+            $_SESSION["memEmail"] = $memberRow["memEmail"];
+            $_SESSION["memImgUrl"] = $memberRow["memImgUrl"];
+
+            echo $_SESSION["memId"],$_SESSION["memFirstName"],$_SESSION["memTel"];
+        }
         
     }catch(PDOException $e){
             $errMsg = "錯誤原因" . $e -> getMessage() . "<br>" ;
@@ -45,9 +55,9 @@ if(isset($_POST['login'])) {
         $to = $dir . $_FILES['memUpFile']['name'];
         copy($from, $to);
         try{    
-            $dsn="mysql:host=localhost;port=3306;dbname=mrspring;charset=utf8";
-            $user="root";
-            $password="bebe";
+            $dsn="mysql:host=localhost;port=3306;dbname=mrspringtest;charset=utf8";
+            $user="nick8195";
+            $password="1234";
             $options= array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE=>PDO::CASE_NATURAL);
             $pdo = new PDO($dsn, $user, $password, $options);
         

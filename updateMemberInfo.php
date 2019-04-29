@@ -27,9 +27,9 @@ $errMsg="";
                 $to = $dir . $_FILES['memUpFile']['name'];
                 copy($from, $to);
                 try{
-                    $dsn="mysql:host=localhost;port=3306;dbname=test;charset=utf8";
-                    $user="root";
-                    $password="bebe";
+                    $dsn="mysql:host=localhost;port=3306;dbname=mrspringtest;charset=utf8";
+                    $user="nick8195";
+                    $password="1234";
                     $options= array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE=>PDO::CASE_NATURAL);
                     $pdo = new PDO($dsn, $user, $password, $options);
                     $sql = "UPDATE `member` SET  memFirstName=:memFirstName,memLastName=:memLastName,";
@@ -46,6 +46,7 @@ $errMsg="";
                     $statement -> bindValue(':memEmail', $memEmail);
                     $statement -> bindValue(':memImgUrl', $memImgUrl);
                     $statement -> bindValue(':memNo', $memNo);
+
                     $updateRow = $statement->execute();
                     header("Location: member.php");
             
@@ -68,9 +69,9 @@ $errMsg="";
                 break;
             case 4:
             try{
-                $dsn="mysql:host=localhost;port=3306;dbname=mrspring;charset=utf8";
-                $user="root";
-                $password="bebe";
+                $dsn="mysql:host=localhost;port=3306;dbname=mrspringtest;charset=utf8";
+                $user="nick8195";
+                $password="1234";
                 $options= array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE=>PDO::CASE_NATURAL);
                 $pdo = new PDO($dsn, $user, $password, $options);
                 $sql = "UPDATE `member` SET memFirstName=:memFirstName,memLastName=:memLastName,";
