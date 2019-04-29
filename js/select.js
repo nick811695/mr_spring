@@ -46,23 +46,53 @@ function storeSlide(){
 
     function clockSelect(jsonStr){
         var result = JSON.parse(jsonStr);
+        var reserMorningCount = 0;
+        var reserAfternoonCount = 0;
+        var reserNightCount = 0;
         // console.log(result);
         for(var i = 0;i < result.length;i++){
             if(result[i].reserMorning == "1"){
-                document.getElementsByClassName("clock")[0].style.filter = "brightness(.5)";
-                document.getElementsByClassName("clock")[0].removeEventListener("click",clockSlide);
-                document.getElementsByClassName("clock")[0].classList.remove("nav-control");
+                reserMorningCount++;
+                if(reserMorningCount == 3){
+                    document.getElementsByClassName("clock")[0].style.filter = "brightness(.5)";
+                    document.getElementsByClassName("clock")[0].removeEventListener("click",clockSlide);
+                    document.getElementsByClassName("clock")[0].classList.remove("nav-control");
+                }
             }else if(result[i].reserAfternoon == "1"){
-                document.getElementsByClassName("clock")[2].style.filter = "brightness(.5)";
-                document.getElementsByClassName("clock")[2].removeEventListener("click",clockSlide);
-                document.getElementsByClassName("clock")[2].classList.remove("nav-control");
+                reserAfternoonCount++;
+                if(reserAfternoonCount == 3){
+                    document.getElementsByClassName("clock")[1].style.filter = "brightness(.5)";
+                    document.getElementsByClassName("clock")[1].removeEventListener("click",clockSlide);
+                    document.getElementsByClassName("clock")[1].classList.remove("nav-control");
+                }
             }else if(result[i].reserNight == "1"){
-                document.getElementsByClassName("clock")[1].style.filter = "brightness(.5)";
-                document.getElementsByClassName("clock")[1].removeEventListener("click",clockSlide);
-                document.getElementsByClassName("clock")[1].classList.remove("nav-control");
+                reserNightCount++;
+                if(reserNightCount == 3){
+                    document.getElementsByClassName("clock")[2].style.filter = "brightness(.5)";
+                    document.getElementsByClassName("clock")[2].removeEventListener("click",clockSlide);
+                    document.getElementsByClassName("clock")[2].classList.remove("nav-control");
+                }
             }
         }
+        
+        //時段限定篩選時段
+        // console.log(cardTimeItemValue);
+        if(cardTimeItemValue == 1){
+            document.getElementsByClassName("clock")[0].style.filter = "brightness(.5)";
+            document.getElementsByClassName("clock")[0].removeEventListener("click",clockSlide);
+            document.getElementsByClassName("clock")[0].classList.remove("nav-control");
+        }else if(cardTimeItemValue == 2){
+            document.getElementsByClassName("clock")[1].style.filter = "brightness(.5)";
+            document.getElementsByClassName("clock")[1].removeEventListener("click",clockSlide);
+            document.getElementsByClassName("clock")[1].classList.remove("nav-control");
+        }else if(cardTimeItemValue == 3){
+            document.getElementsByClassName("clock")[2].style.filter = "brightness(.5)";
+            document.getElementsByClassName("clock")[2].removeEventListener("click",clockSlide);
+            document.getElementsByClassName("clock")[2].classList.remove("nav-control");
+        }
     }
+
+    
     
     // console.log(this.getAttribute("roomPrice"));
     // console.log(this.childNodes[1].childNodes[1].innerHTML);
@@ -149,9 +179,9 @@ for(var i = 0;i < clock.length;i++){
 }
 
 function clockSlide(){
-    clockvalueTempIndex = this.childNodes[1].childNodes[1].childNodes[1].src.split("/").length;
+    // clockvalueTempIndex = this.childNodes[1].childNodes[1].childNodes[1].src.split("/").length;
     // console.log(clockvalueTempIndex);
-    clockvalue = this.childNodes[1].childNodes[1].childNodes[1].src.split("/")[clockvalueTempIndex-1].split(".")[0];
+    // clockvalue = this.childNodes[1].childNodes[1].childNodes[1].src.split("/")[clockvalueTempIndex-1].split(".")[0];
     // console.log(this.childNodes[1].childNodes[1].childNodes[1].src.split("/")[4].split(".")[0]);
     // console.log(clockvalue);
     for(var i = 0;i < clock.length;i++){
@@ -165,17 +195,21 @@ function clockSlide(){
         roomImg[0].style.filter = "brightness(1.2)";
         roomImg[1].style.filter = "brightness(1.2)";
         roomImg[2].style.filter = "brightness(1.2)";
+        clockvalue = "morning";
     }else if(temp == 1){
         clockSlider[0].style.transform = "translateY(-140px)";
         roomImg[0].style.filter = "brightness(1)";
         roomImg[1].style.filter = "brightness(1)";
         roomImg[2].style.filter = "brightness(1)";
+        clockvalue = "afternoon";
     }else if(temp == 2){
         clockSlider[0].style.transform = "translateY(-210px)";
         roomImg[0].style.filter = "brightness(0.8)";
         roomImg[1].style.filter = "brightness(0.8)";
         roomImg[2].style.filter = "brightness(0.8)";
+        clockvalue = "night";
     }
+    // console.log(clockvalue);
 }
 
 //選擇湯牌提示燈箱
@@ -186,16 +220,16 @@ function clockCheck(){
         // console.log(this.style.filter);
     }else if(this.style.filter == "brightness(0.5)"){
         document.getElementById("smallLightBox_wrapper").style.visibility = "visible";
-        document.querySelector("#smallLightBox_wrapper h3").innerHTML = "此時段已經被訂走囉!!!"
+        document.querySelector("#smallLightBox_wrapper h3").innerHTML = "此時段無法預約哦!!!"
     }
 }
 
 //選擇湯牌燈箱開關
-var lightboxOnBtn = document.getElementsByClassName("springCard");
-var lightboxOffBtn = document.getElementById("lightboxToggle");
+// var lightboxOnBtn = document.getElementsByClassName("springCard");
+// var lightboxOffBtn = document.getElementById("lightboxToggle");
 
-lightboxOnBtn[0].addEventListener("click",lightboxOn);
-lightboxOffBtn.addEventListener("click",lightboxOff);
+// lightboxOnBtn[0].addEventListener("click",lightboxOn);
+// lightboxOffBtn.addEventListener("click",lightboxOff);
 
 function lightboxOn(){
     document.getElementById('lightbox_wrapper').style.visibility = "visible";

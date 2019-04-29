@@ -1,7 +1,7 @@
 <?php 
 
 try{
-  require_once("php/connect.php");
+  require_once("php/yt_connect.php");
   	// $memNo = $_SESSION["memNo"];
   	// $memId = $_SESSION["memId"];
   	// $memNickname = $_SESSION["memNickname"];

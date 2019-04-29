@@ -2,7 +2,7 @@
     $errMsg="";
 
     try {
-        require_once("connect.php");
+        require_once("yt_connect.php");
         $sql = "select * from branch where branchName = :branchName";
         $branchs = $pdo->prepare($sql);//下指令
         $branchs->bindValue(":branchName",$_REQUEST["roomvalue"]);
