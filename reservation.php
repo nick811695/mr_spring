@@ -1,3 +1,10 @@
+<?php
+    ob_start();
+    session_start();
+
+    // $_SESSION["memNo"] = 1;
+    // unset($_SESSION["memNo"]);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,15 +14,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/share.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/demo.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/forum.css">
+    <link rel="stylesheet" type="text/css" href="css/card.css">
+    <link rel="stylesheet" href="css/lightbox.css">
+    <link rel="stylesheet" href="css/slick.css">
     <link rel="stylesheet" href="css/reservation.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js"></script>
 </head>
 
 <body>
-    <header class="mobile_display">
+    <!-- <header class="mobile_display">
         <div class="nav_fabric">
             <img src="images/navBar.png" alt="navBar">
         </div>
@@ -47,6 +63,127 @@
             </a>
 
         </nav>
+    </header> -->
+    <!-- 燈箱：登入 -->
+    <div id="lightBox" style="display:none; z-index: 1000;">
+        <div class="table_wrap">
+
+            <figure class="Login_pic">
+                <img src="images/Logo_browen.svg" alt="湯先生">
+            </figure>
+
+            <p class="Login_title">會員登入</p>
+
+            <table id="tableLogin">
+
+                <tr>
+
+                    <td>
+                        <p>帳號</p>
+                        <input type="text" name="memId" id="memId" placeholder="example@email.com">
+                    </td>
+                </tr>
+                <tr>
+                    <!-- <td></td> -->
+                    <td>
+                        <p>密碼</p>
+                        <input type="password" name="memPsw" id="memPsw" placeholder="******">
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <!-- <td colspan="2" align="center">
+                            
+                        </td> -->
+                </tr>
+            </table>
+            <div class="btn_wrap">
+                <button class="btn_s" id="btnLogin" value="登入" style="color:rgb(112, 95, 69);">
+                    <span>登入</span>
+                </button>
+            </div>
+            <button class="btn_s" id="btnLoginCancel" value="取消">
+                <div class="x_x">
+                    <span class="top"></span>
+                    <span class="bottom"></span>
+                </div>
+            </button>
+            <div class="center">
+                <button class="first_time">還沒註冊帳號?</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- 導覽列 -->
+    <header>
+        <nav id="nav_bar">
+            <img id="LoginHere" src="images/account.png" alt="會員登入">
+            <svg width="800" height="0" viewBox="0 0 800 230">
+                <path fill="none" d="0 96%, 100% 96%, 100% 100%, 0% 100%" />
+            </svg>
+            <ul id="banner">
+                <a class="flag" href="custom.html">
+                    <h2>客製湯頭</h2>
+                </a>
+                <a class="flag" href="reservation.html">
+                    <h2>預約訂房</h2>
+                </a>
+                <a class="flag" href="index.html">
+                    <h1> <img id="mrSpringLogo_w" style="width:118.7px; " src="images/mrSpringLogo_W.svg" alt="湯先生">
+                        <img id="mrSpringLogo" style="width:110px;" src="images/mrSpringLogo.svg" alt="湯先生"></h1>
+                </a>
+                <a class="flag" href="forum.html">
+                    <h2>討論の區</h2>
+                </a>
+                <a class="flag" href="member.html">
+                    <h2>會員専區</h2>
+                </a>
+            </ul>
+        </nav>
+
+        <div id="nav_wrapper">
+            <h1 id="mt_logo">
+                <a href="index.html"><img src="images/logoHorizon.svg" alt="Mr.Spring Logo"></a>
+            </h1>
+            <div class="nav_icon_wrap">
+                <!-- <a href="javascript:;"><img src="object/most_love.png" alt="most_love" style="display:none;"></a>
+        <a href="javascript:;"><img src="object/shop_cart.png" alt="shop_cart" style="display:none;"></a> -->
+                <span id="memName">&nbsp;</span>
+                <img id="spanLogin" src="images/account.png" alt="member">
+            </div>
+
+            <div class="button_container" id="toggle">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+            </div>
+        </div>
+
+        <div class="overlay" id="overlay">
+
+            <nav class="overlay-menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="custom.html">客製湯頭</a></li>
+                    <li><a href="reservation.html">預約訂房</a></li>
+                    <li><a href="forum.html">討論の區</a></li>
+                    <li><a href="member.html">會員専區</a></li>
+                </ul>
+            </nav>
+        </div>
+
+
+        <script>
+            $("#toggle").click(function() {
+                $(this).toggleClass("action");
+                $("#overlay").toggleClass("open");
+            });
+        </script>
+
     </header>
     <div class="reservationWindow_d">
         <section id="smallLightBox_wrapper">
@@ -60,20 +197,39 @@
         </section>
         <section id="lightbox_wrapper">
             <div id="lightbox">
-                <div id="lightboxToggle"></div>
+                <!-- <div id="lightboxToggle"></div> -->
+                <div id="lightbox_radar_mask"></div>
+                <div id="lightbox_radar">
+                    <div id="lightbox_radar_close" class="btn_s">關閉</div>
+                    <div id="lightbox_radar_wrapper">
+                        <canvas id="chartRadar" width="300" height="300"></canvas>
+                    </div>
+                </div>
                 <div class="chooseCard_d">
                     <h2>請選擇要使用的湯牌</h2>
+                    <div id="lightbox_filter_mask"></div>
+                    <div class="lightbox_filter">
+                        <img src="images/filter.png">
+                        <select id="lightbox_filter_select">
+                            <option value="Choice 1">熱門湯牌</option>
+                            <option value="Choice 2">自己製作</option>
+                            <option value="Choice 3">討論區收藏</option>
+                        </select>
+                    </div>
+                    <label for="lightbox_radar" id="lightbox_radar_btn"><img src="images/info_icon.png"></label>
+                    
                     <div class="select-box">
-                        <label for="select-box1" class="label select-box1"><span class="label-desc">全部湯牌</span> </label>
+                        <label for="select-box1" class="label select-box1"><span class="label-desc">熱門湯牌</span> </label>
                         <select id="select-box1" class="select">
-                            <option value="Choice 1">全部湯牌</option>
+                            <option value="Choice 1">熱門湯牌</option>
                             <option value="Choice 2">自己製作</option>
                             <option value="Choice 3">討論區收藏</option>
                         </select>  
                     </div>
+                    
                     <div class="chooseCardArea_d">
                         <div class="responsive">
-                            <div class="cards">
+                            <!-- <div class="cards">
                                 <img src="http://placehold.it/224x420" alt="" />
                             </div>
                             <div class="cards">
@@ -96,7 +252,7 @@
                             </div>
                             <div class="cards">
                                 <img src="http://placehold.it/224x420" alt="" />
-                            </div>
+                            </div> -->
                         </div>
                         <!-- control arrows -->
                         <div class="prev">
@@ -109,18 +265,20 @@
                         </div>
                     </div>
                 </div>
-                <div class="radar_d">
+                <div class="radar_box">
                     <div id="radar_wrapper">
-                        <canvas id="chartRadar" width="300" height="300"></canvas>
+                        <canvas id="chartRadar2" width="300" height="300"></canvas>
                     </div>
                 </div>
-                <div class="cardPrice_d">
+                <!-- <div class="cardPrice_d">
                     <span>湯牌價格</span>
                     <span>NT$<span id="cardPriceText">1200</span></span>
-                </div>
-                <div class="nextStepBtn_d">
-                    <div class="btn_b nextStep">確定</div>
-                </div>
+                </div> -->
+                <!-- <a href="forum_article_publish.php#publish_r"> -->
+                    <div class="nextStepBtn_d">
+                        <div class="btn_b nextStep">確定</div>
+                    </div>
+                <!-- </a> -->
             </div>
         </section>
         <div class="reservationContainer_d">
@@ -167,12 +325,14 @@
                 </div>
                 <div class="wrap select1_container_d">
                     <div class="left_box_d">
-                        <div class="springCard">
-                            <!-- <img src="images/springCard.png" alt=""> -->
-                            <img src="images/springCard02.png" alt="">
-                            <div class="add_button_d">
-                                <div class="add_button"></div>
-                                <p>載入我的湯牌</p>
+                        <div class="publish_l">
+                            <div class="springCard publish_card" id="add_card">
+                                <!-- <img src="images/springCard.png" alt=""> -->
+                                <img src="images/springCard02.png" alt="">
+                                <div class="add_button_d">
+                                    <div class="add_button"></div>
+                                    <p>載入我的湯牌</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -185,7 +345,7 @@
                                 <div class="herbsContent_d">
                                     <p>
                                         目前選用之湯牌包含時段限定藥材 : <span class="herbsTitle">櫻花</span><br>
-                                        <span class="mobile_display">已為您篩選出可使用本湯牌之日期</sapn>。
+                                        <span class="mobile_display">已為您篩選出可使用本湯牌之時段</sapn>。
                                     </p>
                                 </div>
                             </div>
@@ -231,7 +391,7 @@
                         </div>
                         <div class="cardPrice_d">
                             <span>湯牌價格</span>
-                            <span>NT$<span id="cardPriceText">1200</span></span>
+                            <span>NT$<span id="cardPriceText">0</span></span>
                         </div>
                     </div>
                 </div>
@@ -623,15 +783,15 @@
                         <table class="orderDetails">
                             <tr>
                                 <th>姓氏</th>
-                                <td>林</td>
+                                <td id="orderMemFirstName">林</td>
                                 <th class="th_rightSide">名稱</th>
-                                <td>建廷</td>
+                                <td id="orderMemLastName">建廷</td>
                             </tr>
                             <tr>
                                 <th>身分證號</th>
-                                <td>A123456789</td>
+                                <td id="orderTwId">A123456789</td>
                                 <th class="th_rightSide">連絡電話</th>
-                                <td>0912345678</td>
+                                <td id="orderMemTel">0912345678</td>
                             </tr>
                             <tr>
                                 <th>日期</th>
@@ -643,11 +803,11 @@
                             </tr>
                             <tr>
                                 <th>地點</th>
-                                <td colspan="3"><span id="orderRoomName">北投分店</span> ( NT$<span>1200</span> )</td>
+                                <td colspan="3"><span id="orderRoomName">北投分店</span> ( NT$<span id="orderRoomPrice">1200</span> )</td>
                             </tr>
                             <tr>
                                 <th>使用湯牌</th>
-                                <td colspan="3">舒筋軟骨湯 ( NT$<span>1200</span> )</td>
+                                <td colspan="3"><span id="orderCardName">舒筋軟骨湯</span> ( NT$<span id="orderCardPrice">1200</span> )</td>
                             </tr>
                             <tr>
                                 <th>優惠券</th>
@@ -655,7 +815,7 @@
                                     <select name="coupon" id="coupon">
                                         <option value="0">85折</option>
                                     </select>
-                                    <span>( - NT$<span>100</span> )</span>
+                                    <span>( - NT$<span id="couponDiscount">100</span> )</span>
                                 </td>
                             </tr>
                         </table>
@@ -687,8 +847,10 @@
         
     
    
-
+    <script src="js/header.js"></script>
+    <script src="js/login.js"></script>
     <script src="js/loadInfo.js"></script>
+    <script src="js/yt_cardFilter.js"></script>
     <script src="js/calendar.js"></script>
     <script src="js/select.js"></script>
     <!-- <script src="js/PrismSlider.js"></script> -->
@@ -696,11 +858,12 @@
     <!-- <script src="js/sliderMain.js"></script> -->
     <script src="js/anime.min.js"></script>
     <script src="js/demo.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.5/slick.min.js"></script>
-    <script src="js/chooseCard.js"></script>
     <script src="js/Chart.js"></script>
-    <script src="js/radar.js"></script>
+    <!-- <script src="js/radar.js"></script> -->
+    <!-- <script src="js/article_poblish_radar.js"></script> -->
+    <script src="js/chooseCard.js"></script>
+    <!-- <script type="text/javascript" src="js/article_poblish.js"></script> -->
     <script src="js/reservationStep.js"></script>
 </body>
 

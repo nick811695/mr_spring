@@ -1,5 +1,7 @@
 function showLogin() {
         document.getElementById("lightBox").style.display = "block";
+        document.getElementById("lightBox").style.opacity = 1;
+        TweenMax.from("#lightBox", 1, { opacity:0, ease: Power1.easeIn });
     // if (document.getElementById("spanLogin").innerHTML == "登入") {
     //     document.getElementById("lightBox").style.display = "block";
     // }
@@ -19,7 +21,7 @@ function loginForm() {
 
         // document.getElementById('spanLogin').innerHTML = "登出";
         document.getElementById('memName').innerHTML = "張君山";
-        document.getElementById("memId").value = "";
+        account.value = "mountain";
         document.getElementById("memPsw").value = "";
         document.getElementById("lightBox").style.display = "none";
     }
@@ -40,24 +42,20 @@ function cancelLogin() {
     document.getElementById("lightBox").style.display = "none";
 }
 
-function init() {
-    var btnLogin = document.getElementById("spanLogin");
-    btnLogin.addEventListener("click", showLogin, false);
 
-    var btnLogOut = document.getElementById("spanLogin");
-    btnLogOut.addEventListener("click", logOut, false);
+var btnLogin = document.getElementById("spanLogin");
+btnLogin.addEventListener("click", showLogin, false);
 
-    var btnSendForm = document.getElementById("btnLogin");
-    btnSendForm.addEventListener("click", loginForm, false);
+var btnLogOut = document.getElementById("spanLogin");
+btnLogOut.addEventListener("click", logOut, false);
+
+var btnSendForm = document.getElementById("btnLogin");
+btnSendForm.addEventListener("click", loginForm, false);
 
 
-    var btnLogCancel = document.getElementById("btnLoginCancel");
-    btnLogCancel.addEventListener("click", cancelLogin, false);
+var btnLogCancel = document.getElementById("btnLoginCancel");
+btnLogCancel.addEventListener("click", cancelLogin, false);
 
-    
-    var LoginHere = document.getElementById("LoginHere");
-    LoginHere.addEventListener("click", showLogin, false);
+var LoginHere = document.getElementById("LoginHere");
+LoginHere.addEventListener("click", showLogin, false);
 
-};
-
-window.onload = init;

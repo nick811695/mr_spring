@@ -1,7 +1,11 @@
 <?php 
 
 try{
+<<<<<<< HEAD
   require_once("php/j_connect.php");
+=======
+  require_once("php/yt_connect.php");
+>>>>>>> baec60226a351b309eba5c63b2b7f8986ac850c0
   	// $memNo = $_SESSION["memNo"];
   	// $memId = $_SESSION["memId"];
   	// $memNickname = $_SESSION["memNickname"];

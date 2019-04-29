@@ -1,6 +1,10 @@
 <?php 
 try{
+<<<<<<< HEAD
 	require_once("../php/j_connect.php");
+=======
+	require_once("yt_connect.php");
+>>>>>>> baec60226a351b309eba5c63b2b7f8986ac850c0
 	$cardNo = $_REQUEST['cardNo'];
 	$sql = "select *
 			from card c 

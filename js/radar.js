@@ -37,10 +37,7 @@ chartRadarOptions =
     }
 };
 
-console.log("---------Rader Data--------");
 var graphData =[0,0,0];
-
-console.log("--------Rader Create-------------");
     
 //CreateData
 chartRadarData = {

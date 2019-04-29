@@ -39,20 +39,6 @@
                 </div>
             </div>
         </div>
-        <!-- 遊戲訊息欄 -->
-        <div id="game_info">
-            <div class="life_board">
-                <div>生命力</div>
-                <div style="text-align: left;">
-                    <div class="life_bar_box"><span id="lifeBar"></span></div>
-                </div>
-                <div style="display:none;">關卡</div>
-                <div><strong id="gameLevel">1</strong></div>
-                <div>當前得分</div>
-                <div id="gameCent">0</div>
-            </div>
-
-        </div>
         <!-- 遊戲訊息 end -->
         <!-- 遊戲主螢幕 start -->
         <div id="game_box">
@@ -61,6 +47,7 @@
                 <div class="game_over_tip"></div>
                 <img class="special" src="images/coupon.png" alt="">
                 <a id="bonus" class="game_over_tip3" href="custom.html">立刻前往客製湯頭</a>
+                <input type="hidden" id="getScore">
             </div>
             <div class="time_container">
                 <div class="joy_show_main_player">
@@ -68,33 +55,33 @@
 
                         <div class="wrapper" data-anim="base wrapper">
 
-                            <!-- <div class="circle2">
-                            </div> -->
+                            <!-- 遊戲訊息欄 -->
 
+                            <div id="game_info">
+                                <div class="life_board">
+                                    <div>生命值</div>
+                                    <div style="text-align: left;">
+                                        <div class="life_bar_box"><span id="lifeBar"></span></div>
+                                    </div>
+                                    <div style="display:none;">關卡</div>
+                                    <div><strong id="gameLevel">1</strong></div>
+                                    <div id="nowScore">目前得分</div>
+                                    <div id="gameCent">0</div>
+                                    <input type="hidden" id="getScore">
+                                    <input type="hidden" id="couponNo">
+                                    <input type="hidden" id="couponName">
+                                    <input type="hidden" id="couponDiscount">
+                                    <input type="hidden" id="memCouponDate">
+                                </div>
 
-                            <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 195 195" class="clock_circle">
-                                <defs>
-                                    <style>
-                                        .path {
-                                            fill: rgba(255, 176, 85, 0.5);
-                                            stroke: none;
-                                            stroke-miterlimit: 10;
-                                        }
-                                    </style>
-                                </defs>
-                                <g id="圖層_2" data-name="圖層 2">
-                                    <g id="圖層_1-2" data-name="圖層 1">
-                                        <path class="path" d="M97.5,2.5a95,95,0,1,1-95,95,95,95,0,0,1,95-95" />
-                                    </g>
-                                </g>
-                            </svg> -->
+                            </div>
                             <img src="images/circle01.svg" alt="">
 
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 195 195" id="clock_circle" >
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 195 195" id="clock_circle">
                                 <defs>
                                     <style>
                                         .path {
-                                            fill: rgba(255, 248, 240,0);
+                                            fill: rgba(255, 248, 240, 0);
                                             stroke: rgb(146, 0, 0);
                                             stroke-miterlimit: 10;
                                             stroke-width: 5;
@@ -110,8 +97,8 @@
                                 </g>
                             </svg>
                             <div id="count_back">
-                                <span>剩餘時間</span><br>
-                                <span id="divNum">20</span>
+                                <span id="timeBack">剩餘時間</span><br>
+                                <span id="divNum">10</span>
                             </div>
                         </div>
                     </div>
@@ -134,6 +121,8 @@
                 <button onclick="document.getElementById('game_control').style.display='none'" id="btnStart">
                     開始
                 </button>
+                
+                <input type="hidden" id="memNo">
             </div>
 
         </div>
@@ -149,7 +138,7 @@
             $("#btnStart").click(function () {
                 // alert('ok');
                 FruitGame.Start();
-                $('#clock_circle').css("display" , 'block');
+                $('#clock_circle').css("display", 'block');
             });
         });
         $(document).ready(function () {

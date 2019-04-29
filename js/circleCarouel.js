@@ -56,7 +56,7 @@
 		
 		setInterval(function(){
 			var dataTab= $('#wikiNav.active').data("tab");
-			if(dataTab>10||i>10){
+			if(dataTab>fields.length||i>fields.length){
 			dataTab=1;
 			i=1;
 			}
