@@ -42,24 +42,20 @@ function cancelLogin() {
     document.getElementById("lightBox").style.display = "none";
 }
 
-function init() {
-    var btnLogin = document.getElementById("spanLogin");
-    btnLogin.addEventListener("click", showLogin, false);
 
-    var btnLogOut = document.getElementById("spanLogin");
-    btnLogOut.addEventListener("click", logOut, false);
+var btnLogin = document.getElementById("spanLogin");
+btnLogin.addEventListener("click", showLogin, false);
 
-    var btnSendForm = document.getElementById("btnLogin");
-    btnSendForm.addEventListener("click", loginForm, false);
+var btnLogOut = document.getElementById("spanLogin");
+btnLogOut.addEventListener("click", logOut, false);
+
+var btnSendForm = document.getElementById("btnLogin");
+btnSendForm.addEventListener("click", loginForm, false);
 
 
-    var btnLogCancel = document.getElementById("btnLoginCancel");
-    btnLogCancel.addEventListener("click", cancelLogin, false);
+var btnLogCancel = document.getElementById("btnLoginCancel");
+btnLogCancel.addEventListener("click", cancelLogin, false);
 
-    
-    var LoginHere = document.getElementById("LoginHere");
-    LoginHere.addEventListener("click", showLogin, false);
+var LoginHere = document.getElementById("LoginHere");
+LoginHere.addEventListener("click", showLogin, false);
 
-};
-
-window.onload = init;

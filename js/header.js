@@ -27,9 +27,9 @@ function animateStrands(strand) {
     animateWindCurve(flag, fromPath, toPath, strandPathDuration);
   });
 
-  if (supportsOffsetPath) {
-    animateStringInWind(strand, fromPath, toPath, strandPathDuration);
-  }
+  // if (supportsOffsetPath) {
+  //   animateStringInWind(strand, fromPath, toPath, strandPathDuration);
+  // }
 }
 
 function animateWindRotate(flag) {
