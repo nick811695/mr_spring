@@ -1,14 +1,13 @@
-*{
-    outline: #f99 solid 2px;
-}
+// *{
+//     outline: #f99 solid 2px;
+// }
 
 .wrap{
     width: 100%;
     max-width: 1200px;
 }
-
-    
-//會員資料＋大頭貼
+ 
+//會員資料 + 大頭貼
 .member_info{
     display: flex;
     // justify-content: center;
@@ -21,7 +20,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    // max-width: 1200px;
     margin: 0 auto;
     padding: 130px 0 0 0;
 }
@@ -35,32 +33,38 @@
 }
 }
 
-.member_headpic{
+.member_edit_label{
+    position: relative;
+}
+
+.member_imgPreview{
     border: #231515 1px solid;
     border-radius: 200%;
     width: 180px;
     height: 180px;
     overflow: hidden;
-    margin: auto;
-    //margin-top:80px; 
+    margin: auto; 
 }
 
-.head_pic{
+#imgPreview_pic{
+    margin: auto;
     width: 100%;
+}
+
+#member_upFile{
+    display: none;
 }
 
 .edit_text{
     text-align: center;
-    margin: 13px;
-
+    padding: 10px 0 0 0;
 }
 
-//編輯icon圖
 .fas{
-    margin: 0 12px;
+    padding:0 0 0 10px ;
     cursor: pointer;
 }
-    
+
 //會員資料
 .mem_info{
     background-color: #fff;
@@ -77,7 +81,7 @@
     justify-content: center;
     // align-items: center;
     flex-wrap:wrap;
-    margin:40px 10px 50px 10px;
+    margin:40px 0 50px 0;
 }
 
 @media screen and (min-width:768px){
@@ -103,11 +107,16 @@
 .edit_data{
     display: flex;
     margin: 15px 5px 15px 0;
-    
+    padding-left: 10px;
 }
 
-.edit_data p{
-    padding: 3px 0 0 0;
+.edit_data > input{
+    padding: 0 0 0 5px;
+}
+
+.btn_edit{
+    text-align: center;
+    margin: 0 0 20px 0;
 }
 
 .redknot{
@@ -150,7 +159,7 @@
     display:flex;
     justify-content:space-around;
     flex-wrap: wrap;
-    margin: 0 25px;
+    // margin: 0 25px;
 }
   
 .tablinks_reservation,.tablinks_post,.tablinks_coupon,.meun_btn{
@@ -222,6 +231,10 @@
     margin: 0 auto;
 }
 
+#updated_it{
+    display: none;
+}
+
 .function_area{
     margin-top: 30px;
 }
@@ -239,71 +252,44 @@
 .reservation_area{
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
+    
     // margin-top: 60px;
 }
 
-.reser_dataImg{
-    width: 700px;
-    max-width: 100%;
-}
+
 
 .reser_data{
-    /* width: 400px;
-    height: 250px; */
     position: relative;
-    // margin-left: 5px;
-    /* margin-top: 20px; */
     margin: 0 auto;
-}
-
-.reser_img{
-    display: none;
+    background-color: #fff;
+    border: #fff 2px solid;
+    border-bottom: #7d0000 2px solid;
+    border-radius: 10px;  
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-bottom: 10px;
 }
 
 @media screen and (min-width:768px){
-    .reser_img{
-        position: absolute;
-        top: 38px;
-        left: 33px;
-        width: 120px;
-        height:120px;
-        display:show;
+    .reser_data{
+        padding: 20px 20px 20px 60px;
     }
 }
 
-.reser_pic{
-    width: 100%;
-}
 
-.reser_text{
-    position: absolute;
-    top: 25px;
-    left: 50px;
-    width: 200px;
-    height: 120px;
-    font-size: 12px;
-    display: flex;
-    flex-direction:column;
-    
+.reser_data > div{
+    display:flex;
+    padding:20px 0;
 }
 
 
 
-.reser_text > div > p{
-    display: inline-block;
-    padding-bottom: 5px;
-}
 
-.reser_qrcode{
-    position: absolute;
-    top: 25px;
-    right: 30px;
-    width: 70px;
-}
-
-.reser_qrcode img {
-    width: 100%;
-}
 
 //湯牌
 .card_area , .collection_area{
@@ -313,6 +299,9 @@
     flex-wrap: wrap;
 }
 
+.cards{
+    margin-top: 40px;
+}
 
 .card{
     margin:40px;
@@ -341,8 +330,9 @@
 }
 
 .card{
-	width: 224px;
-	height: 420px;
+    width: 224px;
+    height: 100%;
+	min-height: 380px;
 	color: #4d2000;
 	// position: absolute;
 	font-family:'Mori';
@@ -369,20 +359,17 @@
 	margin: auto;
 	width: 150px;
 }
-.card .front .badge{
-	display: block;
-	width: 65%;
-	margin: auto;
-}
+
+
 .card .front .card_name{
 	text-align: center;
 	width: 100%;
-	padding: 5px 20px;
+	padding: 15px 20px;
 	font-family: 'pigmo';
 }
 .card .card_item_box{
 	width: 80%;
-	height: 40%;
+	height: 35%;
 	margin: auto;
 }
 .card .card_item_box::after{
@@ -392,7 +379,8 @@
 }
 .card .card_item{
 	width: 50%;
-	height: 50%;
+    height: 50%;
+    // max-height: 50px;
 	float: left;
 }
 
@@ -412,10 +400,10 @@
 	width: 90%;
 	margin: auto;
     display: flex;
-    margin-top:20px ;
+    margin-top:10px ;
 }
 
-.card .front .card_btn_box a{
+.card_btn{
 	display: block;
 	margin: auto;
 	font-size: 15px;
@@ -424,13 +412,18 @@
 	// transition: 0.5s;
 	cursor: pointer;
 }
-.card .front .card_btn_box a:hover{
+.card_btn:hover{
 	color: #fff;
 }
 
 
 
 //發表
+
+.post_area{
+    margin-bottom: 30px;
+}
+
 .post_data{
     width:85%;
     border-collapse:collapse;
@@ -455,55 +448,29 @@
 
 
 //發表藥材＆文字顏色
-.post_data_medicine{
+.post_data_time{
     display:none;
 }
 
-.post_title_medicine{
+.post_title_time{
     display:none;
 }
 
 @media screen and (min-width:768px){
-    .post_data_medicine{
+    .post_data_time{
         display:table-cell
     }
     
-    .post_title_medicine{
+    .post_title_time{
         display:table-cell; 
     }
 }
-
-@media screen and (min-width:768px){
-    .post_data_medicine div{ 
-    display: inline-block;
-    padding: 5px 10px ;
-    border-radius: 40px;
-    color: #fff;
-    // margin: 0 10px;comput
-    margin: 2px 10px;
-}
-}
-
-.color_green{ 
-    background-color: #6a912d; 
-}
-
-.color_red{ 
-    background-color: #b24f59; 
-}
-
-.color_orange{ 
-    background-color: #dd7d1d; 
-}
-
-
-
-
 
 //酷碰
 .coupons{
     width: 320px;
     margin-left: 1%;
+    margin-bottom: 1%;
 }
 
 .coupon_data{
@@ -516,12 +483,13 @@
 
 .coupon_num{
     position: absolute;
-    top: 35%;
-    left:28%;
-    font-size: 45px;
+    top:45%;
+    left:48%;
+    transform: translate(-70%,-50%);
+    font-size: 36px;
 }
 
-.coupon_total{
+.coupon_date{
     text-align: center;
     font-size: 24px;
 }
@@ -529,7 +497,7 @@
 .coupon_area{
     margin: 0 auto;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
     // width:90%;
     padding: 10px 20px;
@@ -540,3 +508,34 @@
     display:none;
 }
 
+.draw{
+    margin: auto;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .drawingArea{
+        transform: scale(.55);
+        width: 0;
+        height: 0; 
+        position: relative;
+        text-align: center;
+        vertical-align: baseline;
+    }
+    .circle1, .circle2, .circle3, .circle4, .circle5, .circle0{
+        position: relative;
+        /* letter-spacing: 0.1em; */
+    }                
+    .circle p{
+        font-weight: bold;
+        position: absolute;
+        display: block;
+        width: 25px;
+        margin: 0;
+        font-size: 60px;
+        font-family: 'Times New Roman';
+        vertical-align: top;
+    }
+}

@@ -289,7 +289,7 @@ mql.addListener(handleOrientationChange);
      */
     fruitGame.prototype.FruitDownMove = function(element){
         var _this = this,
-             _setting = this.Setting;
+            _setting = this.Setting;
         var _move = setInterval(function(){
             var _$element = $(element),
                  _top = _$element.position().top;
@@ -300,110 +300,6 @@ mql.addListener(handleOrientationChange);
     }
 
  
-
-    /**
-     * 藥材炸弹,血量减少
-     */
-    fruitGame.prototype.FruitBomb = function(life){
-        var _this = this,
-            _$lifeBar = $('#lifeBar'),
-            _lifeSize = _$lifeBar.width();
-            _lifeSize -= life;
-        var score=document.getElementsByClassName('game_over_tip')[0];
-        var num = document.getElementById("divNum");
-        
-    
-        var xhr = new XMLHttpRequest();
-        
-            xhr.onreadystatechange = function(){
-                if( xhr.readyState == 4){
-                    if( xhr.status == 200 ){
-         
-                
-                var discount = JSON.parse(xhr.responseText);
-                
-                if(_lifeSize <= 0 ){
-
-                        num.innerHTML="Over!";
-                        clearInterval(_this.BuilderFruit);
-
-                        
-                        document.getElementById("count_back").style.marginTop="-22px";
-                        document.getElementById("divNum").style.color="#790e0e";
-                        document.getElementById("timeBack").style.display="none";
- 		                // clearInterval( time ); //停止倒數
-                        // 生命值小於零遊戲結束字樣
-                        _$lifeBar.animate({width:_lifeSize + 'px'},100,function(){
-                        $('div.thing').remove();
-                        aa = parseInt(document.getElementById('gameCent').innerText);
-                        // 把文字轉成數值再來判斷
-                        // alert(aa);
-                        
-                        var cpCount=0;
-                        if(aa <= 150){
-                            c = discount[0].couponName;
-                            cpCount=2;
-                            d=discount[0].couponNo;
-                        }else if(aa <= 200){
-                            c = discount[1].couponName;
-                            cpCount=1;
-                            d=discount[1].couponNo;
-                        }else{
-                            c = discount[2].couponName;
-                            d=discount[2].couponNo;
-                        }
-                        console.log(`cpCount:${cpCount}, d:${d}`);
-                        score.innerHTML=`恭喜您得到積分${document.getElementById('gameCent').innerText}分<br>獲得${c}優惠券!`;
-                        
-                        //$("div#game_box").append('<div class="game_over_tip2">立刻前往客製湯頭</div>');
-                        // $("div#game_box").append('<a href="javasript:;" id="bonus" class="game_over_tip3">'+'GO'+'</a>');
-                        // $("div#game_box").append('<img class="special" src="images/coupon.png" alt="">');
-                        // $("div#game_box").append('<a id="bonus" class="game_over_tip3">立刻前往客製湯頭</a>');
-                        // $('#game_box .game_over_tip3').css("display" , 'block');
-
-                        // var date =new Date();
-                        // DateStr = date.getFullYear()+ "-"+date.getMonth()+"-"+date.getDate();
-
-                        $('#tip_wrap').css("display" , 'block');
-                        
-                        //遊戲結束後寫入資料庫
-
-                        var xhr = new XMLHttpRequest();
-                        // xhr.onload=function (){
-                             
-                             
-                            // $coupon -> bindValue(":couponNo", $_REQUEST["couponNo"]);
-                            // $coupon -> bindValue(":memNo",1); //session
-                            // $coupon -> bindValue(":memCouponDate", $_REQUEST["memCouponDate"]);
-
-                            var url = `php/memCoupon.php?memId=1&couponNo=${d}`;
-                            xhr.open("Get", url, true);
-                            xhr.send( null );
-                            console.log(13);
-
-                            
-                        // }    
-                        
-                    });
-                    clearInterval(this.BuilderFruit);
-                }else{
-                    _$lifeBar.animate({width:_lifeSize + 'px'},100,function(){
-                        if(_lifeSize <= _this.Setting.LifeSize / 1.5)
-                            _$lifeBar.removeAttr('class').addClass('yellow');
-                        if(_lifeSize <= _this.Setting.LifeSize / 2)
-                            _$lifeBar.removeAttr('class').addClass('red');
-                    });
-                }
-            }else{
-                alert( xhr.status );
-              }
-         }
-        }
-        var url = "php/coupon.php";
-        xhr.open("Get", url, true);
-        xhr.send( null );
-    }
-
     /**
      * 藥材爆炸後,抖動畫面
      */
@@ -428,6 +324,95 @@ mql.addListener(handleOrientationChange);
             _shockCount++;
         },20);
     }
+    
+    /**
+     * 藥材炸弹,血量减少
+     */
+    fruitGame.prototype.FruitBomb = function(life){
+        var _this = this,
+            _$lifeBar = $('#lifeBar'),
+            _lifeSize = _$lifeBar.width();
+            _lifeSize -= life;
+        var score=document.getElementsByClassName('game_over_tip')[0];
+        var num = document.getElementById("divNum");
+
+        var xhr = new XMLHttpRequest();
+        
+        xhr.onreadystatechange = function(){
+         if( xhr.readyState == 4){
+          if( xhr.status == 200 ){
+                
+                var discount = JSON.parse(xhr.responseText);
+                
+                if(_lifeSize <= 0 ){
+
+                        // 生命值小於零遊戲結束字樣
+                        num.innerHTML="Over!";
+                        clearInterval(_this.BuilderFruit);
+                        
+                        document.getElementById("count_back").style.marginTop="-22px";
+                        document.getElementById("divNum").style.color="#790e0e";
+                        document.getElementById("timeBack").style.display="none";
+                        document.getElementById("clock_circle").style.display="none";
+
+                        _$lifeBar.animate({width:_lifeSize + 'px'},100,function(){
+                        $('div.thing').remove();
+                        aa = parseInt(document.getElementById('gameCent').innerText);
+                        // 把文字轉成數值再來判斷
+                        // alert(aa);
+                        
+                        var cpCount=0;
+                        if(aa <= 150){
+                            c = discount[0].couponName;
+                            cpCount=2;
+                            d=discount[0].couponNo;
+                        }else if(aa <= 200){
+                            c = discount[1].couponName;
+                            cpCount=1;
+                            d=discount[1].couponNo;
+                        }else{
+                            c = discount[2].couponName;
+                            d=discount[2].couponNo;
+                        }
+                        console.log(`cpCount:${cpCount}, d:${d}`);
+                        score.innerHTML=`恭喜您得到積分${document.getElementById('gameCent').innerText}分<br>獲得${c}優惠券!`;
+                        
+
+                        // var date =new Date();
+                        // DateStr = date.getFullYear()+ "-"+date.getMonth()+"-"+date.getDate();
+                        
+
+
+                        $('#tip_wrap').css("display" , 'block');
+                        
+                        //遊戲結束後寫入資料庫
+                        var xhr = new XMLHttpRequest();
+                        // xhr.onload=function (){
+                            var url = `php/memCoupon.php?memId=1&couponNo=${d}`; //已經預設的欄位不要填寫
+                            xhr.open("Get", url, true);
+                            xhr.send( null );
+                            console.log(xhr);
+                        // } 
+                    });
+                    clearInterval(this.BuilderFruit);
+                }else{
+                    _$lifeBar.animate({width:_lifeSize + 'px'},100,function(){
+                        if(_lifeSize <= _this.Setting.LifeSize / 1.5){
+                            _$lifeBar.removeAttr('class').addClass('yellow');}
+                        if(_lifeSize <= _this.Setting.LifeSize / 2){
+                            _$lifeBar.removeAttr('class').addClass('red');}
+                    });
+                }
+            }else{
+                alert( xhr.status );
+              }
+         }
+        }
+        var url = "php/coupon.php";
+        xhr.open("Get", url, true);
+        xhr.send( null );
+    }
+
 
     /**
      * 計算籃子接到的藥材
@@ -470,10 +455,15 @@ mql.addListener(handleOrientationChange);
      * 開始遊戲
      */
     fruitGame.prototype.Start = function(){
-       // 倒數二十秒計時器 
-        var num = 20;
-        var time;
-		// 用innerHTML來更改數字
+        var _this = this,
+            _$lifeBar = $('#lifeBar'),
+            _lifeSize = _$lifeBar.width();
+       // 倒數二十秒計時器
+            num = 10; 
+
+        // var _$lifeBar = $('#lifeBar'),
+        //     _lifeSize = _$lifeBar.width();
+        // 用innerHTML來更改數字
         function bye(){
  	        num--;
  	        if(num == 0){ 
@@ -483,13 +473,16 @@ mql.addListener(handleOrientationChange);
              document.getElementById("count_back").style.marginTop="-22px";
              document.getElementById("divNum").style.color="#790e0e";
              document.getElementById("timeBack").style.display="none";  
+            //  console.log(fruitGame.prototype.FruitBomb(100));
         }
-		console.log(num)
+		console.log(num);
+	    document.getElementById("divNum").innerHTML= num ;
     }
-	    document.getElementById("divNum").innerHTML = num;
-	    time = setInterval( bye,1000);
         // 寫下一個數字 就會是10的-3次方,所以寫1000會等於一秒	
-        // 倒數三十秒計時器結束  
+        // 倒數三十秒計時器結束 
+        
+        var time = setInterval( bye,1000);
+        
         var _this = this,
             _setting = this.Setting;
         // 遊戲部分
@@ -510,15 +503,18 @@ mql.addListener(handleOrientationChange);
             _this.FruitDownMove(_domDiv);
         },
         _this.GetLevelModel(_setting.LevelNum).Speed);
+
+
         // 這邊寫一個遊戲本身停止的計時器
         // 30000毫秒過後執行吃到炸彈的function，這function是給生命life，要扣多少就給多少，滿是80，所以可以給80，這裡給100
         setTimeout(function() {
         clearInterval(_this.BuilderFruit);
+        // clearInterval( time );
         console.log(fruitGame.prototype.FruitBomb(100));
-        }, 20000);
-        return this;
-    };
+        }, 10000);
 
+        return this;
+    }
 
     /**
      * 遊戲初始化

@@ -2,7 +2,7 @@
     $errMsg="";
 
     try {
-        require_once("connect.php");
+        require_once("yt_connect.php");
         $sql = "select * from reservation natural join branch where reserDate = :reserDate and branchName = :branchName";
         $result = $pdo->prepare($sql);//下指令
         $result->bindValue(":branchName",$_REQUEST["roomvalue"]);

@@ -30,6 +30,37 @@
 	filter:drop-shadow(0px 0px 5px rgba(0,0,0,0.5));
 	z-index: 998;
 	text-align: center;
+	.draw{
+		margin: auto;
+		width: 200px;
+		height: 200px;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.drawingArea{
+			transform: scale(.55);
+			width: 0;
+			height: 0; 
+			position: relative;
+			text-align: center;
+			vertical-align: baseline;
+		}
+		.circle1, .circle2, .circle3, .circle4, .circle5, .circle0{
+			position: relative;
+			/* letter-spacing: 0.1em; */
+		}                
+		.circle p{
+			font-weight: bold;
+			position: absolute;
+			display: block;
+			width: 25px;
+			margin: 0;
+			font-size: 60px;
+			// font-family: 'Times New Roman';
+			vertical-align: top;
+		}
+	}
 }
 
 .card .front{
