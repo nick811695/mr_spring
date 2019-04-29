@@ -5,14 +5,13 @@ $errMsg="";
 
    if(isset($_POST['updated_it'])){
 
-    $memNo = 5; //那個會員的編號 $_SESSION[""];
+    $memNo = 1; //那個會員的編號 $_SESSION[""];
 
     $memFirstName = $_POST["mem_memFirstName"];
     $memLastName = $_POST["mem_memLastName"];
     $memNickname = $_POST["mem_memNickname"];
     $memId = $_POST["mem_memId"];
     $memPsw = $_POST["mem_memPsw"];
-    $twId = $_POST["tw_id"];
     $memTel = $_POST["mem_memTel"];
     $memEmail = $_POST["mem_memEmail"];
     $memImgUrl = $_FILES['memUpFile']['name'];
@@ -28,7 +27,7 @@ $errMsg="";
                 $to = $dir . $_FILES['memUpFile']['name'];
                 copy($from, $to);
                 try{
-                    $dsn="mysql:host=localhost;port=3306;dbname=mrspring;charset=utf8";
+                    $dsn="mysql:host=localhost;port=3306;dbname=test;charset=utf8";
                     $user="root";
                     $password="bebe";
                     $options= array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION, PDO::ATTR_CASE=>PDO::CASE_NATURAL);
